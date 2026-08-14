@@ -1,0 +1,170 @@
+/* ============================================================
+   USC Logic Web — shared course palette
+   Mirrors the logic textbook (et-book, maroon, teal)
+   ============================================================ */
+
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/roman-line-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/bold-line-figures.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://gabriel-uzquiano.github.io/logic/libs/tufte-css-2015.12.29/et-book/display-italic-old-style-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+:root {
+  --font-body: et-book, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  --color-bg:      #fffff8;
+  --color-text:    #111111;
+  --color-muted:   #666660;
+  --color-border:  #ddd8ce;
+  --color-primary: #7a1a3a;
+  --color-teal:    #006666;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 21px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  padding: 3rem 2rem 5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+.site-header .course-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.site-header h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--color-text);
+  margin-top: 0.1rem;
+  line-height: 1.2;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin: 0.8rem 0 1.8rem;
+}
+.breadcrumb a { color: var(--color-teal); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 0.3em; }
+
+/* ── Body text ───────────────────────────────────────────── */
+p { margin-bottom: 1rem; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+a { color: var(--color-teal); }
+a:hover { text-decoration: underline; }
+
+/* ── Section headings ────────────────────────────────────── */
+h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  margin: 2.5rem 0 0.6rem;
+  padding-top: 0.3rem;
+}
+
+/* ── Unit list ───────────────────────────────────────────── */
+.unit-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.unit-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.unit-list li:first-child { border-top: 1px solid var(--color-border); }
+.unit-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  margin-right: 0.5em;
+  letter-spacing: 0.03em;
+}
+.coming-soon {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  margin-left: 0.4em;
+}
+
+/* ── Instruction boxes ───────────────────────────────────── */
+.instructions {
+  border-left: 3px solid var(--color-teal);
+  padding: 0.6rem 0.9rem;
+  margin: 0.5rem 0 1.75rem;
+  font-size: 0.91rem;
+  line-height: 1.55;
+  background: #f5fbfb;
+}
+
+/* ── Exercise blocks ─────────────────────────────────────── */
+.exercise {
+  margin: 0 0 2.5rem;
+}
+.exercise-label {
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Iframe wrapper ──────────────────────────────────────── */
+.app-frame {
+  position: relative;
+  width: 100%;
+}
+.app-frame iframe {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  display: block;
+  background: #fff;
+}
+/* Open link sits at top-right CORNER of the frame, outside the iframe */
+.app-frame .open-btn {
+  position: absolute;
+  top: -1.4rem;
+  right: 0;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--color-teal);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.app-frame .open-btn:hover { text-decoration: underline; }

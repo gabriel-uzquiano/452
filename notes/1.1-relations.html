@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relations — PHIL 452</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/452">← PHIL 452</a></nav>
+<article>
+<h1 id="relations">relations</h1>
+<p>Modal logic interprets <span class="math inline">\(\Box\)</span> and
+<span class="math inline">\(\Diamond\)</span> over a set of worlds
+equipped with a binary relation. Almost every result later in the course
+turns on which <em>properties</em> that relation has, so we begin with
+them.</p>
+<h2 id="ordered-pairs-and-relations">ordered pairs and relations</h2>
+<dl>
+<dt>Ordered Pair</dt>
+<dd>
+<p><span class="math inline">\(\langle x, y \rangle\)</span> is the
+ordered pair of <span class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span>. Order matters: <span
+class="math inline">\(\langle x, y \rangle = \langle u, v
+\rangle\)</span> if and only if <span class="math inline">\(x =
+u\)</span> and <span class="math inline">\(y = v\)</span>.</p>
+</dd>
+<dt>Binary Relation</dt>
+<dd>
+<p>A <em>binary relation</em> <span class="math inline">\(R\)</span> on
+a set <span class="math inline">\(W\)</span> is a set of ordered pairs
+of members of <span class="math inline">\(W\)</span>, that is, <span
+class="math inline">\(R \subseteq W \times W\)</span>.</p>
+</dd>
+</dl>
+<p>We write <span class="math inline">\(Rxy\)</span> as an abbreviation
+for <span class="math inline">\(\langle x, y \rangle \in R\)</span>, and
+read it as ‘<span class="math inline">\(x\)</span> sees <span
+class="math inline">\(y\)</span>’ or ‘<span
+class="math inline">\(y\)</span> is accessible from <span
+class="math inline">\(x\)</span>’.</p>
+<h2 id="properties-of-relations">properties of relations</h2>
+<p>Each property below will later correspond to a modal axiom. Let <span
+class="math inline">\(R\)</span> be a binary relation on <span
+class="math inline">\(W\)</span>.</p>
+<dl>
+<dt>Reflexivity</dt>
+<dd>
+<p><span class="math inline">\(R\)</span> is <em>reflexive</em> if and
+only if <span class="math inline">\(Rxx\)</span> for every <span
+class="math inline">\(x \in W\)</span>.</p>
+</dd>
+<dt>Symmetry</dt>
+<dd>
+<p><span class="math inline">\(R\)</span> is <em>symmetric</em> if and
+only if for all <span class="math inline">\(x, y \in W\)</span>, if
+<span class="math inline">\(Rxy\)</span> then <span
+class="math inline">\(Ryx\)</span>.</p>
+</dd>
+<dt>Transitivity</dt>
+<dd>
+<p><span class="math inline">\(R\)</span> is <em>transitive</em> if and
+only if for all <span class="math inline">\(x, y, z \in W\)</span>, if
+<span class="math inline">\(Rxy\)</span> and <span
+class="math inline">\(Ryz\)</span>, then <span
+class="math inline">\(Rxz\)</span>.</p>
+</dd>
+<dt>Seriality</dt>
+<dd>
+<p><span class="math inline">\(R\)</span> is <em>serial</em> if and only
+if for every <span class="math inline">\(x \in W\)</span> there is some
+<span class="math inline">\(y \in W\)</span> such that <span
+class="math inline">\(Rxy\)</span>.</p>
+</dd>
+<dt>Euclidean</dt>
+<dd>
+<p><span class="math inline">\(R\)</span> is <em>euclidean</em> if and
+only if for all <span class="math inline">\(x, y, z \in W\)</span>, if
+<span class="math inline">\(Rxy\)</span> and <span
+class="math inline">\(Rxz\)</span>, then <span
+class="math inline">\(Ryz\)</span>.</p>
+</dd>
+</dl>
+<h2 id="a-warning-about-independence">a warning about independence</h2>
+<p>These properties are independent of one another in ways that are easy
+to misjudge. Two cautionary cases:</p>
+<ul>
+<li><p>A relation may be symmetric and transitive without being
+reflexive. Let <span class="math inline">\(W = \{1, 2\}\)</span> and
+<span class="math inline">\(R = \{\langle 1, 1 \rangle\}\)</span>. Then
+<span class="math inline">\(R\)</span> is symmetric and transitive, but
+<span class="math inline">\(2\)</span> does not see itself.</p></li>
+<li><p>A relation may be euclidean without being symmetric. Seriality
+does not follow from reflexivity’s failure either.</p></li>
+</ul>
+<h2 id="why-this-matters-later">why this matters later</h2>
+<p>We will prove that a frame validates a given axiom exactly when its
+relation has the corresponding property:</p>
+<table>
+<thead>
+<tr>
+<th>Axiom</th>
+<th>Schema</th>
+<th>Property of <span class="math inline">\(R\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td><span class="math inline">\(\Box \varphi \to \Diamond
+\varphi\)</span></td>
+<td>serial</td>
+</tr>
+<tr>
+<td>T</td>
+<td><span class="math inline">\(\Box \varphi \to \varphi\)</span></td>
+<td>reflexive</td>
+</tr>
+<tr>
+<td>B</td>
+<td><span class="math inline">\(\varphi \to \Box \Diamond
+\varphi\)</span></td>
+<td>symmetric</td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math inline">\(\Box \varphi \to \Box \Box
+\varphi\)</span></td>
+<td>transitive</td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math inline">\(\Diamond \varphi \to \Box \Diamond
+\varphi\)</span></td>
+<td>euclidean</td>
+</tr>
+</tbody>
+</table>
+<p>Keep this table close. It is the spine of the completeness results in
+the second half of the course.</p>
+</article>
+</body>
+</html>

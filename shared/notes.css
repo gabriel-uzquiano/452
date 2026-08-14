@@ -1,0 +1,183 @@
+/* ─── ET Book ──────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff");
+  font-weight: normal; font-style: normal;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff");
+  font-weight: normal; font-style: italic;
+}
+@font-face {
+  font-family: "et-book";
+  src: url("https://edwardtufte.github.io/tufte-css/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff");
+  font-weight: bold; font-style: normal;
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+*, *:before, *:after { box-sizing: border-box; }
+
+html { font-size: 15px; }
+
+body {
+  margin: 0;
+  background-color: #fffff8;
+  color: #111;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+/* ─── Back nav ─────────────────────────────────────────────────────────────── */
+.back-nav {
+  padding: 1rem 0 0 8%;
+  font-size: 0.9rem;
+}
+.back-nav a {
+  color: #555;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.back-nav a:hover { text-decoration: underline; }
+
+/* ─── Article container ────────────────────────────────────────────────────── */
+article {
+  position: relative;
+  padding: 3rem 0 5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ─── Content width ────────────────────────────────────────────────────────── */
+article > p,
+article > ul,
+article > ol,
+article > dl,
+article > blockquote,
+article > div,
+article > section > p,
+article > section > ul,
+article > section > ol,
+article > section > dl,
+article > section > blockquote {
+  width: 55%;
+  margin-left: 8%;
+}
+
+/* ─── Headings ─────────────────────────────────────────────────────────────── */
+h1 {
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  margin-left: 8%;
+  width: 55%;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  margin-left: 8%;
+  width: 55%;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-left: 8%;
+  width: 55%;
+}
+
+/* ─── Body text ────────────────────────────────────────────────────────────── */
+p, ol, ul, dt, dd {
+  font-size: 1.4rem;
+}
+
+p {
+  line-height: 2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  vertical-align: baseline;
+}
+
+/* ─── Lists ────────────────────────────────────────────────────────────────── */
+article > ul,
+article > ol {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+li { padding: 0.5rem 0; }
+li p { width: 100%; }
+li > p:first-child { margin-top: 0; }
+li > p:last-child  { margin-bottom: 0; }
+
+/* ─── Definition lists ─────────────────────────────────────────────────────── */
+article > dl { width: 55%; margin-left: 8%; }
+
+dt {
+  font-variant: small-caps;
+  margin-top: 1rem;
+}
+
+dd {
+  margin-left: 10pt;
+}
+
+dl dd p, dl p { width: 100%; }
+
+/* ─── Blockquotes ──────────────────────────────────────────────────────────── */
+blockquote {
+  font-size: 1.4rem;
+}
+
+blockquote p {
+  width: 100%;
+  margin-left: 10pt;
+}
+
+blockquote footer {
+  width: 100%;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* ─── Links ────────────────────────────────────────────────────────────────── */
+a:link, a:visited { color: inherit; }
+a:link {
+  text-decoration: none;
+  background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8,
+               0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8,
+               0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
+  background-position: 0% 93%, 100% 93%, 0% 93%;
+}
+
+/* ─── Numbered lists (argument style) ─────────────────────────────────────── */
+ol { list-style-type: decimal; }
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  article > p,
+  article > ul,
+  article > ol,
+  article > dl,
+  article > blockquote,
+  article > div,
+  h1, h2, h3,
+  article > dl {
+    width: 84%;
+    margin-left: 8%;
+  }
+  blockquote p { width: 100%; }
+}
