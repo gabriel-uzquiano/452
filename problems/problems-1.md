@@ -1,4 +1,4 @@
-### problem set 1. relations
+## problem set 1. relations
 
 1. Find a relation $R$ on the set of English words $W$ with each of the profiles given below:&nbsp;
 
