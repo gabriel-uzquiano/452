@@ -1,0 +1,240 @@
+/*-- scss:defaults --*/
+
+// Matches the Modal Logic textbook (Quarto "cosmo"): Source Sans, #343a40 text,
+// weight-600 headings, #2761e3 links.  Measured from the rendered book, not guessed.
+
+// Fonts are self-hosted in ./fonts and declared in fonts.css, which is attached
+// via the qmd's css: key.  The book names Source Sans Pro but never ships it, so
+// it silently falls back to the system font; bundling the real face is what makes
+// these slides look intentional, and it works with no network in the classroom.
+
+// NB: keep every family name free of digits.  Quarto injects these into a CSS
+// custom property *unquoted*, and a name like "Source Sans 3" is then invalid CSS,
+// which silently drops the whole declaration and falls back to Times New Roman.
+// The bundled face is registered as "Source Sans Pro" in fonts.css for that reason
+// -- and because that is the exact name the textbook asks for.
+$font-family-sans-serif: "Source Sans Pro", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace: "Source Code Pro", SFMono-Regular, Menlo, Consolas, monospace !default;
+
+// Palette lifted from the book
+$body-bg: #ffffff !default;
+$body-color: #343a40 !default;
+$link-color: #2761e3 !default;
+$accent: #2780e3 !default;          // the book's callout rule
+$muted: #6c757d !default;
+$rule-strong: #9a9da0 !default;     // book's th border-bottom
+$rule-light: #d6d8d9 !default;      // book's td border-top
+
+// Type scale.  The book runs h1 2.00x, h2 1.65x, h3 1.45x over a 17px body;
+// slides need a larger root, so the same ratios are applied to 32px.
+$presentation-font-size-root: 32px !default;
+$presentation-line-height: 1.5 !default;
+$presentation-heading-font: $font-family-sans-serif !default;
+$presentation-heading-color: $body-color !default;
+$presentation-heading-font-weight: 600 !default;
+$presentation-heading-line-height: 1.2 !default;
+
+$presentation-h1-font-size: 1.85em !default;   // section dividers
+$presentation-h2-font-size: 1.35em !default;   // slide titles
+$presentation-h3-font-size: 1.15em !default;
+$presentation-h4-font-size: 1.0em !default;
+
+$code-block-font-size: 0.75em !default;
+
+
+/*-- scss:rules --*/
+
+.reveal {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family-sans-serif;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: $font-family-sans-serif;
+}
+
+// ---- slide titles -------------------------------------------------------
+// Left aligned with a hairline rule, echoing the book's section headings.
+.reveal .slides section > h2 {
+  text-align: left;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.7em 0;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid $rule-light;
+}
+
+.reveal .slides section > h3 {
+  text-align: left;
+  color: $body-color;
+  margin-top: 0.2em;
+}
+
+// ---- section divider slides --------------------------------------------
+.reveal .slides > section > h1,
+.reveal .slides > section > section > h1 {
+  text-align: left;
+  font-weight: 600;
+  border: none;
+  color: $body-color;
+}
+
+// A short accent rule under divider titles instead of a full-width border.
+// NB: reveal/Quarto uses `.title-slide` for *section divider* slides and the id
+// `#title-slide` for the actual opening slide.  They are not the same thing.
+.reveal .slides section.title-slide > h1::after,
+.reveal #title-slide h1.title::after {
+  content: "";
+  display: block;
+  width: 2.2em;
+  height: 3px;
+  margin-top: 0.45em;
+  background: $accent;
+}
+
+// ---- body ---------------------------------------------------------------
+.reveal p,
+.reveal li {
+  text-align: left;
+}
+
+.reveal ul,
+.reveal ol {
+  display: block;
+  margin-left: 1.1em;
+}
+
+.reveal li {
+  margin-bottom: 0.35em;
+}
+
+.reveal strong { font-weight: 700; }
+.reveal em     { font-style: italic; }
+
+.reveal a {
+  color: $link-color;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(39, 97, 227, 0.35);
+}
+.reveal a:hover {
+  color: $link-color;
+  border-bottom-color: $link-color;
+}
+
+// ---- tables: match the book exactly ------------------------------------
+.reveal table {
+  border-collapse: collapse;
+  margin: 0.7em 0;          // flush left, aligned with the title and body text
+  font-size: 0.92em;
+}
+.reveal table th {
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid $rule-strong;
+  border-top: none;
+  padding: 0.42em 0.75em;
+}
+.reveal table td {
+  border-top: 1px solid $rule-light;
+  border-bottom: none;
+  padding: 0.42em 0.75em;
+}
+.reveal table tbody tr:last-child td { border-bottom: 1px solid $rule-light; }
+
+// ---- definitions / emphasis blocks -------------------------------------
+// Mirrors the book's callout: 5px accent rule, no fill.
+.reveal blockquote {
+  border-left: 5px solid $accent;
+  background: none;
+  box-shadow: none;
+  margin: 0.7em 0;
+  padding: 0.15em 0 0.15em 0.9em;
+  font-style: normal;
+  width: 100%;
+}
+.reveal blockquote p { margin: 0.25em 0; }
+
+// ---- definition lists ---------------------------------------------------
+// Pandoc turns "Term\n:   gloss" into dl/dt/dd.  Give them the book's accent
+// rule so a definition reads as a definition rather than a stray indent.
+.reveal dl {
+  margin: 0.7em 0;
+  border-left: 5px solid $accent;
+  padding-left: 0.9em;
+}
+.reveal dl dt {
+  font-weight: 600;
+  margin-bottom: 0.1em;
+}
+.reveal dl dd {
+  margin: 0 0 0.55em 0;     // the accent rule supplies the indent
+}
+.reveal dl dd:last-child { margin-bottom: 0; }
+
+// ---- code ---------------------------------------------------------------
+.reveal code {
+  font-family: $font-family-monospace;
+  color: #b5407a;
+  background: none;
+}
+.reveal pre code {
+  color: $body-color;
+  border: 1px solid $rule-light;
+  border-radius: 3px;
+  padding: 0.6em 0.8em;
+}
+
+// ---- opening slide ------------------------------------------------------
+// Everything here is left aligned on one edge: title, rule, subtitle, byline.
+.reveal #title-slide {
+  text-align: left;
+}
+.reveal #title-slide h1.title {
+  font-size: 1.85em;
+  margin-bottom: 0.15em;
+  text-align: left;
+}
+.reveal #title-slide .subtitle {
+  color: $muted;
+  font-size: 0.95em;
+  font-weight: 400;
+  margin: 0 0 1.1em 0;
+  text-align: left;
+}
+// Quarto lays the author block out as a centred flex row; override both the
+// flex alignment and the text alignment or the byline stays stranded mid-slide.
+.reveal #title-slide .quarto-title-authors {
+  display: block;
+  text-align: left;
+  justify-content: flex-start;
+  border: none;
+}
+.reveal #title-slide .quarto-title-author {
+  display: block;
+  text-align: left;
+  padding: 0;
+}
+.reveal #title-slide .quarto-title-author-name,
+.reveal #title-slide .author {
+  color: $muted;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: left;
+}
+
+// ---- chrome -------------------------------------------------------------
+.reveal .slide-number {
+  color: $muted;
+  background: none;
+  font-size: 0.55em;
+  font-family: $font-family-sans-serif;
+}
+
+.reveal .progress { color: $accent; height: 3px; }
+
+// Keep MathJax from sitting too tight against surrounding text.
+.reveal mjx-container[display="true"] { margin: 0.55em 0; }
+
+// Slightly restrain the footer/controls so they stay out of the way.
+.reveal .controls { color: $muted; }

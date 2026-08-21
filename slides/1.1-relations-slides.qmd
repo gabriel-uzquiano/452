@@ -4,10 +4,13 @@ subtitle: "PHIL 452 · Background"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
-    theme: simple
-    slide-number: true
+    theme: [default, theme.scss]
+    css: fonts.css
+    slide-number: c/t
     chalkboard: true
     html-math-method: mathjax
+    title-slide-attributes:
+      data-background-color: "#ffffff"
 ---
 
 # Why start here

@@ -1,0 +1,101 @@
+/* ---------------------------------------------------------------
+   arguments.css — side-by-side English / formalization blocks
+   for PHIL 452 slides.
+
+   Markup pattern:
+
+     ::: {.argument}
+     ::: {.arow}
+     [1]{.n} [English sentence.]{.en} [$\Box p$]{.fm} [premise]{.by}
+     :::
+     ::: {.rule}
+     :::
+     ::: {.arow .fragment .highlight-current-red}
+     [2]{.n} [English sentence.]{.en} [$p$]{.fm} [from 1]{.by .q}
+     :::
+     :::
+
+   Columns are fixed so that formulas line up down the page. Use
+   .argument.wide when the formalizations are long (multi-modal).
+
+   A .fragment.highlight-current-red row stays visible from the
+   start and turns red only when it is the current step, which is
+   what allows the whole argument to sit on screen at once.
+   --------------------------------------------------------------- */
+
+.reveal .argument {
+  margin: 0.55em 0 0.25em;
+}
+
+.reveal .argument .arow > p {
+  display: grid;
+  grid-template-columns: 1.7rem minmax(0, 1fr) 12.5rem 5.5rem;
+  gap: 0 0.85rem;
+  align-items: baseline;
+  margin: 0;
+  padding: 0.14em 0;
+}
+
+.reveal .argument.wide .arow > p {
+  grid-template-columns: 1.7rem minmax(0, 1fr) 16.5rem 4.5rem;
+}
+
+/* no justification column: reclaim the space */
+.reveal .argument.noby .arow > p {
+  grid-template-columns: 1.7rem minmax(0, 1fr) 13rem;
+}
+
+.reveal .argument .n {
+  color: #6c757d;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.reveal .argument .fm {
+  white-space: nowrap;
+}
+
+.reveal .argument .by {
+  color: #6c757d;
+  font-size: 0.7em;
+  line-height: 1.2;
+}
+
+/* a step whose licence is in question */
+.reveal .argument .by.q {
+  color: #c0392b;
+}
+
+.reveal .argument .by.q::after {
+  content: " ?";
+  font-weight: 600;
+}
+
+/* horizontal rule between premises and what is inferred */
+.reveal .argument .rule {
+  border-top: 1px solid #9a9da0;
+  margin: 0.28em 0 0.3em;
+}
+
+/* the rule only needs to span the number, English and formula columns */
+.reveal .argument .rule {
+  margin-right: 5.5rem;
+}
+
+.reveal .argument.noby .rule {
+  margin-right: 0;
+}
+
+/* ---------------------------------------------------------------
+   In-formula pinpointing.
+
+   \bbox[4px, #fff3bf]{...} inside any $...$ tints part of a
+   formula. Use the class below on a span when you would rather
+   tint a whole line of English.
+   --------------------------------------------------------------- */
+
+.reveal .tint {
+  background: #fff3bf;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}

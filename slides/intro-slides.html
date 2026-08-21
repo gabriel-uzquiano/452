@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="intro-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="intro-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="intro-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="intro-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="intro-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="intro-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="intro-slides_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Gabriel Uzquiano">
+  <title>introduction</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="intro-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="intro-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="intro-slides_files/libs/revealjs/dist/theme/quarto-b2ca8ea55bdb352928decfb8863a3bd8.css">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="arguments.css">
+  <link href="intro-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="intro-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="intro-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="intro-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="intro-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="intro-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#ffffff" class="quarto-title-block center">
+  <h1 class="title">introduction</h1>
+  <p class="subtitle">PHIL 452 · Modal Logic</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Gabriel Uzquiano 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="why-modal-logic" class="title-slide slide level1 center">
+<h1>why modal logic?</h1>
+
+</section>
+<section id="modes-of-truth" class="slide level2">
+<h2>modes of truth</h2>
+<p>In logic, we make a distinction between <em>true</em> and <em>false</em> propositions.</p>
+<div class="fragment">
+<p>Modal logic makes further distinctions between different <em>ways</em> in which propositions may be true or false.</p>
+<ul>
+<li><em>necessarily</em> true or <em>possibly</em> true</li>
+<li><em>necessarily</em> false or <em>possibly</em> false.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>We expand the language of propositional logic with a <em>propositional operator</em> <span class="math inline">\(\Box\)</span> for necessity, and a <em>dual</em> operator <span class="math inline">\(\Diamond\)</span> for possibility.</p>
+</div>
+</section>
+<section id="one-formalism-different-interpretations" class="slide level2">
+<h2>one formalism, different interpretations</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>modality</th>
+<th><span class="math inline">\(\Box\)</span></th>
+<th><span class="math inline">\(\Diamond\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>alethic</td>
+<td>necessarily</td>
+<td>possibly</td>
+</tr>
+<tr class="even">
+<td>temporal</td>
+<td>always</td>
+<td>sometimes</td>
+</tr>
+<tr class="odd">
+<td>epistemic</td>
+<td>it is known</td>
+<td>for all it is known</td>
+</tr>
+<tr class="even">
+<td>deontic</td>
+<td>obligatory</td>
+<td>permitted</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>One formal framework, different subject matters.</p>
+</div>
+</section></section>
+<section>
+<section id="three-arguments" class="title-slide slide level1 center">
+<h1>three arguments</h1>
+
+</section>
+<section id="the-modal-ontological-argument" class="slide level2 smaller">
+<h2>the modal ontological argument</h2>
+<p>We let <span class="math inline">\(p\)</span> be the proposition that God exists:</p>
+<div class="fragment">
+<div class="argument">
+<div class="arow">
+<p><span class="n">1</span> <span class="en">Necessarily, if God exists, then God exists necessarily.</span> <span class="fm"><span class="math inline">\(\Box (p \to \Box p)\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="arow">
+<p><span class="n">2</span> <span class="en">It is possible that God exists.</span> <span class="fm"><span class="math inline">\(\Diamond p\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="rule">
+
+</div>
+<div class="arow fragment highlight-current-red">
+<p><span class="n">3</span> <span class="en">It is possible that God exists necessarily.</span> <span class="fm"><span class="math inline">\(\Diamond \Box p\)</span></span> <span class="by q">from 1, 2</span></p>
+</div>
+<div class="arow fragment highlight-current-red">
+<p><span class="n">4</span> <span class="en">God exists.</span> <span class="fm"><span class="math inline">\(p\)</span></span> <span class="by q">from 3</span></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>There is the step from 1 and 2 to 3:</p>
+<p><span class="math display">\[
+\Box (p \to \Box p)  \Longrightarrow \ (p \to \Box p)
+\]</span> <span class="math display">\[
+(p \to \Box p)  \Longrightarrow \ (\Diamond p \to \Diamond \Box p)
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Focus on the step from 3 to 4:</p>
+<p><span class="math display">\[
+\Diamond \bbox[3px, #fff3bf]{\Box p} \ \Longrightarrow \ p
+\]</span></p>
+</div>
+<div class="fragment">
+<p>If the highlighted proposition <span class="math inline">\(\Box p\)</span> is true at <em>some</em> accessible world, then <span class="math inline">\(p\)</span> is true.</p>
+</div>
+</section>
+<section id="same-initial-premise-opposite-conclusion" class="slide level2 smaller">
+<h2>Same initial premise, opposite conclusion</h2>
+<div class="argument">
+<div class="arow">
+<p><span class="n">1</span> <span class="en">Necessarily, if God exists, then God exists necessarily.</span> <span class="fm"><span class="math inline">\(\Box (p \to \Box p)\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="arow">
+<p><span class="n">2</span> <span class="en">It is possible that God does not exist.</span> <span class="fm"><span class="math inline">\(\Diamond \neg p\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="rule">
+
+</div>
+<div class="arow fragment highlight-current-red">
+<p><span class="n">3</span> <span class="en">God does not exist.</span> <span class="fm"><span class="math inline">\(\neg p\)</span></span> <span class="by q">from 1, 2</span></p>
+</div>
+</div>
+<div class="fragment">
+<p>The crucial step now takes us from 1 and 2 to 3.</p>
+<p><span class="math display">\[
+\Box (p \to \Box p)  \Longrightarrow \ (p \to \Box p)
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+(p \to \Box p)  \Longrightarrow \ (\neg \Box \neg p \to \neg p)
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+(\neg \Box \neg p \to \neg p)  \Longrightarrow \ (\Diamond \neg p \to \neg p)
+\]</span></p>
+</div>
+</section>
+<section id="two-modalities-at-once" class="slide level2">
+<h2>two modalities at once</h2>
+<p>The next argument takes place in a <strong>multi-modal</strong> language.</p>
+<dl>
+<dt><span class="math inline">\(\textsf{F}\)</span></dt>
+<dd>
+<p>it will once be the case that</p>
+</dd>
+<dt><span class="math inline">\(\textsf{H}\)</span></dt>
+<dd>
+<p>it has always been the case that</p>
+</dd>
+<dt><span class="math inline">\(\Box\)</span></dt>
+<dd>
+<p>it is necessary that</p>
+</dd>
+</dl>
+</section>
+<section id="the-sea-battle-argument" class="slide level2 smaller">
+<h2>the sea battle argument</h2>
+<div class="argument wide">
+<div class="arow">
+<p><span class="n">1</span> <span class="en">If there will be a sea battle tomorrow, then it has always been the case that there would be one.</span> <span class="fm"><span class="math inline">\(\textsf{F} p \to \textsf{H}\textsf{F} p\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="arow">
+<p><span class="n">2</span> <span class="en">If it has always been the case that there would be one, then necessarily it has always been the case.</span> <span class="fm"><span class="math inline">\(\textsf{H}\textsf{F} p \to \Box \textsf{H}\textsf{F} p\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="arow">
+<p><span class="n">3</span> <span class="en">If necessarily it has always been the case, then necessarily there will be a sea battle.</span> <span class="fm"><span class="math inline">\(\Box \textsf{H}\textsf{F}p \to \Box \textsf{F} p\)</span></span> <span class="by">premise</span></p>
+</div>
+<div class="rule">
+
+</div>
+<div class="arow fragment highlight-current-red">
+<p><span class="n">4</span> <span class="en">If there will be a sea battle tomorrow, then necessarily so.</span> <span class="fm"><span class="math inline">\(\textsf{F}p \to \Box \textsf{F} p\)</span></span> <span class="by">1, 2, 3</span></p>
+</div>
+</div>
+<div class="fragment">
+<p>If the past is closed, that is, then there is no reason to expect the future to be open.</p>
+<p>The inference is propositionally valid, which means that the pressure falls on the premises of the argument.</p>
+</div>
+<div class="fragment">
+<p>Focus on premise 2:</p>
+<p><span class="math display">\[
+\textsf{H}\textsf{F} p \to \bbox[3px, #fff3bf]{\Box \textsf{H}\textsf{F} p}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>That is one step that a friend of the open future will want to resist.</p>
+</div>
+<div class="fragment">
+<p>The challenge is a framework in which the past is closed while the future stays open.</p>
+</div>
+</section></section>
+<section>
+<section id="how-to-interpret-the-formalism" class="title-slide slide level1 center">
+<h1>how to interpret the formalism</h1>
+
+</section>
+<section id="we-must-move-beyond-truth-tables" class="slide level2">
+<h2>we must move beyond truth tables</h2>
+<p>Propositional connectives are <em>truth-functional</em>: the truth value of a complex proposition is a function of the truth values of its parts.</p>
+<div class="fragment">
+<p>The truth value of a conjunction is fixed by the truth values of its conjuncts. That is what a truth table records.</p>
+</div>
+</section>
+<section id="box-is-not-truth-functional" class="slide level2 smaller">
+<h2><span class="math inline">\(\Box\)</span> is not truth-functional</h2>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\varphi &amp; \Box \varphi \\
+\hline
+T &amp; ? \\
+\hline
+F &amp; F \\
+\hline
+\end{array}
+\]</span></p>
+<div class="fragment">
+<ul>
+<li><p>if <span class="math inline">\(\varphi\)</span> is false, <span class="math inline">\(\Box \varphi\)</span> is false.</p></li>
+<li><p>if <span class="math inline">\(\varphi\)</span> is false, however, it is open whether <span class="math inline">\(\Box \varphi\)</span> is true or false, e.g., <span class="math inline">\(\Box\varphi\)</span> will be true if <span class="math inline">\(\varphi\)</span> is a tautology, but it will be false is <span class="math inline">\(\varphi\)</span> is merely contingent.</p></li>
+</ul>
+</div>
+</section>
+<section id="a-more-fine-grained-attempt" class="slide level2 smaller">
+<h2>a more fine-grained attempt</h2>
+<p>maybe we will do better if we add more truth values into the mix.</p>
+<ul>
+<li>reserve <span class="math inline">\(T\)</span> and <span class="math inline">\(t\)</span> for necessary and contingent <em>truths</em> respectively.</li>
+<li>reserve <span class="math inline">\(F\)</span> and <span class="math inline">\(f\)</span> for necessary and contingent <em>falsehoods</em> respectively.</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+\varphi &amp; \neg \varphi &amp; \Box \varphi\\
+\hline
+T &amp; F &amp; T\\
+\hline
+t &amp; f &amp; F\\
+\hline
+F &amp; T &amp; F\\
+\hline
+f &amp; t &amp; F\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>This appears to take care of negation and <span class="math inline">\(\Box\)</span>.</p>
+</div>
+</section>
+<section id="where-it-breaks" class="slide level2 smaller">
+<h2>where it breaks</h2>
+<p>Consider a binary connective such as the conditional:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+\to &amp; T &amp; t &amp; F &amp; f\\
+\hline
+T &amp; T &amp; t &amp; F &amp; f \\
+\hline
+t &amp; T &amp; ? &amp; F &amp; f\\
+\hline
+F &amp; T &amp; T &amp; T &amp; T \\
+\hline
+f &amp; T &amp; t &amp; t &amp; ?\\
+\hline
+\end{array}
+\]</span></p>
+<div class="fragment">
+<p>Suppose <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are both <em>contingently true</em>. What should the finer-grained truth value of <span class="math inline">\(\varphi \to \psi\)</span> be?</p>
+<ul>
+<li><span class="math inline">\(\varphi \to \psi\)</span> may be <em>necessarily true</em>, e.g., <span class="math inline">\(p \to p\)</span></li>
+<li><span class="math inline">\(\varphi \to \psi\)</span> may be <em>contingently true</em>, e.g., <span class="math inline">\(p \to q\)</span>.</li>
+</ul>
+<p>The finer-grained truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> fail to determine a unique finer-grained truth value for <span class="math inline">\(\varphi \to \psi\)</span>.</p>
+</div>
+<div class="fragment">
+<p>We must look elsewhere.</p>
+</div>
+</section></section>
+<section>
+<section id="possible-worlds" class="title-slide slide level1 center">
+<h1>possible worlds</h1>
+
+</section>
+<section id="circumstances-of-truth" class="slide level2">
+<h2>circumstances of truth</h2>
+<p>Propositions differ not only in <em>whether</em> they are true, but in <em>the circumstances under which</em> they are true.</p>
+<div class="fragment">
+<ul>
+<li>Los Angeles has over three million inhabitants</li>
+<li>Kilimanjaro rises to 5,895 meters</li>
+</ul>
+<p>Both propositions are true …</p>
+</div>
+<div class="fragment">
+<p>… but there are possible circumstances under which one is true and the other false.</p>
+</div>
+</section>
+<section id="worlds" class="slide level2">
+<h2>worlds</h2>
+<dl>
+<dt>possible world</dt>
+<dd>
+<p>a complete specification of a <em>way things might be</em>.</p>
+</dd>
+</dl>
+<div class="fragment">
+<p>We may then ask whether a sentence is <em>true at</em> a possible world: whether that world specifies a way things might be under which the sentence is in fact true.</p>
+</div>
+</section>
+<section id="accessibility-or-relative-possibility" class="slide level2 smaller">
+<h2>accessibility (or relative possibility)</h2>
+<dl>
+<dt>accessible</dt>
+<dd>
+<p>a world <span class="math inline">\(u\)</span> is <em>accessible from</em> a world <span class="math inline">\(w\)</span> if <span class="math inline">\(u\)</span> is possible relative to <span class="math inline">\(w\)</span>.</p>
+</dd>
+</dl>
+<div class="fragment">
+<p>That is, <span class="math inline">\(u\)</span> is a way things might be, given how things are at <span class="math inline">\(w\)</span></p>
+</div>
+<div class="fragment">
+<dl>
+<dt><em>nomological possibility</em></dt>
+<dd>
+<p><span class="math inline">\(u\)</span> is <em>nomologically possible relative to</em> <span class="math inline">\(w\)</span> if <span class="math inline">\(u\)</span> is consistent with the laws of nature that are in force at <span class="math inline">\(w\)</span></p>
+</dd>
+</dl>
+</div>
+<div class="fragment">
+<dl>
+<dt><em>epistemic possibility</em></dt>
+<dd>
+<p><span class="math inline">\(u\)</span> is <em>epistemically possible relative to</em> <span class="math inline">\(w\)</span> if <span class="math inline">\(u\)</span> is consistent with all that is known at <span class="math inline">\(w\)</span></p>
+</dd>
+</dl>
+</div>
+</section>
+<section id="possible-worlds-model" class="slide level2">
+<h2>possible worlds model</h2>
+<dl>
+<dt>possible worlds model</dt>
+<dd>
+a structure, which includes:
+<ul>
+<li>a non-empty set <span class="math inline">\(W\)</span> of possible worlds,</li>
+<li>an <em>accessibility relation</em> <span class="math inline">\(R\)</span> on <span class="math inline">\(W\)</span>, and</li>
+<li>a <em>valuation function</em>, which specifies which propositions are true at which worlds.</li>
+</ul>
+</dd>
+</dl>
+<div class="fragment">
+<p>three ingredients: possible worlds, how they are related to each other, and what is the case at each world.</p>
+</div>
+</section>
+<section id="a-possible-worlds-model" class="slide level2 smaller">
+<h2>a possible worlds model</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="images/d1.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:55%;">
+<ul>
+<li><p>four worlds</p></li>
+<li><p>a binary relation <span class="math inline">\(R\)</span> on the four worlds</p></li>
+<li><p>a valuation:</p>
+<ul>
+<li><p><span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>, and nowhere else.</p></li>
+<li><p><span class="math inline">\(q\)</span> is true at <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_4\)</span>, and nowhere else.</p></li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="the-ontological-argument-revisited" class="slide level2 smaller">
+<h2>the ontological argument revisited</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="images/d1.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment"><p><span class="math inline">\(\Box p\)</span> is true at all worlds, since only <span class="math inline">\(p\)</span>-worlds are accessible from each world.</p></li>
+<li class="fragment"><p><span class="math inline">\(p \to \Box p\)</span> is true at all worlds.</p></li>
+<li class="fragment"><p><span class="math inline">\(\Box (p \to \Box p)\)</span> is true at all worlds</p></li>
+<li class="fragment"><p><span class="math inline">\(\Diamond p\)</span> is true at all worlds.</p></li>
+<li class="fragment"><p><span class="math inline">\(\Diamond \Box p\)</span> is true at all worlds, since only <span class="math inline">\(\Box p\)</span>-worlds are accessible from each world.</p></li>
+<li class="fragment"><p><span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>, but <strong>nowhere else</strong>.</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>Two worlds, <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span>, verify the premises of the ontological argument, but not the conclusion.</p>
+</div>
+</section>
+<section id="the-point-of-the-possible-worlds-framework" class="slide level2">
+<h2>the point of the possible worlds framework</h2>
+<p>The framework provides a way to answer the question ‘does it follow?’.</p>
+<div class="fragment">
+<p>And the answer, in this model, is no.</p>
+</div>
+<div class="fragment">
+<div class="caption">
+<p>The argument turns on the <em>structure</em> of the accessibility relation: it is valid if we restrict attention to models whose relation is <em>symmetric</em>, or to models whose relation is <em>reflexive</em> and <em>euclidean</em>.</p>
+</div>
+</div>
+</section>
+<section id="next" class="slide level2">
+<h2>Next</h2>
+<p>The terms <code>symmetric',</code>reflexive’, `euclidean’ refer to specific features of binary relations, and we will discuss them next.</p>
+</section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
+<ul>
+<li><a href="https://gabriel-uzquiano.github.io/modal-logic/intro.html">Modal Logic</a>, ch.&nbsp;1: Introduction</li>
+<li>Next: ch.&nbsp;2, Background</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="intro-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="intro-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="intro-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="intro-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

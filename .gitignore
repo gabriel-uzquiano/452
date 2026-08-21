@@ -5,5 +5,4 @@
 .DS_Store
 .quarto/
 _book/
-slides/*_files/
 solutions/
