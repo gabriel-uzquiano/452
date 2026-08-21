@@ -2,10 +2,6 @@
 title: "Problem set 5 — axiomatic derivations"
 ---
 
-## problems
-
-### axiomatic derivations&nbsp;
-
 1. Justify the facts given below:
 
    1. $\Box \varphi/\varphi$ is a derived rule of inference for $\textsf{K}$.

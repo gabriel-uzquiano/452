@@ -2,10 +2,6 @@
 title: "Problem set 7 — deontic logic"
 ---
 
-## problems
-
-### deontic logic
-
 $\textsf{KDU}$ is a deontic logic that extends $\textsf{KD}$ with all substitution instances of the axiom:<br/>
 
 

@@ -2,10 +2,6 @@
 title: "Problem set 3 — propositional logic: axiomatic derivations"
 ---
 
-## problems
-
-### propositional logic: axiomatic derivations
-
 **Choose your own adventure.** Please plan to write solutions to either problems 1, 2, and 3, or to problems 2, 3, and 4.<br/><br/>
 
 

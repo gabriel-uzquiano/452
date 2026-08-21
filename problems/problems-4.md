@@ -2,10 +2,6 @@
 title: "Problem set 4 — modal propositional logic"
 ---
 
-## problems
-
-### modal propositional logic&nbsp;
-
 1. Draw a possible world model that shows that the relevant formula is *not* true in *all* worlds of *all* models of the specified sort.
 
    1. $\Diamond p \to \Box p$ / euclidean
