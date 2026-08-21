@@ -1,4 +1,4 @@
-## problem set 2: propositional logic: syntax and semantics
+### problem set 2. propositional logic: syntax and semantics
 
 
 1. Call a formula $\varphi$ of propositional logic *positive* if, and only if, there are no occurrences of negation $\neg$ in $\varphi$. Justify each of the following claims:&nbsp;
