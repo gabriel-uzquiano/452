@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem set 5 — axiomatic derivations — PHIL 452</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/452">← PHIL 452</a></nav>
+<article>
+<h2 id="problems">problems</h2>
+<h3 id="axiomatic-derivations">axiomatic derivations </h3>
+<ol type="1">
+<li><p>Justify the facts given below:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\Box \varphi/\varphi\)</span> is a
+derived rule of inference for <span
+class="math inline">\(\textsf{K}\)</span>.</p></li>
+<li><p><span class="math inline">\(\Box \varphi/\varphi\)</span> is a
+derived rule of inference for <span
+class="math inline">\(\textsf{KD}\)</span>.</p></li>
+<li><p><span class="math inline">\(\Box \varphi/\varphi\)</span> is a
+derived rule of inference for <span
+class="math inline">\(\textsf{KT}\)</span>.</p></li>
+</ol>
+<p><strong>Hint</strong>.</p>
+<p>Consider a transformation <span class="math inline">\(\sigma\)</span>
+from formulas of <span class="math inline">\(\mathcal{L}^{\Box}\)</span>
+into formulas of <span class="math inline">\(\mathcal{L}^{\Box}\)</span>
+defined by the recursion:<br/></p>
+<p><span class="math display">\[
+\begin{array}{lll}
+   \sigma(p) &amp; = &amp; p\\
+   \sigma(\neg \varphi) &amp; = &amp;\neg \sigma(\varphi)\\
+   \sigma(\varphi \to \psi) &amp; = &amp; \sigma(\varphi) \to
+\sigma(\varphi)\\
+   \sigma (\Box \varphi) &amp; = &amp; \varphi\\
+   \end{array}
+\]</span> <br/></p>
+<p>In other words, <span class="math inline">\(\sigma\)</span> scans a
+formula for subformulas of the form <span class="math inline">\(\Box
+\psi\)</span> and deletes the first occurrence of a modal operator in
+those formulas. Thus for example <span class="math inline">\(\sigma(\Box
+p \to \Box \Box p)\)</span> is just the formula: <span
+class="math inline">\(p \to \Box p\)</span>, and <span
+class="math inline">\(\sigma(\Box p \to \Diamond p)\)</span>, which is
+<span class="math inline">\(\sigma(\Box p \to \neg \Box \neg p)\)</span>
+becomes the formula: <span class="math inline">\(p \to \neg \neg
+p\)</span>.</p>
+<p>When <span class="math inline">\(\Sigma\)</span> is <span
+class="math inline">\(\textsf{K}\)</span> or <span
+class="math inline">\(\textsf{KD}\)</span>, use an induction on the
+length of proofs in <span class="math inline">\(\Sigma\)</span> to
+prove:<br/></p>
+<p><span class="math display">\[
+\begin{array}{llll}
+      \text{if} &amp;  \vdash_{\Sigma} \varphi, &amp; \text{then}
+&amp;  \vdash_{\Sigma} \sigma(\varphi)\\
+      \end{array}
+\]</span></p>
+<p>You will need a different strategy for <span
+class="math inline">\(\textsf{KT}\)</span>.<br/><br/></p></li>
+<li><p>Prove <span class="math inline">\(\textsf{KB4}\)</span> is a
+<em>proper</em> extension of <span
+class="math inline">\(\textsf{K5}\)</span>. That is,</p>
+<ol type="1">
+<li><p>All theorems of <span class="math inline">\(\textsf{K5}\)</span>
+are theorems of <span
+class="math inline">\(\textsf{KB4}\)</span>.<br/></p></li>
+<li><p>Not all theorems of <span
+class="math inline">\(\textsf{KB4}\)</span> are theorems of <span
+class="math inline">\(\textsf{K5}\)</span>.<br/></p></li>
+</ol>
+<p><br/></p></li>
+<li><p>Prove that <span class="math inline">\(\textsf{K5}\)</span>
+proves the <em>necessitation</em> of every axiom of <span
+class="math inline">\(\textsf{KB4}\)</span>. That is:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\vdash_{\textsf{K5}} \Box (\varphi
+\to \Box \Diamond \varphi)\)</span><br/></p></li>
+<li><p><span class="math inline">\(\vdash_{\textsf{K5}} \Box (\Box
+\varphi \to \Box \Box \varphi)\)</span><br/></p></li>
+</ol>
+<p><strong>Hint</strong></p>
+<p>One option is to outline proof schemas for <span
+class="math inline">\(\textsf{B}\)</span> and <span
+class="math inline">\(\textsf{4}\)</span> respectively, but another
+option is to reason semantically by exploiting the completeness of <span
+class="math inline">\(\textsf{K5}\)</span> with respect to the class of
+euclidean models.</p>
+<p><br/></p></li>
+<li><p>Justify the facts given below:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\Box \varphi / \varphi\)</span> is
+<em>not</em> a derived rule of inference for <span
+class="math inline">\(\textsf{K5}\)</span>.<br/></p></li>
+<li><p><span class="math inline">\(\Box \varphi/\varphi\)</span> is
+<em>not</em> a derived rule of inference for <span
+class="math inline">\(\textsf{KB4}\)</span></p></li>
+</ol>
+<p><br/></p></li>
+</ol>
+</article>
+</body>
+</html>

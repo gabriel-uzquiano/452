@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem set 3 — propositional logic: axiomatic
+derivations — PHIL 452</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/452">← PHIL 452</a></nav>
+<article>
+<h2 id="problems">problems</h2>
+<h3 id="propositional-logic-axiomatic-derivations">propositional logic:
+axiomatic derivations</h3>
+<p><strong>Choose your own adventure.</strong> Please plan to write
+solutions to either problems 1, 2, and 3, or to problems 2, 3, and
+4.<br/><br/></p>
+<ol type="1">
+<li><p>Show that the deductive system we have introduced is
+<em>sound</em>: a formula <span class="math inline">\(\varphi\)</span>
+is provable from a set of formulas <span
+class="math inline">\(\Gamma\)</span> only if <span
+class="math inline">\(\varphi\)</span> is a logical consequence of <span
+class="math inline">\(\Gamma\)</span>. That is,  </p>
+<p><span class="math display">\[
+\Gamma \vdash \varphi \ \text{only if} \ \Gamma \models \varphi.
+\]</span></p>
+<p><em>Hint: Use complete induction (without a base case) to argue that
+for every positive integer <span class="math inline">\(n\)</span>, if
+<span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span>
+is a derivation of <span class="math inline">\(\varphi\)</span> from
+<span class="math inline">\(\Gamma\)</span>, then <span
+class="math inline">\(\Gamma \models \varphi\)</span>.</em> </p></li>
+<li><p>Show that given a set <span class="math inline">\(\Gamma\)</span>
+and formulas <span class="math inline">\(\varphi\)</span> and <span
+class="math inline">\(\psi\)</span>​,  </p>
+<p><span class="math display">\[
+\Gamma \vdash (\varphi \to \neg \varphi) \to \neg \varphi
+\]</span></p></li>
+<li><p>Show that given a set <span class="math inline">\(\Gamma\)</span>
+and a formula <span class="math inline">\(\varphi\)</span>, <span
+class="math inline">\(\Gamma\)</span> is inconsistent if both <span
+class="math inline">\(\Gamma, \varphi\)</span> and <span
+class="math inline">\(\Gamma, \neg \varphi\)</span> are. </p>
+<p><em>Hint: Please feel free to make use of the Deduction Theorem and
+whatever propositions you may find helpful from the
+notes.</em> </p></li>
+<li><p>Consider the axiomatic system that results from our axiom system
+when <span class="math inline">\(\textsf{A3}\)</span> is replaced with
+the axiom:  <span class="math display">\[
+(\neg p \to \neg q) \to (q \to p) \tag{$\textsf{A3}^\ast$}
+\]</span></p>
+<p>We write <span class="math inline">\(\Gamma \vdash^\ast
+\varphi\)</span> to indicate that <span
+class="math inline">\(\varphi\)</span> is derivable from <span
+class="math inline">\(\Gamma\)</span> in the new system. Justify the
+equivalence between the two axiom systems. That is, prove that no matter
+what <span class="math inline">\(\Gamma\)</span> and <span
+class="math inline">\(\varphi\)</span> may be, </p>
+<p><span class="math display">\[
+\Gamma \vdash \varphi \ \text{iff} \ \Gamma \vdash^\ast \varphi.
+\]</span></p>
+<p><em>Hint: Please note that the argument for the Deduction Theorem
+carries over to the new system without incident. Further hints available
+upon request.</em></p></li>
+</ol>
+</article>
+</body>
+</html>

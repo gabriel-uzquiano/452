@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem set 4 — modal propositional logic — PHIL 452</title>
+  <link rel="stylesheet" href="../shared/notes.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav class="back-nav"><a href="https://gabriel-uzquiano.github.io/courses/452">← PHIL 452</a></nav>
+<article>
+<h2 id="problems">problems</h2>
+<h3 id="modal-propositional-logic">modal propositional logic </h3>
+<ol type="1">
+<li><p>Draw a possible world model that shows that the relevant formula
+is <em>not</em> true in <em>all</em> worlds of <em>all</em> models of
+the specified sort.</p>
+<ol type="1">
+<li><span class="math inline">\(\Diamond p \to \Box p\)</span> /
+euclidean</li>
+<li><span class="math inline">\(\Box (\Box p \to p)\)</span> /
+symmetric</li>
+<li><span class="math inline">\(\Diamond(p \to q) \to (\Diamond p \to
+\Diamond q)\)</span> / reflexive</li>
+<li><span class="math inline">\(\Box \Box p \to \Box p\)</span> /
+transitive</li>
+<li><span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span>
+/ reflexive and transitive</li>
+</ol>
+<p><br/></p></li>
+<li><p>Justify the claim that no formula of the form <span
+class="math inline">\(\Box \Diamond \varphi\)</span> is valid in all
+frames.</p>
+<p><em>Hint. You should be able to find a model in which all such
+formulas are in fact false at some world.</em></p></li>
+<li><p>Call a relation <span class="math inline">\(R\)</span> is
+<em>serial</em> on <span class="math inline">\(W\)</span> if, and only
+if, for all <span class="math inline">\(u \in W\)</span>, there is some
+<span class="math inline">\(v\in W\)</span> such that <span
+class="math inline">\(uRv\)</span>. On the other hand, a relation <span
+class="math inline">\(R\)</span> is <em>functional</em> on <span
+class="math inline">\(W\)</span> if, and only if, for all <span
+class="math inline">\(w, u, v \in W\)</span>, if <span
+class="math inline">\(wRu\)</span> and <span
+class="math inline">\(wRv\)</span>, then <span class="math inline">\(u =
+v\)</span>. Justify the claims below:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\Box p \to \Diamond p\)</span>
+defines the class of serial frames.</p></li>
+<li><p><span class="math inline">\(\Diamond p \to \Box p\)</span>
+defines the class of functional frames.</p></li>
+</ol></li>
+<li><p>Find a modal formula to define the class of <em>identity
+frames</em>, that is, fames of the form <span class="math inline">\((W,
+R)\)</span>, where <span class="math inline">\(R = \{(u,u): u \in
+W\}\)</span>.</p></li>
+<li><p>Consider the rule of inference: <span class="math display">\[
+\Box \varphi / \varphi
+\]</span> Justify the claim that it preserves validity with respect to
+the class of <em>all</em> frames.</p>
+<p><em>Hint. Take the contrapositive. That is, you can argue that if
+<span class="math inline">\(\varphi\)</span> is not valid in all frames,
+then neither is <span class="math inline">\(\Box
+\varphi\)</span>.</em></p></li>
+</ol>
+</article>
+</body>
+</html>
