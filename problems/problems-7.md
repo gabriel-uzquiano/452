@@ -1,5 +1,5 @@
 ---
-title: "Problem set 6 — deontic logic"
+title: "Problem set 7 — deontic logic"
 ---
 
 ## problems
@@ -18,9 +18,9 @@ $$
 
    You may take for granted that (i) if $\textsf{KDU}$-consistent, a formula $\varphi$ is true at some world of the canonical model for $\textsf{KDU}$ and that (ii) the canonical model for $\textsf{KDU}$ is serial, which is a consequence of Proposition 8.2 in [section 8.2](https://gabriel-uzquiano.github.io/modal-logic/modalcompleteness.html#completeness-for-canonical-systems). <br/>
 
-2. $\textsf{KDU}$ is *not* closed under the derived rule of inference $\textsf{P}\varphi/\varphi$.<br/>
+2. $\textsf{KDU}$ is *not* closed under the derived rule of inference $\textsf{O}\varphi/\varphi$.<br/>
 
-3. $\textsf{KD}$ is closed under the derived rule of inference $\textsf{P}\varphi/\varphi$. <br/>
+3. $\textsf{KD}$ is closed under the derived rule of inference $\textsf{O}\varphi/\varphi$. <br/>
 
 4. $\textsf{KDU}$ proves every substitution instance of $\textsf{P}p \to \textsf{PP}p$..<br/>
 
