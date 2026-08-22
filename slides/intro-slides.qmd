@@ -449,10 +449,14 @@ models whose relation is *reflexive* and *euclidean*.
 
 ## Next
 
-The terms `symmetric', `reflexive', `euclidean' refer to specific features of binary relations, and we will discuss them next.
+The terms *symmetric*, *reflexive*, and *euclidean* refer to specific features of binary relations, and we will discuss them next.
 
 ## Reading
 
-- [Modal Logic](https://gabriel-uzquiano.github.io/modal-logic/intro.html), ch. 1:
-  Introduction
-- Next: ch. 2, Background
+- Modal Logic. [Introduction](https://gabriel-uzquiano.github.io/modal-logic/intro.html). 
+
+Next: 
+
+- Modal Logic. [Background](https://gabriel-uzquiano.github.io/modal-logic/background.html).
+
+
