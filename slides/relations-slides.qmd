@@ -1,135 +1,337 @@
 ---
-title: "Relations"
+title: "relations"
 subtitle: "PHIL 452 · Background"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
-    theme: [default, theme.scss]
+    theme: [default, theme.scss, examples.scss, mc.scss]
+    filters: [mc.lua]
+    include-after-body: mc-scripts.html
     css: fonts.css
     slide-number: c/t
     chalkboard: true
     html-math-method: mathjax
     title-slide-attributes:
       data-background-color: "#ffffff"
+    width: 1280
+    height: 720
 ---
 
-# Why start here
+# why relations? 
 
-## The plan
+## plan
 
-Modal logic interprets $\Box$ and $\Diamond$ over a set of worlds with a binary relation.
+We use possible worlds models to interpret the language of modal logic, which consist of a set of possible worlds and an accessibility relation on them. 
 
 . . .
 
-Almost every later result turns on which **properties** that relation has.
+What counts as **valid** with respect to a family of possible worlds models turns on what features we stipulate the accessibility relation to have.
+
 
 ::: {.notes}
 Tell them explicitly: today looks like set theory, but every definition
 reappears as an axiom in week 8.
 :::
 
-# Relations
+# relations
 
-## Ordered pairs
+## ordered pairs
+
+We will use the expression $\langle a, b \rangle$ to denote the ordered pair of $a$ and $b$.
+
+. . .
+
+Ordered pairs are governed by the principle:
+
+$$
+\langle a, b \rangle = \langle c, d\rangle \ \text{ iff } \ a = c \text{ and } b = d
+$$
+Ordered pairs are generally defined in terms of unordered sets:
 
 Ordered Pair
 
-:   $\langle x, y \rangle$ is the ordered pair of $x$ and $y$.
+: $\langle x, y \rangle$ is the set $\{ \{a\}, \{a, b\}\}$.
+
+Cartesian Product
+
+: $A \times B = \{\langle x, y\rangle: x \in A \wedge y \in B\}$
+
+
+## binary relations
+
+binary relation on a set
+
+:   Given a set $A$, $R$ is a **binary relation on** $A$ iff $R \subseteq A \times A$.
 
 . . .
 
-Order matters:
+binary relation
 
-$$
-\langle x, y \rangle = \langle u, v \rangle \ \text{ iff } \ x = u \text{ and } y = v
-$$
+: $R$ is a binary relation iff $R$ is a binary relation on a set.
 
-## Binary relations
+We sometimes write $Rxy$ or $xRy$ for $\langle x, y \rangle \in R$.
 
-Binary Relation
 
-:   A binary relation $R$ on $W$ is a set of ordered pairs of members of $W$:
-    $R \subseteq W \times W$.
+::: {.mc correct="1"}
+Is $\emptyset$ a relation on the set $\{a, b\}$?
 
-. . .
+- yes
+- no
 
-We write $Rxy$ for $\langle x, y \rangle \in R$.
-
-Read it as '$x$ sees $y$', or '$y$ is **accessible** from $x$'.
-
-# Properties
-
-## Reflexivity and symmetry
-
-Reflexivity
-
-:   $Rxx$ for every $x \in W$.
-
-. . .
-
-Symmetry
-
-:   For all $x, y \in W$: if $Rxy$ then $Ryx$.
-
-## Transitivity and seriality
-
-Transitivity
-
-:   For all $x, y, z \in W$: if $Rxy$ and $Ryz$, then $Rxz$.
-
-. . .
-
-Seriality
-
-:   For every $x \in W$ there is some $y \in W$ with $Rxy$.
-
-## Euclidean
-
-Euclidean
-
-:   For all $x, y, z \in W$: if $Rxy$ and $Rxz$, then $Ryz$.
-
-. . .
-
-::: {.callout-note appearance="minimal"}
-Draw this one. It is the property students consistently cannot picture.
+Explanation: a relation on $\{a, b\}$ is a *subset* of the Cartesian product $\{a, b\} \times \{a, b\}$.
 :::
 
-# Independence
 
-## A cautionary case {.smaller}
+# structural features of relations
 
-Symmetry and transitivity together do **not** give reflexivity.
+## reflexivity {.smaller}
 
-Let $W = \{1, 2\}$ and $R = \{\langle 1, 1 \rangle\}$.
+reflexivity on $A$
+
+: $R$ is **reflexive on** $A$ iff for every $x \in A$, $Rxx$.
+
+
+::: {.example-panel}
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, b\rangle\}$. Then $R$ is reflexive on $W$.
+:::
+
+. . . 
+
+irreflexivity on $A$
+
+: $R$ is **irreflexive on** $A$ iff for every $x \in A$, $\neg Rxx$.
+
+
+::: {.example-panel}
+Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, a\rangle \}$. Then $R$ is not irreflexive on $W$.
+:::
+
+. . . 
+
+non-reflexivity on $A$
+
+: $R$ is **non-reflexive on** $A$ iff for some $x \in A$, $\neg Rxx$.
+
+
+
+## examples {.smaller}
+
+Fix $W$ as the set of English words. Check whether each relation below is reflexive, irreflexive, or non-reflexive:
+
+::: {.mc correct="1"} 
+$\{\langle u, v\rangle: u \ \text{shares at least a letter with} \ v\}$
+
+- reflexive
+- irreflexive
+- non-reflexive
+
+Explanation: A word shares all letters with itself.
+:::
+
+. . . 
+
+::: {.mc correct="3"} 
+$\{\langle u, v\rangle: u \ \text{shares at most one letter with} \ v\}$
+
+- reflexive
+- irreflexive
+- non-reflexive
+
+Explanation: A word with two letters will share both with itself.
+:::
+
+
+
+
+## symmetry {.smaller}
+
+symmetry on $A$
+
+: $R$ is **symmetric on** $A$ iff for every $x, y \in A$, if $Rxy$, then $Ryx$.
+
+
+::: {.example-panel}
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, b\rangle\}$. Then $R$ is symmetric on $W$.
+:::
+
+
+asymmetry on $A$
+
+: $R$ is **asymmetric on** $A$ iff for every $x, y \in A$, if $Rxy$, then $\neg Ryx$.
+
+. . . 
+
+
+antisymmetry on $A$
+
+: $R$ is **antisymmetric on** $A$ iff for every $x, y \in A$, if $Rxy$ and $Ryx$, then $x = y$.
+
+::: {.example-panel}
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, b\rangle\}$. Then $R$ is antisymmetric on $W$.
+:::
+
+
+## examples {.smaller}
+
+Fix $W$ as the set of English words. Check whether each relation below is symmetric, asymmetric, or antisymmetric:
+
+::: {.mc correct="1"} 
+$\{\langle u, v\rangle: u \ \text{shares exactly two letters with} \ v\}$
+
+- symmetric
+- asymmetric
+- antisymmetric
+
+Explanation: If a word shares two letters with another, then the latter shares two words with the former.
+:::
+
+. . . 
+
+::: {.mc correct="3"} 
+$\{\langle u, v\rangle: u \ \text{comes no later than} \ v \ \text{in the lexicographical order} \}$
+
+- symmetric
+- asymmetric
+- antisymmetric
+
+Explanation: No word comes later than itself in the lexicographical order.
+:::
+
+
+
+## transitivity {.smaller}
+
+symmetry on $A$
+
+: $R$ is **transitive on** $A$ iff for every $x, y, z\in A$, if $Rxy$ and $Ryz$, then $Rxz$.
+
+
+::: {.example-panel}
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, a\rangle\}$. Then $R$ is transitive on $W$.
+:::
+
+
+intransitivity on $A$
+
+: $R$ is **intransitive on** $A$ iff for every $x, y \in A$, if $Rxy$ and $Ryz$, then $\neg Rxz$.
+
+::: {.example-panel}
+Let $A = \{a, b, c\}$ and $R = \{\langle a, b \rangle, \langle b, c\rangle\}$. Then $R$ is intransitive on $W$.
+:::
+. . . 
+
+
+non-transitivity on $A$
+
+: $R$ is **non-transitive on** $A$ iff for some $x, y, z \in A$, $Rxy$ and $Ryz$, but $\neg Rxz$.
+
+
+
+
+## examples {.smaller}
+
+Fix $W$ as the set of English words. Check whether each relation below is transitive, intransitive, or non-transitive:
+
+::: {.mc correct="2"} 
+$\{\langle u, v\rangle: u \ \text{is an antonym of} \ v\}$
+
+- transitive
+- intransitive
+- non-transitive
+
+Explanation: If $u$ is an antonym of $v$, and $v$ an antonym of $t$, then $u$ is a synonym of $t$.
+:::
+
+. . . 
+
+::: {.mc correct="3"} 
+$\{\langle u, v\rangle: u \ \text{is} \ v \ \text{backwards} \}$
+
+- transitive
+- intransitive
+- non-transitive
+
+Explanation: Consider of the word 'radar'.
+:::
+
+## equivalence relations
+
+equivalence relation
+
+:   $R$ is an *equivalence relation on* a set $A$ if, and only if
+- $R$ is reflexive on $A$
+- $R$ is symmetric on $A$
+- $R$ is transitive on $A$
+
+. . .
+
+::: {.example-panel}
+Synonymy is an equivalence relation on $W$.
+:::
+
+
+## equivalence classes
+
+equivalence class
+
+: If $R$ is an equivalence relation on a set $A$, for each $x \in A$, the *equivalence class of* $x$, written $[x]_R$ is the set of elements of $A$ that are $R$-equivalent to $x$:
+$$
+[x]_R := \{y\in A: Rxy\}
+$$
+
+::: {.example-panel}
+If $A$ is the set of undergraduate students at USC and $R$ is $\{\langle x, y\rangle: x \ \text{is in the same year as} \ y\}$, then if
+$a$ is a freshman at $USC$, then $[a]_R$ is the set of freshmen at USC.
+:::
+
+
+## euclidean relations
+
+euclidean on $A$
+
+:   $R$ is **euclidean on** $A$ iff for every $x, y, z\in A$, if $Rxy$ and $Rxz$, then $Ryz$.
+
+. . .
+
+::: {.mc correct="1"} 
+If $R$ is an equivalence relation on $A$, then $R$ is euclidean on $A$
+
+- true
+- false
+
+Explanation: Suppose $Rxy$ and $Rxz$ for $x, y, z \in A$. By symmetry, $Ryx$, and, by transitivity, since $Ryx$ and $Rxz$, $Ryz$.
+:::
+
+
+
+# independence
+
+## some cautionary cases {.smaller}
+
+Symmetry and transitivity on a set $A$ do **not** entail reflexivity on $A$.
+
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle\}$.
 
 ::: {.incremental}
-- Symmetric? ✅ --- the only pair is $\langle 1,1 \rangle$
-- Transitive? ✅ --- vacuously
-- Reflexive? ❌ --- $2$ does not see itself
+- Symmetric? ✓
+- Transitive? ✓
+- Reflexive? ✗
 :::
-
-::: {.notes}
-Make them try to build this themselves before revealing it.
-:::
-
-# The payoff
-
-## Frames validate axioms {.smaller}
-
-A frame validates an axiom exactly when its relation has the matching property.
-
-| Axiom | Schema | Property of $R$ |
-|-------|--------|-----------------|
-| D | $\Box \varphi \to \Diamond \varphi$ | serial |
-| T | $\Box \varphi \to \varphi$ | reflexive |
-| B | $\varphi \to \Box \Diamond \varphi$ | symmetric |
-| 4 | $\Box \varphi \to \Box \Box \varphi$ | transitive |
-| 5 | $\Diamond \varphi \to \Box \Diamond \varphi$ | euclidean |
 
 . . .
 
-This table is the spine of the completeness results.
+Not all euclidean relations on $A$ are equivalence relations on $A$.
+
+Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle\}$.
+
+::: {.incremental}
+- Euclidean? ✓
+- Symmetric? ✓
+- Transitive? ✓
+- Reflexive? ✗
+:::
+
+
 
 ## Reading
 

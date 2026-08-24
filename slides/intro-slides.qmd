@@ -4,13 +4,15 @@ subtitle: "PHIL 452 · Modal Logic"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
-    theme: [default, theme.scss]
+    theme: [default, theme.scss, examples.scss]
     css: [fonts.css, arguments.css]
     slide-number: c/t
     chalkboard: true
     html-math-method: mathjax
     title-slide-attributes:
       data-background-color: "#ffffff"
+    width: 1280
+    height: 720
 ---
 
 # why modal logic?
