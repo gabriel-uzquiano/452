@@ -1,0 +1,86 @@
+/*-- scss:defaults --*/
+
+// Repeated with !default so this file works regardless of theme ordering.
+$accent: #2780e3 !default;
+$body-color: #343a40 !default;
+$muted: #6c757d !default;
+$rule-light: #d6d8d9 !default;
+
+
+/*-- scss:rules --*/
+
+// The notes' MC widget sized for slides: em units against the 32px root
+// instead of the notes' rem, and full width instead of the Tufte 55% column.
+.reveal .mc-exercise {
+  margin: 0.7em 0;
+}
+
+.reveal .mc-question {
+  margin-bottom: 0.5em;
+}
+
+.reveal .mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+.reveal .mc-option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.reveal .mc-option input {
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: $accent;
+}
+
+.reveal .mc-controls {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.4em;
+}
+
+.reveal .btn-check,
+.reveal .btn-reveal {
+  font-family: inherit;
+  font-size: 0.55em;
+  padding: 0.35em 0.9em;
+  border: 1px solid $rule-light;
+  border-radius: 3px;
+  background: #fff;
+  color: $body-color;
+  cursor: pointer;
+}
+
+.reveal .btn-check:hover {
+  background: $accent;
+  border-color: $accent;
+  color: #fff;
+}
+
+.reveal .btn-reveal:hover {
+  border-color: $muted;
+}
+
+.reveal .mc-feedback {
+  font-size: 0.62em;
+  margin-bottom: 0.2em;
+}
+
+.reveal .fb-ok  { color: #1a6e2e; }
+.reveal .fb-err { color: #8b1a1a; }
+
+.reveal .mc-answer {
+  font-size: 0.62em;
+  color: $muted;
+}
+
+.reveal .mc-explanation {
+  margin-top: 0.4em;
+  color: $body-color;
+}

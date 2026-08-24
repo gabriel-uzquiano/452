@@ -1,0 +1,51 @@
+<script>
+// Same behaviour as the notes' checkMC/revealMC, with two changes for slides:
+// MathJax 3 has no MathJax.Hub, and reveal.js steals arrow/space keys from
+// focused radio buttons unless the event stops at the widget.
+function checkMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var correct = JSON.parse(ex.dataset.correct);
+  var multi = ex.dataset.multi === "true";
+  var feedback = ex.querySelector('.mc-feedback');
+  feedback.removeAttribute('hidden');
+  var ok;
+  if (multi) {
+    var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked'))
+                       .map(function (c) { return parseInt(c.value); });
+    if (checked.length === 0) {
+      feedback.textContent = 'Please select an option.';
+      feedback.className = 'mc-feedback';
+      return;
+    }
+    ok = correct.length === checked.length &&
+         correct.every(function (v) { return checked.includes(v); });
+  } else {
+    var selected = ex.querySelector('input[type=radio]:checked');
+    if (!selected) {
+      feedback.textContent = 'Please select an option.';
+      feedback.className = 'mc-feedback';
+      return;
+    }
+    ok = correct.includes(parseInt(selected.value));
+  }
+  feedback.textContent = ok ? '\u2713 Correct.' : '\u2717 Not quite \u2014 try again.';
+  feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+}
+
+function revealMC(btn) {
+  var ex = btn.closest('.mc-exercise');
+  var ans = ex.querySelector('.mc-answer');
+  ans.removeAttribute('hidden');
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([ans]);
+  } else if (window.MathJax && MathJax.Hub) {
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.mc-exercise').forEach(function (ex) {
+    ex.addEventListener('keydown', function (e) { e.stopPropagation(); });
+  });
+});
+</script>

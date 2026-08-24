@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// A warm neutral, deliberately unlike the blue definition rule so a definition
+// and an example are never confused at a glance from the back of the room.
+$example-accent: #a9631f !default;
+$example-tint: #faf6f1 !default;
+
+
+/*-- scss:rules --*/
+
+// The counter lives on .slides, which is a single element wrapping every
+// section, so numbering runs continuously through the whole deck.
+.reveal .slides { counter-reset: example; }
+
+@mixin example-label {
+  counter-increment: example;
+
+  &::before {
+    content: "Example " counter(example);
+    display: block;
+    font-size: 0.6em;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: $example-accent;
+    margin-bottom: 0.3em;
+  }
+
+  > :last-child { margin-bottom: 0; }
+}
+
+// ---- A: ruled ------------------------------------------------------------
+.reveal .example {
+  @include example-label;
+  border-left: 5px solid $example-accent;
+  margin: 0.75em 0;
+  padding: 0.1em 0 0.1em 0.9em;
+}
+
+// ---- B: tinted panel -----------------------------------------------------
+.reveal .example-panel {
+  @include example-label;
+  background: $example-tint;
+  border-radius: 3px;
+  margin: 0.75em 0;
+  padding: 0.55em 0.9em;
+}
+
+// ---- C: label only -------------------------------------------------------
+.reveal .example-plain {
+  @include example-label;
+  margin: 0.9em 0;
+}
+
+// Suppress the number where a bare "Example" reads better.
+.reveal .example.unnumbered::before,
+.reveal .example-panel.unnumbered::before,
+.reveal .example-plain.unnumbered::before { content: "Example"; }
