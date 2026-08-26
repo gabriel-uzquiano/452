@@ -210,7 +210,6 @@ Gabriel Uzquiano
 <p><span class="math inline">\(R\)</span> is a binary relation iff <span class="math inline">\(R\)</span> is a binary relation on a set.</p>
 </dd>
 </dl>
-<p>We sometimes write <span class="math inline">\(Rxy\)</span> or <span class="math inline">\(xRy\)</span> for <span class="math inline">\(\langle x, y \rangle \in R\)</span>.</p>
 <div class="mc-exercise" data-correct="[0]">
 <div class="mc-question">Is <span class="math inline">∅</span> a relation on the set <span class="math inline">{<em>a</em>, <em>b</em>}</span>?</div>
 <div class="mc-options"><label class="mc-option"><input type="radio" name="ex_1" value="0"><span>yes</span></label><label class="mc-option"><input type="radio" name="ex_1" value="1"><span>no</span></label></div>
@@ -245,7 +244,7 @@ of the Cartesian product <span class="math inline">{<em>a</em>, <em>b</em>} 
 </dd>
 </dl>
 <div class="example-panel">
-<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, b \rangle, \langle b, a\rangle \}\)</span>. Then <span class="math inline">\(R\)</span> is not irreflexive on <span class="math inline">\(W\)</span>.</p>
+<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, b \rangle, \langle b, a\rangle \}\)</span>. Then <span class="math inline">\(R\)</span> is irreflexive on <span class="math inline">\(W\)</span>.</p>
 </div>
 </div>
 <div class="fragment">
@@ -288,7 +287,7 @@ at most one letter with&nbsp;<em>v</em>}</span></div>
 </dd>
 </dl>
 <div class="example-panel">
-<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, a \rangle, \langle b, b\rangle\}\)</span>. Then <span class="math inline">\(R\)</span> is symmetric on <span class="math inline">\(W\)</span>.</p>
+<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, b \rangle, \langle b, a\rangle\}\)</span>. Then <span class="math inline">\(R\)</span> is symmetric on <span class="math inline">\(W\)</span>.</p>
 </div>
 <dl>
 <dt>asymmetry on <span class="math inline">\(A\)</span></dt>
@@ -341,7 +340,7 @@ order.</div></div>
 </dd>
 </dl>
 <div class="example-panel">
-<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, a \rangle, \langle b, a\rangle\}\)</span>. Then <span class="math inline">\(R\)</span> is transitive on <span class="math inline">\(W\)</span>.</p>
+<p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, b \rangle, \langle b, c\rangle, \langle a, c\rangle\}\)</span>. Then <span class="math inline">\(R\)</span> is transitive on <span class="math inline">\(W\)</span>.</p>
 </div>
 <dl>
 <dt>intransitivity on <span class="math inline">\(A\)</span></dt>
@@ -413,7 +412,7 @@ antonym of <span class="math inline"><em>v</em></span>, and <span class="math in
 </dd>
 </dl>
 <div class="example-panel">
-<p>If <span class="math inline">\(A\)</span> is the set of undergraduate students at USC and <span class="math inline">\(R\)</span> is <span class="math inline">\(\{\langle x, y\rangle: x \ \text{is in the same year as} \ y\}\)</span>, then if <span class="math inline">\(a\)</span> is a freshman at <span class="math inline">\(USC\)</span>, then <span class="math inline">\([a]_R\)</span> is the set of freshmen at USC.</p>
+<p>If <span class="math inline">\(A\)</span> is the set of undergraduate students at USC and we let <span class="math inline">\(R\)</span> be <span class="math inline">\(\{\langle x, y\rangle: x \ \text{is in the same year as} \ y\}\)</span>, then if <span class="math inline">\(a\)</span> is a freshman at <span class="math inline">\(USC\)</span>, then <span class="math inline">\([a]_R\)</span> is the set of freshmen at USC.</p>
 </div>
 </section>
 <section id="euclidean-relations" class="slide level2">
@@ -452,7 +451,7 @@ transitivity, since <span class="math inline"><em>R</em><em>y</em><em>x</em></sp
 <li class="fragment">Reflexive? ✗</li>
 </ul>
 <div class="fragment">
-<p>Not all euclidean relations on <span class="math inline">\(A\)</span> are equivalence relations on <span class="math inline">\(A\)</span>.</p>
+<p>Not every euclidean relation on <span class="math inline">\(A\)</span> is an equivalence relation on <span class="math inline">\(A\)</span>.</p>
 <p>Let <span class="math inline">\(A = \{a, b\}\)</span> and <span class="math inline">\(R = \{\langle a, a \rangle\}\)</span>.</p>
 <ul>
 <li class="fragment">Euclidean? ✓</li>

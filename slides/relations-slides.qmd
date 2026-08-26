@@ -69,8 +69,6 @@ binary relation
 
 : $R$ is a binary relation iff $R$ is a binary relation on a set.
 
-We sometimes write $Rxy$ or $xRy$ for $\langle x, y \rangle \in R$.
-
 
 ::: {.mc correct="1"}
 Is $\emptyset$ a relation on the set $\{a, b\}$?
@@ -103,7 +101,7 @@ irreflexivity on $A$
 
 
 ::: {.example-panel}
-Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, a\rangle \}$. Then $R$ is not irreflexive on $W$.
+Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, a\rangle \}$. Then $R$ is irreflexive on $W$.
 :::
 
 . . . 
@@ -151,7 +149,7 @@ symmetry on $A$
 
 
 ::: {.example-panel}
-Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, b\rangle\}$. Then $R$ is symmetric on $W$.
+Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, a\rangle\}$. Then $R$ is symmetric on $W$.
 :::
 
 
@@ -207,7 +205,7 @@ symmetry on $A$
 
 
 ::: {.example-panel}
-Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle, \langle b, a\rangle\}$. Then $R$ is transitive on $W$.
+Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, c\rangle, \langle a, c\rangle\}$. Then $R$ is transitive on $W$.
 :::
 
 
@@ -280,7 +278,7 @@ $$
 $$
 
 ::: {.example-panel}
-If $A$ is the set of undergraduate students at USC and $R$ is $\{\langle x, y\rangle: x \ \text{is in the same year as} \ y\}$, then if
+If $A$ is the set of undergraduate students at USC and we let $R$ be $\{\langle x, y\rangle: x \ \text{is in the same year as} \ y\}$, then if
 $a$ is a freshman at $USC$, then $[a]_R$ is the set of freshmen at USC.
 :::
 
@@ -320,7 +318,7 @@ Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle\}$.
 
 . . .
 
-Not all euclidean relations on $A$ are equivalence relations on $A$.
+Not every euclidean relation on $A$ is an equivalence relation on $A$.
 
 Let $A = \{a, b\}$ and $R = \{\langle a, a \rangle\}$.
 
