@@ -205,7 +205,7 @@ symmetry on $A$
 
 
 ::: {.example-panel}
-Let $A = \{a, b\}$ and $R = \{\langle a, b \rangle, \langle b, c\rangle, \langle a, c\rangle\}$. Then $R$ is transitive on $W$.
+Let $A = \{a, b, c\}$ and $R = \{\langle a, b \rangle, \langle b, c\rangle, \langle a, c\rangle\}$. Then $R$ is transitive on $W$.
 :::
 
 
