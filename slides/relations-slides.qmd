@@ -1,6 +1,6 @@
 ---
 title: "relations"
-subtitle: "PHIL 452 · Background"
+subtitle: "PHIL 452 · Modal Logic"
 author: "Gabriel Uzquiano"
 format:
   revealjs:
