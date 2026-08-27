@@ -11,15 +11,15 @@
 
    Please justify your answers.
 
-2. Draw a diagram for a finite relation $R$ on a set $W$ with each of the profiles given below:
+2. Draw a diagram for a finite relation $R$ on a set $A$ with each of the profiles given below:
 
-   1. reflexive, symmetric, and non-transitive on $W$.
+   1. reflexive, symmetric, and non-transitive on $A$.
 
-   2. non-reflexive, symmetric, and intransitive on $W$.
+   2. non-reflexive, symmetric, and intransitive on $A$.
 
-   3. irreflexive, symmetric, and transitive on $W$.
+   3. irreflexive, symmetric, and transitive on $A$.
 
-   4. euclidean, connected, and non-reflexive on $W$.
+   4. euclidean, connected, and non-reflexive on $A$.
 
    Please justify your answers.
 
