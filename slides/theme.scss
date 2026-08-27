@@ -238,3 +238,23 @@ $code-block-font-size: 0.75em !default;
 
 // Slightly restrain the footer/controls so they stay out of the way.
 .reveal .controls { color: $muted; }
+
+.conjecture {
+  background-color: #fff4e6;      /* soft warm highlight */
+  border-left: 6px solid #e67700; /* accent bar */
+  padding: 0.75em 1em;
+  margin: 0.75em 0;
+  border-radius: 6px;
+  font-size: inherit;             /* keeps slide font size — no shrinking */
+}
+
+.conjecture::before {
+  content: "Conjecture";
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25em;
+  color: #e67700;
+}
+

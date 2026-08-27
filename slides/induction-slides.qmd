@@ -1,0 +1,79 @@
+---
+title: "induction and recursion"
+subtitle: "PHIL 452 · Modal Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, theme.scss, examples.scss, mc.scss]
+    filters: [mc.lua]
+    include-after-body: mc-scripts.html
+    css: fonts.css
+    slide-number: c/t
+    chalkboard: true
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-color: "#ffffff"
+    width: 1280
+    height: 720
+---
+
+# induction and recursion
+
+## induction on the natural numbers
+
+Given a condition $\Phi$ on natural numbers, **if**
+
+- $0$ satisfies the condition, $\Phi(0)$, *and*
+- a natural number $n$ satisfies the condition only if $n +1$ does,
+
+**then** all natural numbers satisfy the condition.
+
+## induction on positive integers
+
+Given a condition $\Phi$ on positive integers, **if**
+
+- $1$ satisfies the condition, and
+- a positive integer $n$ satisfies the condition only if $n +1$ does,
+
+**then** all positive integers satisfy the condition.
+
+## example: how to deploy induction
+
+::: {.example-panel}
+Consider the pattern:
+
+$$\begin{array}{lllll}
+1 + 3& = & 4 & = & 2^2\\
+1 + 3 + 5 & = & 9 & = & 3^2\\
+1 + 3+ 5 +7 & = & 16 & = & 4^2\\
+\cdots & = & \cdots & = & \cdots \\
+\end{array}$$
+
+The pattern suggests a conjecture:
+
+::: {.conjecture}
+For each positive integer $n$, $$\sum_{k = 1}^{n}{2k - 1} = n^2.$$
+:::
+
+Notice that $2k-1$ is the $k$th odd number. The conjecture is that the sum of the first $n$ odd numbers is $n^2$.
+:::
+
+## example continued
+
+::: {.example-panel}
+By induction on the positive integers, it suffices to prove two claims:
+
+1. $\Phi(1)$ $$\sum_{k = 1}^{1} 2k - 1 = 1^2$$
+
+2. If $\Phi(n)$, then $\Phi(n+1)$.
+
+Suppose:
+
+$$\sum_{k=1}^{n} 2k-1 = n^2.$$
+
+$$\begin{array}{lll}
+\sum_{k=1}^{n+1} 2k-1 & = & (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
+& =  & n^2 + 2n +1\\
+& = & (n+1)^2 \\
+\end{array}$$
+:::
