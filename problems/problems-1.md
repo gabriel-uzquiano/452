@@ -1,4 +1,4 @@
-### problem set 1 (relations)
+## problem set 1 (relations)
 
 1. Find a relation $R$ on the set of English words $W$ with each of the profiles given below:
 
@@ -9,7 +9,7 @@
    3. irreflexive, symmetric, and intransitive on $W$.
 
 
-   Please justify your answers.
+   *Please justify your answers.*
 
 2. Draw a diagram for a finite relation $R$ on a set $A$ with each of the profiles given below:
 
@@ -21,7 +21,7 @@
 
    4. euclidean, connected, and non-reflexive on $A$.
 
-   Please justify your answers.
+   *Please justify your answers.*
 
 3. Justify each of the claims given below:
 
