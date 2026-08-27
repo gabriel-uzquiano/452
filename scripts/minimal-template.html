@@ -8,6 +8,36 @@
   <link rel="stylesheet" href="/assets/main.css">
   <style>
     .page-content { padding-top: 60px; }
+
+    .post-content > ol { padding-left: 1.5em; }
+
+    .post-content > ol > li {
+      border-top: 1px solid #e7e7e7;
+      padding-top: 1.5em;
+      margin: 0 0 2em;
+    }
+    .post-content > ol > li:first-child {
+      border-top: 0;
+      padding-top: 0.2em;
+    }
+    .post-content > ol > li::marker {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .post-content > ol > li > p:first-child {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 0.75em;
+    }
+
+    .post-content > ol > li > ol { margin: 0; padding-left: 1.6em; }
+    .post-content > ol > li > ol > li > p { margin: 0 0 0.45em; }
+
+    .post-content > ol > li > p:last-child:not(:first-child) {
+      margin: 1em 0 0;
+      font-style: italic;
+      color: #6a6a6a;
+    }
   </style>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
