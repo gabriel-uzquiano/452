@@ -1,4 +1,4 @@
-## problem set 2 (basic language)
+### problem set 2 (basic language)
 
 *True or false? If true, please provide an argument. If false, provide a counterexample.*
 
@@ -20,9 +20,9 @@
 
    2. If $\Gamma \models \varphi \to \psi$, then $\Gamma \not\models \varphi$ or $\Gamma \models \psi$.
 
-   3. If $\Gamma \models \varphi$ and $\Gamma \not \models \psi$, then $\Gamma \not \models \varphi \to \psi$.
+   3. If $\Gamma \models \varphi$ and $\Gamma \not \models \psi$, then $\Gamma \models \neg (\varphi \to \psi)$.
    
-   4. If $\Gamma \not \models \varphi \to \psi$, then $\Gamma \models \varphi$ and $\Gamma \not \models \psi$.
+   4. If $\Gamma \models \neg (\varphi \to \psi)$, then $\Gamma \models \varphi$ and $\Gamma \not \models \psi$.
 
 3. Satisfiability
 
