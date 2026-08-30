@@ -1,5 +1,5 @@
 ---
-title: "induction and recursion"
+title: "basic language"
 subtitle: "PHIL 452 · Modal Logic"
 author: "Gabriel Uzquiano"
 format:
@@ -17,63 +17,360 @@ format:
     height: 720
 ---
 
-# induction and recursion
+# induction and recursion {.divider}
 
-## induction on the natural numbers
+## induction on the natural numbers {.smaller}
 
-Given a condition $\Phi$ on natural numbers, **if**
+Given a condition on natural numbers, if
 
-- $0$ satisfies the condition, $\Phi(0)$, *and*
-- a natural number $n$ satisfies the condition only if $n +1$ does,
+- $0$ meets the condition, and
+- a natural number $n$ meets the condition only if its successor $n + 1$ does,
 
-**then** all natural numbers satisfy the condition.
+then all natural numbers satisfy the condition.
 
-## induction on positive integers
-
-Given a condition $\Phi$ on positive integers, **if**
-
-- $1$ satisfies the condition, and
-- a positive integer $n$ satisfies the condition only if $n +1$ does,
-
-**then** all positive integers satisfy the condition.
-
-## example: how to deploy induction
+. . .
 
 ::: {.example-panel}
-Consider the pattern:
+$$\begin{array}{llll}
+0 & < & 1 & = & 2^0  \\
+1 & < & 2 & = & 2^1\\
+2 & < & 4 & = & 2^2 \\
+\cdots &  & \cdots &  & \cdots \\
+\end{array}$$
+:::
 
+:::{.conjecture}
+For all natural numbers $n$, $n < 2^n$.
+:::
+
+## how to deploy induction on the natural numbers
+
+
+Set $\Phi(n)$ as: $n < 2^n$, and observe:
+
+1. $\Phi(0)$
+    
+      $0 < 1 = 2^0$.
+
+2. If $\Phi(n)$, then $\Phi(n+1)$.
+
+      If $n < 2^n$, then $2^n \geq 1$ and $n + 1 < 2^{n} + 2^{n} = 2^{n+1}$.  
+
+By induction, we conclude that for all natural numbers $n$, $n < 2^n$.
+
+
+## induction on the positive integers {.smaller}
+
+Given a condition on positive integers, if
+
+- $1$ meets the condition, and
+- a positive integer $n$ meets the condition only if its successor $n +1$ does,
+
+then all positive integers satisfy the condition.
+
+. . .
+
+::: {.example-panel}
 $$\begin{array}{lllll}
 1 + 3& = & 4 & = & 2^2\\
 1 + 3 + 5 & = & 9 & = & 3^2\\
 1 + 3+ 5 +7 & = & 16 & = & 4^2\\
-\cdots & = & \cdots & = & \cdots \\
+\cdots &  & \cdots &  & \cdots \\
 \end{array}$$
-
-The pattern suggests a conjecture:
+:::
 
 ::: {.conjecture}
-For each positive integer $n$, $$\sum_{k = 1}^{n}{2k - 1} = n^2.$$
+The sum of the first $n$ odd numbers is $n^2$.
 :::
 
-Notice that $2k-1$ is the $k$th odd number. The conjecture is that the sum of the first $n$ odd numbers is $n^2$.
-:::
+## how to deploy induction on the positive integers {.smaller}
 
-## example continued
 
-::: {.example-panel}
-By induction on the positive integers, it suffices to prove two claims:
+Set $\Phi(n)$ as: $\sum_{k = 1}^{n}{2k - 1} = n^2$:
 
-1. $\Phi(1)$ $$\sum_{k = 1}^{1} 2k - 1 = 1^2$$
+1. $\Phi(1)$
+    
+      $\sum_{k = 1}^{1} 2k - 1 = 1^2$.
+      
+      
 
 2. If $\Phi(n)$, then $\Phi(n+1)$.
+  
+      Suppose $\sum_{k=1}^{n} 2k-1 = n^2$, and note:
 
-Suppose:
+      
+      \begin{array}{lll}
+        \sum_{k=1}^{n+1} 2k-1 & = & (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
+                              & =  & n^2 + 2n +1\\
+                              & = & (n+1)^2 \\
+          \end{array}
 
-$$\sum_{k=1}^{n} 2k-1 = n^2.$$
 
-$$\begin{array}{lll}
-\sum_{k=1}^{n+1} 2k-1 & = & (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
-& =  & n^2 + 2n +1\\
-& = & (n+1)^2 \\
+
+## how **not** to use induction on the natural numbers {.smaller}
+
+::: {.conjecture}
+For all positive integers $n$, if two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$.
+:::
+
+Set $\Phi(n)$ be: If two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$. 
+
+- $\Phi(0)$
+
+    If $A$ and $B$ have at most $0$ members, then they are both empty and $|A| = |B|$.
+    
+- If $\Phi(n)$, then $\Phi(n+1)$
+
+    Suppose the condition holds for $n$ and let $A$ and $B$ be two sets with at most $n+1$ members. Let $A^-$ and $B^-$ be obtained from $A$ and $B$ by substracting one member from each. By inductive hypothesis, $|A^-| = |B^-|$, whence $|A| = |A^-| + 1 = |B^-| +1 = |B|$. 
+
+
+By induction, if two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$
+
+::: {.callout-caution}
+It would seem to follow that all finite sets have the same cardinality, which is false.
+:::
+
+ Where is the flaw in the argument?
+
+## variants of induction {.smaller}
+
+**Complete Induction**
+
+Given a condition on natural numbers, if
+
+- $0$ meets the condition, and
+- if for all $m \leq n$, $m$ meets the condition, then $n$ does,
+
+then all natural numbers satisfy the condition.
+
+. . .
+
+**Complete Induction without a Base Case**
+
+Given a condition $\Phi(n)$ on natural numbers, if
+
+if for all $m < n$, $m$ meets the condition, then $n$ does,
+
+then all natural numbers satisfy the condition.
+
+
+## recursion {.smaller}
+
+::: {.example-panel}
+We define by recursion a set of formulas for a formal language. Suppose we start with a simple vocabulary, which consists of only three symbols:
+
+$$@, \#, \%$$
+
+We could define a set of formulas for that language by means of the following recursion:
+
+$$\varphi ::= @ \ | \  \% \varphi \ | \ (\varphi \ \#  \ \psi)$$
+
+Here is how to read that notation now.
+
+- $@$ is a formula of the language
+
+- if $\varphi$ is a formula of the language, then $\% \varphi$ is a formula
+
+- if $\varphi$ and $\psi$ are formulas of the language, then $(\varphi \ \# \ \psi)$ is a formula.
+
+That means that the set of formulas of the language includes:
+
+$$@, \%@, \%\% @, \dots, (@ \ \# \ @), (@ \ \# \% @), \% (@ \ \# \ @), \dots$$
+:::
+
+# propositional logic {.divider}
+
+## basic language {.smaller}
+
+Choose a stock of propositional variables or atoms:
+
+$$
+AT := p, q, r, \cdots
+$$
+
+We define the formulas of a propositional language $\mathcal{L}$ recursively:
+
+$$
+\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi)
+$$
+
+Here is how to read the last line:
+
+- All atoms are formulas.
+
+- If $\varphi$ is a formula, then $\neg \varphi$ is a formula.
+
+- If $\varphi$ and $\psi$ are formulas, then $(\varphi \to \psi)$ is a formula.
+
+- Nothing else is a formula.
+
+## some definitions 
+
+::: {.definition}
+$$
+\begin{array}{lll}
+\top & := & (p \to p)\\
+\bot & := & \neg \top \\
+(\varphi \vee \psi) & := & (\neg \varphi \to \psi)\\
+(\varphi \wedge \psi) & := & \neg (\varphi \to \neg \psi)\\
+(\varphi \leftrightarrow \psi) & := & (\varphi \to \psi) \wedge (\psi \to \varphi)
+\end{array}
+$$
+:::
+
+## induction on the complexity of formulas {.smaller}
+
+Given a condition on formulas of $\mathcal{L}$, if
+
+- all atoms meet the condition,
+
+- whenever a formula $\varphi$ meets the condition, $\neg \varphi$ meets the condition as well, and
+
+- whenever two formulas $\varphi$ and $\psi$ meet the condition, $(\varphi \to \psi)$ meets the condition as well,
+
+then all formulas of $\mathcal{L}$ meet the condition.
+
+. . . 
+
+
+
+::: {.example-panel .featured}
+Call a formula *balanced* iff it has the same number of right and left parentheses.
+
+$$\begin{array}{ll}
+p &  \text{is balanced}  \\
+\neg (p \to q) & \text{is balanced} \\
+(p \to (\neg p \to (q \to r))) & \text{is balanced} \\
+\cdots &  \cdots \\
 \end{array}$$
+:::
+
+::: {.conjecture}
+All formulas are balanced.
+:::
+
+## how to deploy induction on the complexity of formulas {.smaller}
+
+Set $\Phi(\varphi)$ as: $\varphi$ is balanced:
+
+1. All atoms are balanced.
+    
+      Atoms have an equal number of left and right parentheses, namely $0$.
+      
+      
+2. If $\varphi$ is balanced, then $\neg \varphi$ is balanced.
+  
+      Suppose $\varphi$ is balanced. $\neg \varphi$ contains the same number of left and right parentheses as $\varphi$. So, $\neg \varphi$ is balanced.
+      
+3. If $\varphi$ and $\psi$ are each balanced, then $(\varphi \to \psi)$ is balanced.
+
+      If $n$ and $m$ are the number of left and right parentheses for $\varphi$ and $\psi$ respectively, then $n+m+1$ is the number of left and right parentheses for $(\varphi \to \psi)$. So, $(\varphi \to \psi)$ is balanced.
+
+By induction on the complexity of formulas, all formulas are balanced.
+
+# semantics {.divider}
+
+## valuation
+
+::: {.definition .featured}
+An *assignment* for a propositional language $\mathcal{L}$ is a function $v$ from $AT$ into $\{0, 1\}$, which maps a propositional variable to a truth value.
+:::
+
+. . .
+
+::: {.definition .featured}
+A *valuation* $V$ *based on* an assignment $v$ is a function from formulas into $\{0, 1\}$ such that:
+$$
+\begin{array}{lll}
+V(p) & = & v(p)\\
+& & \\
+V(\neg \varphi) & = & \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \end{cases}\\
+& & \\
+V(\varphi \to \psi) & = & \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0 \ \text{or} \ V(\psi) = 1\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \ \text{and} \ V(\psi) = 0\end{cases}\\
+\end{array}
+$$
+::: 
+
+## example
+
+::: {.example-panel .feature}
+Let $v$ map all atoms into $0$. Then:
+$$
+\begin{array}{lll}
+V(p) & = & 0\\
+& & \\
+V(\neg p) & = & 1\\
+& & \\
+V(\neg p \to \neg \neg q) & = & 0\\
+& & \\
+V(\neg \neg q \to \neg \neg p) & = & 1\\
+\end{array}
+$$
+:::
+
+## satisfaction and validity
+
+::: {.definition .featured}
+A valuation $V$ *satisfies* a formula $\varphi$ if, and only if, $V(\varphi) = 1$.
+:::
+
+. . .
+
+::: {.definition .featured}
+A set of formulas $\Gamma$ is *satisfiable* if, and only if, some valuation $V$ satisfies all formulas in $\Gamma$.
+:::
+
+. . .
+
+::: {.definition .featured}
+A formula $\varphi$ is *valid* if, and only if, every valuation $V$ satisfies $\varphi$.
+:::
+
+::: {.definition .featured}
+Given a set of formulas $\Gamma$, a formula $\varphi$ is a *logical consequence* of $\Gamma$, written $\Gamma \models \varphi$ if, and only if, for every valuation $V$, $V$ satisfies all formulas in $\Gamma$ only if $V$ satisfies $\varphi$.
+:::
+
+## practice
+
+::: {.mc correct="1"} 
+A formula $\varphi$ is unsatisfiable if, and only if, $\neg \varphi$ is valid.
+
+- true
+- false
+
+Explanation: If no valuation satisfies $\varphi$, then all valuations will satisfy $\neg \varphi$.
+:::
+
+. . . 
+
+::: {.mc correct="2"} 
+A conjunction $\varphi \wedge \psi$ is unsatisfiable if, and only if, $\neg \varphi$ is valid or $\neg \psi$ is valid.
+
+- true
+- false
+
+Explanation: $p \wedge \neg p$ is not satisfiable.
+:::
+
+
+## practice
+
+::: {.mc correct="2"} 
+$\Gamma \models \varphi$ if, and only if, $\Gamma \cup \{\neg \varphi\}$ is satisfiable
+
+- true
+- false
+
+Explanation: $\{p\} \cup \{\neg q\}$ is satisfiable, yet $\{p\} \not \models q$.
+:::
+
+. . .
+
+::: {.mc correct="1"} 
+$\Gamma \models \varphi$ if, and only if, $\Gamma \cup \{\neg \varphi\}$ is unsatisfiable
+
+- true
+- false
+
+Explanation: If every valuation satisfying $\Gamma$ satisfies $\varphi$, then no valuation satisfying $\Gamma$ will satisfy $\neg \varphi$.
 :::

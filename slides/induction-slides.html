@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Gabriel Uzquiano">
-  <title>induction and recursion</title>
+  <title>basic language</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -133,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#ffffff" class="quarto-title-block center">
-  <h1 class="title">induction and recursion</h1>
+  <h1 class="title">basic language</h1>
   <p class="subtitle">PHIL 452 · Modal Logic</p>
 
 <div class="quarto-title-authors">
@@ -146,62 +146,322 @@ Gabriel Uzquiano
 
 </section>
 <section>
-<section id="induction-and-recursion" class="title-slide slide level1 center">
+<section id="induction-and-recursion" class="title-slide slide level1 divider center">
 <h1>induction and recursion</h1>
 
 </section>
-<section id="induction-on-the-natural-numbers" class="slide level2">
+<section id="induction-on-the-natural-numbers" class="slide level2 smaller">
 <h2>induction on the natural numbers</h2>
-<p>Given a condition <span class="math inline">\(\Phi\)</span> on natural numbers, <strong>if</strong></p>
+<p>Given a condition on natural numbers, if</p>
 <ul>
-<li><span class="math inline">\(0\)</span> satisfies the condition, <span class="math inline">\(\Phi(0)\)</span>, <em>and</em></li>
-<li>a natural number <span class="math inline">\(n\)</span> satisfies the condition only if <span class="math inline">\(n +1\)</span> does,</li>
+<li><span class="math inline">\(0\)</span> meets the condition, and</li>
+<li>a natural number <span class="math inline">\(n\)</span> meets the condition only if its successor <span class="math inline">\(n + 1\)</span> does,</li>
 </ul>
-<p><strong>then</strong> all natural numbers satisfy the condition.</p>
-</section>
-<section id="induction-on-positive-integers" class="slide level2">
-<h2>induction on positive integers</h2>
-<p>Given a condition <span class="math inline">\(\Phi\)</span> on positive integers, <strong>if</strong></p>
-<ul>
-<li><span class="math inline">\(1\)</span> satisfies the condition, and</li>
-<li>a positive integer <span class="math inline">\(n\)</span> satisfies the condition only if <span class="math inline">\(n +1\)</span> does,</li>
-</ul>
-<p><strong>then</strong> all positive integers satisfy the condition.</p>
-</section>
-<section id="example-how-to-deploy-induction" class="slide level2">
-<h2>example: how to deploy induction</h2>
+<p>then all natural numbers satisfy the condition.</p>
+<div class="fragment">
 <div class="example-panel">
-<p>Consider the pattern:</p>
+<p><span class="math display">\[\begin{array}{llll}
+0 &amp; &lt; &amp; 1 &amp; = &amp; 2^0  \\
+1 &amp; &lt; &amp; 2 &amp; = &amp; 2^1\\
+2 &amp; &lt; &amp; 4 &amp; = &amp; 2^2 \\
+\cdots &amp;  &amp; \cdots &amp;  &amp; \cdots \\
+\end{array}\]</span></p>
+</div>
+<div class="conjecture">
+<p>For all natural numbers <span class="math inline">\(n\)</span>, <span class="math inline">\(n &lt; 2^n\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="how-to-deploy-induction-on-the-natural-numbers" class="slide level2">
+<h2>how to deploy induction on the natural numbers</h2>
+<p>Set <span class="math inline">\(\Phi(n)\)</span> as: <span class="math inline">\(n &lt; 2^n\)</span>, and observe:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\Phi(0)\)</span></p>
+<p><span class="math inline">\(0 &lt; 1 = 2^0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>If <span class="math inline">\(n &lt; 2^n\)</span>, then <span class="math inline">\(2^n \geq 1\)</span> and <span class="math inline">\(n + 1 &lt; 2^{n} + 2^{n} = 2^{n+1}\)</span>.</p></li>
+</ol>
+<p>By induction, we conclude that for all natural numbers <span class="math inline">\(n\)</span>, <span class="math inline">\(n &lt; 2^n\)</span>.</p>
+</section>
+<section id="induction-on-the-positive-integers" class="slide level2 smaller">
+<h2>induction on the positive integers</h2>
+<p>Given a condition on positive integers, if</p>
+<ul>
+<li><span class="math inline">\(1\)</span> meets the condition, and</li>
+<li>a positive integer <span class="math inline">\(n\)</span> meets the condition only if its successor <span class="math inline">\(n +1\)</span> does,</li>
+</ul>
+<p>then all positive integers satisfy the condition.</p>
+<div class="fragment">
+<div class="example-panel">
 <p><span class="math display">\[\begin{array}{lllll}
 1 + 3&amp; = &amp; 4 &amp; = &amp; 2^2\\
 1 + 3 + 5 &amp; = &amp; 9 &amp; = &amp; 3^2\\
 1 + 3+ 5 +7 &amp; = &amp; 16 &amp; = &amp; 4^2\\
-\cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
+\cdots &amp;  &amp; \cdots &amp;  &amp; \cdots \\
 \end{array}\]</span></p>
-<p>The pattern suggests a conjecture:</p>
-<div class="conjecture">
-<p>For each positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[\sum_{k = 1}^{n}{2k - 1} = n^2.\]</span></p>
 </div>
-<p>Notice that <span class="math inline">\(2k-1\)</span> is the <span class="math inline">\(k\)</span>th odd number. The conjecture is that the sum of the first <span class="math inline">\(n\)</span> odd numbers is <span class="math inline">\(n^2\)</span>.</p>
+<div class="conjecture">
+<p>The sum of the first <span class="math inline">\(n\)</span> odd numbers is <span class="math inline">\(n^2\)</span>.</p>
+</div>
 </div>
 </section>
-<section id="example-continued" class="slide level2">
-<h2>example continued</h2>
-<div class="example-panel">
-<p>By induction on the positive integers, it suffices to prove two claims:</p>
+<section id="how-to-deploy-induction-on-the-positive-integers" class="slide level2 smaller">
+<h2>how to deploy induction on the positive integers</h2>
+<p>Set <span class="math inline">\(\Phi(n)\)</span> as: <span class="math inline">\(\sum_{k = 1}^{n}{2k - 1} = n^2\)</span>:</p>
 <ol type="1">
-<li><p><span class="math inline">\(\Phi(1)\)</span> <span class="math display">\[\sum_{k = 1}^{1} 2k - 1 = 1^2\]</span></p></li>
-<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p></li>
+<li><p><span class="math inline">\(\Phi(1)\)</span></p>
+<p><span class="math inline">\(\sum_{k = 1}^{1} 2k - 1 = 1^2\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>Suppose <span class="math inline">\(\sum_{k=1}^{n} 2k-1 = n^2\)</span>, and note:</p>
+<span class="math display">\[\begin{array}{lll}
+     \sum_{k=1}^{n+1} 2k-1 &amp; = &amp; (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
+                           &amp; =  &amp; n^2 + 2n +1\\
+                           &amp; = &amp; (n+1)^2 \\
+       \end{array}\]</span></li>
 </ol>
-<p>Suppose:</p>
-<p><span class="math display">\[\sum_{k=1}^{n} 2k-1 = n^2.\]</span></p>
-<p><span class="math display">\[\begin{array}{lll}
-\sum_{k=1}^{n+1} 2k-1 &amp; = &amp; (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
-&amp; =  &amp; n^2 + 2n +1\\
-&amp; = &amp; (n+1)^2 \\
+</section>
+<section id="how-not-to-use-induction-on-the-natural-numbers" class="slide level2 smaller">
+<h2>how <strong>not</strong> to use induction on the natural numbers</h2>
+<div class="conjecture">
+<p>For all positive integers <span class="math inline">\(n\)</span>, if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
+</div>
+<p>Set <span class="math inline">\(\Phi(n)\)</span> be: If two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\Phi(0)\)</span></p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> members, then they are both empty and <span class="math inline">\(|A| = |B|\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span></p>
+<p>Suppose the condition holds for <span class="math inline">\(n\)</span> and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> members. Let <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> be obtained from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by substracting one member from each. By inductive hypothesis, <span class="math inline">\(|A^-| = |B^-|\)</span>, whence <span class="math inline">\(|A| = |A^-| + 1 = |B^-| +1 = |B|\)</span>.</p></li>
+</ul>
+<p>By induction, if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span></p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p>It would seem to follow that all finite sets have the same cardinality, which is false.</p>
+</div>
+</div>
+</div>
+<p>Where is the flaw in the argument?</p>
+</section>
+<section id="variants-of-induction" class="slide level2 smaller">
+<h2>variants of induction</h2>
+<p><strong>Complete Induction</strong></p>
+<p>Given a condition on natural numbers, if</p>
+<ul>
+<li><span class="math inline">\(0\)</span> meets the condition, and</li>
+<li>if for all <span class="math inline">\(m \leq n\)</span>, <span class="math inline">\(m\)</span> meets the condition, then <span class="math inline">\(n\)</span> does,</li>
+</ul>
+<p>then all natural numbers satisfy the condition.</p>
+<div class="fragment">
+<p><strong>Complete Induction without a Base Case</strong></p>
+<p>Given a condition <span class="math inline">\(\Phi(n)\)</span> on natural numbers, if</p>
+<p>if for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(m\)</span> meets the condition, then <span class="math inline">\(n\)</span> does,</p>
+<p>then all natural numbers satisfy the condition.</p>
+</div>
+</section>
+<section id="recursion" class="slide level2 smaller">
+<h2>recursion</h2>
+<div class="example-panel">
+<p>We define by recursion a set of formulas for a formal language. Suppose we start with a simple vocabulary, which consists of only three symbols:</p>
+<p><span class="math display">\[@, \#, \%\]</span></p>
+<p>We could define a set of formulas for that language by means of the following recursion:</p>
+<p><span class="math display">\[\varphi ::= @ \ | \  \% \varphi \ | \ (\varphi \ \#  \ \psi)\]</span></p>
+<p>Here is how to read that notation now.</p>
+<ul>
+<li><p><span class="math inline">\(@\)</span> is a formula of the language</p></li>
+<li><p>if <span class="math inline">\(\varphi\)</span> is a formula of the language, then <span class="math inline">\(\% \varphi\)</span> is a formula</p></li>
+<li><p>if <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas of the language, then <span class="math inline">\((\varphi \ \# \ \psi)\)</span> is a formula.</p></li>
+</ul>
+<p>That means that the set of formulas of the language includes:</p>
+<p><span class="math display">\[@, \%@, \%\% @, \dots, (@ \ \# \ @), (@ \ \# \% @), \% (@ \ \# \ @), \dots\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="propositional-logic" class="title-slide slide level1 divider center">
+<h1>propositional logic</h1>
+
+</section>
+<section id="basic-language" class="slide level2 smaller">
+<h2>basic language</h2>
+<p>Choose a stock of propositional variables or atoms:</p>
+<p><span class="math display">\[
+AT := p, q, r, \cdots
+\]</span></p>
+<p>We define the formulas of a propositional language <span class="math inline">\(\mathcal{L}\)</span> recursively:</p>
+<p><span class="math display">\[
+\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi)
+\]</span></p>
+<p>Here is how to read the last line:</p>
+<ul>
+<li><p>All atoms are formulas.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is a formula, then <span class="math inline">\(\neg \varphi\)</span> is a formula.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas, then <span class="math inline">\((\varphi \to \psi)\)</span> is a formula.</p></li>
+<li><p>Nothing else is a formula.</p></li>
+</ul>
+</section>
+<section id="some-definitions" class="slide level2">
+<h2>some definitions</h2>
+<div class="definition">
+<p><span class="math display">\[
+\begin{array}{lll}
+\top &amp; := &amp; (p \to p)\\
+\bot &amp; := &amp; \neg \top \\
+(\varphi \vee \psi) &amp; := &amp; (\neg \varphi \to \psi)\\
+(\varphi \wedge \psi) &amp; := &amp; \neg (\varphi \to \neg \psi)\\
+(\varphi \leftrightarrow \psi) &amp; := &amp; (\varphi \to \psi) \wedge (\psi \to \varphi)
+\end{array}
+\]</span></p>
+</div>
+</section>
+<section id="induction-on-the-complexity-of-formulas" class="slide level2 smaller">
+<h2>induction on the complexity of formulas</h2>
+<p>Given a condition on formulas of <span class="math inline">\(\mathcal{L}\)</span>, if</p>
+<ul>
+<li><p>all atoms meet the condition,</p></li>
+<li><p>whenever a formula <span class="math inline">\(\varphi\)</span> meets the condition, <span class="math inline">\(\neg \varphi\)</span> meets the condition as well, and</p></li>
+<li><p>whenever two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> meet the condition, <span class="math inline">\((\varphi \to \psi)\)</span> meets the condition as well,</p></li>
+</ul>
+<p>then all formulas of <span class="math inline">\(\mathcal{L}\)</span> meet the condition.</p>
+<div class="fragment">
+<div class="example-panel featured">
+<p>Call a formula <em>balanced</em> iff it has the same number of right and left parentheses.</p>
+<p><span class="math display">\[\begin{array}{ll}
+p &amp;  \text{is balanced}  \\
+\neg (p \to q) &amp; \text{is balanced} \\
+(p \to (\neg p \to (q \to r))) &amp; \text{is balanced} \\
+\cdots &amp;  \cdots \\
 \end{array}\]</span></p>
 </div>
+<div class="conjecture">
+<p>All formulas are balanced.</p>
+</div>
+</div>
+</section>
+<section id="how-to-deploy-induction-on-the-complexity-of-formulas" class="slide level2 smaller">
+<h2>how to deploy induction on the complexity of formulas</h2>
+<p>Set <span class="math inline">\(\Phi(\varphi)\)</span> as: <span class="math inline">\(\varphi\)</span> is balanced:</p>
+<ol type="1">
+<li><p>All atoms are balanced.</p>
+<p>Atoms have an equal number of left and right parentheses, namely <span class="math inline">\(0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is balanced, then <span class="math inline">\(\neg \varphi\)</span> is balanced.</p>
+<p>Suppose <span class="math inline">\(\varphi\)</span> is balanced. <span class="math inline">\(\neg \varphi\)</span> contains the same number of left and right parentheses as <span class="math inline">\(\varphi\)</span>. So, <span class="math inline">\(\neg \varphi\)</span> is balanced.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are each balanced, then <span class="math inline">\((\varphi \to \psi)\)</span> is balanced.</p>
+<p>If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are the number of left and right parentheses for <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> respectively, then <span class="math inline">\(n+m+1\)</span> is the number of left and right parentheses for <span class="math inline">\((\varphi \to \psi)\)</span>. So, <span class="math inline">\((\varphi \to \psi)\)</span> is balanced.</p></li>
+</ol>
+<p>By induction on the complexity of formulas, all formulas are balanced.</p>
+</section></section>
+<section>
+<section id="semantics" class="title-slide slide level1 divider center">
+<h1>semantics</h1>
 
+</section>
+<section id="valuation" class="slide level2">
+<h2>valuation</h2>
+<div class="definition featured">
+<p>An <em>assignment</em> for a propositional language <span class="math inline">\(\mathcal{L}\)</span> is a function <span class="math inline">\(v\)</span> from <span class="math inline">\(AT\)</span> into <span class="math inline">\(\{0, 1\}\)</span>, which maps a propositional variable to a truth value.</p>
+</div>
+<div class="fragment">
+<div class="definition featured">
+<p>A <em>valuation</em> <span class="math inline">\(V\)</span> <em>based on</em> an assignment <span class="math inline">\(v\)</span> is a function from formulas into <span class="math inline">\(\{0, 1\}\)</span> such that: <span class="math display">\[
+\begin{array}{lll}
+V(p) &amp; = &amp; v(p)\\
+&amp; &amp; \\
+V(\neg \varphi) &amp; = &amp; \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \end{cases}\\
+&amp; &amp; \\
+V(\varphi \to \psi) &amp; = &amp; \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0 \ \text{or} \ V(\psi) = 1\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \ \text{and} \ V(\psi) = 0\end{cases}\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>example</h2>
+<div class="example-panel feature">
+<p>Let <span class="math inline">\(v\)</span> map all atoms into <span class="math inline">\(0\)</span>. Then: <span class="math display">\[
+\begin{array}{lll}
+V(p) &amp; = &amp; 0\\
+&amp; &amp; \\
+V(\neg p) &amp; = &amp; 1\\
+&amp; &amp; \\
+V(\neg p \to \neg \neg q) &amp; = &amp; 0\\
+&amp; &amp; \\
+V(\neg \neg q \to \neg \neg p) &amp; = &amp; 1\\
+\end{array}
+\]</span></p>
+</div>
+</section>
+<section id="satisfaction-and-validity" class="slide level2">
+<h2>satisfaction and validity</h2>
+<div class="definition featured">
+<p>A valuation <span class="math inline">\(V\)</span> <em>satisfies</em> a formula <span class="math inline">\(\varphi\)</span> if, and only if, <span class="math inline">\(V(\varphi) = 1\)</span>.</p>
+</div>
+<div class="fragment">
+<div class="definition featured">
+<p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>satisfiable</em> if, and only if, some valuation <span class="math inline">\(V\)</span> satisfies all formulas in <span class="math inline">\(\Gamma\)</span>.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="definition featured">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> if, and only if, every valuation <span class="math inline">\(V\)</span> satisfies <span class="math inline">\(\varphi\)</span>.</p>
+</div>
+<div class="definition featured">
+<p>Given a set of formulas <span class="math inline">\(\Gamma\)</span>, a formula <span class="math inline">\(\varphi\)</span> is a <em>logical consequence</em> of <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \models \varphi\)</span> if, and only if, for every valuation <span class="math inline">\(V\)</span>, <span class="math inline">\(V\)</span> satisfies all formulas in <span class="math inline">\(\Gamma\)</span> only if <span class="math inline">\(V\)</span> satisfies <span class="math inline">\(\varphi\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="practice" class="slide level2">
+<h2>practice</h2>
+<div class="mc-exercise" data-correct="[0]">
+<div class="mc-question">A formula <span class="math inline"><em>φ</em></span> is unsatisfiable
+if, and only if, <span class="math inline">¬<em>φ</em></span> is valid.</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_1" value="0"><span>true</span></label><label class="mc-option"><input type="radio" name="ex_1" value="1"><span>false</span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> true<div class="mc-explanation">If no valuation satisfies <span class="math inline"><em>φ</em></span>, then all valuations will satisfy
+<span class="math inline">¬<em>φ</em></span>.</div></div>
+</div>
+<div class="fragment">
+<div class="mc-exercise" data-correct="[1]">
+<div class="mc-question">A conjunction <span class="math inline"><em>φ</em> ∧ <em>ψ</em></span>
+is unsatisfiable if, and only if, <span class="math inline">¬<em>φ</em></span> is valid or <span class="math inline">¬<em>ψ</em></span> is valid.</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_2" value="0"><span>true</span></label><label class="mc-option"><input type="radio" name="ex_2" value="1"><span>false</span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> false<div class="mc-explanation"><span class="math inline"><em>p</em> ∧ ¬<em>p</em></span>
+is not satisfiable.</div></div>
+</div>
+</div>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>practice</h2>
+<div class="mc-exercise" data-correct="[1]">
+<div class="mc-question"><span class="math inline"><em>Γ</em> ⊨ <em>φ</em></span> if, and only
+if, <span class="math inline"><em>Γ</em> ∪ {¬<em>φ</em>}</span> is
+satisfiable</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_3" value="0"><span>true</span></label><label class="mc-option"><input type="radio" name="ex_3" value="1"><span>false</span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> false<div class="mc-explanation"><span class="math inline">{<em>p</em>} ∪ {¬<em>q</em>}</span> is satisfiable,
+yet <span class="math inline">{<em>p</em>} ⊭ <em>q</em></span>.</div></div>
+</div>
+<div class="fragment">
+<div class="mc-exercise" data-correct="[0]">
+<div class="mc-question"><span class="math inline"><em>Γ</em> ⊨ <em>φ</em></span> if, and only
+if, <span class="math inline"><em>Γ</em> ∪ {¬<em>φ</em>}</span> is
+unsatisfiable</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_4" value="0"><span>true</span></label><label class="mc-option"><input type="radio" name="ex_4" value="1"><span>false</span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> true<div class="mc-explanation">If every valuation satisfying <span class="math inline"><em>Γ</em></span> satisfies <span class="math inline"><em>φ</em></span>, then no valuation satisfying
+<span class="math inline"><em>Γ</em></span> will satisfy <span class="math inline">¬<em>φ</em></span>.</div></div>
+</div>
+
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
