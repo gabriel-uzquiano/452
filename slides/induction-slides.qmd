@@ -139,7 +139,7 @@ It would seem to follow that all finite sets have the same cardinality, which is
 Given a condition on natural numbers, if
 
 - $0$ meets the condition, and
-- if for all $m \leq n$, $m$ meets the condition, then $n$ does,
+- if for all $m < n$, $m$ meets the condition, then $n$ does,
 
 then all natural numbers satisfy the condition.
 
