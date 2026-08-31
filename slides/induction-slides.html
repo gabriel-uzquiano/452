@@ -223,16 +223,16 @@ Gabriel Uzquiano
 <section id="how-not-to-use-induction-on-the-natural-numbers" class="slide level2 smaller">
 <h2>how <strong>not</strong> to use induction on the natural numbers</h2>
 <div class="conjecture">
-<p>For all positive integers <span class="math inline">\(n\)</span>, if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p>For all natural number <span class="math inline">\(n\)</span>, if both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have each at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
 </div>
-<p>Set <span class="math inline">\(\Phi(n)\)</span> be: If two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p>Set <span class="math inline">\(\Phi(n)\)</span> be: If two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have each at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span>.</p>
 <ul>
 <li><p><span class="math inline">\(\Phi(0)\)</span></p>
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> members, then they are both empty and <span class="math inline">\(|A| = |B|\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span></p>
 <p>Suppose the condition holds for <span class="math inline">\(n\)</span> and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> members. Let <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> be obtained from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by substracting one member from each. By inductive hypothesis, <span class="math inline">\(|A^-| = |B^-|\)</span>, whence <span class="math inline">\(|A| = |A^-| + 1 = |B^-| +1 = |B|\)</span>.</p></li>
 </ul>
-<p>By induction, if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span></p>
+<p>By induction, if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have each at most <span class="math inline">\(n\)</span> members, then <span class="math inline">\(|A| = |B|\)</span></p>
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">

@@ -110,10 +110,10 @@ Set $\Phi(n)$ as: $\sum_{k = 1}^{n}{2k - 1} = n^2$:
 ## how **not** to use induction on the natural numbers {.smaller}
 
 ::: {.conjecture}
-For all positive integers $n$, if two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$.
+For all natural number $n$, if both $A$ and $B$ have each at most $n$ members, then $|A| = |B|$.
 :::
 
-Set $\Phi(n)$ be: If two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$. 
+Set $\Phi(n)$ be: If two sets $A$ and $B$ have each at most $n$ members, then $|A| = |B|$. 
 
 - $\Phi(0)$
 
@@ -124,7 +124,7 @@ Set $\Phi(n)$ be: If two sets $A$ and $B$ have at most $n$ members, then $|A| = 
     Suppose the condition holds for $n$ and let $A$ and $B$ be two sets with at most $n+1$ members. Let $A^-$ and $B^-$ be obtained from $A$ and $B$ by substracting one member from each. By inductive hypothesis, $|A^-| = |B^-|$, whence $|A| = |A^-| + 1 = |B^-| +1 = |B|$. 
 
 
-By induction, if two sets $A$ and $B$ have at most $n$ members, then $|A| = |B|$
+By induction, if two sets $A$ and $B$ have each at most $n$ members, then $|A| = |B|$
 
 ::: {.callout-caution}
 It would seem to follow that all finite sets have the same cardinality, which is false.
