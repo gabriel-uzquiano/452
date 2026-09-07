@@ -258,3 +258,54 @@ $code-block-font-size: 0.75em !default;
   color: #e67700;
 }
 
+// ---- logic environments --------------------------------------------------
+
+// Theorem: soft blue fill with dark blue-gray border
+.theorem {
+  background-color: #eef3f8;
+  border: 2px solid #2c3e50;
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  margin: 0.75em 0;
+  font-size: inherit;
+}
+
+// Proof: soft neutral background with slate border
+.proof {
+  background-color: #f8f9fa;
+  border: 2px solid #7f8c8d;
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  margin-top: 1.25em; // spacing relative to theorem above
+  margin-bottom: 0.75em;
+  font-size: inherit;
+}
+
+// Example: matches the book's 5px accent rule style
+.example {
+  background-color: #f4f8fb;
+  border-left: 5px solid $accent;
+  padding: 0.6em 1em;
+  margin: 0.75em 0;
+  border-radius: 0 6px 6px 0;
+  font-size: inherit;
+}
+
+// Exercise: warm accent (matches burnt orange tone)
+.exercise {
+  background-color: #fdf2e9;
+  border: 2px solid #d35400;
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  margin: 0.75em 0;
+  font-size: inherit;
+}
+
+// Optional: Long sentence inline text highlight inside proofs
+.hl-sentence {
+  background-color: #fff3cd;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+
