@@ -12,7 +12,7 @@
 
    3. Not every formula is equivalent to a positive formula.
 
-2. Logical Consequence and the conditional
+2. Logical consequence
 
    Let $\Gamma$ be a set of formulas and let $\varphi$ and $\psi$ be formulas.
 
@@ -37,3 +37,5 @@
       - $\Gamma$ is unsatisfiable, but
 
       - every *finite* subset $\Delta \subseteq \Gamma$ is satisfiable.
+      
+      *Please feel free to help yourself to completeness.*
