@@ -434,11 +434,11 @@ n + 2 &amp;  \psi &amp; \textsf{MP} \ n, n+1 \\
 k  &amp; \varphi \to  (\chi_l \to \psi) &amp; \Gamma \vdash  \varphi \to  (\chi_l \to \psi) \\
 \vdots &amp;  \vdots &amp; \vdots \\
 m  &amp; \varphi \to  \chi_l &amp; \Gamma \vdash  \varphi \to  \chi_l\\
-\vdots &amp;  \vdots &amp; \vdots \\
-n &amp; (\varphi \to (\chi_1 \to \psi)) \to  &amp; \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
+%\vdots &amp;  \vdots &amp; \vdots \\
+m+1 &amp; (\varphi \to (\chi_1 \to \psi)) \to  &amp; \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
   &amp; ((\varphi \to \chi_l)\to (\varphi \to \psi)) &amp; \\
-n+1 &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \textsf{MP} \ k, n\\
-n+2  &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
+n+2 &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \textsf{MP} \ k, n\\
+n+3  &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \end{array}
 \]</span></p>
 </div>
@@ -519,8 +519,8 @@ n+2  &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Combine two observations above:</p>
 <p><span class="math display">\[\begin{array}{lll}
-1 &amp; \neg \neg \varphi \to \neg \varphi &amp; \textsf{theorem} \ (4.4)\\
-2 &amp; (\neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{theorem} \ (4.3) \\
+1 &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \textsf{theorem} \ (4.4)\\
+2 &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{theorem} \ (4.3) \\
 3 &amp; \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2
 \end{array}\]</span></p>
 </div>
