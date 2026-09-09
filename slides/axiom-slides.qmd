@@ -198,11 +198,10 @@ $$
 
 . . .
 
-::: {.proof}
-
+::: {style="font-size: 0.8em;"}
+::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 ::: {.incremental}
-- Assume $\Gamma \vdash \varphi \to \psi$.
-- We argue that there is a derivation of $\psi$ from $\Gamma, \varphi$. 
+- Assume $\Gamma \vdash \varphi \to \psi$. We argue that there is a derivation of $\psi$ from $\Gamma, \varphi$. 
 - There is, by assumption, a derivation of $\psi$ from $\Gamma$ of some finite length $n$, e.g.
 $$\begin{array}{lll}
 1 & \cdots & \cdots \\
@@ -213,7 +212,12 @@ n &  \varphi \to \psi & \cdots \\
 
 :::
 
+:::
+
+
 ## the key step
+
+::: {style="font-size: 0.8em;"}
 
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 - We expand a derivation of $\psi$ from $\Gamma$ with two lines:
@@ -224,6 +228,9 @@ n &  \psi & \cdots \\
 n + 1 &  \varphi & \textsf{premise} \\
 n + 2 &  \psi & \textsf{MP} \ n, n+1 \\
 \end{array}$$
+
+:::
+
 :::
 
 # the crucial direction
@@ -291,7 +298,7 @@ if $\langle \chi_1, \cdots \chi_n\rangle$ is a derivation of $\psi$ from $\Gamma
 
 ## distinguish four cases 
 
-::: {style="font-size: 0.9em;"}
+::: {style="font-size: 0.8em;"}
 
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 Consider a derivation of $\psi$ from $\Gamma, \varphi$ of the form: $$( \chi_1, ..., \chi_{n}).$$
@@ -306,6 +313,8 @@ Thus $\chi_{n}= \psi$, and for each $1 \leq i \leq n$, $\chi_{i}$ is either:
 :::
 
 ## two cases 
+
+::: {style="font-size: 0.8em;"}
 
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 - **Case 1**. $\psi$ is an *axiom*. Then $\Gamma \vdash \varphi \to \psi$:
@@ -327,20 +336,26 @@ $$\begin{array}{lll}
 \end{array}$$
 :::
 
+:::
+
 ## two more cases 
+
+::: {style="font-size: 0.8em;"}
 
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 - **Case 3**. $\psi$ is $\varphi$. Then $\vdash \varphi \to \psi$. <br/> This is because $\varphi \to \psi$ is just $\varphi \to \varphi$ and $\vdash \varphi \to \varphi$. So, $\Gamma \vdash \varphi \to \varphi$
-
+<br/>
 
 - **Case 4**. $\psi$ is the output of an application of $\textsf{MP}$ to two earlier lines $\chi_l$ and $\chi_k$. That means that $\chi_k$ is $(\chi_l \to \psi)$ for some $k, l < n$. Because both $k, l < n$, there are derivations of $\chi_l$ and $\chi_l \to \psi$, respectively, of length less than $n$.<br/><br/> 
 *By inductive hypothesis*: <br/>$\Gamma \vdash \varphi \to \chi_l$<br/>$\Gamma \vdash \varphi \to (\chi_l \to \psi)$.
 
 :::
 
+:::
+
 ## a proof of $\varphi \to \psi$ from $\Gamma$ 
 
-::: {style="font-size: 0.9em;"}
+::: {style="font-size: 0.8em;"}
 
 Combine the derivations of $\varphi \to \chi_l$ and $\varphi \to (\chi_l \to \psi)$ from $\Gamma$ into a derivation of $\varphi \to \psi$ from $\Gamma$:
 
@@ -367,7 +382,7 @@ $$
 
 To prove a conditional, we adjoin the antecedent to our assumptions and set out to derive the consequent from them. If we can, we are entitled to the conditional on the basis of the original assumptions.
 
-## transitivity
+## transitivity {.smaller}
 
 ::: {.theorem}
 $\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))$
@@ -393,7 +408,7 @@ $$
 :::
 :::
 
-## reverse contraposition 
+## reverse contraposition {.smaller}
 
 ::: {.theorem}
 $\vdash (\neg \psi \to \neg \varphi) \to  (\varphi \to \psi)$
@@ -424,7 +439,7 @@ $$
 
 
 
-## double negation elimination 
+## double negation elimination {.smaller}
 
 ::: {.theorem}
 $\vdash \neg \neg \varphi \to \varphi$
@@ -450,7 +465,7 @@ $$\begin{array}{lll}
 :::
 
 
-## double negation introduction 
+## double negation introduction {.smaller}
 
 ::: {.theorem}
 $\vdash \varphi \to \neg \neg \varphi$
@@ -469,7 +484,7 @@ $$\begin{array}{lll}
 :::
 :::
 
-## contraposition 
+## contraposition {.smaller}
 
 ::: {.theorem}
 $\vdash (\varphi \to \psi) \to  (\neg \psi \to \neg \varphi)$
@@ -499,7 +514,7 @@ $$
 :::
 :::
 
-## exercise
+## exercise  {.smaller}
 
 ::: {.exercise}
 
@@ -531,7 +546,7 @@ $$\begin{array}{lll}
 
 :::
 
-## ex falso quodlibet 
+## ex falso quodlibet {.smaller}
 
 ::: {.theorem}
 $\vdash \neg \varphi \to (\varphi \to \psi)$
