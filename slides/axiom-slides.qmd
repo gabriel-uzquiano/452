@@ -224,7 +224,7 @@ n &  \varphi \to \psi & \cdots \\
 $$\begin{array}{lll}
 1 & \cdots & \cdots \\
 \vdots & \vdots & \vdots \\
-n &  \psi & \cdots \\
+n &  \varphi \to \psi & \cdots \\
 n + 1 &  \varphi & \textsf{premise} \\
 n + 2 &  \psi & \textsf{MP} \ n, n+1 \\
 \end{array}$$
