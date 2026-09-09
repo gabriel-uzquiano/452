@@ -345,6 +345,7 @@ $$\begin{array}{lll}
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 - **Case 3**. $\psi$ is $\varphi$. Then $\vdash \varphi \to \psi$. <br/> This is because $\varphi \to \psi$ is just $\varphi \to \varphi$ and $\vdash \varphi \to \varphi$. So, $\Gamma \vdash \varphi \to \varphi$
 <br/>
+<br/>
 
 - **Case 4**. $\psi$ is the output of an application of $\textsf{MP}$ to two earlier lines $\chi_l$ and $\chi_k$. That means that $\chi_k$ is $(\chi_l \to \psi)$ for some $k, l < n$. Because both $k, l < n$, there are derivations of $\chi_l$ and $\chi_l \to \psi$, respectively, of length less than $n$.<br/><br/> 
 *By inductive hypothesis*: <br/>$\Gamma \vdash \varphi \to \chi_l$<br/>$\Gamma \vdash \varphi \to (\chi_l \to \psi)$.
