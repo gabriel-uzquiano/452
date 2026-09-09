@@ -224,7 +224,7 @@ n &  \varphi \to \psi & \cdots \\
 $$\begin{array}{lll}
 1 & \cdots & \cdots \\
 \vdots & \vdots & \vdots \\
-n &  \varphi \to \psi & \cdots \\
+n &  \psi & \cdots \\
 n + 1 &  \varphi & \textsf{premise} \\
 n + 2 &  \psi & \textsf{MP} \ n, n+1 \\
 \end{array}$$
@@ -345,7 +345,6 @@ $$\begin{array}{lll}
 ::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
 - **Case 3**. $\psi$ is $\varphi$. Then $\vdash \varphi \to \psi$. <br/> This is because $\varphi \to \psi$ is just $\varphi \to \varphi$ and $\vdash \varphi \to \varphi$. So, $\Gamma \vdash \varphi \to \varphi$
 <br/>
-<br/>
 
 - **Case 4**. $\psi$ is the output of an application of $\textsf{MP}$ to two earlier lines $\chi_l$ and $\chi_k$. That means that $\chi_k$ is $(\chi_l \to \psi)$ for some $k, l < n$. Because both $k, l < n$, there are derivations of $\chi_l$ and $\chi_l \to \psi$, respectively, of length less than $n$.<br/><br/> 
 *By inductive hypothesis*: <br/>$\Gamma \vdash \varphi \to \chi_l$<br/>$\Gamma \vdash \varphi \to (\chi_l \to \psi)$.
@@ -368,11 +367,11 @@ $$
 k  & \varphi \to  (\chi_l \to \psi) & \Gamma \vdash  \varphi \to  (\chi_l \to \psi) \\
 \vdots &  \vdots & \vdots \\
 m  & \varphi \to  \chi_l & \Gamma \vdash  \varphi \to  \chi_l\\
-%\vdots &  \vdots & \vdots \\
-m+1 & (\varphi \to (\chi_1 \to \psi)) \to  & \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
+\vdots &  \vdots & \vdots \\
+n & (\varphi \to (\chi_1 \to \psi)) \to  & \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
   & ((\varphi \to \chi_l)\to (\varphi \to \psi)) & \\
-n+2 & (\varphi \to \chi_l)\to (\varphi \to \psi) & \textsf{MP} \ k, n\\
-n+3  & \varphi \to \psi & \textsf{MP} \ m, n+1\\
+n+1 & (\varphi \to \chi_l)\to (\varphi \to \psi) & \textsf{MP} \ k, n\\
+n+2  & \varphi \to \psi & \textsf{MP} \ m, n+1\\
 \end{array}
 $$ 
 :::
@@ -478,8 +477,8 @@ $\vdash \varphi \to \neg \neg \varphi$
 Combine two observations above:
 
 $$\begin{array}{lll}
-1 & \neg \neg \neg \varphi \to \neg \varphi & \textsf{theorem} \ (4.4)\\
-2 & (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) & \textsf{theorem} \ (4.3) \\
+1 & \neg \neg \varphi \to \neg \varphi & \textsf{theorem} \ (4.4)\\
+2 & (\neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) & \textsf{theorem} \ (4.3) \\
 3 & \varphi \to \neg \neg \varphi & \textsf{MP} \ 1, 2
 \end{array}$$
 :::
