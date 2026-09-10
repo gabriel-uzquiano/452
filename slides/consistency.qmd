@@ -1,0 +1,393 @@
+---
+title: "maximal consistency"
+subtitle: "PHIL 452 · Modal Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, theme.scss, examples.scss, mc.scss]
+    filters: [mc.lua]
+    include-after-body: mc-scripts.html
+    css: fonts.css
+    slide-number: c/t
+    chalkboard: true
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-color: "#ffffff"
+    width: 1280
+    height: 720
+---
+
+# completeness {.divider}
+
+The axiom system is *sound* and *complete* for the semantics of propositional logic.
+
+::: {.theorem}
+For each set of formulas $\Gamma$ and each formula $\varphi$, 
+$$
+\begin{array}{lll}
+\Gamma \vdash \varphi & \Leftrightarrow & \Gamma \models \varphi\\
+\end{array}
+$$
+:::
+
+
+# soundness {.smaller}
+
+The axiom system is *sound* if a formula $\varphi$ is derivable from a $\Gamma$ *only if* $\varphi$ is a logical consequence of $\Gamma$.
+
+::: {.theorem}
+**Soundness** For each set of formulas $\Gamma$ and each formula $\varphi$, 
+$$
+\begin{array}{lll}
+\Gamma \vdash \varphi & \Rightarrow & \Gamma \models \varphi\\
+\end{array}
+$$
+:::
+
+::: {style="font-size: 0.8em;"}
+
+::: {.proof}
+Use a *complete induction* on the *length* of derivations. Set the condition $\Phi(n)$ on *length* as: 
+
+::: {style="border-left: 4px solid #2980b9; padding-left: 0.8em; margin: 0.8em 0; color: #2c3e50; font-weight: 500;"}
+For each set of formulas $\Gamma$ and each formula $\varphi$, if $\langle \chi_1, \cdots \chi_n\rangle$ is a derivation of $\varphi$ from $\Gamma$ of length $n$, then $\Gamma \models \varphi$.
+:::
+
+:::
+
+:::
+
+# completeness {.smaller}
+
+The axiom system is *complete* if if a formula $\varphi$ is derivable from a $\Gamma$ *whenever* $\varphi$ is a logical consequence of $\Gamma$.
+
+::: {.theorem}
+**Completeness** For each set of formulas $\Gamma$ and each formula $\varphi$, 
+$$
+\begin{array}{lll}
+\Gamma \models \varphi & \Rightarrow & \Gamma \vdash \varphi\\
+\end{array}
+$$
+:::
+
+::: {style="font-size: 0.8em;"}
+
+We will set out to prove a reformulation of completeness in terms of *consistency*, a proof-theoretic counterpart of satisfiability.
+
+::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
+For each set of formulas $\Gamma$ and each formula $\varphi$, 
+
+$$
+\begin{array}{lll}
+\Gamma \nvdash \varphi & \Rightarrow &\Gamma \not \models \varphi\\
+\Gamma \models \varphi & \Rightarrow & \Gamma \vdash \varphi \\
+\Gamma, \neg \varphi \ \textsf{consistent} & \Rightarrow & \Gamma, \neg \varphi \ \textsf{satisfiable} \\
+\end{array}
+$$
+
+For each set of formulas $\Gamma$,
+
+$$
+\begin{array}{lll}
+\Gamma  \ \textsf{consistent} & \Rightarrow & \Gamma \ \textsf{satisfiable} \\
+\end{array}
+$$
+:::
+
+:::
+
+
+## consistency
+
+::: {.definition}
+A set of formulas $\Gamma$ is *consistent* iff $\bot$ is not derivable from $\Gamma$.
+:::
+
+
+::: {style="font-size: 0.8em;"}
+
+::: {.theorem}
+Given a set of formulas $\Gamma$ and a formula $\varphi$,
+$$
+\begin{array}{lll}
+\Gamma \vdash \varphi &  \Leftrightarrow & \Gamma, \neg \varphi \ \ \text{is inconsistent}.\\
+\end{array}
+$$
+:::
+*Consistency* is the proof-theoretic counterpart of *satisfiability*:
+
+::: {.theorem}
+Given a set of formulas $\Gamma$ and a formula $\varphi$,
+$$
+\begin{array}{lll}
+\Gamma \models \varphi &  \Leftrightarrow & \Gamma, \neg \varphi \ \ \text{is unsatisfiable}.\\
+\end{array}
+$$
+:::
+
+:::
+
+## from left to right {.smaller}
+
+::: {.theorem}
+Given a set of formulas $\Gamma$ and a formula $\varphi$,
+$$
+\begin{array}{lll}
+\Gamma \vdash \varphi &  \Rightarrow & \Gamma, \neg \varphi \ \ \text{is inconsistent}.\\
+\end{array}
+$$
+:::
+
+::: {.proof}
+Assume $\Gamma \vdash \varphi$. Here is a derivation of $\bot$ from $\Gamma, \neg \varphi$:
+
+$$
+\begin{array}{llll}
+1 & & \neg \varphi \to (\neg \bot \to \neg  \varphi) & \textsf{A1}[\neg \varphi/p, \bot/q]  \\
+2 & & \neg \varphi & \textsf{premise} \\
+3 & & \neg \bot \to \neg \varphi & \textsf{MP} \ 1, 2\\
+4 & & (\neg \bot \to \neg \varphi) \to (\varphi \to \bot) & \textsf{theorem} \ (4.3)\\
+5 & & \varphi \to \bot & \textsf{MP} \ 3, 4\\
+6 & & \varphi  & \Gamma \vdash \varphi\\
+7 & & \bot & \textsf{MP} \ 4, 5\\
+\end{array}
+$$
+
+:::
+
+## from right to left {.smaller}
+
+::: {.theorem}
+Given a set of formulas $\Gamma$ and a formula $\varphi$,
+$$
+\begin{array}{lll}
+\Gamma, \neg \varphi \ \ \text{is inconsistent} &  \Rightarrow & \Gamma \vdash \varphi\\
+\end{array}
+$$
+:::
+
+::: {.proof}
+Assume $\Gamma, \neg \varphi$ is inconsistent, i.e., $\Gamma, \neg \varphi \vdash \bot$. Here is a derivation of $\varphi$ from $\Gamma$:
+
+$$
+\begin{array}{llll}
+1 & & \neg \varphi \to  \neg \bot & \Gamma \vdash \neg \varphi \to \neg \bot  \\
+2 & & (\neg \varphi \to  \neg \bot)  \to ((\neg \varphi \to  \bot) \to \varphi) & \textsf{A3}[\varphi/p, \bot/q]\\
+3 & & (\neg \varphi \to  \bot) \to \varphi & \textsf{MP} \ 1, 2\\
+4 & & \neg \varphi \to \bot &  \Gamma \vdash \neg \varphi \to \bot \\
+5 & & \varphi & \textsf{MP} \ 3, 4\\
+\end{array}
+$$
+Steps 1 and 4 rely on two key observations:
+
+1. $\Gamma \vdash \neg \varphi \to \bot$, which follows from the Deduction Theorem.
+2. $\Gamma \vdash \neg \varphi \to \neg \bot$. Since $\Gamma, \neg \varphi \vdash \top$, and $\vdash \top \to \neg \neg \bot$, $\Gamma, \neg \varphi \vdash \neg \neg \top$. Since $\neg \neg \top$ is $\neg \bot$, we infer $\Gamma, \neg \varphi \vdash \neg \bot$. 
+
+:::
+
+## maximal consistency
+
+::: {.definition}
+A set of formulas $\Gamma$ is *maximal consistent* iff 
+
+1. $\Gamma$ is consistent, and
+
+2. for every formula $\varphi$, $\Gamma, \varphi$ is consistent *only if* $\varphi \in \Gamma$
+:::
+
+
+
+
+::: {.theorem}
+Given a *maximal consistent* set of formulas $\Gamma$ and two formulas $\varphi$ and $\psi$,
+$$
+\begin{array}{llll}
+1. &\Gamma \vdash \varphi &  \Leftrightarrow & \varphi \in \Gamma\\
+2. & \neg \varphi \in \Gamma & \Leftrightarrow & \varphi \notin \Gamma\\
+3. & (\varphi \to \psi) \in \Gamma & \Leftrightarrow & \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma
+\end{array}
+$$
+:::
+
+---
+
+::: {.proof}
+Given a *maximal consistent* set $\Gamma$ and a formula $\varphi$:
+$$
+\begin{array}{lll}
+ &\Gamma \vdash \varphi &  \Leftrightarrow & \varphi \in \Gamma\\
+\end{array}
+$$
+
+
+($\Rightarrow$) Assume $\Gamma \vdash \varphi$. Suppose, for a reductio, that $\varphi \notin \Gamma$. By definition of *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Since $\Gamma \vdash \varphi$, $\Gamma$ alone must be inconsistent. Contradiction.
+<br/>
+<br/>
+
+($\Leftarrow$) If $\varphi \in \Gamma$, then there is a one-line derivation of $\varphi$ from $\Gamma$.
+
+:::
+
+---
+
+::: {.proof}
+Given a *maximal consistent* set $\Gamma$ and a formula $\varphi$:
+$$
+\begin{array}{llll}
+ &\neg \varphi \in \Gamma &  \Leftrightarrow & \varphi \notin \Gamma\\
+\end{array}
+$$
+
+($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1 again, $\varphi \notin \Gamma$.
+
+The crucial step is to note that $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7). So, if $\Gamma \vdash \varphi$, then, by two applications of \textsf{MP}, $\Gamma \vdash \bot$.
+<br/>
+<br/>
+
+($\Leftarrow$) Suppose $\varphi \notin \Gamma$. By *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Given 4.4. and 4.5. $\Gamma, \neg \neg \varphi$ is inconsistent. So, by 5.1., $\Gamma \vdash \neg \varphi$.
+
+:::
+
+---
+
+::: {.proof}
+Given a *maximal consistent* set $\Gamma$ and two formulas $\varphi$ and $\psi$:
+$$
+\begin{array}{llll}
+ &\varphi \to \psi \in \Gamma &  \Leftrightarrow & \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma\\
+\end{array}
+$$
+
+($\Rightarrow$) Suppose $\varphi \to \psi \in \Gamma$. Then $\Gamma \vdash \varphi \to \psi$. We now argue that if $\varphi \in \Gamma$, then $\psi \in \Gamma$. If $\varphi \in \Gamma$, then $\Gamma \vdash \varphi$ and $\Gamma \vdash \psi$. By 1 above, $\psi \in \Gamma$.
+<br/>
+<br/>
+
+($\Leftarrow$) Suppose $\varphi \notin \Gamma$ or $\psi \in \Gamma$.
+
+- If $\varphi \notin \Gamma$, then $\Gamma \vdash \neg \varphi$. Since $\Gamma \vdash \neg \varphi \to (\varphi \to \psi)$, we infer that $\Gamma \vdash \varphi \to \psi$.
+
+- If $\psi \in \Gamma$, then $\Gamma \vdash \psi$. Since $\Gamma \vdash \psi \to (\varphi \to \psi)$, we infer that $\Gamma \vdash \varphi \to \psi$.
+
+Notice that $\psi \to (\varphi \to \psi)$ is a substitution instance of axiom 1.
+:::
+
+# completeness {.divider}
+
+::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
+For all sets of formulas $\Gamma$ and formula $\varphi$, 
+
+$$
+\begin{array}{lll}
+\Gamma \nvdash \varphi & \Rightarrow &\Gamma \not \models \varphi\\
+\Gamma \models \varphi & \Rightarrow & \Gamma \vdash \varphi \\
+\Gamma, \neg \varphi \ \textsf{consistent} & \Rightarrow & \Gamma, \neg \varphi \ \textsf{satisfiable} \\
+\end{array}
+$$
+
+For all sets of formulas $\Gamma$,
+
+$$
+\begin{array}{lll}
+\Gamma  \ \textsf{consistent} & \Rightarrow & \Gamma \ \textsf{satisfiable} \\
+\end{array}
+$$
+:::
+
+## from consistency to satisfiability {.divider}
+
+## the gap
+
+On one side, a *syntactic* condition on a set of formulas $\Gamma$:
+
+- $\Gamma$ is **consistent** iff $\bot$ is **not** derivable from $\Gamma$.
+
+. . .
+
+On the other side, a *semantic* condition on $\Gamma$:
+
+- $\Gamma$ is **satisfiable** iff some valuation $V$ makes every formula in $\Gamma$ true.
+
+. . .
+
+We want to bridge the two:
+
+$$\Gamma \ \text{consistent} \ \Longrightarrow \ \Gamma \ \text{satisfiable}.$$
+
+## the plan 
+
+Given a consistent set $\Gamma$, we will explain how to expand it into a *maximal consistent* set $\Gamma^+$.
+
+
+<br/>
+<br/>
+
+
+::: {.r-stack style="justify-content:center; text-align:center;"}
+
+::: {.fragment .fade-out data-fragment-index=1}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \phantom{\Downarrow} & & & & \phantom{\Uparrow}\\
+ \phantom{\Gamma^+ \ \text{maximal consistent}} & & \phantom{\Rightarrow} & & \phantom{\Gamma^+  \ \text{satisfiable}}\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=1}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \Downarrow & & & & \phantom{\Uparrow}\\
+ \Gamma^+ \ \text{maximal consistent} & & \phantom{\Rightarrow} & & \phantom{\Gamma^+  \ \text{satisfiable}}\\\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=2}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \Downarrow & & & & \phantom{\Uparrow}\\
+ \Gamma^+ \ \text{maximal consistent} & & \Rightarrow & & \Gamma^+  \ \text{satisfiable}\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \Gamma \ \text{satisfiable}\\
+ \Downarrow & & & & \Uparrow\\
+ \Gamma^+ \text{maximal consistent} & & \Rightarrow & & \Gamma^+  \ \text{satisfiable}
+\end{array}$$
+:::
+
+:::
+
+## three arrows {.smaller}
+
+1. from $\Gamma$ is consistent to $\Gamma^+$ is *maximal consistent*
+
+::: {.theorem}
+**Lindenbaum theorem**. Every *consistent* set $\Gamma$ is a subset of a *maximal consistent* set $\Gamma^+$.
+:::
+
+. . . 
+
+2. from $\Gamma^+$ is *maximal consistent* to $\Gamma^+$ is *satisfiable*.
+
+:::{.theorem}
+**Henkin lemma**. Every *maximal consistent* set $\Sigma$ is satisfiable under the assignment
+$$
+\begin{array}{lll}
+v(p) = 1 & \Leftrightarrow & p \in \Sigma
+\end{array}
+$$
+:::
+
+. . . 
+
+3. from $\Gamma^+$ is *satisfiable* to $\Gamma$ is *satisfiable*.
+
+::: {.theorem}
+Every subset of a satisfiable set is satisfiable.
+:::
+
+
+
+
+
