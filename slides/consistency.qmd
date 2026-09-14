@@ -220,7 +220,7 @@ $$
 $$
 
 
-($\Rightarrow$) Assume $\Gamma \vdash \varphi$. Suppose, for a reductio, that $\varphi \notin \Gamma$. By definition of *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Since $\Gamma \vdash \varphi$, $\Gamma$ alone must be inconsistent. Contradiction.
+($\Rightarrow$) Assume $\Gamma \vdash \varphi$. Suppose, for a reductio, that $\varphi \notin \Gamma$. By definition of *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Since $\Gamma \vdash \varphi$, $\Gamma \vdash \bot$ if $\Gamma, \varphi \vdash \bot$. So, $\Gamma$ is inconsistent. Contradiction.
 <br/>
 <br/>
 
@@ -240,7 +240,7 @@ $$
 
 ($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1 again, $\varphi \notin \Gamma$.
 
-The crucial step is to note that $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7). So, if $\Gamma \vdash \varphi$, then, by two applications of \textsf{MP}, $\Gamma \vdash \bot$.
+The justification for $\Gamma \nvdash \varphi$ is as follows. Since $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7), we have that $\Gamma \vdash \varphi$ only if $\Gamma \vdash \bot$ by \textsf{MP}.
 <br/>
 <br/>
 
@@ -295,8 +295,6 @@ $$
 
 ## from consistency to satisfiability {.divider}
 
-## the gap
-
 On one side, a *syntactic* condition on a set of formulas $\Gamma$:
 
 - $\Gamma$ is **consistent** iff $\bot$ is **not** derivable from $\Gamma$.
@@ -315,7 +313,7 @@ $$\Gamma \ \text{consistent} \ \Longrightarrow \ \Gamma \ \text{satisfiable}.$$
 
 ## the plan 
 
-Given a consistent set $\Gamma$, we will explain how to expand it into a *maximal consistent* set $\Gamma^+$.
+Given a consistent set $\Gamma$, we will explain how to expand it into a *maximal consistent* set $\Sigma$.
 
 
 <br/>
@@ -328,7 +326,7 @@ Given a consistent set $\Gamma$, we will explain how to expand it into a *maxima
 $$\begin{array}{clllc}
  \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
  \phantom{\Downarrow} & & & & \phantom{\Uparrow}\\
- \phantom{\Gamma^+ \ \text{maximal consistent}} & & \phantom{\Rightarrow} & & \phantom{\Gamma^+  \ \text{satisfiable}}\\
+ \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent}} & & \phantom{\Rightarrow} & & \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}}\\
 \end{array}$$
 :::
 
@@ -336,7 +334,7 @@ $$\begin{array}{clllc}
 $$\begin{array}{clllc}
  \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
  \Downarrow & & & & \phantom{\Uparrow}\\
- \Gamma^+ \ \text{maximal consistent} & & \phantom{\Rightarrow} & & \phantom{\Gamma^+  \ \text{satisfiable}}\\\\
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \phantom{\Rightarrow} & & \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}}\\\\
 \end{array}$$
 :::
 
@@ -344,7 +342,7 @@ $$\begin{array}{clllc}
 $$\begin{array}{clllc}
  \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
  \Downarrow & & & & \phantom{\Uparrow}\\
- \Gamma^+ \ \text{maximal consistent} & & \Rightarrow & & \Gamma^+  \ \text{satisfiable}\\
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \Rightarrow & & \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}\\
 \end{array}$$
 :::
 
@@ -352,7 +350,7 @@ $$\begin{array}{clllc}
 $$\begin{array}{clllc}
  \Gamma \ \text{consistent} & & & & \Gamma \ \text{satisfiable}\\
  \Downarrow & & & & \Uparrow\\
- \Gamma^+ \text{maximal consistent} & & \Rightarrow & & \Gamma^+  \ \text{satisfiable}
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \Rightarrow & & \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}
 \end{array}$$
 :::
 
@@ -360,15 +358,15 @@ $$\begin{array}{clllc}
 
 ## three arrows {.smaller}
 
-1. from $\Gamma$ is consistent to $\Gamma^+$ is *maximal consistent*
+1. from a consistent set $\Gamma$ to a *maximal consistent* set $\Sigma$
 
 ::: {.theorem}
-**Lindenbaum theorem**. Every *consistent* set $\Gamma$ is a subset of a *maximal consistent* set $\Gamma^+$.
+**Lindenbaum theorem**. If $\Gamma$ is consistent, then $\Gamma$ is a subset of a *maximal consistent* set $\Sigma$.
 :::
 
 . . . 
 
-2. from $\Gamma^+$ is *maximal consistent* to $\Gamma^+$ is *satisfiable*.
+2. from $\Sigma$ is *maximal consistent* to $\Sigma$ is *satisfiable*.
 
 :::{.theorem}
 **Henkin lemma**. Every *maximal consistent* set $\Sigma$ is satisfiable under the assignment
@@ -381,10 +379,10 @@ $$
 
 . . . 
 
-3. from $\Gamma^+$ is *satisfiable* to $\Gamma$ is *satisfiable*.
+3. from $\Sigma$ is *satisfiable* to $\Gamma$ is *satisfiable*.
 
 ::: {.theorem}
-Every subset of a satisfiable set is satisfiable.
+Subsets of satisfiable sets are satisfiable.
 :::
 
 
