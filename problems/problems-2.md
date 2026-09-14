@@ -6,7 +6,7 @@
 
    Call a formula $\varphi$ *positive* iff there are no occurrences of $\neg$ in $\varphi$.
 
-   1. Every positive formula has an odd number of symbols.
+   1. The length of a positive formula must be odd.
 
    2. Every positive formula is satisfiable.
 
@@ -22,7 +22,7 @@
 
    3. If $\Gamma \models \varphi$ and $\Gamma \not \models \psi$, then $\Gamma \models \neg (\varphi \to \psi)$.
    
-   4. If $\Gamma \models \neg (\varphi \to \psi)$, then $\Gamma \models \varphi$ and $\Gamma \not \models \psi$.
+   4. If $\Gamma \models \neg (\varphi \to \psi)$, then $\Gamma \models \varphi$ or $\Gamma \not \models \psi$.
 
 3. Satisfiability
 
