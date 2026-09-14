@@ -38,4 +38,4 @@
 
       - every *finite* subset $\Delta \subseteq \Gamma$ is satisfiable.
       
-      *Please feel free to help yourself to completeness.*
+      *Please feel free to help yourself to soundness and completeness.*
