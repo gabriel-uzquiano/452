@@ -79,8 +79,8 @@ For each set of formulas $\Gamma$ and each formula $\varphi$,
 
 $$
 \begin{array}{lll}
-\Gamma \nvdash \varphi & \Rightarrow &\Gamma \not \models \varphi\\
-\Gamma \models \varphi & \Rightarrow & \Gamma \vdash \varphi \\
+\Gamma \nvdash \varphi &  &\Gamma \not \models \varphi\\
+\ \ \Updownarrow &  &  \ \ \Updownarrow \\
 \Gamma, \neg \varphi \ \textsf{consistent} & \Rightarrow & \Gamma, \neg \varphi \ \textsf{satisfiable} \\
 \end{array}
 $$
@@ -100,7 +100,7 @@ $$
 ## consistency
 
 ::: {.definition}
-A set of formulas $\Gamma$ is *consistent* iff $\bot$ is not derivable from $\Gamma$.
+A set of formulas $\Gamma$ is *consistent* iff $\bot$ is not derivable from $\Gamma$. That is, iff $\Gamma \nvdash \varphi$.
 :::
 
 
@@ -181,7 +181,7 @@ $$
 Steps 1 and 4 rely on two key observations:
 
 1. $\Gamma \vdash \neg \varphi \to \bot$, which follows from the Deduction Theorem.
-2. $\Gamma \vdash \neg \varphi \to \neg \bot$. Since $\Gamma, \neg \varphi \vdash \top$, and $\vdash \top \to \neg \neg \bot$, $\Gamma, \neg \varphi \vdash \neg \neg \top$. Since $\neg \neg \top$ is $\neg \bot$, we infer $\Gamma, \neg \varphi \vdash \neg \bot$. 
+2. $\Gamma \vdash \neg \varphi \to \neg \bot$. Recall that $\top$ is: $p \to p$. Since $\Gamma, \neg \varphi \vdash \top$, and $\vdash \top \to \neg \neg \top$, $\Gamma, \neg \varphi \vdash \neg \neg \top$. Recall that $\bot$ is: $\neg \top$. Since $\neg \neg \top$ is $\neg \bot$, we infer $\Gamma, \neg \varphi \vdash \neg \bot$. 
 
 :::
 
@@ -220,7 +220,7 @@ $$
 $$
 
 
-($\Rightarrow$) Assume $\Gamma \vdash \varphi$. Suppose, for a reductio, that $\varphi \notin \Gamma$. By definition of *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Since $\Gamma \vdash \varphi$, $\Gamma \vdash \bot$ if $\Gamma, \varphi \vdash \bot$. So, $\Gamma$ is inconsistent. Contradiction.
+($\Rightarrow$) Assume $\Gamma \vdash \varphi$. Suppose, for a reductio, that $\varphi \notin \Gamma$. Since $\Gamma$ is maximal consistent, $\Gamma, \varphi$ is inconsistent. Since $\Gamma \vdash \varphi$, $\Gamma \vdash \bot$ if $\Gamma, \varphi \vdash \bot$. So, $\Gamma$ is inconsistent. Contradiction.
 <br/>
 <br/>
 
@@ -238,11 +238,11 @@ $$
 \end{array}
 $$
 
-($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1, $\varphi \notin \Gamma$. The justification for $\Gamma \nvdash \varphi$ is as follows. Since $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7), we have that $\Gamma \vdash \varphi$ only if $\Gamma \vdash \bot$ by \textsf{MP}.
+($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1, $\varphi \notin \Gamma$. The justification for $\Gamma \nvdash \varphi$ is as follows. Since $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7), we have that $\Gamma \vdash \varphi$ only if $\Gamma \vdash \bot$.
 <br/>
 <br/>
 
-($\Leftarrow$) Suppose $\varphi \notin \Gamma$. By *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Given 4.4. and 4.5. $\Gamma, \neg \neg \varphi$ is inconsistent. So, by 5.1., $\Gamma \vdash \neg \varphi$.
+($\Leftarrow$) Suppose $\varphi \notin \Gamma$. By *maximal consistency*, $\Gamma, \varphi$ is inconsistent. Given 4.4. and 4.5. $\Gamma, \neg \neg \varphi$ is inconsistent. So, $\Gamma \vdash \neg \varphi$.
 
 :::
 
@@ -276,8 +276,8 @@ For all sets of formulas $\Gamma$ and formula $\varphi$,
 
 $$
 \begin{array}{lll}
-\Gamma \nvdash \varphi & \Rightarrow &\Gamma \not \models \varphi\\
-\Gamma \models \varphi & \Rightarrow & \Gamma \vdash \varphi \\
+\Gamma \nvdash \varphi &  &\Gamma \not \models \varphi\\
+\ \ \Updownarrow &  &  \ \ \Updownarrow \\
 \Gamma, \neg \varphi \ \textsf{consistent} & \Rightarrow & \Gamma, \neg \varphi \ \textsf{satisfiable} \\
 \end{array}
 $$

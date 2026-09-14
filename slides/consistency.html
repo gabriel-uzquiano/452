@@ -194,8 +194,8 @@ Gabriel Uzquiano
 <p>For each set of formulas <span class="math inline">\(\Gamma\)</span> and each formula <span class="math inline">\(\varphi\)</span>,</p>
 <p><span class="math display">\[
 \begin{array}{lll}
-\Gamma \nvdash \varphi &amp; \Rightarrow &amp;\Gamma \not \models \varphi\\
-\Gamma \models \varphi &amp; \Rightarrow &amp; \Gamma \vdash \varphi \\
+\Gamma \nvdash \varphi &amp;  &amp;\Gamma \not \models \varphi\\
+\ \ \Updownarrow &amp;  &amp;  \ \ \Updownarrow \\
 \Gamma, \neg \varphi \ \textsf{consistent} &amp; \Rightarrow &amp; \Gamma, \neg \varphi \ \textsf{satisfiable} \\
 \end{array}
 \]</span></p>
@@ -211,7 +211,7 @@ Gabriel Uzquiano
 <section id="consistency" class="slide level2">
 <h2>consistency</h2>
 <div class="definition">
-<p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> iff <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>.</p>
+<p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> iff <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>. That is, iff <span class="math inline">\(\Gamma \nvdash \varphi\)</span>.</p>
 </div>
 <div style="font-size: 0.8em;">
 <div class="theorem">
@@ -277,7 +277,7 @@ Gabriel Uzquiano
 \]</span> Steps 1 and 4 rely on two key observations:</p>
 <ol type="1">
 <li><span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>, which follows from the Deduction Theorem.</li>
-<li><span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, and <span class="math inline">\(\vdash \top \to \neg \neg \bot\)</span>, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>. Since <span class="math inline">\(\neg \neg \top\)</span> is <span class="math inline">\(\neg \bot\)</span>, we infer <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>.</li>
+<li><span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>. Recall that <span class="math inline">\(\top\)</span> is: <span class="math inline">\(p \to p\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, and <span class="math inline">\(\vdash \top \to \neg \neg \top\)</span>, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>. Recall that <span class="math inline">\(\bot\)</span> is: <span class="math inline">\(\neg \top\)</span>. Since <span class="math inline">\(\neg \neg \top\)</span> is <span class="math inline">\(\neg \bot\)</span>, we infer <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>.</li>
 </ol>
 </div>
 </section>
@@ -308,7 +308,7 @@ Gabriel Uzquiano
 &amp;\Gamma \vdash \varphi &amp;  \Leftrightarrow &amp; \varphi \in \Gamma\\
 \end{array}
 \]</span></p>
-<p>(<span class="math inline">\(\Rightarrow\)</span>) Assume <span class="math inline">\(\Gamma \vdash \varphi\)</span>. Suppose, for a reductio, that <span class="math inline">\(\varphi \notin \Gamma\)</span>. By definition of <em>maximal consistency</em>, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Since <span class="math inline">\(\Gamma \vdash \varphi\)</span>, <span class="math inline">\(\Gamma \vdash \bot\)</span> if <span class="math inline">\(\Gamma, \varphi \vdash \bot\)</span>. So, <span class="math inline">\(\Gamma\)</span> is inconsistent. Contradiction. <br> <br></p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Assume <span class="math inline">\(\Gamma \vdash \varphi\)</span>. Suppose, for a reductio, that <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Since <span class="math inline">\(\Gamma \vdash \varphi\)</span>, <span class="math inline">\(\Gamma \vdash \bot\)</span> if <span class="math inline">\(\Gamma, \varphi \vdash \bot\)</span>. So, <span class="math inline">\(\Gamma\)</span> is inconsistent. Contradiction. <br> <br></p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \in \Gamma\)</span>, then there is a one-line derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
 </div>
 </section>
@@ -320,8 +320,8 @@ Gabriel Uzquiano
 &amp;\neg \varphi \in \Gamma &amp;  \Leftrightarrow &amp; \varphi \notin \Gamma\\
 \end{array}
 \]</span></p>
-<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. By 1, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, and, by 1, <span class="math inline">\(\varphi \notin \Gamma\)</span>. The justification for <span class="math inline">\(\Gamma \nvdash \varphi\)</span> is as follows. Since <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \bot)\)</span> (4.7), we have that <span class="math inline">\(\Gamma \vdash \varphi\)</span> only if <span class="math inline">\(\Gamma \vdash \bot\)</span> by . <br> <br></p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. By <em>maximal consistency</em>, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given 4.4. and 4.5. <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, by 5.1., <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. By 1, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, and, by 1, <span class="math inline">\(\varphi \notin \Gamma\)</span>. The justification for <span class="math inline">\(\Gamma \nvdash \varphi\)</span> is as follows. Since <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \bot)\)</span> (4.7), we have that <span class="math inline">\(\Gamma \vdash \varphi\)</span> only if <span class="math inline">\(\Gamma \vdash \bot\)</span>. <br> <br></p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. By <em>maximal consistency</em>, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given 4.4. and 4.5. <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -348,8 +348,8 @@ Gabriel Uzquiano
 <p>For all sets of formulas <span class="math inline">\(\Gamma\)</span> and formula <span class="math inline">\(\varphi\)</span>,</p>
 <p><span class="math display">\[
 \begin{array}{lll}
-\Gamma \nvdash \varphi &amp; \Rightarrow &amp;\Gamma \not \models \varphi\\
-\Gamma \models \varphi &amp; \Rightarrow &amp; \Gamma \vdash \varphi \\
+\Gamma \nvdash \varphi &amp;  &amp;\Gamma \not \models \varphi\\
+\ \ \Updownarrow &amp;  &amp;  \ \ \Updownarrow \\
 \Gamma, \neg \varphi \ \textsf{consistent} &amp; \Rightarrow &amp; \Gamma, \neg \varphi \ \textsf{satisfiable} \\
 \end{array}
 \]</span></p>
