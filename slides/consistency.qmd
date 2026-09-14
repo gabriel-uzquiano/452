@@ -238,9 +238,7 @@ $$
 \end{array}
 $$
 
-($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1 again, $\varphi \notin \Gamma$.
-
-The justification for $\Gamma \nvdash \varphi$ is as follows. Since $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7), we have that $\Gamma \vdash \varphi$ only if $\Gamma \vdash \bot$ by \textsf{MP}.
+($\Rightarrow$) Suppose $\neg \varphi \in \Gamma$. By 1, $\Gamma \vdash \neg \varphi$. Since $\Gamma$ is consistent, $\Gamma \nvdash \varphi$, and, by 1, $\varphi \notin \Gamma$. The justification for $\Gamma \nvdash \varphi$ is as follows. Since $\vdash \neg \varphi \to (\varphi \to \bot)$ (4.7), we have that $\Gamma \vdash \varphi$ only if $\Gamma \vdash \bot$ by \textsf{MP}.
 <br/>
 <br/>
 
