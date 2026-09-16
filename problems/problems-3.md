@@ -54,7 +54,11 @@
    Provide possible worlds models in order to justify that not every substitution instance of the relevant formula is true in every world of the relevant class of models.
 
    1. $\Diamond p \to \Box p$ / euclidean
+   
    2. $\Box (\Box p \to p)$ / symmetric
+   
    3. $\Diamond (p \to q) \to (\Diamond p \to \Diamond q)$ / reflexive
+   
    4. $\Box \Box p \to \Box p$ / transitive
+   
    5. $\Diamond p \to \Box \Diamond p$ / reflexive and transitive
