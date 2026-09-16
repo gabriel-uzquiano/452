@@ -16,7 +16,7 @@ We write $\Gamma \vdash^\ast \varphi$ to indicate that $\varphi$ is derivable fr
    $$
 
    
-1. From right to left
+1. From left to right:
 
    For all $\Gamma$ and $\varphi$:
    
@@ -24,7 +24,7 @@ We write $\Gamma \vdash^\ast \varphi$ to indicate that $\varphi$ is derivable fr
    \Gamma \vdash \varphi \ \Rightarrow \ \Gamma \vdash^\ast \varphi.
    $$
    
-2. The Deduction Theorem for $\vdash^\ast$
+2. The Deduction Theorem for $\vdash^\ast$:
 
    For all $\Gamma$ and $\varphi$ and $\psi$:
   
@@ -32,7 +32,7 @@ We write $\Gamma \vdash^\ast \varphi$ to indicate that $\varphi$ is derivable fr
    \Gamma, \varphi \vdash^\ast \psi \ \Leftrightarrow \ \Gamma \vdash^\ast \varphi \to \psi.
    $$
    
-3. Lemma
+3. Lemma:
 
     For all $\varphi$, 
       
@@ -40,7 +40,7 @@ We write $\Gamma \vdash^\ast \varphi$ to indicate that $\varphi$ is derivable fr
     \vdash^\ast  \varphi \to (\neg \varphi \to \bot)
     $$
    
-4. Lemma
+4. Lemma:
 
     For all $\varphi$, 
     
@@ -49,7 +49,7 @@ We write $\Gamma \vdash^\ast \varphi$ to indicate that $\varphi$ is derivable fr
    $$
    
    
-5. From left to right
+5. From right to left:
 
     For all $\Gamma$ and $\varphi$:
    
