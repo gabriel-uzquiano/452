@@ -1,0 +1,283 @@
+---
+title: "completeness"
+subtitle: "PHIL 452 · Modal Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, theme.scss, examples.scss, mc.scss]
+    filters: [mc.lua]
+    include-after-body: mc-scripts.html
+    css: fonts.css
+    slide-number: c/t
+    chalkboard: true
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-color: "#ffffff"
+    width: 1280
+    height: 720
+---
+
+# completeness {.divider}
+
+
+::: {style="border: 2px solid #7f8c8d; background: #f8f9fa; padding: 0.5em 1em; border-radius: 6px; margin-top: 1.2em;"}
+For all sets of formulas $\Gamma$ and formula $\varphi$, 
+
+$$
+\begin{array}{lll}
+\Gamma \nvdash \varphi &  &\Gamma \not \models \varphi\\
+\ \ \Updownarrow &  & \ \ \Updownarrow \\
+\Gamma, \neg \varphi \ \textsf{consistent} & \Rightarrow & \Gamma, \neg \varphi \ \textsf{satisfiable} \\
+\end{array}
+$$
+
+For all sets of formulas $\Gamma$,
+
+$$
+\begin{array}{lll}
+\Gamma  \ \textsf{consistent} & \Rightarrow & \Gamma \ \textsf{satisfiable} \\
+\end{array}
+$$
+:::
+
+
+## the plan 
+
+Given a consistent set $\Gamma$, we will explain how to expand it into a *maximal consistent* set $\Sigma$.
+
+
+<br/>
+<br/>
+
+
+::: {.r-stack style="justify-content:center; text-align:center;"}
+
+::: {.fragment .fade-out data-fragment-index=1}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \phantom{\Downarrow} & & & & \phantom{\Uparrow}\\
+ \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent}} & & \phantom{\Rightarrow} & & \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}}\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=1}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \Downarrow & & & & \phantom{\Uparrow}\\
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \phantom{\Rightarrow} & & \phantom{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}}\\\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in-then-out data-fragment-index=2}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \phantom{\Gamma \ \text{satisfiable}}\\
+ \Downarrow & & & & \phantom{\Uparrow}\\
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \Rightarrow & & \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}\\
+\end{array}$$
+:::
+
+::: {.fragment .fade-in data-fragment-index=3}
+$$\begin{array}{clllc}
+ \Gamma \ \text{consistent} & & & & \Gamma \ \text{satisfiable}\\
+ \Downarrow & & & & \Uparrow\\
+ \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{maximal consistent} & & \Rightarrow & & \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \text{satisfiable}
+\end{array}$$
+:::
+
+:::
+
+
+
+# three arrows {.divider}
+
+## left arrow: Lindenbaum {.smaller}
+
+$$\begin{array}{clllc}
+ \color{#7a003c}{\Gamma  \ \text{consistent}} & & & &  \Gamma \ \text{satisfiable}\\
+ \color{#7a003c}{\Downarrow} & & & & \Uparrow \\
+ \color{#7a003c}{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \ \text{maximal consistent}} & & \Rightarrow & &   \Gamma \subseteq \Sigma \ \text{and} \ \Sigma \  \ \text{satisfiable}\\ 
+\end{array}$$
+
+. . .
+
+::: {.theorem}
+**Lindenbaum theorem**. If $\Gamma$ is *consistent*, then $\Gamma$ is a subset of a *maximal consistent* set $\Sigma$.
+:::
+
+. . .
+
+::: {.proof}
+Enumerate all the formulas of propositional logic 
+
+$$
+\varphi_0, \varphi_1, \varphi_2, \dots
+$$ 
+and build a chain
+
+$$
+\Gamma = \Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots
+$$
+where $\Sigma_{0}$ is $\Gamma$ and $\Sigma_{n+1}$ is $\Sigma_n, \varphi_n$ if *consistent*, and $\Sigma_n$ otherwise. 
+
+Let $\Sigma = \bigcup_n \Sigma_n$. Notice that the identity of $\Sigma$ is very sensitive to the details of the enumeration. 
+:::
+
+## Lindenbaum Theorem {.smaller}
+
+Let $\varphi_0, \varphi_1, \dots$ be an *enumeration* of the formulas of propositional logic.
+
+Define a chain $\Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots$ by the recursion:
+
+$$\begin{array}{lll}
+\Sigma_0 &  = &  \Gamma \\
+\Sigma_{n+1} & = & \begin{cases} \Sigma_n, \varphi_n & \text{if consistent}\\ \Sigma_n &  \text{otherwise} \end{cases}
+\end{array}$$
+
+::: {.theorem}
+1. $\Gamma \subseteq \Sigma$
+2. For each natural number $n$ $\Sigma_n$ is consistent.
+3. For each natural number $n$, for every $m < n$, $\Sigma_m \subseteq \Sigma_n$.
+4. For every finite subset $\Delta \subseteq \Sigma$, there is some natural number $n$ such that $\Delta \subseteq \Sigma_n$.
+5. $\Sigma$ is consistent.
+6. $\Sigma$ is maximal consistent.
+:::
+
+
+## Lindenbaum Lemma {.smaller}
+
+::: {.theorem}
+2. For each natural number $n$ $\Sigma_n$ is consistent.
+:::
+
+::: {.proof}
+Induction on $n$. 
+
+- *$\Sigma_0$ is consistent*. $\Sigma_0$ is just $\Gamma$, which we have assumed to be consistent.
+
+- *If $\Sigma_n$ is consistent, then so is $\Sigma_{n+1}$*. Suppose $\Sigma_n$ is consistent. Then $\Sigma_{n+1}$ is either $\Sigma_n, \varphi_n$ if consistent, or $\Sigma_n$, otherwise. Either way, $\Sigma_{n+1}$ is consistent.
+:::
+
+::: {.theorem}
+3. For each natural number $n$, for every $m < n$, $\Sigma_m \subseteq \Sigma_n$.
+::: 
+
+::: {.proof}
+Induction on $n$.
+
+- *for every $m < 0$, $\Sigma_n \subseteq \Sigma_0$*. Trivial.
+
+- *If for every $m < n$, $\Sigma_m \subseteq \Sigma_n$, then for every $m < n +1$, $\Sigma_m \subseteq \Sigma_{n+1}$*. By construction, $\Sigma_n \subseteq \Sigma_{n+1}$. So, if $m \leq n$, then $\Sigma_m \subseteq \Sigma_n \subseteq \Sigma_{n+1}$.
+:::
+
+## Lindenbaum Lemma {.smaller}
+
+::: {.theorem}
+4. For every finite subset $\Delta \subseteq \Sigma$, there is some natural number $n$ such that $\Delta \subseteq \Sigma_n$.
+:::
+
+::: {.proof}
+Given a finite subset $\Delta$ of $\Sigma$, let $\varphi_n$ be the member of $\Delta$ of highest index. Then $\Delta \subseteq \Sigma_{n+1}$.
+:::
+
+::: {.theorem}
+5. $\Sigma$ is consistent.
+:::
+
+::: {.proof}
+For a reductio, suppose $\Sigma \vdash \bot$. Then there is a finite derivation of $\bot$ from $\Sigma$. So, there is a derivation of $\bot$ from a *finite* subset $\Delta$ of $\Sigma$, making $\Delta$ inconsistent. But we showed that *every* finite subset of $\Sigma$ is consistent.
+:::
+
+::: {.theorem}
+6. $\Sigma$ is maximal consistent.
+:::
+
+::: {.proof}
+If $\varphi$ is a formula, then it has an index in the enumeration, namely, $\varphi$ is $\varphi_n$. So, if $\Sigma_n, \varphi_n$ is consistent, then $\varphi \in \Sigma_{n+1} \subseteq \Sigma$.
+:::
+
+## middle arrow: from maximal consistency to satisfiability {.smaller}
+
+$$\begin{array}{clllc}
+ \Gamma  \ \text{consistent} & & & &  \Gamma \ \text{satisfiable}\\
+ \Downarrow & & & & \Uparrow \\
+ \color{#7a003c}{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \ \text{maximal consistent}} & & \color{#7a003c}{\Rightarrow} & &   \color{#7a003c}{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \ \text{satisfiable}}\\ 
+\end{array}$$
+
+. . .
+
+::: {.theorem}
+**Henkin lemma.** If $\Sigma$ is *maximal consistent*, then $\Sigma$ is *satisfiable*.
+:::
+
+. . . 
+
+::: {.proof}
+
+Given a maximally consistent $\Sigma$, define the *canonical* assignment:
+
+$$
+\begin{array}{lll}
+v_\Sigma(p) = 1 & \text{iff } & p \in \Sigma
+\end{array}
+$$
+We use an induction on the complexity of formulas to prove:
+$$
+\begin{array}{lll}
+V_\Sigma(\varphi) = 1 & \text{iff } & \varphi \in \Sigma
+\end{array}
+$$
+:::
+
+## Henkin Lemma {.smaller}
+
+
+::: {.proof}
+Induction on the complexity of formulas:
+
+$$
+\begin{array}{lllll}
+\text{Base case}: & & & & \\
+&V_\Sigma(p) = 1 & \text{iff } & v_\Sigma(p) = 1 & \\
+& & \text{iff } & \varphi \in \Sigma & \textsf{definition of} \ v_\Sigma \\[8pt]
+\text{Induction step for }  \neg\textbf{:} & & & & \\
+& V_\Sigma(\neg \varphi) = 1 & \text{iff } & V_\Sigma(\varphi) = 0 & \textsf{definition of} \ V_\Sigma \\
+& & \text{iff } & \varphi \notin \Sigma & \textsf{inductive hypothesis} \\
+& & \text{iff } & \neg \varphi \in \Sigma & \textsf{maximal consistency} \\[8pt]
+\text{Induction step for } \to\textbf{:} & & & & \\
+& V_\Sigma(\varphi \to \psi) = 1 & \text{iff } & V_\Sigma(\varphi) = 0 \ \text{or} \ V_\Sigma(\psi) = 1 & \textsf{definition of} \ V_\Sigma \\
+& & \text{iff } & \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma & \textsf{inductive hypothesis} \\
+& & \text{iff } & \varphi \to \psi \in \Sigma & \textsf{maximal consistency} \\
+\end{array}
+$$
+:::
+
+
+
+## right arrow: monotonicity
+
+$$\begin{array}{clllc}
+ \Gamma  \ \text{consistent} & & & & \color{#7a003c}{\Gamma \ \text{satisfiable}}\\
+ \Downarrow & & & & \color{#7a003c}{\Uparrow} \\
+\Gamma \subseteq \Sigma \ \text{and} \ \Sigma  \ \text{maximal consistent} & &  \Rightarrow & &   \color{#7a003c}{\Gamma \subseteq \Sigma \ \text{and} \ \Sigma \ \text{satisfiable}}\\ 
+\end{array}$$
+
+. . .
+
+If a valuation $V_\Sigma$ satisfies $\Sigma$ and $\Gamma$ is a *subset* of $\Sigma$, then $V$ satisfies $\Gamma$.
+
+
+# summary {.divider}
+
+## the proof
+
+$$\begin{array}{clllc}
+ \Gamma  \ \text{consistent} & & & & \Gamma \ \text{satisfiable}\\
+  \Downarrow \ \text{\scriptsize Lindenbaum}  & & & & \Uparrow \ \text{\scriptsize monotonicity} \\
+  \Gamma \subseteq \Sigma \ \text{and} \ \Sigma  \ \text{maximal consistent}) & & \underset{\text{\scriptsize Henkin lemma}}{\Rightarrow} & &   \Gamma \subseteq \Sigma \ \text{and} \ \Sigma   \ \text{satisfiable}\\ 
+\end{array}$$
+
+. . .
+
+::: {.theorem}
+**Completeness.** If a set $\Gamma$ is consistent, then $\Gamma$ is satisfiable. 
+:::
