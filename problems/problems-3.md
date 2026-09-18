@@ -1,4 +1,4 @@
-### Problem Set 3
+### problem set 3 (axioms and models)
 
 
 1. **Axioms for propositional logic**
@@ -30,18 +30,13 @@
       $$
       \Gamma, \varphi \vdash^\ast \psi \ \Leftrightarrow \ \Gamma \vdash^\ast \varphi \to \psi.
       $$
+      
+      
+   3. For all $\varphi$, $\vdash^\ast \varphi \to (\neg \varphi \to \bot)$.
 
-   3. For all $\varphi$,
+     
+   4. For all $\varphi$, $\vdash^\ast (\neg \varphi \to \varphi) \to \varphi$.
 
-      $$
-      \vdash^\ast \varphi \to (\neg \varphi \to \bot)
-      $$
-
-   4. For all $\varphi$,
-
-      $$
-      \vdash^\ast (\neg \varphi \to \varphi) \to \varphi
-      $$
 
    5. For all $\Gamma$ and $\varphi$:
 
