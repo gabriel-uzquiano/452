@@ -225,7 +225,7 @@ Gabriel Uzquiano
 \]</span> and build a chain</p>
 <p><span class="math display">\[
 \Gamma = \Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots
-\]</span> where <span class="math inline">\(\Sigma_{0}\)</span> is <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if <em>consistent</em>, and <span class="math inline">\(\Sigma_n\)</span> otherwise.</p>
+\]</span> where <span class="math inline">\(\Sigma_{0}\)</span> is <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if that set is <em>consistent</em>, and <span class="math inline">\(\Sigma_n\)</span> otherwise.</p>
 <p>Let <span class="math inline">\(\Sigma = \bigcup_n \Sigma_n\)</span>. Notice that the identity of <span class="math inline">\(\Sigma\)</span> is very sensitive to the details of the enumeration.</p>
 </div>
 </div>
@@ -259,8 +259,8 @@ Gabriel Uzquiano
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Induction on <span class="math inline">\(n\)</span>.</p>
 <ul>
-<li><p><em><span class="math inline">\(\Sigma_0\)</span> is consistent</em>. <span class="math inline">\(\Sigma_0\)</span> is just <span class="math inline">\(\Gamma\)</span>, which we have assumed to be consistent.</p></li>
-<li><p><em>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then so is <span class="math inline">\(\Sigma_{n+1}\)</span></em>. Suppose <span class="math inline">\(\Sigma_n\)</span> is consistent. Then <span class="math inline">\(\Sigma_{n+1}\)</span> is either <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or <span class="math inline">\(\Sigma_n\)</span>, otherwise. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
+<li><p><em>Base Case</em>: <em><span class="math inline">\(\Sigma_0\)</span> is consistent</em>. <span class="math inline">\(\Sigma_0\)</span> is just <span class="math inline">\(\Gamma\)</span>, which we have assumed to be consistent.</p></li>
+<li><p><em>Inductive Step</em>: <em>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then so is <span class="math inline">\(\Sigma_{n+1}\)</span></em>. Suppose <span class="math inline">\(\Sigma_n\)</span> is consistent. Then <span class="math inline">\(\Sigma_{n+1}\)</span> is either <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or <span class="math inline">\(\Sigma_n\)</span>, otherwise. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
 </ul>
 </div>
 <div class="theorem">
@@ -271,8 +271,8 @@ Gabriel Uzquiano
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Induction on <span class="math inline">\(n\)</span>.</p>
 <ul>
-<li><p><em>for every <span class="math inline">\(m &lt; 0\)</span>, <span class="math inline">\(\Sigma_n \subseteq \Sigma_0\)</span></em>. Trivial.</p></li>
-<li><p><em>If for every <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_n\)</span>, then for every <span class="math inline">\(m &lt; n +1\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_{n+1}\)</span></em>. By construction, <span class="math inline">\(\Sigma_n \subseteq \Sigma_{n+1}\)</span>. So, if <span class="math inline">\(m \leq n\)</span>, then <span class="math inline">\(\Sigma_m \subseteq \Sigma_n \subseteq \Sigma_{n+1}\)</span>.</p></li>
+<li><p><em>Base Case</em>: <em>for every <span class="math inline">\(m &lt; 0\)</span>, <span class="math inline">\(\Sigma_n \subseteq \Sigma_0\)</span></em>. Trivial.</p></li>
+<li><p><em>Inductive Step</em>: <em>If for every <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_n\)</span>, then for every <span class="math inline">\(m &lt; n +1\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_{n+1}\)</span></em>. By construction, <span class="math inline">\(\Sigma_n \subseteq \Sigma_{n+1}\)</span>. So, if <span class="math inline">\(m \leq n\)</span>, then <span class="math inline">\(\Sigma_m \subseteq \Sigma_n \subseteq \Sigma_{n+1}\)</span>.</p></li>
 </ul>
 </div>
 </section>
