@@ -212,6 +212,28 @@ p_i[\psi_1/p_1, \dots, \psi_n/p_n] &amp; := &amp; \psi_i \\
 \end{array}
 \]</span></p>
 </div>
+<div class="fragment">
+<div style="height: 2rem;">
+
+</div>
+<div style="font-size: 0.8em;">
+<div class="mc-exercise" data-correct="[0]">
+<div class="mc-question">Unpack <span class="math inline">◇□<em>p</em>[¬<em>q</em>/<em>p</em>]</span>:</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_1" value="0"><span><span class="math inline">◇□¬<em>q</em></span></span></label><label class="mc-option"><input type="radio" name="ex_1" value="1"><span><span class="math inline">◇□<em>q</em></span></span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> <span class="math inline">◇□¬<em>q</em></span></div>
+</div>
+<p>. . .</p>
+<div class="mc-exercise" data-correct="[1]">
+<div class="mc-question">Unpack <span class="math inline">(<em>p</em> → □(<em>q</em> → □¬<em>p</em>))[¬<em>q</em>/<em>p</em>, ¬<em>p</em>/<em>q</em>]</span>:</div>
+<div class="mc-options"><label class="mc-option"><input type="radio" name="ex_2" value="0"><span><span class="math inline">(¬<em>p</em> → □(¬<em>q</em> → □¬¬<em>p</em>))</span></span></label><label class="mc-option"><input type="radio" name="ex_2" value="1"><span><span class="math inline">(¬<em>q</em> → □(¬<em>p</em> → □¬¬<em>q</em>))</span></span></label></div>
+<div class="mc-controls"><button class="btn-check" onclick="checkMC(this)">Check</button><button class="btn-reveal" onclick="revealMC(this)">Show answer</button></div>
+<div class="mc-feedback" hidden=""></div>
+<div class="mc-answer" hidden=""><strong>Answer:</strong> <span class="math inline">(¬<em>q</em> → □(¬<em>p</em> → □¬¬<em>q</em>))</span><div class="mc-explanation">It is the latter. The former substitutes <span class="math inline">¬<em>p</em></span> for <span class="math inline"><em>p</em></span> and <span class="math inline">¬<em>q</em></span> for <span class="math inline"><em>q</em></span>.</div></div>
+</div>
+</div>
+</div>
 </section></section>
 <section id="possible-worlds-semantics" class="title-slide slide level1 divider center">
 <h1>possible worlds semantics</h1>
@@ -233,25 +255,17 @@ p_i[\psi_1/p_1, \dots, \psi_n/p_n] &amp; := &amp; \psi_i \\
 <div style="height: 100px;">
 
 </div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(Ruv\)</span> is sometimes written <span class="math inline">\(uRv\)</span> and read: “<span class="math inline">\(v\)</span> is accessible from <span class="math inline">\(u\)</span>.” To be accessible from <span class="math inline">\(u\)</span> is to be possible relative to <span class="math inline">\(u\)</span>.</p>
-<p><span class="math inline">\(V(p)\)</span> is the set of worlds at which <span class="math inline">\(p\)</span> is true. So, <span class="math inline">\(w \in V(p)\)</span> is sometimes read: “<span class="math inline">\(p\)</span> is true at <span class="math inline">\(w\)</span>.”</p>
-</div>
-</div>
-</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(Ruv\)</span> is sometimes written <span class="math inline">\(uRv\)</span> and read: “<span class="math inline">\(v\)</span> is <strong>accessible from</strong> <span class="math inline">\(u\)</span>.”</p>
+<p>To be accessible from <span class="math inline">\(u\)</span> is to be possible relative to <span class="math inline">\(u\)</span>.</p></li>
+<li class="fragment"><p><span class="math inline">\(w \in V(p)\)</span> is sometimes read: “<span class="math inline">\(p\)</span> is <strong>true at</strong> <span class="math inline">\(w\)</span>.”</p>
+<p><span class="math inline">\(V(p)\)</span> is the set of worlds at which <span class="math inline">\(p\)</span> is true.</p></li>
+</ul>
 </div>
 </section>
 <section id="graphs-for-possible-worlds-models" class="slide level2 smaller">
 <h2>graphs for possible worlds models</h2>
-<p>The directed graph below depicts a possible worlds model <span class="math inline">\((W, R, V)\)</span> where:</p>
+<p>We will use the directed graph to depict a possible worlds model <span class="math inline">\((W, R, V)\)</span> where:</p>
 <div class="columns">
 <div class="column" style="width:33%;">
 <ul>
@@ -266,7 +280,7 @@ p_i[\psi_1/p_1, \dots, \psi_n/p_n] &amp; := &amp; \psi_i \\
 </div><div class="column" style="width:67%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="350"></p>
+<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="400"></p>
 </figure>
 </div>
 </div></div>
@@ -280,69 +294,65 @@ p_i[\psi_1/p_1, \dots, \psi_n/p_n] &amp; := &amp; \psi_i \\
 M, w \Vdash p &amp; \text{iff} &amp; w \in V(p)\\
 M, w \Vdash \neg \varphi &amp; \text{iff} &amp; M, w \nVdash \varphi\\
 M, w \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
-M, w \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
+M, w \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi
 \end{array}
-\]</span></p>
+\]</span> Note that <span class="math inline">\(\Box \varphi\)</span> is true at <span class="math inline">\(w\)</span> iff <span class="math inline">\(\varphi\)</span> is true at <strong>every accessible world</strong> from <span class="math inline">\(u\)</span>.</p>
 <p>Given the defintion of <span class="math inline">\(\Diamond\)</span> in terms of <span class="math inline">\(\Box\)</span>, we find that <span class="math display">\[
 \begin{array}{lll}
 M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
 \end{array}
 \]</span></p>
+<p>Note that <span class="math inline">\(\Diamond \varphi\)</span> is true at <span class="math inline">\(w\)</span> iff <span class="math inline">\(\varphi\)</span> is true at <strong>some accessible world</strong> from <span class="math inline">\(u\)</span>.</p>
 </div>
 </section>
 <section id="example" class="slide level2">
 <h2>example</h2>
-<div class="example-panel">
 <p>Evaluate each formula at each possible world in the model:</p>
 <div class="columns">
 <div class="column" style="width:33%;">
 <ul>
 <li><p><span class="math inline">\(p \to (p \to q)\)</span></p>
-<p>True at <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span></p></li>
+<p>True at <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span>. Why?</p></li>
 <li><p><span class="math inline">\(\Box p\)</span></p>
-<p>True at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span></p></li>
+<p>True at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>. Why?</p></li>
 <li><p><span class="math inline">\(\Diamond \Box p\)</span></p>
-<p>True at <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span><br>
+<p>True at <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span>. Why?<br>
 </p></li>
 </ul>
 </div><div class="column" style="width:67%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="300"></p>
+<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="350"></p>
 </figure>
 </div>
 </div></div>
-</div>
 </section>
 <section id="truth-in-a-model" class="slide level2">
 <h2>truth in a model</h2>
 <div class="definition">
-<p>A formula <span class="math inline">\(\varphi\)</span> to be <strong>true in a possible worlds model</strong> <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(w\in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span></p>
+<p>A formula <span class="math inline">\(\varphi\)</span> to be <strong>true in</strong> a possible worlds model <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(w\in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span></p>
 </div>
 </section>
 <section id="example-1" class="slide level2">
 <h2>example</h2>
-<div class="example-panel">
 <p>Evaluate each formula in the model:</p>
 <div class="columns">
 <div class="column" style="width:33%;">
 <ul>
 <li><p><span class="math inline">\(\neg p \to \Diamond q\)</span></p>
-<p>True in the model.</p></li>
+<p>True in the model. Why?</p></li>
 <li><p><span class="math inline">\(p \to \Box p\)</span></p>
-<p>True in the model.</p></li>
+<p>True in the model. Why?</p></li>
 <li><p><span class="math inline">\(\Box \Diamond p\)</span></p>
-<p>Not true in the model<br>
-</p></li>
+<p>Not true in the model. Why?</p></li>
 </ul>
 </div><div class="column" style="width:67%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="300"></p>
+<p><img data-src="4d1.png" class="quarto-figure quarto-figure-center" width="350"></p>
 </figure>
 </div>
 </div></div>
-</div>
 </section></section>
 <section>
 <section id="frames" class="title-slide slide level1 center">
@@ -360,7 +370,7 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <h2>validity</h2>
 <div class="definition">
 <p>A formula <span class="math inline">\(\varphi\)</span> is <strong>valid in a frame</strong> <span class="math inline">\((W, R)\)</span>, written <span class="math inline">\((W, R) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((W, R, V)\)</span> based on the frame <span class="math inline">\((W, R)\)</span>.</p>
-<p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
+<p>That is, the formula remains true across models based on that frame: it is true no matter what sets of worlds we assign to the propositional variables.</p>
 <p>A formula <span class="math inline">\(\varphi\)</span> is <strong>valid</strong>, written <span class="math inline">\(\models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is valid in every frame <span class="math inline">\((W, R)\)</span>.</p>
 </div>
 </section>
@@ -371,14 +381,18 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <div class="column" style="width:50%;">
 <p>Two <strong>valid</strong> formulas:</p>
 <ol type="1">
-<li><p><span class="math inline">\(\Diamond (p \vee q) \leftrightarrow (\Diamond p \vee \Diamond q)\)</span></p></li>
-<li><p><span class="math inline">\(\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)\)</span></p></li>
+<li><p><span class="math inline">\(\Diamond (p \vee q) \leftrightarrow (\Diamond p \vee \Diamond q)\)</span></p>
+<p><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> <em>can</em> be the case iff <span class="math inline">\(p\)</span> <em>can</em> be the case or <span class="math inline">\(q\)</span> <em>can</em> be the case.<br><br></p></li>
+<li><p><span class="math inline">\(\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)\)</span></p>
+<p><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> <em>must</em> be the case iff <span class="math inline">\(p\)</span> <em>must</em> be the case or <span class="math inline">\(q\)</span> <em>must</em> be the case.</p></li>
 </ol>
 </div><div class="column" style="width:50%;">
 <p>Two <strong>invalid</strong> formulas:</p>
 <ol start="3" type="1">
-<li><p><span class="math inline">\(\Diamond (p \wedge q) \leftrightarrow (\Diamond p \wedge \Diamond q)\)</span></p></li>
-<li><p><span class="math inline">\(\Box (p \vee q) \leftrightarrow (\Box p \vee \Box q)\)</span></p></li>
+<li><p><span class="math inline">\(\Diamond (p \wedge q) \leftrightarrow (\Diamond p \wedge \Diamond q)\)</span></p>
+<p>For some <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> <em>can</em> each be the case even if <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> <em>cannot</em> jointly be the case.</p></li>
+<li><p><span class="math inline">\(\Box (p \vee q) \leftrightarrow (\Box p \vee \Box q)\)</span></p>
+<p>For some <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> <em>must</em> be the case even if none of them <em>must</em> be the case.</p></li>
 </ol>
 </div></div>
 </div>
@@ -388,15 +402,21 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <div class="definition">
 <p>A formula <span class="math inline">\(\varphi\)</span> is <strong>valid in a class of frames</strong> <span class="math inline">\(\mathcal{C}\)</span>, written <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is valid in every frame <span class="math inline">\((W, R)\)</span> in the class <span class="math inline">\(\mathcal{C}\)</span>.</p>
 </div>
+<div style="height: 100px;">
+
+</div>
 <p>For example:</p>
+<div style="height: 100px;">
+
+</div>
 <ul>
-<li><p><span class="math inline">\(\Box p \to p\)</span> is valid in the class of <em>reflexive</em> frames.</p></li>
-<li><p><span class="math inline">\(p \to \Box \Diamond p\)</span> is valid in the class of <em>symmetric</em> frames.</p></li>
-<li><p><span class="math inline">\(\Box p \to \Box \Box p\)</span> is valid in the class of <em>transitive</em> frames.</p></li>
+<li class="fragment"><p><span class="math inline">\(\Box p \to p\)</span> is valid in the class of <em>reflexive</em> frames.</p></li>
+<li class="fragment"><p><span class="math inline">\(p \to \Box \Diamond p\)</span> is valid in the class of <em>symmetric</em> frames.</p></li>
+<li class="fragment"><p><span class="math inline">\(\Box p \to \Box \Box p\)</span> is valid in the class of <em>transitive</em> frames.</p></li>
 </ul>
 </section>
-<section id="example-3" class="slide level2">
-<h2>example</h2>
+<section id="table" class="slide level2">
+<h2>table</h2>
 <div class="example-panel">
 <table class="caption-top">
 <colgroup>
