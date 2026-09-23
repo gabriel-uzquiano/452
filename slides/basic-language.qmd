@@ -99,6 +99,36 @@ p_i[\psi_1/p_1, \dots, \psi_n/p_n] & := & \psi_i \\
  $$
 :::
 
+
+. . .
+
+::: {style="height: 2rem;"}
+:::
+
+::: {style="font-size: 0.8em;"}
+
+::: {.mc correct="1"} 
+Unpack $\Diamond \Box p[\neg q/p]$:
+
+- $\Diamond \Box \neg q$
+- $\Diamond \Box q$
+
+
+:::
+
+. . .
+
+::: {.mc correct="2"} 
+Unpack $(p \to \Box (q \to \Box \neg p))[\neg q/p, \neg p/q]$:
+
+- $(\neg p \to \Box (\neg q \to \Box \neg \neg p))$
+- $(\neg q \to \Box (\neg p \to \Box \neg \neg q))$
+
+Explanation: It is the latter. The former substitutes $\neg p$ for $p$ and $\neg q$ for $q$.
+:::
+
+:::
+
 # possible worlds semantics {.divider}
 
 We develop a possible worlds semantics for $\mathcal{L}^\Box$.
@@ -120,16 +150,19 @@ A **possible worlds model** $M$ for $\mathcal{L}^\Box$ is a structure $(W, R, V)
 ::: {style="height: 100px;"}
 :::
 
+::: {.incremental}
+- $Ruv$ is sometimes written $uRv$ and read: "$v$ is **accessible from** $u$." 
 
-::: {.callout-note}
-$Ruv$ is sometimes written $uRv$ and read: "$v$ is accessible from $u$." To be accessible from $u$ is to be possible relative to $u$.
+    To be accessible from $u$ is to be possible relative to $u$.
 
-$V(p)$ is the set of worlds at which $p$ is true. So, $w \in V(p)$ is sometimes read: "$p$ is true at $w$."
+-  $w \in V(p)$ is sometimes read: "$p$ is **true at** $w$."
+
+    $V(p)$ is the set of worlds at which $p$ is true.
 :::
 
 ## graphs for possible worlds models {.smaller}
 
-The directed graph below depicts a possible worlds model $(W, R, V)$ where:
+We will use the directed graph to depict a possible worlds model $(W, R, V)$ where:
 
 ::: {.columns}
 
@@ -146,7 +179,7 @@ The directed graph below depicts a possible worlds model $(W, R, V)$ where:
 
 ::: {.column width="67%"}
 
-![](4d1.png){width="350px" fig-align="center"}
+![](4d1.png){width="400px" fig-align="center"}
 :::
 :::
 
@@ -162,20 +195,23 @@ $$
 M, w \Vdash p & \text{iff} & w \in V(p)\\
 M, w \Vdash \neg \varphi & \text{iff} & M, w \nVdash \varphi\\
 M, w \Vdash (\varphi \to \psi) & \text{iff} & M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
-M, w \Vdash \Box \varphi & \text{iff} & \text{for every} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
+M, w \Vdash \Box \varphi & \text{iff} & \text{for every} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi
 \end{array}
 $$
+Note that $\Box \varphi$ is true at $w$ iff $\varphi$ is true at **every accessible world** from $u$.
 
 Given the defintion of $\Diamond$ in terms of $\Box$, we find that $$
 \begin{array}{lll}
 M, w \Vdash \Diamond \varphi & \text{iff} & \text{for some} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
 \end{array}
 $$
+
+Note that $\Diamond \varphi$ is true at $w$ iff $\varphi$ is true at **some accessible world** from $u$.
 :::
 
 ## example
 
-::: {.example-panel}
+
 Evaluate each formula at each possible world in the model:
 
 
@@ -184,21 +220,21 @@ Evaluate each formula at each possible world in the model:
 ::: {.column width="33%"}
 - $p \to (p \to q)$
 
-    True at $w_1$, $w_2$ and $w_3$
+    True at $w_1$, $w_2$ and $w_3$. Why?
 
 - $\Box p$
     
-    True at $w_3$ and $w_4$
+    True at $w_3$ and $w_4$. Why?
     
 - $\Diamond \Box p$
 
-    True at $w_1$, $w_2$ and $w_3$    
+    True at $w_1$, $w_2$ and $w_3$. Why?   
 ::: 
 
 ::: {.column width="67%"}
 
-![](4d1.png){width="300px" fig-align="center"}
-:::
+![](4d1.png){width="350px" fig-align="center"}
+
 
 :::
 :::
@@ -206,12 +242,12 @@ Evaluate each formula at each possible world in the model:
 ## truth in a model
 
 ::: {.definition}
-A formula $\varphi$ to be **true in a possible worlds model** $M$, which we write $M \Vdash \varphi$ if, and only if, for all $w\in W$, $M, w \Vdash \varphi$
+A formula $\varphi$ to be **true in** a possible worlds model $M$, which we write $M \Vdash \varphi$ if, and only if, for all $w\in W$, $M, w \Vdash \varphi$
 :::
 
 ## example
 
-::: {.example-panel}
+
 Evaluate each formula in the model:
 
 
@@ -220,24 +256,24 @@ Evaluate each formula in the model:
 ::: {.column width="33%"}
 - $\neg p \to \Diamond q$
 
-    True in the model.
+    True in the model. Why?
 
 - $p \to \Box p$
     
-    True in the model.
+    True in the model. Why?
 
 - $\Box \Diamond p$
 
-    Not true in the model    
+    Not true in the model. Why? 
 ::: 
 
 ::: {.column width="67%"}
-![](4d1.png){width="300px" fig-align="center"}
+![](4d1.png){width="350px" fig-align="center"}
 :::
 
 
 :::
-:::
+
 
 
 # frames
@@ -257,7 +293,7 @@ A model $M$ is **based on a frame** $F = (W, R)$ if, and only if, there is an as
 ::: {.definition}
 A formula $\varphi$ is **valid in a frame** $(W, R)$, written $(W, R) \models \varphi$, if, and only if, $\varphi$ is true in every model $(W, R, V)$ based on the frame $(W, R)$.
 
-That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.
+That is, the formula remains true across models based on that frame: it is true no matter what sets of worlds we assign to the propositional variables.
 
 A formula $\varphi$ is **valid**, written $\models \varphi$, if, and only if, $\varphi$ is valid in every frame $(W, R)$.
 :::
@@ -271,14 +307,22 @@ Two **valid** formulas:
 
 1. $\Diamond (p \vee q) \leftrightarrow (\Diamond p \vee \Diamond q)$
 
+    $p$ or $q$ *can* be the case iff $p$ *can* be the case or $q$ *can* be the case.<br/><br/>
+
 2. $\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)$
+
+    $p$ and $q$ *must* be the case iff $p$ *must* be the case or $q$ *must* be the case.
 :::
 ::: {.column width="50%"}
 Two **invalid** formulas:
 
 3. $\Diamond (p \wedge q) \leftrightarrow (\Diamond p \wedge \Diamond q)$
 
+    For some $p$ and $q$, $p$ and $q$ *can* each be the case even if $p$ and $q$ *cannot* jointly be the case.
+
 4. $\Box (p \vee q) \leftrightarrow (\Box p \vee \Box q)$
+
+   For some $p$ and $q$, $p$ or $q$ *must* be the case even if none of them *must* be the case.
 :::
 :::
 :::
@@ -290,17 +334,26 @@ Two **invalid** formulas:
 ::: {.definition}
 A formula $\varphi$ is **valid in a class of frames** $\mathcal{C}$, written $\models_{\mathcal{C}} \varphi$ if, and only if, $\varphi$ is valid in every frame $(W, R)$ in the class $\mathcal{C}$.
 :::
+
+::: {style="height: 100px;"}
+:::
+
+
 For example:
 
+::: {style="height: 100px;"}
+:::
+
+::: {.incremental}
 - $\Box p \to p$ is valid in the class of *reflexive* frames.
 
 - $p \to \Box \Diamond p$ is valid in the class of *symmetric* frames.
 
 - $\Box p \to \Box \Box p$ is valid in the class of *transitive* frames.
+:::
 
 
-
-## example
+## table
 
 ::: {.example-panel}
 
