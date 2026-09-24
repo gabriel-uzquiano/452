@@ -8,7 +8,7 @@
 
    1. The length of a positive formula must be odd.
 
-      ::: {.proof}
+     
       Use an induction on the complexity of formulas to argue that every formula $\varphi$ satisfies the condition:
 
       *if $\varphi$ is positive, then $\varphi$ has an odd number of symbols.*
@@ -18,11 +18,11 @@
       *Inductive Step for* $\neg$. No negation is positive, which means that all negations vacuously satisfy the condition.
 
       *Inductive Step for* $\to$. Suppose the condition is satisfied by $\varphi$ and $\psi$. Assume now that $(\varphi \to \psi)$ is positive. Then there are no occurrences of $\neg$ in either $\varphi$ of $\psi$, which are themselves positive formulas. By inductive hypothesis, the length of $\varphi$ and $\psi$ is odd, making the length of $(\varphi \to \psi)$ an even positive integer, namely, the sum of the length of $\varphi$ and $\psi$, which must be even, plus 3.
-      :::
+    
 
    2. Every positive formula is satisfiable.
    
-      ::: {.proof}
+  
       If $v$ assigns $1$ to all propositional variables, and $V$ is a valuation based on $v$, then:
       
       *if $\varphi$ is a positive formula, then $V(\varphi) = 1$.*
@@ -32,13 +32,13 @@
       *Inductive Step for* $\neg$. No negation is positive, which means that all negations vacuously satisfy the condition.
 
       *Inductive Step for* $\to$. Suppose the condition is satisfied by $\varphi$ and $\psi$. Assume now that $(\varphi \to \psi)$ is positive. Then there are no occurrences of $\neg$ in either $\varphi$ of $\psi$, which are themselves positive formulas. By inductive hypothesis, $V(\psi) = 1$, which means $V(\varphi \to \psi) = 1$.
-      :::
+     
 
    3. Not every formula is equivalent to a positive formula.
    
-      ::: {.proof}
+     
       The induction above shows that the chosen assignment $v$ satisfies *all* positive formulas of the language. Since the formula $\neg p$ is not true under that assignment, it is not equivalent to any positive formula.
-      :::
+    
    
    
 
