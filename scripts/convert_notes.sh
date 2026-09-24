@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Convert .md files in notes/ and problems/ to .html using pandoc + Carnap→MC transformer.
+# Convert .md files in notes/ and problems/ (plus .qmd files in problems/) to .html using pandoc + Carnap→MC transformer.
 # notes/    -> Tufte template
 # problems/ -> minimal template matching the course pages
 #
@@ -22,8 +22,11 @@ for dir in notes problems; do
     problems) TEMPLATE="scripts/minimal-template.html" ;;
   esac
 
-  for src in "$dir"/*.md; do
-    base=$(basename "$src" .md)
+  srcs=("$dir"/*.md)
+  [ "$dir" = problems ] && srcs+=("$dir"/*.qmd)
+
+  for src in "${srcs[@]}"; do
+    base=$(basename "$src"); base="${base%.*}"
     tmp="/tmp/${base}-raw.html"
     dst="$dir/${base}.html"
     input="$src"
