@@ -1,0 +1,102 @@
+### problem set 2 (basic language)
+
+*True or false? If true, please provide an argument. If false, provide a counterexample.*
+
+1. Positive formulas
+
+   Call a formula $\varphi$ *positive* iff there are no occurrences of $\neg$ in $\varphi$.
+
+   1. The length of a positive formula must be odd.
+
+      ::: {.proof}
+      Use an induction on the complexity of formulas to argue that every formula $\varphi$ satisfies the condition:
+
+      *if $\varphi$ is positive, then $\varphi$ has an odd number of symbols.*
+
+      *Base Case*. Atoms are positive formulas of length $1$, which is odd.
+
+      *Inductive Step for* $\neg$. No negation is positive, which means that all negations vacuously satisfy the condition.
+
+      *Inductive Step for* $\to$. Suppose the condition is satisfied by $\varphi$ and $\psi$. Assume now that $(\varphi \to \psi)$ is positive. Then there are no occurrences of $\neg$ in either $\varphi$ of $\psi$, which are themselves positive formulas. By inductive hypothesis, the length of $\varphi$ and $\psi$ is odd, making the length of $(\varphi \to \psi)$ an even positive integer, namely, the sum of the length of $\varphi$ and $\psi$, which must be even, plus 3.
+      :::
+
+   2. Every positive formula is satisfiable.
+   
+      ::: {.proof}
+      If $v$ assigns $1$ to all propositional variables, and $V$ is a valuation based on $v$, then:
+      
+      *if $\varphi$ is a positive formula, then $V(\varphi) = 1$.*
+      
+      *Base Case*. Atoms are positive formulas, which $V$ maps into $1$.
+
+      *Inductive Step for* $\neg$. No negation is positive, which means that all negations vacuously satisfy the condition.
+
+      *Inductive Step for* $\to$. Suppose the condition is satisfied by $\varphi$ and $\psi$. Assume now that $(\varphi \to \psi)$ is positive. Then there are no occurrences of $\neg$ in either $\varphi$ of $\psi$, which are themselves positive formulas. By inductive hypothesis, $V(\psi) = 1$, which means $V(\varphi \to \psi) = 1$.
+      :::
+
+   3. Not every formula is equivalent to a positive formula.
+   
+      ::: {.proof}
+      The induction above shows that the chosen assignment $v$ satisfies *all* positive formulas of the language. Since the formula $\neg p$ is not true under that assignment, it is not equivalent to any positive formula.
+      :::
+   
+   
+
+2. Logical consequence
+
+   Let $\Gamma$ be a set of formulas and let $\varphi$ and $\psi$ be formulas.
+
+   1. If $\Gamma \not\models \varphi$ or $\Gamma \models \psi$, then $\Gamma \models \varphi \to \psi$.
+      
+      False. $\emptyset \not \models p \to q$ even if $\emptyset \not \models p$.
+
+   2. If $\Gamma \models \varphi \to \psi$, then $\Gamma \not\models \varphi$ or $\Gamma \models \psi$.
+       
+       True. We argue for the contrapositive:
+       
+       *If $\Gamma \models \varphi$ and $\Gamma \not \models \psi$, then $\Gamma \not \models \varphi \to \psi$*
+       
+       *Proof*. Assume $\Gamma \models \varphi$ and $\Gamma \not \models \psi$. Some valuation $V$ satisfies $\Gamma$ but not $\psi$. Since $\Gamma \models \varphi$, the relevant valuation satisfies $\varphi$, whence $V$ does *not* satisfy $\varphi \to \psi$.
+
+   3. If $\Gamma \models \varphi$ and $\Gamma \not \models \psi$, then $\Gamma \models \neg (\varphi \to \psi)$.
+      
+       False. $\{p \} \not \models \neg (p \to q)$ even if $\{p \} \models p$ and $\{p\} \not \models q$.
+
+   4. If $\Gamma \models \neg (\varphi \to \psi)$, then $\Gamma \models \varphi$ or $\Gamma \not \models \psi$.
+        
+        True. We argue for the contrapositive:
+       
+       *If $\Gamma \not \models \varphi$ and $\Gamma \models \psi$, then $\Gamma \models \neg (\varphi \to \psi)$*
+       
+       *Proof*. Assume $\Gamma \not \models \varphi$ and $\Gamma \models \psi$. Some valuation $V$ satisfies $\Gamma$ but not $\varphi$. Since $\Gamma \models \psi$, the relevant valuation satisfies $\psi$, whence $V$ does satisfy $\varphi \to \psi$ making $\neg (\varphi \to \psi)$ false.
+
+3. Satisfiability
+
+   1. For every natural number $n > 1$, there is a set $\Gamma$ of exactly $n$ formulas such that
+
+      - $\Gamma$ is unsatisfiable, but
+
+      - every subset $\Delta \subseteq \Gamma$ with fewer than $n$ formulas is satisfiable.
+      
+            
+       True. Given some $n > 1$, let 
+            
+        $$
+      \Gamma = \{p_1, \dots, p_{n-1}, \neg (p_1 \wedge \dots \wedge p_{n-1})\}
+        $$     
+        
+        No valuation $V$ can satisfy all formulas in $\Gamma$. If $\Gamma$ satisfies all propositional variables, then it does not satisfy the negation of the conjunction.
+        
+        If $\Delta \subseteq \Gamma$ omits one formula in $\Gamma$, then it becomes satisfiable. Consider a valuation $V$ making true all and only those propositional variables in $\Delta$. If $\Delta$ omits the complex negation, then $V$ will satisfy $\Delta$. But if $\Delta$ omits one or more propositional variables in $\Gamma$, then $V$ will do as well.
+
+   2. There is an *infinite* set $\Gamma$ such that
+
+      - $\Gamma$ is unsatisfiable, but
+
+      - every *finite* subset $\Delta \subseteq \Gamma$ is satisfiable.
+      
+      
+      False. If $\Gamma$ is unsatifiable, then $\Gamma$ is *inconsistent*. Therefore, $\Gamma \vdash \bot$. There is a *finite* derivation $\langle \chi_1, \dots, \chi_n, \bot \rangle$ of $\bot$ from $\Gamma$. Now, let $\Delta$ be the set of members of $\Gamma$ that occur in the derivation. On the one hand, $\Delta$ is finite because the derivation has only finitely many steps. On the other hand, $\Delta \vdash \bot$. So, since the axiom system is sound relative to the semantics, $\Delta \models \vdash$, which means that $\Delta$ is unsatisfiable.
+      
+
+     
