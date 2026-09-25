@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Countermodel to diamond of p implies q, implies diamond p implies diamond q. World w sees u and v. At u, p and q are both false, so p implies q is true. At v, p is true and q is false. So diamond of p implies q and diamond p are true at w, but diamond q is false at w." height="370" role="img" viewBox="0 0 720 370" width="720">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <line stroke="#343a40" stroke-width="1.6" x1="322.0" x2="503.3" y1="178.5" y2="113.2"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="321.6" x2="503.8" y1="202.6" y2="275.5"/>
+    <circle cx="290" cy="190" fill="#8a8d90" r="34" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="25" font-style="italic" text-anchor="middle" x="290" y="198">w</text>
+    <circle cx="540" cy="100" fill="#8a8d90" r="34" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="25" font-style="italic" text-anchor="middle" x="540" y="108">u</text>
+    <circle cx="540" cy="290" fill="#8a8d90" r="34" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="25" font-style="italic" text-anchor="middle" x="540" y="298">v</text>
+    <text fill="#2780e3" font-size="22" font-style="italic" text-anchor="start" x="588" y="108">p → q</text>
+    <text fill="#343a40" font-size="24" font-style="italic" text-anchor="start" x="588" y="298">p</text>
+    <path d="M 68.0 105.0 L 76.0 113.0 L 68.0 121.0 L 60.0 113.0 Z" fill="none" stroke="#2780e3" stroke-width="1.7"/>
+    <text fill="#2780e3" font-size="22" font-style="italic" text-anchor="start" x="81" y="122">(p → q)</text>
+    <text fill="#2780e3" font-size="13" text-anchor="start" x="60" y="142">via u</text>
+    <path d="M 68.0 169.0 L 76.0 177.0 L 68.0 185.0 L 60.0 177.0 Z" fill="none" stroke="#2780e3" stroke-width="1.7"/>
+    <text fill="#2780e3" font-size="22" font-style="italic" text-anchor="start" x="81" y="186">p</text>
+    <text fill="#2780e3" font-size="13" text-anchor="start" x="60" y="206">via v</text>
+    <text fill="#b3261e" font-size="20" text-anchor="start" x="60" y="250">not</text>
+    <path d="M 106.0 233.0 L 114.0 241.0 L 106.0 249.0 L 98.0 241.0 Z" fill="none" stroke="#b3261e" stroke-width="1.7"/>
+    <text fill="#b3261e" font-size="22" font-style="italic" text-anchor="start" x="119" y="250">q</text>
+    <text fill="#b3261e" font-size="13" text-anchor="start" x="60" y="270">no world w sees has q</text>
+    <text fill="#2780e3" font-size="15" text-anchor="start" x="60" y="330">so the formula fails at w</text>
+  </g>
+  <polygon fill="#343a40" points="507.1,111.9 495.5,122.2 491.6,111.3"/>
+  <polygon fill="#343a40" points="507.5,277.0 492.0,277.0 496.3,266.3"/>
+</svg>

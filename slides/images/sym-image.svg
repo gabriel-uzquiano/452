@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Validity of B on symmetric frames. Assume p at w. Let u be any world with R w u. Symmetry gives R u w, so diamond p is true at u. Since u was arbitrary, box diamond p is true at w." height="310" role="img" viewBox="0 0 580 310" width="580">
+  <defs>
+    <marker id="a" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#343a40"/>
+    </marker>
+    <marker id="b" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#2780e3"/>
+    </marker>
+  </defs>
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <path d="M 164 146 C 240 96 340 96 416 146" fill="none" marker-end="url(#a)" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="290" y="92">Rwu</text>
+    <text fill="#6c757d" font-size="15" text-anchor="middle" x="290" y="68">u any accessible world</text>
+    <path d="M 416 194 C 340 244 240 244 164 194" fill="none" marker-end="url(#b)" stroke="#2780e3" stroke-dasharray="6 5" stroke-width="1.6"/>
+    <text fill="#2780e3" font-size="20" font-style="italic" text-anchor="middle" x="290" y="262">Ruw</text>
+    <text fill="#2780e3" font-size="15" text-anchor="middle" x="290" y="284">symmetry</text>
+    <circle cx="140" cy="170" fill="#8a8d90" r="34" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="25" font-style="italic" text-anchor="middle" x="140" y="178">w</text>
+    <circle cx="440" cy="170" fill="#8a8d90" r="34" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="25" font-style="italic" text-anchor="middle" x="440" y="178">u</text>
+    <text fill="#000" font-size="24" font-style="italic" text-anchor="middle" x="140" y="114">p</text>
+    <text fill="#6c757d" font-size="14" text-anchor="middle" x="140" y="90">assumption</text>
+    <rect fill="none" height="15" stroke="#2780e3" stroke-width="1.7" width="15" x="36" y="162"/>
+    <path d="M 65.5 160.0 L 74.0 168.5 L 65.5 177.0 L 57.0 168.5 Z" fill="none" stroke="#2780e3" stroke-width="1.7"/>
+    <text fill="#2780e3" font-size="24" font-style="italic" text-anchor="start" x="79" y="178">p</text>
+    <text fill="#2780e3" font-size="14" text-anchor="end" x="92" y="202">u arbitrary</text>
+    <path d="M 496.5 160.0 L 505.0 168.5 L 496.5 177.0 L 488.0 168.5 Z" fill="none" stroke="#2780e3" stroke-width="1.7"/>
+    <text fill="#2780e3" font-size="24" font-style="italic" text-anchor="start" x="510" y="178">p</text>
+    <text fill="#2780e3" font-size="14" text-anchor="start" x="488" y="202">since Ruw</text>
+  </g>
+</svg>
