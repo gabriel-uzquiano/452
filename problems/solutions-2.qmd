@@ -96,7 +96,7 @@
       - every *finite* subset $\Delta \subseteq \Gamma$ is satisfiable.
       
       
-      False. If $\Gamma$ is unsatifiable, then $\Gamma$ is *inconsistent*. Therefore, $\Gamma \vdash \bot$. There is a *finite* derivation $\langle \chi_1, \dots, \chi_n, \bot \rangle$ of $\bot$ from $\Gamma$. Now, let $\Delta$ be the set of members of $\Gamma$ that occur in the derivation. On the one hand, $\Delta$ is finite because the derivation has only finitely many steps. On the other hand, $\Delta \vdash \bot$. So, since the axiom system is sound relative to the semantics, $\Delta \models \vdash$, which means that $\Delta$ is unsatisfiable.
+      False. If $\Gamma$ is unsatifiable, then, by completeness, $\Gamma$ is *inconsistent*. Therefore, $\Gamma \vdash \bot$. There is a *finite* derivation $\langle \chi_1, \dots, \chi_n, \bot \rangle$ of $\bot$ from $\Gamma$. Now, let $\Delta$ be the set of members of $\Gamma$ that occur in the derivation. On the one hand, $\Delta$ is finite because the derivation has only finitely many steps. On the other hand, $\Delta \vdash \bot$. So, since the axiom system is sound relative to the semantics, $\Delta \models \vdash$, which means that $\Delta$ is unsatisfiable.
       
 
      
