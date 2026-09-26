@@ -33,19 +33,16 @@ bash scripts/convert_notes.sh
 
 ## Editing slides
 
-Open the `.Rproj` in RStudio, open a file in `slides/`, click **Render**.
+Write or edit a `.qmd` in `slides/` and push (or upload) it to `main`. The
+`Build and deploy site` action installs Quarto 1.9.38 and renders every
+`slides/*.qmd` to `slides/<name>.html` plus `slides/<name>_files/` before
+publishing, so there is no need to render locally or commit the HTML.
 
 Keep `.qmd` files in **Source** mode, not Visual.
 
-Quarto ships inside RStudio. For terminal use:
-
-```bash
-export PATH="/Applications/RStudio.app/Contents/Resources/app/quarto/bin:$PATH"
-quarto render slides/1.1-relations-slides.qmd
-```
-
-Rendering produces `slides/<name>.html` plus a `slides/<name>_files/` folder.
-The `_files` folders are git-ignored; commit the HTML if you want the deck online.
+To preview locally, open the `.Rproj` in RStudio, open a file in `slides/`, and
+click **Render**. Any HTML you commit is overwritten by the fresh render on the
+site.
 
 ## Publishing
 

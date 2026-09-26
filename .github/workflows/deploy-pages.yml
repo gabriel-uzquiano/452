@@ -29,6 +29,19 @@ jobs:
       - name: Convert markdown to HTML
         run: bash scripts/convert_notes.sh
 
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.9.38
+
+      - name: Render slide decks
+        run: |
+          shopt -s nullglob
+          for f in slides/*.qmd; do
+            echo "Rendering $f"
+            quarto render "$f"
+          done
+
       - name: Stage the site
         run: |
           mkdir -p _site
