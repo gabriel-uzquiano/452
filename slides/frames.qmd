@@ -212,7 +212,7 @@ Assume $M, w \Vdash \Box p$. If $w$ sees $u$, then $M, u \Vdash \Box p$. For if 
 ## $\textsf{5}$ is valid in euclidean frames  {.smaller}
 
 ::: {#prp-valT}
-$\textsf{4}$ is valid in all euclidean frames.
+$\textsf{5}$ is valid in all euclidean frames.
 :::
 
 ::: {.columns}
@@ -263,9 +263,8 @@ $\textsf{T}$ is only valid in all reflexive frames.
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.proof}
-If $(W, R) \models \textsf{T}$, then $R$ is reflexive on $W$.
 
-Let $(W, R)$ be a frame such that $(W, R) \models \Box p \to p$.
+Fix a frame $(W, R)$. If $(W, R) \models \textsf{T}$, then $R$ is reflexive on $W$. Suppose $(W, R) \models \Box p \to p$.
 
 $R$ is reflexive on $W$. Fix a world $w \in W$. Argue that $Rww$.
 
@@ -275,18 +274,17 @@ If $(W, R) \models \Box p \to p$, then $M = (W, R, V) \Vdash \Box p \to p$. Ther
 
 By construction, $M, w \Vdash \Box p$. Therefore, $M, w \Vdash p$. It follows that $w \in V(p) = \{u\in W: Rwu\}$ and $Rww$. 
 
-::: {style="height: 20px;"}
+::: {style="height: 55px;"}
 :::
 
 :::
 :::
 ::: {.column width="50%"}
 ::: {.proof}
-If $R$ is not reflexive on $W$, then $(W, R) \not \models \textsf{T}$
 
-Fix a *non-reflexive* frame $(W, R)$.
+Fix a frame $(W, R)$. If $R$ is not reflexive on $W$, then $(W, R) \not \models \textsf{T}$. Suppose $(W, R)$ is *non-reflexive*, that is, for some $w \in W$, $\neg Rww$.
 
-$\Box p \to p$ is *not* true in every model $M$ based on that frame. 
+$\Box p \to p$ is *not* true in every model $M$ based on $(W, R)$. 
 
 Let $V$ be such that $V(p) = W \setminus \{w\}$, where $\neg Rww$.
 
@@ -311,9 +309,7 @@ $\textsf{B}$ is only valid in symmetric frames.
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.proof}
-If $(W, R) \models \textsf{B}$, then $R$ is symmetric on $W$.
-
-Let $(W, R)$ be a frame such that $(W, R) \models p \to \Box \Diamond p$.
+Fix a frame $(W, R)$. If $(W, R) \models \textsf{B}$, then $R$ is symmetric on $W$. Suppose $(W, R) \models p \to \Box \Diamond p$.
 
 $R$ is symmetric on $W$. Fix worlds $w, u \in W$ such that $Rwu$. Argue that $Ruw$.
 
@@ -323,18 +319,16 @@ If $(W, R) \models p \to \Box \Diamond p$, then $M = (W, R, V) \Vdash p \to \Box
 
 By construction, $M, w \Vdash p$. Therefore, $M, w \Vdash \Box \Diamond p$. Since $Rwu$,  $M, u \Vdash \Diamond p$. But then $Ruw$, since $w$ is the only $p$-world in the model.
 
-::: {style="height: 18px;"}
+::: {style="height: 55px;"}
 :::
 :::
 
 :::
 ::: {.column width="50%"}
 ::: {.proof}
-If $R$ is not symmetric on $W$, then $(W, R) \not \models \textsf{B}$
+Fix a frame $(W, R)$. If $R$ is not symmetric on $W$, then $(W, R) \not \models \textsf{B}$. Suppose $(W, R)$ is *non-symmetric*, that is, for some $w, u \in W$, $Rwu$ but $\neg Ruw$.
 
-Fix a *non-symmetric* frame $(W, R)$.
-
-$p \to \Box \Diamond p$ is *not* true in every model $M$ based on that frame. 
+$p \to \Box \Diamond p$ is *not* true in every model $M$ based on $(W, R)$. 
 
 Let $V$ be such that $V(p) = \{w\}$, where for some $u\in W$, $Rwu$ but $\neg Ruw$.
 
@@ -354,15 +348,13 @@ $p \to \Box \Diamond p$ is *not* true at $w$ in $M$.
 ## $\textsf{4}$ is **only** valid in transitive frames {.smaller}
 
 ::: {#prp-val4}
-$\textsf{4}$ is only valid in symmetric frames.
+$\textsf{4}$ is only valid in transitive frames.
 :::
 
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.proof}
-If $(W, R) \models \textsf{B}$, then $R$ is symmetric on $W$.
-
-Let $(W, R)$ be a frame such that $(W, R) \models p \to \Box \Diamond p$.
+Fix a frame $(W, R)$. If $(W, R) \models \textsf{4}$, then $R$ is transitive on $W$. Suppose $(W, R) \models p \to \Box \Diamond p$.
 
 $R$ is transitive on $W$. Fix worlds $w, u, v \in W$ such that $Rwu$ and $Ruv$. Argue that $Ruv$.
 
@@ -372,18 +364,16 @@ If $(W, R) \models \Box p \to \Box \Box p$, then $M = (W, R, V) \Vdash \Box p \t
 
 By construction, $M, w \Vdash \Box p$. Therefore, $M, w \Vdash \Box \Box p$. Since $Rwu$,  $M, u \Vdash \Box p$. But since $Ruv$, $M, v \Vdash p$, which means that $v \in V(p) = \{t\in W: Rwt\}$. Therefore, $Rwv$.
 
-::: {style="height: 50px;"}
+::: {style="height: 55px;"}
 :::
 :::
 
 :::
 ::: {.column width="50%"}
 ::: {.proof}
-If $R$ is not transitive on $W$, then $(W, R) \not \models \textsf{4}$
+Fix a frame $(W, R)$. If $R$ is not transitive on $W$, then $(W, R) \not \models \textsf{4}$. Suppose $(W, R)$ is *non-transitive*, that is, there are $w, u, v \in W$ such that $Rwu$ and $Ruv$ but $\neg Rwv$.
 
-Fix a *non-transitive* frame $(W, R)$.
-
-$\Box p \to \Box \Box p$ is *not* true in every model $M$ based on that frame. 
+$\Box p \to \Box \Box p$ is *not* true in every model $M$ based on $(W, R)$. 
 
 Let $V$ be such that $V(p) \{t\in W: Rwt\}$, where for some $u, v\in W$, $Rwu$ and $Ruv$ but $\neg Rwv$.
 
@@ -408,9 +398,7 @@ $\textsf{5}$ is only valid in euclidean frames.
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.proof}
-If $(W, R) \models \textsf{5}$, then $R$ is euclidean on $W$.
-
-Let $(W, R)$ be a frame such that $(W, R) \models \Diamond p \to \Box \Diamond p$.
+Fix a frame $(W, R)$. If $(W, R) \models \textsf{5}$, then $R$ is euclidean on $W$. Suppose $(W, R) \models \Diamond p \to \Box \Diamond p$.
 
 $R$ is euclidean on $W$. Fix worlds $w, u, v \in W$ such that $Rwu$ and $Rwv$. Argue that $Ruv$.
 
@@ -420,19 +408,19 @@ If $(W, R) \models \Diamond p \to \Box \Diamond p$, then $M = (W, R, V) \Vdash \
 
 $M, w \Vdash \Diamond p$, since $Rwv$ and $v$ is a $p$-world. Therefore, $M, w \Vdash \Box \Diamond p$. Since $Rwu$,  $M, u \Vdash \Diamond p$. But then $Ruv$, since $v$ is the only $p$-world in the model.
 
+::: {style="height: 20px;"}
+:::
 
 :::
 
 :::
 ::: {.column width="50%"}
 ::: {.proof}
-If $R$ is not euclidean on $W$, then $(W, R) \not \models \textsf{5}$
+Fix a frame $(W, R)$. If $R$ is not euclidean on $W$, then $(W, R) \not \models \textsf{5}$. Suppose $(W, R)$ is *non-euclidean*, that is, for some $w, u, v \in W$, $Rwu$ and $Rwv$ but $\neg Ruv$..
 
-Fix a *non-euclidean* frame $(W, R)$.
+$\Diamond p \to \Box \Diamond p$ is *not* true in every model $M$ based on $(W, R)$. 
 
-$\Diamond p \to \Box \Diamond p$ is *not* true in every model $M$ based on that frame. 
-
-Let $V$ be such that $V(p) = \{w\}$, where for some $w, u\in W$, $Rwu$ and $Rwv$ but $\neg Ruv$.
+Let $V$ be such that $V(p) = \{w\}$, where for some $w, u, v\in W$, $Rwu$ and $Rwv$ but $\neg Ruv$.
 
 $\Diamond p \to \Box \Diamond p$ is *not* true in $M = (W, R, V)$. 
 
@@ -442,8 +430,7 @@ $\Diamond p \to \Box \Diamond p$ is *not* true at $w$ in $M$.
 
 - $M, w \nVdash \Box \Diamond p$, since $Rwu$ but $M, u \nVdash \Diamond p$: $\neg Ruv$, but $v$ is the only $p$-world in the model. 
 
-::: {style="height: 15px;"}
-:::
+
 
 :::
 :::
