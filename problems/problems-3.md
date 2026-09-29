@@ -43,6 +43,25 @@
       $$
       \Gamma \vdash \varphi \ \Rightarrow \ \Gamma \vdash^\ast \varphi.
       $$
+      
+      
+      For 5, we need only argue that all instances of $\textsf{A3}$ are theorems of the new system, where:
+      
+      $$
+      (\neg p \to \neg q) \to ((\neg p \to q) \to p) \tag{$\textsf{A3}$}
+      $$
+      
+      The key observation is this:
+      
+      $$
+      \{\neg \varphi \to \neg \psi, \neg \varphi \to \psi \} \vdash^\ast \psi \to \varphi
+      $$
+      
+      $$
+      \{\neg \varphi \to \neg \psi, \neg \varphi \to \psi\} \vdash^\ast \neg \varphi \to \varphi
+      $$
+
+
 
 2. **Possible worlds models**
 
