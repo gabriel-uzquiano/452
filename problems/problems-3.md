@@ -20,7 +20,7 @@
    1. For all $\Gamma$ and $\varphi$:
 
       $$
-      \Gamma \vdash \varphi \ \Rightarrow \ \Gamma \vdash^\ast \varphi.
+      \Gamma \vdash^\ast \varphi \ \Rightarrow \ \Gamma \vdash \varphi.
       $$
 
    2. The Deduction Theorem for $\vdash^\ast$:
@@ -41,7 +41,7 @@
    5. For all $\Gamma$ and $\varphi$:
 
       $$
-      \Gamma \vdash^\ast \varphi \ \Rightarrow \ \Gamma \vdash \varphi.
+      \Gamma \vdash \varphi \ \Rightarrow \ \Gamma \vdash^\ast \varphi.
       $$
 
 2. **Possible worlds models**
