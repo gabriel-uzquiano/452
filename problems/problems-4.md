@@ -1,37 +1,30 @@
----
-title: "Problem set 4 — modal propositional logic"
----
+### problem set 4 (modal definability and its limits)
 
-1. Draw a possible world model that shows that the relevant formula is *not* true in *all* worlds of *all* models of the specified sort.
+ 
 
-   1. $\Diamond p \to \Box p$ / euclidean
-   2. $\Box (\Box p \to p)$ / symmetric
-   3. $\Diamond(p \to q) \to (\Diamond p \to \Diamond q)$ / reflexive
-   4. $\Box \Box p \to \Box p$ / transitive
-   5. $\Diamond p \to \Box \Diamond p$ / reflexive and transitive
+1. A relation $R$ is *functional* on $W$ iff for all $w, u, v \in W$, if $Rwu$ and $Rwv$, then $u = v$. Justify the claims below.
 
-   <br/>
+    1. $\Diamond p \to \Box p$ defines the class of functional frames.
+    
+    2. $p \to \Diamond p$ defines the class of reflexive frames.
+    
 
-2. Justify the claim that no formula of the form $\Box \Diamond \varphi$ is valid in all frames. 
+2. Let $\textsf{Id}$ be the class of *identity frames* by which we mean the class of frames $(W, R)$ with $R = \{(u, v)\in W \times W: u = v\}$.
 
-   *Hint. You should be able to find a model in which all such formulas are in fact false at some world.*
+    1. $(p \to \Diamond p) \wedge (\Diamond p \to \Box p)$ defines $\textsf{Id}$. 
+    
+        *Observe that a frame $(W, R)$ is in $\textsf{Id}$ iff $R$ is reflexive and functional on $W$.*
+    
+    2. $p \leftrightarrow \Diamond p$ defines $\textsf{Id}$.
+    
+    3. The formulas in 2.1 and 2.2 are *not* equivalent. For each formula, find a model and a world where it is true and the other is false. Explain why this is consistent with 2.1 and 2.2. (Could either of your models be based on an identity frame?)
+    
+3. Let $\textsf{Diff}$ be the class of *difference frames* by which we mean the class of frames $(W, R)$ with $R = \{(u, v) \in W \times W: u \neq v\}$.
+    
+    1. Provide an argument for the undefinability of $\textsf{Diff}$ by a set of modal formulas.
+    
+          *Compare the two-world frame in which each world sees only the other with the one-world frame in which the world sees itself.*
 
-3. Call a relation $R$ is *serial* on $W$ if, and only if, for all $u \in W$, there is some $v\in W$ such that $uRv$. On the other hand, a relation $R$ is *functional* on $W$ if, and only if, for all $w, u, v \in W$, if $wRu$ and $wRv$, then $u = v$. Justify the claims below:
+    2. Provide an argument for the undefinability by a set of modal formulas of the class of *non-identity* frames by which we mean the complement of $\textsf{Id}$.
 
-   1. $\Box p \to \Diamond p$ defines the class of serial frames.
-
-   2. $\Diamond p \to \Box p$ defines the class of functional frames.
-
-      
-
-4. Find a modal formula to define the class of *identity frames*, that is, fames of the form $(W, R)$, where $R = \{(u,u): u \in W\}$.
-
-5. Consider the rule of inference:
-   $$
-   \Box \varphi / \varphi
-   $$
-   Justify the claim that it preserves validity with respect to the class of *all* frames.
-
-   *Hint. Take the contrapositive. That is, you can argue that if $\varphi$ is not valid in all frames, then neither is $\Box \varphi$.*
-
-
+    3. Conclude that modal definability is not closed under complement. Which earlier parts did you use?   
