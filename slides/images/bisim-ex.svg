@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="A bisimulation between a model where w sees u and v, both p-worlds, and a model where w&apos; sees u&apos;, a p-world. E relates w to w&apos;, and u and v to u&apos;." height="440" role="img" viewBox="0 10 680 440" width="680">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <text fill="#6c757d" font-size="18" font-style="italic" style="font-style:italic" text-anchor="middle" x="150.0" y="40">(W, R, V)</text>
+    <text fill="#6c757d" font-size="18" font-style="italic" style="font-style:italic" text-anchor="middle" x="560.0" y="40">(W′, R′, V′)</text>
+    <line stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2" x1="178" x2="532" y1="110" y2="110"/>
+    <line stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2" x1="258" x2="532" y1="290" y2="290"/>
+    <path d="M 80 316 C 150 420 480 420 550 316" fill="none" stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2"/>
+    <text fill="#2780e3" font-size="19" font-style="italic" style="font-style:italic" text-anchor="middle" x="355.0" y="98">E</text>
+    <text fill="#2780e3" font-size="19" font-style="italic" style="font-style:italic" text-anchor="middle" x="395.0" y="280">E</text>
+    <text fill="#2780e3" font-size="19" font-style="italic" style="font-style:italic" text-anchor="middle" x="315.0" y="410">E</text>
+    <line stroke="#343a40" stroke-width="1.6" x1="138.6" x2="83.8" y1="135.6" y2="258.9"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="161.4" x2="216.2" y1="135.6" y2="258.9"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="560.0" x2="560.0" y1="138.0" y2="256.0"/>
+    <circle cx="150" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="150.0" y="118">w</text>
+    <circle cx="70" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="70.0" y="298">u</text>
+    <circle cx="230" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="230.0" y="298">v</text>
+    <circle cx="560" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="560.0" y="118">w′</text>
+    <circle cx="560" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="560.0" y="298">u′</text>
+    <text fill="#343a40" font-size="22" font-style="italic" style="font-style:italic" text-anchor="end" x="32.0" y="298">p</text>
+    <text fill="#343a40" font-size="22" font-style="italic" style="font-style:italic" text-anchor="middle" x="230.0" y="346">p</text>
+    <text fill="#343a40" font-size="22" font-style="italic" style="font-style:italic" text-anchor="start" x="598.0" y="298">p</text>
+  </g>
+  <polygon fill="#343a40" points="81.8,263.5 82.3,249.5 91.8,253.7"/>
+  <polygon fill="#343a40" points="218.2,263.5 208.2,253.7 217.7,249.5"/>
+  <polygon fill="#343a40" points="560.0,261.0 554.8,248.0 565.2,248.0"/>
+</svg>

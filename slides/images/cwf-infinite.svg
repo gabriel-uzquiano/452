@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Infinite ascending chain c1 R c2 R c3 and so on, with its transitive closure." height="170" role="img" viewBox="0 0 660 170" width="660">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <path d="M 46 123 C 81.6 78 188.4 78 224 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 46 123 C 100.6 62 264.4 62 319 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 46 123 C 119.6 46 340.4 46 414 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 46 123 C 138.6 30 416.4 30 509 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 141 123 C 176.6 78 283.4 78 319 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 141 123 C 195.6 62 359.4 62 414 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 141 123 C 214.6 46 435.4 46 509 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 236 123 C 271.6 78 378.4 78 414 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 236 123 C 290.6 62 454.4 62 509 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 331 123 C 366.6 78 473.4 78 509 123" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="60" x2="108" y1="140" y2="140"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="155" x2="203" y1="140" y2="140"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="250" x2="298" y1="140" y2="140"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="345" x2="393" y1="140" y2="140"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="440" x2="488" y1="140" y2="140"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="535" x2="569" y1="140" y2="140"/>
+    <text fill="#343a40" font-size="22" text-anchor="start" x="587" y="147">· · ·</text>
+    <circle cx="40" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="36" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="46" y="153">1</text>
+    <circle cx="135" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="131" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="141" y="153">2</text>
+    <circle cx="230" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="226" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="236" y="153">3</text>
+    <circle cx="325" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="321" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="331" y="153">4</text>
+    <circle cx="420" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="416" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="426" y="153">5</text>
+    <circle cx="515" cy="140" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="511" y="147">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="521" y="153">6</text>
+  </g>
+  <polygon fill="#a9acaf" points="224.0,123.0 215.4,118.3 221.4,113.6"/>
+  <polygon fill="#a9acaf" points="319.0,123.0 310.2,118.8 315.8,113.8"/>
+  <polygon fill="#a9acaf" points="414.0,123.0 405.0,119.1 410.5,113.9"/>
+  <polygon fill="#a9acaf" points="509.0,123.0 500.0,119.3 505.3,113.9"/>
+  <polygon fill="#a9acaf" points="319.0,123.0 310.4,118.3 316.4,113.6"/>
+  <polygon fill="#a9acaf" points="414.0,123.0 405.2,118.8 410.8,113.8"/>
+  <polygon fill="#a9acaf" points="509.0,123.0 500.0,119.1 505.5,113.9"/>
+  <polygon fill="#a9acaf" points="414.0,123.0 405.4,118.3 411.4,113.6"/>
+  <polygon fill="#a9acaf" points="509.0,123.0 500.2,118.8 505.8,113.8"/>
+  <polygon fill="#a9acaf" points="509.0,123.0 500.4,118.3 506.4,113.6"/>
+  <polygon fill="#343a40" points="114.0,140.0 102.0,145.0 102.0,135.0"/>
+  <polygon fill="#343a40" points="209.0,140.0 197.0,145.0 197.0,135.0"/>
+  <polygon fill="#343a40" points="304.0,140.0 292.0,145.0 292.0,135.0"/>
+  <polygon fill="#343a40" points="399.0,140.0 387.0,145.0 387.0,135.0"/>
+  <polygon fill="#343a40" points="494.0,140.0 482.0,145.0 482.0,135.0"/>
+  <polygon fill="#343a40" points="575.0,140.0 563.0,145.0 563.0,135.0"/>
+</svg>

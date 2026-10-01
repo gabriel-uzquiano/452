@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Box step of the invariance lemma, left to right using back" height="380" role="img" viewBox="0 20 680 380" width="680">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <text fill="#6c757d" font-size="17" font-style="italic" style="font-style:italic" text-anchor="middle" x="200.0" y="50">M</text>
+    <text fill="#6c757d" font-size="17" font-style="italic" style="font-style:italic" text-anchor="middle" x="480.0" y="50">M′</text>
+    <line stroke="#343a40" stroke-dasharray="7 5" stroke-width="2" x1="228" x2="452" y1="110" y2="110"/>
+    <line stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2" x1="228" x2="452" y1="290" y2="290"/>
+    <text fill="#343a40" font-size="18" font-style="italic" style="font-style:italic" text-anchor="middle" x="340.0" y="100">E</text>
+    <text fill="#2780e3" font-size="18" font-style="italic" style="font-style:italic" text-anchor="middle" x="340.0" y="280">E</text>
+    <line stroke="#2780e3" stroke-dasharray="6 5" stroke-width="1.6" x1="200.0" x2="200.0" y1="138.0" y2="256.0"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="480.0" x2="480.0" y1="138.0" y2="256.0"/>
+    <text fill="#2780e3" font-size="18" font-style="italic" style="font-style:italic" text-anchor="end" x="164.0" y="207">R</text>
+    <text fill="#343a40" font-size="18" font-style="italic" style="font-style:italic" text-anchor="start" x="516.0" y="207">R′</text>
+    <rect fill="none" height="13.6" stroke="#343a40" stroke-width="1.6" width="13.6" x="128.8" y="102.4"/>
+    <text fill="#343a40" font-size="22" font-style="italic" style="font-style:italic" x="146.4" y="117">φ</text>
+    <rect fill="none" height="13.6" stroke="#2780e3" stroke-width="1.6" width="13.6" x="522.0" y="102.4"/>
+    <text fill="#2780e3" font-size="22" font-style="italic" style="font-style:italic" x="539.6" y="117">φ</text>
+    <text fill="#2780e3" font-size="13" x="520.0" y="139">as </text>
+    <text fill="#2780e3" font-size="13" font-style="italic" style="font-style:italic" x="534.8" y="139">u′</text>
+    <text fill="#2780e3" font-size="13" x="544.8" y="139"> was arbitrary</text>
+    <text fill="#2780e3" font-size="22" font-style="italic" style="font-style:italic" x="146.4" y="297">φ</text>
+    <text fill="#2780e3" font-size="13" x="103.6" y="319">since </text>
+    <text fill="#2780e3" font-size="13" font-style="italic" style="font-style:italic" x="134.2" y="319">wRu</text>
+    <text fill="#2780e3" font-size="22" font-style="italic" style="font-style:italic" x="520.0" y="297">φ</text>
+    <text fill="#2780e3" font-size="13" x="520.0" y="319">IH, since </text>
+    <text fill="#2780e3" font-size="13" font-style="italic" style="font-style:italic" x="570.4" y="319">u E u′</text>
+    <text fill="#6c757d" font-size="14" x="169.1" y="375">given </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="203.6" y="375">w E w′</text>
+    <text fill="#6c757d" font-size="14" x="244.3" y="375"> and </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="272.5" y="375">w′R′u′</text>
+    <text fill="#6c757d" font-size="14" x="308.7" y="375">: back gives </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="379.5" y="375">u</text>
+    <text fill="#6c757d" font-size="14" x="387.4" y="375"> with </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="419.4" y="375">wRu</text>
+    <text fill="#6c757d" font-size="14" x="447.2" y="375"> and </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="475.4" y="375">u E u′</text>
+    <circle cx="200" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="200.0" y="118">w</text>
+    <circle cx="480" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="480.0" y="118">w′</text>
+    <circle cx="200" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="200.0" y="298">u</text>
+    <circle cx="480" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="480.0" y="298">u′</text>
+  </g>
+  <polygon fill="#2780e3" points="200.0,261.0 194.8,248.0 205.2,248.0"/>
+  <polygon fill="#343a40" points="480.0,261.0 474.8,248.0 485.2,248.0"/>
+</svg>
