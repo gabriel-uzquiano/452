@@ -9,7 +9,7 @@
     2. $p \to \Diamond p$ defines the class of reflexive frames.
     
 
-2. Let $\textsf{Id}$ be the class of *identity frames* by which we mean the class of frames $(W, R)$ with $R = \{(u, v)\in W \times W: u = v\}$.
+2. Let $\textsf{Id}$ be the class of *identity frames* $(W, R)$ with $R = \{(u, v)\in W \times W: u = v\}$.
 
     1. $(p \to \Diamond p) \wedge (\Diamond p \to \Box p)$ defines $\textsf{Id}$. 
     
@@ -19,7 +19,7 @@
     
     3. The formulas in 2.1 and 2.2 are *not* equivalent. For each formula, find a model and a world where it is true and the other is false. Explain why this is consistent with 2.1 and 2.2. (Could either of your models be based on an identity frame?)
     
-3. Let $\textsf{Diff}$ be the class of *difference frames* by which we mean the class of frames $(W, R)$ with $R = \{(u, v) \in W \times W: u \neq v\}$.
+3. Let $\textsf{Diff}$ be the class of *difference frames* $(W, R)$ with $R = \{(u, v) \in W \times W: u \neq v\}$.
     
     1. Provide an argument for the undefinability of $\textsf{Diff}$ by a set of modal formulas.
     
