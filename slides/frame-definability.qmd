@@ -45,7 +45,7 @@ $$\begin{array}{lll}
 :::
 
 
-## first-order definability
+## first-order definability {.smaller}
 
 Let $\mathcal{L}$ be a first-order language with a binary predicate $R$ as part of the non-logical vocabulary.
 
@@ -57,6 +57,9 @@ $$\begin{array}{lll}
 \end{array}$$
 :::
 
+::: {style="height: 10px;"}
+:::
+
 ::: {.incremental}
 - $\forall x Rxx$ first-order defines the class of *reflexive* frames
 
@@ -65,13 +68,17 @@ $$\begin{array}{lll}
 - $\forall x \forall y \forall z (Rxy \wedge Ryz \to Rxz)$ first-order defines the class of *transitive* frames
 
 - $\forall x \forall y \forall z (Rxy \wedge Rxz \to Ryz)$ first-order  defines the class of *euclidean* frames
+
+- $\forall x \forall y \ x =y$ first-order defines the class of *identity* frames
+
+- $\forall x \forall y \ Rxy$ first-order defines the class of *universal* frames
 :::
 
-## are all first-order definable classes of frames modally definable?
+## are all first-order definable classes of frames modally definable? {.smaller}
 
-The answer is **no**. Some negative results:
+Some *negative results*:
 
-::: {style="height: 50px;"}
+::: {style="height: 10px;"}
 :::
 
 ::: {.incremental}
@@ -79,30 +86,67 @@ The answer is **no**. Some negative results:
 
 - no formula of $\mathcal{L}^\Box$ *modally defines* the class of *irreflexive* frames.
 
-::: {style="height: 50px;"}
+::: {style="height: 5px;"}
 :::
 
+- $\forall x \forall y (Rxy \to \neg Ryx)$ *first-order defines* the class of *asymmetric* frames.
+
+- no formula of $\mathcal{L}^\Box$ *modally defines* the class of *asymmetric* frames.
+
+::: {style="height: 5px;"}
+:::
+
+- $\forall x \forall y \forall z ((Rxy \wedge Ryz) \to \neg Rxz)$ *first-order defines* the class of *intransitive* frames.
+
+- no formula of $\mathcal{L}^\Box$ *modally defines* the class of *intransitive* frames.
+
+::: {style="height: 5px;"}
+:::
+
+- $\forall x \forall y \ x \neq y$ *first-order defines* the class of *difference* frames.
+
+- no formula of $\mathcal{L}^\Box$ *modally defines* the class of *difference* frames.
+
+::: {style="height: 5px;"}
+:::
 - $\forall x \ Rxx$ *first-order defines* the class of *universal* frames.
 
 - no formula of $\mathcal{L}^\Box$ *modally defines* the class of *universal* frames.
 :::
 
-## are all modally definable classes of frames first-order definable?
+## are all modally definable classes of frames first-order definable {.smaller}
 
-The answer is still *no*. Some negative results:
+Some *negative results*:
 
-::: {style="height: 50px;"}
+::: {style="height: 10px;"}
 :::
 
 ::: {.incremental}
-- $\Box (\Box p \to p) \to \Box p$ *modally defines* the class of *transitive converse well-founded* frames.
+- $\Box (\Box p \to p) \to \Box p$ (Löb) *modally defines* the class of *transitive converse well-founded* frames.
 
 - *no first-order formula* defines the class of *transitive converse well-founded* frames.
 
-::: {style="height: 50px;"}
+::: {style="height: 10px;"}
 :::
 
-- $\Box (\Box (p \to \Box p) \to p) \to p$ *modally defines* the class of frames that are *partial orders with no infinite strictly ascending $R$-chains*.
+
+
+
+- $\Box \Diamond p \to \Diamond \Box p$ (McKinsey) *modally defines* the class of *unsplittable* frames.
+
+- *no first-order formula* defines the class of *unsplittable* frames.
+
+    A *coloring* of a frame $(W, R)$ is a function $c: W \to \{ \text{red}, \text{blue}\}$. $R(u)$ is the set of $R$-successors of each member $u \in W$, that is, $R(u) = \{v \in W: Ruv\}$. Given a coloring $c$ for a frame $(W, R)$, call a world $u \in W$ *split by* $c$ iff $R(v)$ contains both a red world and a blue world.
+  
+    Call a frame *unsplittable* iff no coloring splits every successor of every world.
+    
+    Given the McKinsey formula, if every world accessible from a given world $u$ *sees* a red world, then some successor world of $u$ sees *only* red.
+
+::: {style="height: 10px;"}
+:::
+
+
+- $\Box (\Box (p \to \Box p) \to p) \to p$ (Grzegorczyk) *modally defines* the class of frames that are *partial orders with no infinite strictly ascending $R$-chains*.
 
 - *no first-order formula* defines the class of frames that are *partial orders with no infinite strictly ascending $R$-chains*.
 :::
@@ -120,11 +164,11 @@ A relation $R$ on a set $W$ *converse well-founded* iff there are no infinite as
 This is a consequence of Compactness: if a set of first-order formulas $\Gamma$ is finitely satisfiable, then $\Gamma$ is satisfiable.
 
 ::: {.proof}
-Suppose, for contradiction, that $\psi$ is true in *all and only* the transitive converse well-founded frames, whatever we assign to new constants.
+Suppose, for contradiction, that $\psi$ is true in *all and only* the transitive converse well-founded frames.
 
 - Let $\Sigma$ be a set of first-order formulas that require $R$ to be transitive.
 
-- Add new constants $c_1, c_2, c_3, \dots$ and let
+- Add infinitely many new constants $c_1, c_2, c_3, \dots , c_n, \dots$ and let
 $$
 \Gamma_0 := \{Rc_ic_{i+1} : i \geq 1\}.
 $$
@@ -165,7 +209,7 @@ By Compactness, $\Sigma \cup \Gamma_0 \cup \{\psi\}$ has a model $(W, R)$:
 ::: {.incremental}
 - $R$ is transitive and $(W, R) \models \psi$.
 
-- $c_1 R c_2 R c_3 R \cdots$ is now an *infinite* ascending $R$-chain.
+- $c_1 R c_2 R c_3 R \dots$ is now an *infinite* ascending $R$-chain.
 
 - $(W, R)$ is *not* converse well-founded.
 
