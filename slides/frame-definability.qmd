@@ -69,7 +69,7 @@ $$\begin{array}{lll}
 
 - $\forall x \forall y \forall z (Rxy \wedge Rxz \to Ryz)$ first-order  defines the class of *euclidean* frames
 
-- $\forall x \forall y \ x =y$ first-order defines the class of *identity* frames
+- $\forall x \forall y \ (Rxy \leftrightarrow x =y)$ first-order defines the class of *identity* frames
 
 - $\forall x \forall y \ Rxy$ first-order defines the class of *universal* frames
 :::
@@ -96,14 +96,14 @@ Some *negative results*:
 ::: {style="height: 5px;"}
 :::
 
-- $\forall x \forall y \forall z ((Rxy \wedge Ryz) \to \neg Rxz)$ *first-order defines* the class of *intransitive* frames.
+- $\forall x \forall y \forall z (Rxy \wedge Ryz \to \neg Rxz)$ *first-order defines* the class of *intransitive* frames.
 
 - no formula of $\mathcal{L}^\Box$ *modally defines* the class of *intransitive* frames.
 
 ::: {style="height: 5px;"}
 :::
 
-- $\forall x \forall y \ x \neq y$ *first-order defines* the class of *difference* frames.
+- $\forall x \forall y  (Rxy \leftrightarrow x \neq y)$ *first-order defines* the class of *difference* frames.
 
 - no formula of $\mathcal{L}^\Box$ *modally defines* the class of *difference* frames.
 
@@ -138,17 +138,15 @@ Some *negative results*:
 
     A *coloring* of a frame $(W, R)$ is a function $c: W \to \{ \text{red}, \text{blue}\}$. $R(u)$ is the set of $R$-successors of each member $u \in W$, that is, $R(u) = \{v \in W: Ruv\}$. Given a coloring $c$ for a frame $(W, R)$, call a world $u \in W$ *split by* $c$ iff $R(v)$ contains both a red world and a blue world.
   
-    Call a frame *unsplittable* iff no coloring splits every successor of every world.
-    
-    Given the McKinsey formula, if every world accessible from a given world $u$ *sees* a red world, then some successor world of $u$ sees *only* red.
+    Call a frame *unsplittable* iff no coloring splits every successor of every world. Given the McKinsey formula, if every world accessible from a given world $u$ *sees* a red world, then some successor world of $u$ sees *only* red.
 
 ::: {style="height: 10px;"}
 :::
 
 
-- $\Box (\Box (p \to \Box p) \to p) \to p$ (Grzegorczyk) *modally defines* the class of frames that are *partial orders with no infinite strictly ascending $R$-chains*.
+- $\Box (\Box (p \to \Box p) \to p) \to p$ (Grzegorczyk) *modally defines* the class of  *partial orders with no infinite strictly ascending $R$-chains*.
 
-- *no first-order formula* defines the class of frames that are *partial orders with no infinite strictly ascending $R$-chains*.
+- *no first-order formula* defines the class of *partial orders with no infinite strictly ascending $R$-chains*.
 :::
 
 ## example: transitive converse well-founded frames {.smaller}
@@ -236,7 +234,7 @@ $$
 :::
 
 ::: {.proof}
-We proceed in two stages:
+Fix a frame $(W, R)$. We now proceed in two stages:
 
 ::: {.incremental}
 - ($\Rightarrow$) We target the contrapositive. 
@@ -244,7 +242,7 @@ We proceed in two stages:
     If $R$ is *not transitive*, or *not converse well-founded*, then we will find a valuation $V$ and a world where Löb fails.
 
 
-- ($\Leftarrow$) If $R$ is transitive and converse well-founded, then, given a valuation $V$, we will find that a world will falsify $\Box p$ only if it falsifies $\Box(\Box p \to p)$.
+- ($\Leftarrow$) If $R$ is transitive and converse well-founded, then, given a valuation $V$, we will argue that each world $w \in W$ verifies Löb: if $w$ falsifies $\Box p$, then $w$ falsifies $\Box(\Box p \to p)$.
 :::
 :::
 
