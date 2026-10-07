@@ -32,12 +32,13 @@ Bisimulations are to modal propositional logic what isomorphisms are to first-or
 
 ## definition {.smaller}
 
-A *bisimulation* between $(W, R, V)$ and $(W', R', V')$ is a relation $E \subseteq W \times W'$ such that whenever $wEw'$:
+A *bisimulation* between $(W, R, V)$ and $(W', R', V')$ is a relation $E \subseteq W \times W'$ where for all $w \in W$, for all $w'\in W'$, if $wEw'$, then:
 
-1. $w \in V(p)$ iff $w' \in V'(p)$, for every propositional variable $p$ (atoms);
-2. if $wRu$, then $w'R'u'$ and $uEu'$ for some $u' \in W'$ (forth);
-3. if $w'R'u'$, then $wRu$ and $uEu'$ for some $u \in W$ (back).
-
+::: {.incremental}
+1. $w \in V(p)$ iff $w' \in V'(p)$, for all propositional atoms $p$ (atoms);
+2. if $wRu$, then for some $u' \in W'$, $w'R'u'$ and $uEu'$  (forth);
+3. if $w'R'u'$, then for some $u \in W$, $wRu$ and $uEu'$  (back).
+:::
 . . . 
 
 ![](images/bisim.svg){.nostretch width="90%" fig-align="center"}
@@ -49,32 +50,33 @@ A *bisimulation* between $(W, R, V)$ and $(W', R', V')$ is a relation $E \subset
 ::: {.column width="44%"}
 - $W = \{w, u, v\}$; $R = \{(w, u), (w, v)\}$; $V(p) = \{u, v\}$
 
-::: {style="height: 10px;"}
+::: {style="height: 5px;"}
 :::
 
 - $W' = \{w', u'\}$; $R' = \{(w', u')\}$; $V'(p) = \{u'\}$
 
-::: {style="height: 10px;"}
+::: {style="height: 5px;"}
 :::
 
 - $E = \{(w, w'), (u, u'), (v, u')\}$
 
-::: {style="height: 10px;"}
+::: {style="height: 5px;"}
 :::
+$E$ is a bisimulation between $(W, R, V)$ and $(W', R', V')$:
 
 ::: {.incremental}
-- **Atoms:** 
-  - $w$ and $w'$ verify no propositional variable. 
+- **atoms:** 
+  - $w$ and $w'$ verify no propositional atoms. 
   - $u$, $v$ and $u'$ verify just $p$.
   
-- **Forth:** 
+- **forth:** 
   
-  - given $wRu$ and $wRv$, we have $w'R'u'$ with $uEu'$ and $vEu'$. 
+  - since $wRu$ and $wRv$, we have $w'R'u'$ with $uEu'$ and $vEu'$. 
   - $u$ and $v$ see nothing.
   
-- **Back:** 
+- **back:** 
 
-  - given $w'R'u'$, we have $wRu$ with $uEu'$. 
+  - since $w'R'u'$, we have $wRu$ with $uEu'$. 
   - $u'$ sees nothing.
 :::
 :::
@@ -87,25 +89,23 @@ A *bisimulation* between $(W, R, V)$ and $(W', R', V')$ is a relation $E \subset
 
 ## invariance lemma {.smaller}
 ::: {#prp-inv}
-If there is a bisimulation $E$ between two models $(W, R, V)$ and $(W', R', V')$, then for all $w\in W$, for all $w'\in W'$, if $wEw'$, the for every formula $\varphi$ of $\mathcal{L}^\Box$:
+If there is a bisimulation $E$ between two models $(W, R, V)$ and $(W', R', V')$, then for all $w\in W$, for all $w'\in W'$, if $wEw'$, then for each modal formula $\varphi$ of $\mathcal{L}^\Box$:
 $$\begin{array}{lll}
-(W, R), w \Vdash \varphi & \text{iff} &  (W', R'), w' \Vdash \varphi.
+(W, R, V), w \Vdash \varphi & \text{iff} &  (W', R', V'), w' \Vdash \varphi.
 \end{array}$$
 :::
 
+::: {.proof}
 ::: {.incremental}
-- The proof is by induction on the complexity of formulas.
-
-
-
-- Here is the condition we use for the induction:
+By induction on the complexity of formulas. We use the condition:
 
   - For all $w\in W$, for all $w'\in W'$, if $wEw'$:
       $$
       \begin{array}{lll}
-      (W, R), w \Vdash \varphi & \text{iff} &  (W', R'), w' \Vdash \varphi.
+      (W, R, V), w \Vdash \varphi & \text{iff} &  (W', R', V'), w' \Vdash \varphi.
       \end{array}
       $$
+:::
 :::
 
 
@@ -117,7 +117,7 @@ Assume $wEw'$.
 $$
 \begin{array}{llll}
 M, w \Vdash p & \text{iff} & w \in V(p) & \\
- & \text{iff} & w' \in V'(p) & \textsf{Clause 1 (atoms)}\\
+ & \text{iff} & w' \in V'(p) & \textsf{atoms}\\
  & \text{iff} & M', w' \Vdash p &
 \end{array}
 $$
@@ -126,7 +126,7 @@ $$
 $$
 \begin{array}{llll}
 M, w \Vdash \neg\varphi & \text{iff} & M, w \nVdash \varphi & \\
- & \text{iff} & M', w' \nVdash \varphi & \textsf{Inductive Hypothesis}\\
+ & \text{iff} & M', w' \nVdash \varphi & \textsf{inductive hypothesis}\\
  & \text{iff} & M', w' \Vdash \neg\varphi &
 \end{array}
 $$
@@ -135,7 +135,7 @@ $$
 $$
 \begin{array}{llll}
 M, w \Vdash \varphi \to \psi & \text{iff} & M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi & \\
- & \text{iff} & M', w' \nVdash \varphi \ \text{or} \ M', w' \Vdash \psi & \textsf{Inductive Hypothesis}\\
+ & \text{iff} & M', w' \nVdash \varphi \ \text{or} \ M', w' \Vdash \psi & \textsf{inductive hypothesis}\\
  & \text{iff} & M', w' \Vdash \varphi \to \psi &
 \end{array}
 $$
@@ -147,9 +147,9 @@ $$
 Assume $wEw'$ and $M, w \Vdash \Box\varphi$. Let $w'R'u'$.
 
 ::: {.incremental}
-- By clause 3 (back), there is $u \in W$ with $wRu$ and $uEu'$.
+- By $\textsf{back}$, for some $u \in W$, $wRu$ and $uEu'$.
 - Since $M, w \Vdash \Box\varphi$ and $wRu$: $M, u \Vdash \varphi$.
-- Since $uEu'$, by the inductive hypothesis: $M', u' \Vdash \varphi$.
+- Since $uEu'$, by inductive hypothesis: $M', u' \Vdash \varphi$.
 - $u'$ was arbitrary, so $M', w' \Vdash \Box\varphi$.
 :::
 :::
@@ -166,9 +166,9 @@ Assume $wEw'$ and $M, w \Vdash \Box\varphi$. Let $w'R'u'$.
 Suppose $wEw'$ and $M', w' \Vdash \Box\varphi$. Let $wRu$.
 
 ::: {.incremental}
-- By clause 2 (forth), there is $u' \in W'$ with $w'R'u'$ and $uEu'$.
+- By $\textsf{forth}$, for some $u' \in W'$, $w'R'u'$ and $uEu'$.
 - Since $M', w' \Vdash \Box\varphi$ and $w'R'u'$: $M', u' \Vdash \varphi$.
-- Since $uEu'$, by the inductive hypothesis: $M, u \Vdash \varphi$.
+- Since $uEu'$, by inductive hypothesis: $M, u \Vdash \varphi$.
 - $u$ was arbitrary, so $M, w \Vdash \Box\varphi$. 
 :::
 :::
@@ -185,9 +185,9 @@ Suppose $wEw'$ and $M', w' \Vdash \Box\varphi$. Let $wRu$.
 ::: {.column width="52%"}
 Given a model $M = (W, R, V)$, we let $M' = (W', R', V')$ where
 
-- $W' = W \times \{0, 1\}$;
-- $(w, i) R' (u, j)$ \ iff \ $wRu$ and $i \neq j$;
-- $(w, i) \in V'(p)$ \ iff \ $w \in V(p)$.
+- $W' = W \times \{0, 1\}$; We write $w_i$ for $(w, i)$.
+- $w_i R' u_i$ \ iff \ $wRu$ and $i \neq j$;
+- $w_i \in V'(p)$ \ iff \ $w \in V(p)$.
 
 $R'$ is *irreflexive*, since $i \neq i$ is never the case.
 
@@ -197,9 +197,9 @@ $E = \{(w, w_i) : w \in W,\ i \in \{0, 1\}\}$ is a bisimulation between the two 
 - **atoms:** 
     - trivial by the definition of $V'$.
 - **forth:** 
-    - if $wE(w,i)$ and $wRu$, then $(w, i) R' (u, 1-i)$ and $uE(u, 1-i)$.
+    - if $wEw_i$ and $wRu$, then $w_i R' u_{1-i}$ and $uEu_{1-i}$.
 - **back:** 
-    - if $wE(w, i)$ and $(w,i) R' (u,j)$, then $wRu$ and $uE(u, j)$.
+    - if $wE w_i$ and $w_i R' u_j$, then $wRu$ and $uE u_j$.
 :::
 :::
 
@@ -221,10 +221,10 @@ No formula $\varphi$ is valid in all and only irreflexive frames.
 Suppose $\varphi$ is valid in all and only the irreflexive frames.
 
 ::: {.incremental}
-- The frame $(\{w\}, \{(w, w)\})$ is not irreflexive. So, by assumption,  $(\{w\}, \{(w, w)\}, V), w \nVdash \varphi$ for some $V$.
-- Its two-cycle counterpart is irreflexive. So $\varphi$ is valid there: $(W', R', V'), w_0 \Vdash \varphi$.
-- But notice that $wE(w, 0)$ in our bisimulation $E$.
-- So, by the Invariance Lemma, $(\{w\}, \{(w, w)\}, V), w \Vdash \varphi$. Contradiction.
+- The frame $(\{w\}, \{(w, w)\})$ is not irreflexive. So, by assumption, for some $V$, $(\{w\}, \{(w, w)\}, V), w \nVdash \varphi$.
+- Its two-cycle counterpart is irreflexive. So, by assumption, $\varphi$ is valid in that frame, which means that $(W', R', V'), w_0 \Vdash \varphi$.
+- But notice that $wE w_0$ in the given bisimulation $E$.
+- So, by Invariance, $(\{w\}, \{(w, w)\}, V), w \Vdash \varphi$. Contradiction.
 :::
 :::
 
@@ -233,7 +233,9 @@ Suppose $\varphi$ is valid in all and only the irreflexive frames.
 
 ::: {.columns}
 ::: {.column width="50%"}
-To show that a structural condition $C$ is not modally definable, find a frame $G$ that fails $C$ such that, for every model $M$ based on $G$ and every world $w$ in $M$, there is a model $N$ on some frame $F$ satisfying $C$ and a world $v$ of $N$, and a bisimulation $E$ between $M$ and $N$ with $wEv$.
+To show that a structural condition $C$ is not modally definable, find a frame $G$ in which $C$ fails such that 
+
+- for each model $M$ based on $G$ and each world $w$ in $M$, there is a model $N$ based on some frame $F$ that satisfies $C$ and a world $u$ in $N$, and a bisimulation $E$ between $M$ and $N$ with $wEv$.
 
 
 | condition $C$ | $G$ lacks $C$ | $F$ has $C$ |
