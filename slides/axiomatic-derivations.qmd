@@ -1,0 +1,297 @@
+---
+title: "axiomatic derivations"
+subtitle: "PHIL 452 · Modal Logic"
+author: "Gabriel Uzquiano"
+format:
+  revealjs:
+    theme: [default, theme.scss, examples.scss, mc.scss]
+    filters: 
+     - mc.lua
+     - diagram
+    include-after-body: mc-scripts.html
+    css: fonts.css
+    slide-number: c/t
+    chalkboard: true
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-color: "#ffffff"
+    width: 1280
+    height: 720
+---
+
+# axiomatic proofs {.divider}
+
+We aim for a characterization of sets of modal formulas valid in different classes of frames. 
+
+We begin with the system $\textsf{K}$ which proves all and only formulas valid in all frames. 
+
+## the minimal normal modal logic $\textsf{K}$
+
+**Axioms** include:
+
+  - all substitution instances of axioms of propositional logic
+  - all substitution instances of axiom 
+
+
+      $$
+      \begin{array}{lll}
+        \textsf{K} & & \Box (p \to q) \to (\Box p \to \Box q)\\
+        \end{array}
+      $$
+
+. . .
+
+Two **rules of inference**:
+
+  - modus ponenes
+    
+      $$
+      \varphi \to \psi, \varphi / \psi \tag{\textsf{MP}}
+      $$
+        
+  - necessitation
+    
+      $$
+      \varphi / \Box \varphi \tag{\textsf{N}}
+      $$
+
+## theorem 
+
+::: {.definition}
+A **proof** in $\textsf{K}$ is a finite sequence of modal formulas $(\chi_1, \dots , \chi_n)$ where for each $m \leq n$, the formula $\chi_m$ is either
+
+::: {.incremental}
+- an axiom
+
+- an outcome of an application of $\textsf{MP}$ to two prior formulas
+
+- an outcome of an application of $\textsf{N}$ to a prior formula
+:::
+:::
+
+. . .
+
+::: {style="height: 10px;"}
+:::
+
+::: {.definition}
+A **theorem** of $\textsf{K}$ is formula $\varphi$ is a formula that appears in the last line of a proof in $\textsf{K}$. We write $\vdash_{\textsf{K}} \varphi$ to indicate that $\varphi$ is a theorem of $\textsf{K}$.
+:::
+
+## example
+
+::: {.theorem}
+$\vdash_{\textsf{K}} \Box p \to \Box (q \to p)$
+:::
+
+::: {.proof}
+$$
+\begin{array}{lll}
+1 &  p \to (q \to p) & \textsf{A1}[p/p, (p \to p)/q]\\
+2 &  \Box (p \to (q \to p))  & \textsf{N}, 1\\
+3 &  \Box (p \to (q \to p)) \to (\Box p \to \Box(q \to p)) & \textsf{K}[p/p, (q \to p)/q]\\
+4 &  \Box p \to \Box(q \to p) & \textsf{MP} \ 2, 3\\
+\end{array}
+$$
+:::
+
+## soundness
+
+::: {.theorem}
+All theorems of $\textsf{K}$ are valid in the class of all frames.
+:::
+
+::: {.proof}
+- All substitution instances of tautologies are valid in the class of all frames.
+- All substitution instances of $\textsf{K}$ are valid in the class of all frames.
+- $\textsf{MP}$ preserves validity in the class of all frames.
+- $\textsf{RN}$ preserves validity in the class of all frames.
+:::
+
+
+## derived rules of inference
+
+
+::: {.theorem}
+If $\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n$ and $\psi$ is derivable from $\{\varphi_1, \dots, \varphi\}$ in propositional logic, then $\vdash_{\textsf{K}} \psi$.
+:::
+
+::: {.proof}
+Given the Deduction Theorem for Propositional Logic, if $\psi$ is derivable from $\{ \varphi_1, \dots, \varphi_n\}$ in Propositional Logic, then $\varphi_1 \to ( \varphi_2 \to \dots (\varphi_n \to \psi) \dots))$ is a theorem of Propositional Logic and thus one of $\textsf{K}$. By repeated applications of $\textsf{MP}$, $\vdash_K \psi$.
+:::
+
+## $\textsf{RK}$ {.smaller}
+
+::: {.theorem}
+($\textsf{RK}$) \ If $\vdash_K \varphi \to \psi$, then $\vdash_K \Box \varphi \to \Box \psi$
+:::
+
+::: {.proof}
+We may transform a proof of $\varphi \to \psi$ into a proof of $\Box \varphi \to \Box \psi$.
+
+$$\begin{array}{lllll}
+n & & \varphi \to \psi & \\
+n+1 & & \Box (\varphi \to \psi) & \textsf{RN} \ n\\
+n+2  & & \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) & \textsf{K}[\varphi/p, \psi/q]\\
+n+3 & & \Box \varphi \to \Box \psi & \textsf{MP} \ n+1, n+2\\
+\end{array}$$
+:::
+
+## $\textsf{RK}_\Diamond$ {.smaller}
+
+::: {.theorem}
+($\textsf{RK}$) \ If $\vdash_K \varphi \to \psi$, then $\vdash_K \Diamond \varphi \to \Diamond \psi$
+:::
+
+::: {.proof}
+We may transform a proof of $\varphi \to \psi$ into a proof of $\Diamond \varphi \to \Diamond \psi$.
+
+$$
+\begin{array}{lllll}
+n & & \varphi \to \psi & \\
+n+1 & & \neg \psi \to \neg \varphi &  \textsf{PL} \ n\\
+n+2 & & \Box (\neg \psi \to \neg \varphi) & \textsf{RN} \ n+1\\
+n+3  & & \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) & \textsf{K}[\neg \psi/p, \neg \varphi/q]\\
+n+4 & & \Box \neg \psi \to \Box \neg \varphi & \textsf{MP} \ n+2, n+3\\
+n+5 & & \neg \Box \neg \varphi \to \neg \Box \neg \psi & \textsf{PL} \ n+4\\
+n+6 & & \Diamond \varphi \to \Diamond \psi & \textsf{Def} \ \Diamond \ n+5
+\end{array}
+$$
+:::
+
+
+## theorems of $\textsf{K}$ {.smaller}
+
+::: {.theorem}
+$\vdash_K \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)$
+:::
+
+::: {.proof}
+$$
+\begin{array}{lllll}
+1 & & (\varphi \to \psi) \to (\neg \psi \to \neg \varphi) & \textsf{PL} \\
+2 & & \Box (\varphi \to \psi) \to \Box(\neg \psi \to \neg \varphi) & \textsf{RK} \ 1 \\
+3 & & \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) & \textsf{K}[\neg \psi/p, \neg \varphi/q] \\
+4 & & (\Box \neg \psi \to \Box \neg \varphi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) & \textsf{PL}\\
+5 & & \Box (\varphi \to \psi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) & \textsf{PL} \ 2, 3, 4\\
+6 & & \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi) & \textsf{Def} \ \Diamond \  6\\
+\end{array}
+$$
+:::
+
+
+## necessity commutes with conjunction ($\Rightarrow$) {.smaller}
+
+::: {.theorem}
+$\vdash_K \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)$
+:::
+
+::: {.proof}
+\begin{array}{lllll}
+1 & & (\varphi \wedge \psi) \to \varphi & \textsf{PL} \\
+2 & & \Box (\varphi \wedge \psi) \to \Box \varphi & \textsf{RK} \ 1 \\
+3 & & (\varphi \wedge \psi) \to \psi & \textsf{PL} \\
+4 & & \Box (\varphi \wedge \psi) \to \Box \psi & \textsf{RK} \ 3 \\
+5 & & \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) & \textsf{PL} \ 2, 4\\
+\end{array}
+
+:::
+
+## necessity commutes with conjunction ($\Leftarrow$) {.smaller}
+
+::: {.theorem}
+$\vdash_K (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)$
+:::
+
+
+::: {.proof}
+$$
+\begin{array}{lllll}
+1 & & (\varphi \wedge \psi) \to \varphi & \textsf{PL} \\
+2 & & \Box (\varphi \wedge \psi) \to \Box \varphi & \textsf{RK} \ 1 \\
+3 & & (\varphi \wedge \psi) \to \psi & \textsf{PL} \\
+4 & & \Box (\varphi \wedge \psi) \to \Box \psi & \textsf{RK} \ 3 \\
+5 & & \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) & \textsf{PL} \ 2, 4\\
+\end{array}
+$$
+:::
+
+
+
+
+## possibility commutes with disjunction ($\Rightarrow$) {.smaller}
+
+
+::: {.theorem}
+$\vdash_K \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)$
+:::
+
+
+::: {.proof}
+$$
+\begin{array}{lllll}
+1 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) & \textsf{Def} \ \Diamond \\
+2 & & \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{PL} \\
+3 & & (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{Prop} \ 7.6\\
+4 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{PL} \ 1, 2, 3\\
+5 & & (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) & \textsf{PL} \\
+6  & & \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{RK} \ 5 \\
+7 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{PL} \ 4, 6\\
+8 & & \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) & \textsf{PL} \\
+9 & & \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) & \textsf{Def} \ \Diamond\\
+10 &  & \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &  \textsf{PL} \ 7, 8, 9\\
+11 & & \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 10
+\end{array}
+$$
+
+:::
+
+
+## possibility commutes with disjunction ($\Leftarrow$) {.smaller}
+
+
+::: {.theorem}
+$\vdash_K (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)$
+:::
+
+::: {.proof}
+$$
+\begin{array}{lllll}
+1 & & \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) & \textsf{Def} \ \Diamond\\
+2 & & \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{PL} \ 1\\
+3 & & \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) & \textsf{PL}\\
+4 & & \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{RK} \ 3\\
+5 & & \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{Prop} \ 7.5\\
+6 & & (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) & \textsf{PL} \\
+7 & & \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{Def} \ \Diamond\\
+8 & & \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 5, 6, 7\\
+9 & & \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 2, 8\\
+10 & & (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) & \textsf{PL} \ 9\\
+\end{array}
+$$
+:::
+
+
+## one more helpful theorem {.smaller}
+
+::: {.theorem}
+$\vdash_K (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)$
+:::
+
+::: {.proof}
+$$
+\begin{array}{lllll}
+1 & & \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) & \textsf{PL} \\
+2 & & \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) & \textsf{RK} \ 1 \\
+3 & & \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &  \textsf{K}[\psi/p, \neg \varphi/q] \\
+4 & & \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  & \textsf{PL} \ 2, 3\\
+5 & & \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) & \textsf{PL} \ 4 \\
+6 & & \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) & \textsf{Def} \ \Diamond \\
+7 & & (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) & \textsf{PL} \\
+8 & & (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) & \textsf{PL} \ 6, 7\\
+9 & & (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) & \textsf{Def} \ \Diamond\\
+10 & & (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) & \textsf{PL} \\
+11 & & (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) & \textsf{PL} \ 8, 9, 10\\
+\end{array}
+$$
+:::
