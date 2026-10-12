@@ -25,7 +25,7 @@ We aim for a characterization of sets of modal formulas valid in different class
 
 We begin with the system $\textsf{K}$ which proves all and only formulas valid in all frames. 
 
-## the minimal normal modal logic $\textsf{K}$
+## the minimal normal modal logic $\textsf{K}$ 
 
 **Axioms** include:
 
@@ -78,7 +78,7 @@ A **proof** in $\textsf{K}$ is a finite sequence of modal formulas $(\chi_1, \do
 A **theorem** of $\textsf{K}$ is formula $\varphi$ is a formula that appears in the last line of a proof in $\textsf{K}$. We write $\vdash_{\textsf{K}} \varphi$ to indicate that $\varphi$ is a theorem of $\textsf{K}$.
 :::
 
-## example
+## example {.smaller}
 
 ::: {.theorem}
 $\vdash_{\textsf{K}} \Box p \to \Box (q \to p)$
@@ -105,7 +105,7 @@ All theorems of $\textsf{K}$ are valid in the class of all frames.
 - All substitution instances of tautologies are valid in the class of all frames.
 - All substitution instances of $\textsf{K}$ are valid in the class of all frames.
 - $\textsf{MP}$ preserves validity in the class of all frames.
-- $\textsf{RN}$ preserves validity in the class of all frames.
+- $\textsf{N}$ preserves validity in the class of all frames.
 :::
 
 
@@ -150,11 +150,9 @@ $$
 \begin{array}{lllll}
 n & & \varphi \to \psi & \\
 n+1 & & \neg \psi \to \neg \varphi &  \textsf{PL} \ n\\
-n+2 & & \Box (\neg \psi \to \neg \varphi) & \textsf{RN} \ n+1\\
-n+3  & & \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) & \textsf{K}[\neg \psi/p, \neg \varphi/q]\\
-n+4 & & \Box \neg \psi \to \Box \neg \varphi & \textsf{MP} \ n+2, n+3\\
-n+5 & & \neg \Box \neg \varphi \to \neg \Box \neg \psi & \textsf{PL} \ n+4\\
-n+6 & & \Diamond \varphi \to \Diamond \psi & \textsf{Def} \ \Diamond \ n+5
+n+2 & & \Box \neg \psi \to \Box \neg \varphi & \textsf{RK} \ n+1\\
+n+4 & & \neg \Box \neg \varphi \to \neg \Box \neg \psi & \textsf{PL} \ n+4\\
+n+5 & & \Diamond \varphi \to \Diamond \psi & \textsf{Def} \ \Diamond \ n+5
 \end{array}
 $$
 :::
