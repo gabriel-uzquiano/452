@@ -43,7 +43,7 @@ We begin with the system $\textsf{K}$ which proves all and only formulas valid i
 
 Two **rules of inference**:
 
-  - modus ponenes
+  - modus ponens
     
       $$
       \varphi \to \psi, \varphi / \psi \tag{\textsf{MP}}
@@ -52,7 +52,7 @@ Two **rules of inference**:
   - necessitation
     
       $$
-      \varphi / \Box \varphi \tag{\textsf{N}}
+      \varphi / \Box \varphi \tag{\textsf{RN}}
       $$
 
 ## theorem 
@@ -65,7 +65,7 @@ A **proof** in $\textsf{K}$ is a finite sequence of modal formulas $(\chi_1, \do
 
 - an outcome of an application of $\textsf{MP}$ to two prior formulas
 
-- an outcome of an application of $\textsf{N}$ to a prior formula
+- an outcome of an application of $\textsf{RN}$ to a prior formula
 :::
 :::
 
@@ -87,8 +87,8 @@ $\vdash_{\textsf{K}} \Box p \to \Box (q \to p)$
 ::: {.proof}
 $$
 \begin{array}{lll}
-1 &  p \to (q \to p) & \textsf{A1}[p/p, (p \to p)/q]\\
-2 &  \Box (p \to (q \to p))  & \textsf{N}, 1\\
+1 &  p \to (q \to p) & \textsf{A1}\\
+2 &  \Box (p \to (q \to p))  & \textsf{RN}, 1\\
 3 &  \Box (p \to (q \to p)) \to (\Box p \to \Box(q \to p)) & \textsf{K}[p/p, (q \to p)/q]\\
 4 &  \Box p \to \Box(q \to p) & \textsf{MP} \ 2, 3\\
 \end{array}
@@ -105,7 +105,7 @@ All theorems of $\textsf{K}$ are valid in the class of all frames.
 - All substitution instances of tautologies are valid in the class of all frames.
 - All substitution instances of $\textsf{K}$ are valid in the class of all frames.
 - $\textsf{MP}$ preserves validity in the class of all frames.
-- $\textsf{N}$ preserves validity in the class of all frames.
+- $\textsf{RN}$ preserves validity in the class of all frames.
 :::
 
 
@@ -205,11 +205,11 @@ $\vdash_K (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)$
 ::: {.proof}
 $$
 \begin{array}{lllll}
-1 & & (\varphi \wedge \psi) \to \varphi & \textsf{PL} \\
-2 & & \Box (\varphi \wedge \psi) \to \Box \varphi & \textsf{RK} \ 1 \\
-3 & & (\varphi \wedge \psi) \to \psi & \textsf{PL} \\
-4 & & \Box (\varphi \wedge \psi) \to \Box \psi & \textsf{RK} \ 3 \\
-5 & & \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) & \textsf{PL} \ 2, 4\\
+1 & & \varphi \to (\psi \to (\varphi \wedge \psi)) & \textsf{PL} \\
+2 & & \Box \varphi \to \Box (\psi \to (\varphi \wedge \psi)) & \textsf{RK} \ 1\\
+3 & & \Box (\psi \to (\varphi \wedge \psi)) \to (\Box \psi \to \Box (\varphi \wedge \psi)) & \textsf{K}[\psi/p, (\varphi \wedge \psi)/q]\\
+4 & & \Box \varphi \to (\Box \psi \to \Box (\varphi \wedge \psi)) & \textsf{PL} \ 2, 3\\
+5 & & (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi) & \textsf{PL} \ 4\\
 \end{array}
 $$
 :::
@@ -228,17 +228,12 @@ $\vdash_K \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)
 ::: {.proof}
 $$
 \begin{array}{lllll}
-1 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) & \textsf{Def} \ \Diamond \\
-2 & & \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{PL} \\
-3 & & (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{Prop} \ 7.6\\
-4 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{PL} \ 1, 2, 3\\
-5 & & (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) & \textsf{PL} \\
-6  & & \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{RK} \ 5 \\
-7 & & \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{PL} \ 4, 6\\
-8 & & \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) & \textsf{PL} \\
-9 & & \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) & \textsf{Def} \ \Diamond\\
-10 &  & \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &  \textsf{PL} \ 7, 8, 9\\
-11 & & \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 10
+1 & & (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) & \textsf{PL} \\
+2 & & \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{RK} \ 1 \\
+3 & & (\Box \neg \varphi \wedge \Box \neg \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{Prop} \ 7.6 \\
+4 & & (\Box \neg \varphi \wedge \Box \neg \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{PL} \ 2, 3 \\
+5 & & (\neg \Diamond \varphi \wedge \neg \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) & \textsf{Def} \ \Diamond, \textsf{PL} \ 4 \\
+6 & & \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 5
 \end{array}
 $$
 
@@ -255,16 +250,12 @@ $\vdash_K (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)
 ::: {.proof}
 $$
 \begin{array}{lllll}
-1 & & \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) & \textsf{Def} \ \Diamond\\
-2 & & \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) & \textsf{PL} \ 1\\
-3 & & \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) & \textsf{PL}\\
-4 & & \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{RK} \ 3\\
-5 & & \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{Prop} \ 7.5\\
-6 & & (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) & \textsf{PL} \\
-7 & & \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{Def} \ \Diamond\\
-8 & & \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 5, 6, 7\\
-9 & & \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) & \textsf{PL} \ 2, 8\\
-10 & & (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) & \textsf{PL} \ 9\\
+1 & & \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) & \textsf{PL} \\
+2 & & \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) & \textsf{RK} \ 1 \\
+3 & & \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{Prop} \ 7.5 \\
+4 & & \Box \neg (\varphi \vee \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) & \textsf{PL} \ 2, 3 \\
+5 & & \neg \Diamond (\varphi \vee \psi) \to (\neg \Diamond \varphi \wedge \neg \Diamond \psi) & \textsf{Def} \ \Diamond, \textsf{PL} \ 4 \\
+6 & & (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) & \textsf{PL} \ 5
 \end{array}
 $$
 :::
@@ -281,15 +272,9 @@ $$
 \begin{array}{lllll}
 1 & & \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) & \textsf{PL} \\
 2 & & \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) & \textsf{RK} \ 1 \\
-3 & & \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &  \textsf{K}[\psi/p, \neg \varphi/q] \\
-4 & & \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  & \textsf{PL} \ 2, 3\\
-5 & & \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) & \textsf{PL} \ 4 \\
-6 & & \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) & \textsf{Def} \ \Diamond \\
-7 & & (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) & \textsf{PL} \\
-8 & & (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) & \textsf{PL} \ 6, 7\\
-9 & & (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) & \textsf{Def} \ \Diamond\\
-10 & & (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) & \textsf{PL} \\
-11 & & (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) & \textsf{PL} \ 8, 9, 10\\
+3 & & \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) & \textsf{K}[\psi/p, \neg \varphi/q] \\
+4 & & \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi) & \textsf{PL} \ 2, 3 \\
+5 & & (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) & \textsf{Def} \ \Diamond, \textsf{PL} \ 4
 \end{array}
 $$
 :::
