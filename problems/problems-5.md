@@ -1,11 +1,12 @@
 ### problem set 5 (landscape of normal modal logics)
 
-1. Use the fact that $\textsf{K}$ is sound and complete with respect to all frames to 
-   justify the fact that $\Box \varphi/\varphi$ is a derived rule of inference for $\textsf{K}$. That is, if $\vdash_\textsf{K} \Box \varphi$,
+1. Justify the fact that $\Box \varphi/\varphi$ is a derived rule of inference for $\textsf{K}$. That is, for each modal formula $\varphi$, if $\vdash_\textsf{K} \Box \varphi$,
    then $\vdash_\textsf{K} \varphi$.
+   
+   *Use the fact that $\textsf{K}$ is sound and complete with respect to the class of all frames*
 
       
-2. Prove $\textsf{KB4}$ is a *proper* extension of $\textsf{K5}$. That is, 
+2. Prove $\textsf{KB4}$ is a *proper* extension of $\textsf{K5}$. That is: 
 
    1. All theorems of $\textsf{K5}$ are theorems of $\textsf{KB4}$.
 
