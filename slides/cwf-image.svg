@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Compactness argument. Every finite subset is satisfied by a finite transitive chain w1 to wn, which is converse well-founded, so psi holds. By compactness there is a transitive model of psi with an infinite ascending chain c1 R c2 R c3 and so on, which is not converse well-founded." height="680" role="img" viewBox="0 0 760 680" width="760">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <text fill="#6c757d" font-size="16" text-anchor="start" x="40" y="40">Each finite Δ ⊆ Σ ∪ Γ₀ ∪ {ψ}: take n = largest index, and cᵢ ↦ wᵢ</text>
+    <path d="M 86 133 C 121.6 88 228.4 88 264 133" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="100" x2="148" y1="150" y2="150"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="195" x2="243" y1="150" y2="150"/>
+    <circle cx="80" cy="150" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="76" y="157">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="86" y="163">1</text>
+    <circle cx="175" cy="150" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="171" y="157">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="181" y="163">2</text>
+    <circle cx="270" cy="150" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="266" y="157">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="276" y="163">3</text>
+    <text fill="#6c757d" font-size="16" font-style="italic" text-anchor="start" x="360" y="157">n = 3</text>
+    <path d="M 86 303 C 121.6 258 228.4 258 264 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 86 303 C 140.6 242 304.4 242 359 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 86 303 C 159.6 226 380.4 226 454 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 181 303 C 216.6 258 323.4 258 359 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 181 303 C 235.6 242 399.4 242 454 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 276 303 C 311.6 258 418.4 258 454 303" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="100" x2="148" y1="320" y2="320"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="195" x2="243" y1="320" y2="320"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="290" x2="338" y1="320" y2="320"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="385" x2="433" y1="320" y2="320"/>
+    <circle cx="80" cy="320" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="76" y="327">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="86" y="333">1</text>
+    <circle cx="175" cy="320" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="171" y="327">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="181" y="333">2</text>
+    <circle cx="270" cy="320" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="266" y="327">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="276" y="333">3</text>
+    <circle cx="365" cy="320" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="361" y="327">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="371" y="333">4</text>
+    <circle cx="460" cy="320" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="456" y="327">w</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="466" y="333">5</text>
+    <text fill="#6c757d" font-size="16" font-style="italic" text-anchor="start" x="550" y="327">n = 5</text>
+    <text fill="#2780e3" font-size="15" text-anchor="start" x="80" y="378">finite chain + transitive closure: transitive, converse well-founded,</text>
+    <text fill="#2780e3" font-size="15" text-anchor="start" x="80" y="398">so ψ holds, and Δ is satisfied</text>
+    <line stroke="#343a40" stroke-width="2.2" x1="330" x2="330" y1="418" y2="462"/>
+    <text fill="#343a40" font-size="18" font-style="italic" text-anchor="start" x="350" y="452">Compactness</text>
+    <path d="M 86 563 C 121.6 518 228.4 518 264 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 86 563 C 140.6 502 304.4 502 359 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 86 563 C 159.6 486 380.4 486 454 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 86 563 C 178.6 470 456.4 470 549 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 181 563 C 216.6 518 323.4 518 359 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 181 563 C 235.6 502 399.4 502 454 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 181 563 C 254.6 486 475.4 486 549 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 276 563 C 311.6 518 418.4 518 454 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 276 563 C 330.6 502 494.4 502 549 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <path d="M 371 563 C 406.6 518 513.4 518 549 563" fill="none" stroke="#a9acaf" stroke-width="1.1"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="100" x2="148" y1="580" y2="580"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="195" x2="243" y1="580" y2="580"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="290" x2="338" y1="580" y2="580"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="385" x2="433" y1="580" y2="580"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="480" x2="528" y1="580" y2="580"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="575" x2="609" y1="580" y2="580"/>
+    <text fill="#343a40" font-size="22" text-anchor="start" x="627" y="587">· · ·</text>
+    <circle cx="80" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="76" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="86" y="593">1</text>
+    <circle cx="175" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="171" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="181" y="593">2</text>
+    <circle cx="270" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="266" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="276" y="593">3</text>
+    <circle cx="365" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="361" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="371" y="593">4</text>
+    <circle cx="460" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="456" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="466" y="593">5</text>
+    <circle cx="555" cy="580" fill="#8a8d90" r="20" stroke="#343a40" stroke-width="1.5"/>
+    <text fill="#000" font-size="20" font-style="italic" text-anchor="middle" x="551" y="587">c</text>
+    <text fill="#000" font-size="12" text-anchor="middle" x="561" y="593">6</text>
+    <text fill="#b3261e" font-size="15" text-anchor="start" x="80" y="640">transitive and ψ holds, but c₁ R c₂ R c₃ R ⋯ is an infinite ascending chain:</text>
+    <text fill="#b3261e" font-size="15" text-anchor="start" x="80" y="660">not converse well-founded, contradicting the assumption on ψ</text>
+  </g>
+  <polygon fill="#a9acaf" points="264.0,133.0 255.4,128.3 261.4,123.6"/>
+  <polygon fill="#343a40" points="154.0,150.0 142.0,155.0 142.0,145.0"/>
+  <polygon fill="#343a40" points="249.0,150.0 237.0,155.0 237.0,145.0"/>
+  <polygon fill="#a9acaf" points="264.0,303.0 255.4,298.3 261.4,293.6"/>
+  <polygon fill="#a9acaf" points="359.0,303.0 350.2,298.8 355.8,293.8"/>
+  <polygon fill="#a9acaf" points="454.0,303.0 445.0,299.1 450.5,293.9"/>
+  <polygon fill="#a9acaf" points="359.0,303.0 350.4,298.3 356.4,293.6"/>
+  <polygon fill="#a9acaf" points="454.0,303.0 445.2,298.8 450.8,293.8"/>
+  <polygon fill="#a9acaf" points="454.0,303.0 445.4,298.3 451.4,293.6"/>
+  <polygon fill="#343a40" points="154.0,320.0 142.0,325.0 142.0,315.0"/>
+  <polygon fill="#343a40" points="249.0,320.0 237.0,325.0 237.0,315.0"/>
+  <polygon fill="#343a40" points="344.0,320.0 332.0,325.0 332.0,315.0"/>
+  <polygon fill="#343a40" points="439.0,320.0 427.0,325.0 427.0,315.0"/>
+  <polygon fill="#343a40" points="330.0,474.0 324.0,460.0 336.0,460.0"/>
+  <polygon fill="#a9acaf" points="264.0,563.0 255.4,558.3 261.4,553.6"/>
+  <polygon fill="#a9acaf" points="359.0,563.0 350.2,558.8 355.8,553.8"/>
+  <polygon fill="#a9acaf" points="454.0,563.0 445.0,559.1 450.5,553.9"/>
+  <polygon fill="#a9acaf" points="549.0,563.0 540.0,559.3 545.3,553.9"/>
+  <polygon fill="#a9acaf" points="359.0,563.0 350.4,558.3 356.4,553.6"/>
+  <polygon fill="#a9acaf" points="454.0,563.0 445.2,558.8 450.8,553.8"/>
+  <polygon fill="#a9acaf" points="549.0,563.0 540.0,559.1 545.5,553.9"/>
+  <polygon fill="#a9acaf" points="454.0,563.0 445.4,558.3 451.4,553.6"/>
+  <polygon fill="#a9acaf" points="549.0,563.0 540.2,558.8 545.8,553.8"/>
+  <polygon fill="#a9acaf" points="549.0,563.0 540.4,558.3 546.4,553.6"/>
+  <polygon fill="#343a40" points="154.0,580.0 142.0,585.0 142.0,575.0"/>
+  <polygon fill="#343a40" points="249.0,580.0 237.0,585.0 237.0,575.0"/>
+  <polygon fill="#343a40" points="344.0,580.0 332.0,585.0 332.0,575.0"/>
+  <polygon fill="#343a40" points="439.0,580.0 427.0,585.0 427.0,575.0"/>
+  <polygon fill="#343a40" points="534.0,580.0 522.0,585.0 522.0,575.0"/>
+  <polygon fill="#343a40" points="615.0,580.0 603.0,585.0 603.0,575.0"/>
+</svg>

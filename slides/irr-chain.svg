@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="A two-cycle a, b is bisimilar to the chain c0, c1, c2, and so on, with even links related to a and odd links to b." height="395" role="img" viewBox="0 0 880 395" width="880">
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <text fill="#6c757d" font-size="17" text-anchor="middle" x="110.0" y="40">two-cycle</text>
+    <text fill="#6c757d" font-size="17" text-anchor="middle" x="560.0" y="40">its unravelling</text>
+    <path d="M 128 132 Q 170 200 128 261" fill="none" stroke="#343a40" stroke-width="1.6"/>
+    <path d="M 92 268 Q 50 200 92 139" fill="none" stroke="#343a40" stroke-width="1.6"/>
+    <line stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2" x1="138" x2="302" y1="110" y2="110"/>
+    <line stroke="#2780e3" stroke-dasharray="7 5" stroke-width="2" x1="138" x2="442" y1="290" y2="290"/>
+    <text fill="#2780e3" font-size="19" font-style="italic" style="font-style:italic" text-anchor="middle" x="220.0" y="100">E</text>
+    <text fill="#2780e3" font-size="19" font-style="italic" style="font-style:italic" text-anchor="middle" x="290.0" y="280">E</text>
+    <line stroke="#343a40" stroke-width="1.6" x1="347.2" x2="449.1" y1="132.1" y2="263.2"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="487.2" x2="589.1" y1="267.9" y2="136.8"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="627.2" x2="729.1" y1="132.1" y2="263.2"/>
+    <line stroke="#343a40" stroke-width="1.6" x1="772" x2="812" y1="272" y2="240"/>
+    <text fill="#343a40" font-size="22" text-anchor="start" x="830.0" y="230">· · ·</text>
+    <circle cx="110" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="110.0" y="118">a</text>
+    <circle cx="110" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="23" font-style="italic" style="font-style:italic" text-anchor="middle" x="110.0" y="298">b</text>
+    <circle cx="330" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="22" font-style="italic" style="font-style:italic" text-anchor="middle" x="326.0" y="117">c</text>
+    <text fill="#000" font-size="13" text-anchor="middle" x="337.0" y="123">0</text>
+    <circle cx="470" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="22" font-style="italic" style="font-style:italic" text-anchor="middle" x="466.0" y="297">c</text>
+    <text fill="#000" font-size="13" text-anchor="middle" x="477.0" y="303">1</text>
+    <circle cx="610" cy="110" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="22" font-style="italic" style="font-style:italic" text-anchor="middle" x="606.0" y="117">c</text>
+    <text fill="#000" font-size="13" text-anchor="middle" x="617.0" y="123">2</text>
+    <circle cx="750" cy="290" fill="#8a8d90" r="28" stroke="#343a40" stroke-width="1.6"/>
+    <text fill="#000" font-size="22" font-style="italic" style="font-style:italic" text-anchor="middle" x="746.0" y="297">c</text>
+    <text fill="#000" font-size="13" text-anchor="middle" x="757.0" y="303">3</text>
+    <text fill="#6c757d" font-size="14" x="350.8" y="375">and so on: </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="412.8" y="375">c</text>
+    <text fill="#6c757d" font-size="14" x="419.7" y="375">ₙ </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="428.1" y="375">E a</text>
+    <text fill="#6c757d" font-size="14" x="448.4" y="375"> for even </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="502.1" y="375">n</text>
+    <text fill="#6c757d" font-size="14" x="510.0" y="375">, </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="517.1" y="375">c</text>
+    <text fill="#6c757d" font-size="14" x="524.0" y="375">ₙ </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="532.4" y="375">E b</text>
+    <text fill="#6c757d" font-size="14" x="553.2" y="375"> for odd </text>
+    <text fill="#6c757d" font-size="14" font-style="italic" style="font-style:italic" x="601.2" y="375">n</text>
+  </g>
+  <polygon fill="#343a40" points="126.0,263.0 129.2,249.4 137.7,255.3"/>
+  <polygon fill="#343a40" points="94.0,137.0 90.8,150.6 82.3,144.7"/>
+  <polygon fill="#343a40" points="452.2,267.1 440.1,260.0 448.3,253.7"/>
+  <polygon fill="#343a40" points="592.2,132.9 588.3,146.3 580.1,140.0"/>
+  <polygon fill="#343a40" points="732.2,267.1 720.1,260.0 728.3,253.7"/>
+  <polygon fill="#343a40" points="818.0,235.0 811.1,247.2 804.6,239.1"/>
+</svg>
