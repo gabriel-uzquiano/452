@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Completeness strategy: from non-theoremhood, to consistency, to a maximal consistent set, to a world of the canonical model where the formula fails." role="img" width="880" height="240" viewBox="0 0 880 240">
+  <defs>
+    <marker id="a" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#343a40"/></marker>
+    <marker id="b" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#2780e3"/></marker>
+  </defs>
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <rect x="20.0" y="68.0" width="180" height="84" rx="10" fill="#e8f1fc" stroke="#2780e3" stroke-width="1.8"/>
+    <text x="110" y="117" font-size="19" fill="#2780e3" text-anchor="middle">⊬Σ φ</text>
+    <rect x="240.0" y="68.0" width="180" height="84" rx="10" fill="#fff" stroke="#343a40" stroke-width="1.8"/>
+    <text x="330" y="104" font-size="19" fill="#343a40" text-anchor="middle">{¬φ} is</text>
+    <text x="330" y="130" font-size="19" fill="#343a40" text-anchor="middle">Σ-consistent</text>
+    <rect x="460.0" y="68.0" width="180" height="84" rx="10" fill="#fff" stroke="#343a40" stroke-width="1.8"/>
+    <text x="550" y="104" font-size="19" fill="#343a40" text-anchor="middle">¬φ ∈ Γ</text>
+    <text x="550" y="130" font-size="19" fill="#343a40" text-anchor="middle">for some MCS Γ</text>
+    <rect x="680.0" y="68.0" width="180" height="84" rx="10" fill="#e8f1fc" stroke="#2780e3" stroke-width="1.8"/>
+    <text x="770" y="117" font-size="19" fill="#2780e3" text-anchor="middle">MΣ, Γ ⊩ ¬φ</text>
+    <line x1="202" y1="110" x2="236" y2="110" stroke="#343a40" stroke-width="2" marker-end="url(#a)"/>
+    <text x="219.0" y="54.0" font-size="19" fill="#343a40" font-style="italic" text-anchor="middle">Thm 8.1</text>
+    <line x1="422" y1="110" x2="456" y2="110" stroke="#343a40" stroke-width="2" marker-end="url(#a)"/>
+    <text x="439.0" y="54.0" font-size="19" fill="#343a40" font-style="italic" text-anchor="middle">Lindenbaum</text>
+    <line x1="642" y1="110" x2="676" y2="110" stroke="#343a40" stroke-width="2" marker-end="url(#a)"/>
+    <text x="659.0" y="54.0" font-size="19" fill="#343a40" font-style="italic" text-anchor="middle">Truth Lemma</text>
+    <text x="440" y="215" font-size="19" fill="#6c757d" font-style="italic" text-anchor="middle">so φ fails at a world of the canonical model</text>
+  </g>
+</svg>

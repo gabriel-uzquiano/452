@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Canonical frame for B systems is symmetric." role="img" width="640" height="320" viewBox="0 0 640 320">
+  <defs>
+    <marker id="a" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#343a40"/></marker>
+    <marker id="b" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#2780e3"/></marker>
+  </defs>
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <ellipse cx="130" cy="170" rx="72" ry="46" fill="#f4f6f8" stroke="#343a40" stroke-width="1.8"/>
+    <text x="130" y="179" font-size="26" fill="#343a40" font-style="italic" text-anchor="middle">Γ</text>
+    <text x="130" y="246" font-size="19" fill="#343a40" text-anchor="middle">φ</text>
+    <text x="130" y="272" font-size="19" fill="#343a40" text-anchor="middle">□◇φ</text>
+    <ellipse cx="510" cy="170" rx="72" ry="46" fill="#f4f6f8" stroke="#343a40" stroke-width="1.8"/>
+    <text x="510" y="179" font-size="26" fill="#343a40" font-style="italic" text-anchor="middle">Δ</text>
+    <text x="510" y="246" font-size="19" fill="#343a40" text-anchor="middle">◇φ</text>
+    <path d="M 204 150 Q 320.0 100.0 436 150" fill="none" stroke="#343a40" stroke-width="2" marker-end="url(#a)"/>
+    <text x="320.0" y="111.0" font-size="19" fill="#343a40" font-style="italic" text-anchor="middle">R</text>
+    <path d="M 436 190 Q 320.0 240.0 204 190" fill="none" stroke="#2780e3" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#b)"/>
+    <text x="320.0" y="237.0" font-size="19" fill="#2780e3" font-style="italic" text-anchor="middle">R ?</text>
+  </g>
+</svg>

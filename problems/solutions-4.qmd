@@ -1,0 +1,153 @@
+### problem set 4 (modal definability and its limits)
+
+ 
+
+1. A relation $R$ is *functional* on $W$ iff for all $w, u, v \in W$, if $Rwu$ and $Rwv$, then $u = v$. Justify the claims below.
+
+    1. $\Diamond p \to \Box p$ defines the class of functional frames.
+    
+        We argue that for all frames $(W, R)$:
+        
+        $$
+        \begin{array}{lll}
+        (W, R) \models \Diamond p \to \Box p & \text{iff} & R \ \text{is functional on} \ W.
+        \end{array}
+        $$
+        
+        ($\Leftarrow$) Suppose $R$ is functional on $W$. We argue that for all $V$, $(W, R, V) \Vdash \Diamond p \to \Box p$. 
+        Fix a valuation $V$. Given an arbitrary $w \in W$, assume $(W,R, V), w \Vdash \Diamond p$. That means that there is some $u \in W$ such that $Rwu$ and $(W,R, V), u \Vdash p$. Since $R$ is functional on $W$, there is *at most one* such $u\in W$ such that $Rwu$. But since $(W,R, V), u \Vdash p$, we conclude that $(W,R, V), w \Vdash \Box p$.
+
+        ($\Rightarrow$) Suppose $R$ is *not* functional on $W$. That is, there are $w, u, v\in W$ such that $Rwu$ and $Rwv$ and $u \neq v$. Consider a valuation $V$ such that $V(p) = \{u\}$. By definition of $V$, $(W,R, V), u \Vdash p$ and $(W,R, V), w \Vdash \Diamond p$. However, $(W,R, V), v \nVdash p$, which means that $(W,R, V), w \nVdash  \Box p$, since $Rwv$.
+
+
+    
+    2. $p \to \Diamond p$ defines the class of reflexive frames.
+    
+        We argue that for all frames $(W, R)$:
+        
+        $$
+        \begin{array}{lll}
+        (W, R) \models p \to \Diamond p & \text{iff} & R \ \text{is reflexive on} \ W.
+        \end{array}
+        $$
+        
+        ($\Leftarrow$) Suppose $R$ is reflexive on $W$. We argue that for all $V$, $(W, R, V) \Vdash p \to \Diamond p$. 
+        Fix a valuation $V$. Given an arbitrary $w \in W$, assume $(W,R, V), w \Vdash p$. Since $R$ is reflexive on $W$, $Rww$ and $(W,R, V), w \Vdash \Diamond p$.
+        
+        
+
+        ($\Rightarrow$) Suppose $R$ is *not* reflexive on $W$. That is, there is some $w \in W$ such that $\neg Rww$. Consider a valuation $V$ such that $V(p) = \{w\}$. By definition of $V$, $(W,R, V), w \Vdash p$. However, $(W,R, V), w \nVdash \Diamond p$, since $\neg Rwv$.
+    
+
+2. Let $\textsf{Id}$ be the class of *identity frames* $(W, R)$ with $R = \{(u, v)\in W \times W: u = v\}$.
+
+    1. $(p \to \Diamond p) \wedge (\Diamond p \to \Box p)$ defines $\textsf{Id}$. 
+    
+        *Observe that a frame $(W, R)$ is in $\textsf{Id}$ iff $R$ is reflexive and functional on $W$.*
+        
+        **Claim**. If $R \subseteq W \times W$, then $R$ is reflexive and functional if, and only if, $R$ is the identity relation on $W$.
+        
+       
+         ($\Rightarrow$) Since $R$ is reflexive on $W$, the identity relation on $W$ is included in $R$. Now, if $(w, u) \in R$, then since $R$ is reflexive on $W$, $(w, w) \in R$. But since $R$ is functional, it follows that $w = u$. So, $R$ is included in the identity relation on $W$.
+         
+         ($\Leftarrow$) The identity relation on $W$ is reflexive, since $w = w$, and functional, since a world is only identical to itself.
+        
+        
+        We argue that for all frames $(W, R)$:
+        
+        $$
+        \begin{array}{lll}
+        (W, R) \models (p \to \Diamond p) \wedge (\Diamond p \to \Box p) & \text{iff} & R \ \text{is the identity relation on} \ W.
+        \end{array}
+        $$
+        
+         ($\Leftarrow$) Suppose $R$ is the identity relation on $W$. Then $R$ is both reflexive and functional on $W$, which means, by 1.1 and 1.2 respectively, that $(W,R) \models p \to \Diamond p$ and $(W,R) \models \Diamond p \to \Box p$. It follows that $(W, R) \models (p \to \Diamond p) \wedge (\Diamond p \to \Box p)$.
+         
+         ($\Rightarrow$) Suppose $R$ is *not* the identity relation on $W$. By the claim above, $R$ is either not reflexive or not functional on $W$. It follows from 1.1 and 1.2 respectively, that either $(W,R) \not \models p \to \Diamond p$ or $(W,R) \not \models \Diamond p \to \Box p$. Either way, $(W, R) \not \models (p \to \Diamond p) \wedge (\Diamond p \to \Box p)$
+        
+    
+    2. $p \leftrightarrow \Diamond p$ defines $\textsf{Id}$.
+    
+         We argue that for all frames $(W, R)$:
+        
+        $$
+        \begin{array}{lll}
+        (W, R) \models p \leftrightarrow \Diamond p & \text{iff} & R \ \text{is the identity relation on} \ W.
+        \end{array}
+        $$
+        
+        ($\Leftarrow$) Suppose $R$ is the identity relation on $W$. We argue that for all $V$, $(W, R, V) \Vdash p \leftrightarrow \Diamond p$. 
+        Fix a valuation $V$. Given an arbitrary $w \in W$, assume $(W,R, V), w \Vdash p$. Since $R$ is reflexive on $W$, $Rww$ and $(W,R, V), w \Vdash \Diamond p$. On the other hand, if $(W,R, V), w \Vdash \Diamond p$, then since no world other than $w$ is accessible from $w$, we have that $(W,R, V), w \Vdash p$.
+        
+        
+
+        ($\Rightarrow$) Suppose $R$ is *not* the identity relation on $W$. That is, there are some $w, u \in W$ such that $Rwu$ and $w \neq u$. Consider a valuation $V$ such that $V(p) = \{u\}$. By definition of $V$, $(W,R, V), w \nVdash p$. However, $(W,R, V), w \Vdash \Diamond p$, since $Rwv$ and $(W,R, V), u \nVdash p$.
+    
+    
+    3. The formulas in 2.1 and 2.2 are *not* equivalent. For each formula, find a model and a world where it is true and the other is false. Explain why this is consistent with 2.1 and 2.2. (Could either of your models be based on an identity frame?)
+    
+    
+        Consider a frame $(W, R)$ in which:
+      
+        - $W = \{w, u\}$
+      
+        - $R = \{(w, u), (u, u)\}$
+      
+        We now adopt a valuation $V$ on which $V(p) = \{u\}$.
+    
+        - $(W, R, V) w \Vdash p \to \Diamond p$, since $w$ is not a $p$-world.
+      
+        - $(W, R, V) w \Vdash \Diamond p \to \Box p$, since $w$ has access to exactly one $p$-world: $u$.
+      
+        On the other hand:
+      
+        - $(W, R, V) w \nVdash  \Diamond p \to p$, since $w$ has access to a $p$-world without being itself a $p$-world.
+      
+
+        To claim that two formulas define the same class of frames is weaker than to claim that they are equivalent. Two formulas are equivalent iff they share the same truth value at every world of every model. On the other hand, for two formulas to define the same class of frames, it is sufficient that they both be true at every world of every model *based on a frame in the given class*. Because the two formulas are true at every world of every model based on an identity frame, we need to look outside that class of frames in order to find a counterexample to their equivalence. 
+      
+    
+    
+    
+3. Let $\textsf{Diff}$ be the class of *difference frames* $(W, R)$ with $R = \{(u, v) \in W \times W: u \neq v\}$.
+    
+    1. Provide an argument for the undefinability of $\textsf{Diff}$ by a set of modal formulas.
+    
+          *Compare the two-world frame in which each world sees only the other with the one-world frame in which the world sees itself.*
+          
+          Consider the two frames given below:
+          
+          $$
+          \begin{array}{ll|ll}
+           (W_1, R_1) &   &   (W_2, R_2)  \\
+           \hline 
+          W_1  =  \{w\} & &  W_2  =  \{w_0, w_1\} \\
+          R_1  =  \{(w, w)\} & &  R_2  =  \{(w_0, w_1), (w_1, w_0)\} \\
+          \end{array}
+          $$
+          
+          Given a model $(W_1, R_1, V)$ based on the first frame, there is a bisimilarity $E \subseteq W_1 \times W_2$ between that model and a model $(W_2, R_2, V')$ based on the second frame, provided we let
+
+          $$E = \{(w, w_0), (w, w_1)\}$$
+
+          and for every propositional atom $p$:
+
+          $$
+            V'(p) =
+            \begin{cases}
+              W_2 & \text{if } w \in V(p),\\
+              \emptyset & \text{if } w \notin V(p).
+              \end{cases}
+            $$
+
+          We now proceed by a reductio. Suppose $\varphi$ defines the difference frames. $(W_1, R_1)$ is not a difference frame, which means that, by assumption, there is a valuation $V$ with $(W_1, R_1, V), w \nVdash \varphi$. Since $w$ is the only world, $\varphi$ must fail at $w$. On the other hand, $(W_2, R_2)$ is a difference frame, which means that, by assumption, $\varphi$ is valid on it. In particular, $(W_2, R_2, V’), w_0 \Vdash \varphi$. $E$ relates $w$ to $w_0$. By the invariance lemma, $(W_1, R_1, V), w \Vdash \varphi$. This contradicts the second step.
+          
+
+    2. Provide an argument for the undefinability by a set of modal formulas of the class of *non-identity* frames by which we mean the complement of $\textsf{Id}$.
+    
+        The same argument carries over almost verbatim. The key observation now is that $(W_1, R_1)$ is not a non-identity frame, whereas $(W_1, R_1)$ is one.
+
+    3. Conclude that modal definability is not closed under complement. Which earlier parts did you use?   
+    
+        $\textsf{Id}$ is modally definable by 2.1 or 2.2, but its complement, $\overline{\textsf{Id}}$, is not by 3.2.
+    

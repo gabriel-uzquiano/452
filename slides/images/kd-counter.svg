@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Serial frame: w1 sees only w2, w2 sees itself. p false at w1, true at w2. So w1 forces box p but not p." role="img" width="660" height="290" viewBox="0 0 660 290">
+  <defs><marker id="a" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#343a40"/></marker></defs>
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <circle cx="180" cy="170" r="30" fill="#8a8d90" stroke="#343a40" stroke-width="1.6"/>
+    <text x="176" y="178" font-size="23" fill="#000" font-style="italic" text-anchor="middle">w</text>
+    <text x="188" y="184" font-size="13" fill="#000" text-anchor="middle">1</text>
+    <text x="180" y="232" font-size="20" fill="#343a40" font-style="italic" text-anchor="middle">¬p</text>
+    <circle cx="480" cy="170" r="30" fill="#8a8d90" stroke="#343a40" stroke-width="1.6"/>
+    <text x="476" y="178" font-size="23" fill="#000" font-style="italic" text-anchor="middle">w</text>
+    <text x="488" y="184" font-size="13" fill="#000" text-anchor="middle">2</text>
+    <text x="480" y="232" font-size="20" fill="#343a40" font-style="italic" text-anchor="middle">p</text>
+    <line x1="212" y1="170" x2="446" y2="170" stroke="#343a40" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M 466 143 C 440 75 520 75 494 143" fill="none" stroke="#343a40" stroke-width="1.6" marker-end="url(#a)"/>
+    <text x="180" y="265" font-size="20" fill="#2780e3" text-anchor="middle">□p, ¬p</text>
+    <text x="330" y="40" font-size="17" fill="#6c757d" text-anchor="middle">serial, not reflexive</text>
+  </g>
+</svg>

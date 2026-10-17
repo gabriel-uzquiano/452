@@ -130,7 +130,7 @@ $$
 $$
 :::
 
-## $\textsf{KT}_\Diamond \vdash \textsf{T}$ 
+## $\textsf{KT}_\Diamond \vdash \textsf{T}$ {.smaller}
 
 ::: {.theorem}
 $\vdash_{\textsf{KT}_\Diamond} \Box p \to p$
