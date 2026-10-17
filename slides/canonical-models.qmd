@@ -21,20 +21,36 @@ format:
 
 # canonical models {.divider}
 
-We want to show that a normal modal system $\Sigma$ **characterizes** a class of frames $\mathcal{C}$:
+$\Sigma$ **characterizes** a class of frames $\mathcal{C}$ iff $\Sigma$ is sound and complete with respect to $\mathcal{C}$:
 $$\vdash_\Sigma \varphi \quad \text{iff} \quad \models_{\mathcal{C}} \varphi$$
 
-## soundness and completeness
+## how to justify each direction ($\Rightarrow$)
+
+$\Sigma$ is sound with respect to $\mathcal{C}$:
+
+$$\vdash_\Sigma \varphi \quad \text{only if} \quad \models_{\mathcal{C}} \varphi$$
 
 ::: {.incremental}
-- **Soundness** ($\Rightarrow$): the axioms of $\Sigma$ are valid in every frame in $\mathcal{C}$ and the rules preserve validity in $\mathcal{C}$.
+- We argue that the axioms of $\Sigma$ are valid in all frames in $\mathcal{C}$.
 
-- **Completeness** ($\Leftarrow$): we argue by contraposition. If $\nvdash_\Sigma \varphi$, then $\varphi$ fails at a world of some model based on a frame in $\mathcal{C}$.
-
-- The model we build is the **canonical model** $\mathcal{M}_\Sigma$ for $\Sigma$.
-
-- The main task will be to verify that the canonical frame belongs to $\mathcal{C}$.
+- We observe that both $\textsf{MP}$ and $\textsf{RN}$ preserve validity in all frames in $\mathcal{C}$.
 :::
+
+
+## how to justify each direction ($\Leftarrow$)
+
+$\Sigma$ is complete with respect to $\mathcal{C}$:
+
+$$\vdash_\Sigma \varphi \quad \text{if} \quad \models_{\mathcal{C}} \varphi$$
+
+We argue by contraposition. If $\nvdash_\Sigma \varphi$, then $\varphi$ is not valid in all frames in $\mathcal{C}$. That is, if $\nvdash_\Sigma \varphi$, then we find a world at which $\varphi$ fails in *some* model based on a frame in $\mathcal{C}$.
+
+::: {.incremental}
+- We build the **canonical model** $\mathcal{M}_\Sigma$ for $\Sigma$ from maximal $\Sigma$-consistent sets of formulas.
+
+- We verify that the canonical for $\Sigma$ is a member of the class $\mathcal{C}$.
+:::
+
 
 ## the strategy
 
@@ -42,7 +58,11 @@ $$\vdash_\Sigma \varphi \quad \text{iff} \quad \models_{\mathcal{C}} \varphi$$
 
 . . .
 
-Each arrow will be justified in this deck: Theorem 8.1, Lindenbaum's lemma, and the Truth Lemma.
+Each arrow will be justified in this deck:
+
+- Theorem 8.1, 
+- Lindenbaum's Lemma,
+- Truth Lemma.
 
 # consistency {.divider}
 
@@ -55,38 +75,38 @@ $$\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$$
 
 . . .
 
-We make no allowance for premises *inside* a derivation. Otherwise $\textsf{RN}$ would let us infer $p \vdash_\Sigma \Box p$, which is undesirable.
+We do *not* allow premises *inside* a derivation. Otherwise $\textsf{RN}$ would let us infer $p \vdash_\Sigma \Box p$, which is undesirable.
 
 ## consistency
 
 ::: {.definition}
-$\Gamma$ is **$\Sigma$-consistent** iff $\Gamma \nvdash_\Sigma \bot$: there is no finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$ for which
+$\Gamma$ is **$\Sigma$-consistent** iff $\Gamma \nvdash_\Sigma \bot$. That is, there is no finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$ for which
 $$\vdash_\Sigma \boldsymbol{\alpha} \to \bot$$
 :::
 
 . . .
 
-- Otherwise, $\Gamma$ is **$\Sigma$-inconsistent**.
+Otherwise, $\Gamma$ is **$\Sigma$-inconsistent**.
 
-- $\varphi$ is $\Sigma$-consistent iff $\{\varphi\}$ is, i.e., iff $\nvdash_\Sigma \varphi \to \bot$.
+$\varphi$ is $\Sigma$-consistent iff $\{\varphi\}$ is, i.e., iff $\nvdash_\Sigma \varphi \to \bot$. In particular, $\nvdash_\Sigma \varphi$ iff $\neg \varphi$ is $\Sigma$-consistent.
 
-- In particular, $\nvdash_\Sigma \varphi$ iff $\neg \varphi$ is $\Sigma$-consistent.
-
-## derivability and inconsistency {.smaller}
+## derivability and inconsistency
 
 ::: {.theorem}
 $\Gamma \vdash_\Sigma \varphi$ iff $\Gamma, \neg \varphi$ is $\Sigma$-inconsistent.
 :::
 
 ::: {.proof}
-($\Rightarrow$) If $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$, then $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi$, and so $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ by $\textsf{PL}$. So $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent.
+We consider each direction in turn:
 
-($\Leftarrow$) Suppose $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ for some conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$. Since $\vdash_\Sigma \neg \bot$, we have $\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)$, whence $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$ by $\textsf{PL}$. So $\Gamma \vdash_\Sigma \varphi$.
+($\Rightarrow$) If $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$, then $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi$, and so $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ by $\textsf{PL}$. Therefore, $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent.
+
+($\Leftarrow$) Suppose $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ for some conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$. Since $\vdash_\Sigma \neg \bot$, we have $\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)$, whence $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$ by $\textsf{PL}$. Thus $\Gamma \vdash_\Sigma \varphi$.
 :::
 
 # maximal consistency {.divider}
 
-## maximal $\Sigma$-consistent sets
+## maximal $\Sigma$-consistent sets {.smaller}
 
 ::: {.definition}
 $\Gamma$ is **maximal $\Sigma$-consistent** iff
@@ -98,20 +118,34 @@ $\Gamma$ is **maximal $\Sigma$-consistent** iff
 . . .
 
 ::: {.theorem}
-(**Lindenbaum**) Every $\Sigma$-consistent set can be extended to a maximal $\Sigma$-consistent set.
+(**Lindenbaum theorem**) If $\Delta$ is $\Sigma$-consistent set, then $\Delta$ is a subset of some maximal $\Sigma$-consistent set $\Gamma$.
 :::
 
-. . .
+::: {.proof}
+Enumerate all the formulas of propositional logic 
 
-Enumerate all formulas $\varphi_1, \varphi_2, \dots$ and add each in turn whenever doing so preserves $\Sigma$-consistency.
+$$
+\varphi_0, \varphi_1, \varphi_2, \dots
+$$ 
+and build a chain
+
+$$
+\Gamma = \Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots
+$$
+where $\Sigma_{0}$ is $\Gamma$ and $\Sigma_{n+1}$ is $\Sigma_n, \varphi_n$ if that set is *consistent*, and $\Sigma_n$ otherwise. 
+
+Let $\Sigma = \bigcup_n \Sigma_n$. Notice that the identity of $\Sigma$ is very sensitive to the details of the enumeration. 
+:::
+
+
 
 ## a maximal consistent set as a world
 
 ![](images/mcs.svg){.nostretch width="72%" fig-align="center"}
 
-A maximal $\Sigma$-consistent set gives a complete and consistent description of how things might be. These will be the worlds of the canonical model.
+A maximal $\Sigma$-consistent set gives a complete and consistent description of a way the world might be. These will be the worlds of the canonical model for $\Sigma$.
 
-## decomposition {.smaller}
+## maximal consistent sets {.smaller}
 
 ::: {.theorem}
 If $\Gamma$ is maximal $\Sigma$-consistent, then
@@ -126,16 +160,26 @@ $$
 :::
 
 ::: {.proof}
-1 ($\Rightarrow$) If $\Gamma \vdash_\Sigma \varphi$, then $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent. If $\varphi \notin \Gamma$, then $\Gamma, \varphi$ would be $\Sigma$-inconsistent too, which would make $\Gamma$ itself $\Sigma$-inconsistent. So $\varphi \in \Gamma$. ($\Leftarrow$) Since $\vdash_\Sigma \varphi \to \varphi$.
+We look at each case in turn:
 
-2 ($\Rightarrow$) If $\neg \varphi \in \Gamma$, then $\Gamma \vdash_\Sigma \neg\varphi$, so $\varphi \notin \Gamma$ by consistency. ($\Leftarrow$) If $\varphi \notin \Gamma$, then $\Gamma, \neg\neg\varphi$ is $\Sigma$-inconsistent, and so $\Gamma \vdash_\Sigma \neg \varphi$ by Theorem 8.1.
+1. $\Gamma \vdash_\Sigma \varphi \Leftrightarrow \varphi \in \Gamma$
+
+    ($\Rightarrow$) If $\Gamma \vdash_\Sigma \varphi$, then $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent. If $\varphi \notin \Gamma$, then $\Gamma, \varphi$ would likewise be $\Sigma$-inconsistent, which would make $\Gamma$ itself $\Sigma$-inconsistent. So $\varphi \in \Gamma$. 
+
+    ($\Leftarrow$) Since $\vdash_\Sigma \varphi \to \varphi$.
+
+2. $\neg \varphi \in \Gamma \Leftrightarrow \varphi \notin \Gamma$
+
+    ($\Rightarrow$) If $\neg \varphi \in \Gamma$, then $\Gamma \vdash_\Sigma \neg\varphi$, so $\varphi \notin \Gamma$ by consistency. 
+
+    ($\Leftarrow$) If $\varphi \notin \Gamma$, then $\Gamma, \neg\neg\varphi$ is $\Sigma$-inconsistent, and thus $\Gamma \vdash_\Sigma \neg \varphi$ by Theorem 8.1.
 
 3 is analogous.
 :::
 
 # accessibility {.divider}
 
-## the canonical relation
+## the canonical accessibility relation
 
 ::: {.definition}
 For maximal $\Sigma$-consistent $\Gamma, \Delta$:
@@ -152,44 +196,56 @@ $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ iff $\{\varphi : \B
 
 ![](images/acc-dia.svg){.nostretch width="62%" fig-align="center"}
 
-## proof {.smaller}
+## proof
 
-::: {.proof}
-($\Rightarrow$) Suppose $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ and $\Box \varphi \in \Gamma$. For reductio, suppose $\varphi \notin \Delta$. Then $\neg \varphi \in \Delta$, so $\Diamond \neg \varphi \in \Gamma$, i.e., $\neg \Box \neg\neg \varphi \in \Gamma$. Since $\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi$, we get $\neg \Box \varphi \in \Gamma$, and so $\Box \varphi \notin \Gamma$. Contradiction.
-
-($\Leftarrow$) Suppose $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$. We show: if $\Diamond \varphi \notin \Gamma$, then $\varphi \notin \Delta$. If $\neg \Box \neg \varphi \notin \Gamma$, then $\Box \neg \varphi \in \Gamma$ by maximality. So $\neg \varphi \in \Delta$, and $\varphi \notin \Delta$.
+::: {.theorem}
+$\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ iff $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$
 :::
 
-## $\Diamond$ and $\Box$ in maximal consistent sets
+::: {.proof}
+We look at each direction in turn:
+
+($\Rightarrow$) Suppose $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ and $\Box \varphi \in \Gamma$. For reductio, suppose $\varphi \notin \Delta$. Then $\neg \varphi \in \Delta$, so $\Diamond \neg \varphi \in \Gamma$, i.e., $\neg \Box \neg\neg \varphi \in \Gamma$. Since $\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi$, we get $\neg \Box \varphi \in \Gamma$, and so $\Box \varphi \notin \Gamma$. Contradiction.
+
+($\Leftarrow$) Suppose $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$. We now argue for the conditional: if $\Diamond \varphi \notin \Gamma$, then $\varphi \notin \Delta$. If $\neg \Box \neg \varphi \notin \Gamma$, then $\Box \neg \varphi \in \Gamma$ by maximality. So $\neg \varphi \in \Delta$, and $\varphi \notin \Delta$.
+:::
+
+## $\Diamond$ and $\Box$ in maximal consistent sets {.smaller}
 
 ::: {.theorem}
 If $\Gamma$ is maximal $\Sigma$-consistent, then
 
 $$
 \begin{array}{llll}
-\text{a.} & \Diamond \varphi \in \Gamma & \text{iff} & \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
-\text{b.} & \Box \varphi \in \Gamma & \text{iff} & \text{for every} \ \Delta, \ \text{if} \ \Gamma R \Delta, \ \text{then} \ \varphi \in \Delta
+\text{a.} & \Diamond \varphi \in \Gamma & \text{iff} & \text{for some max $\Sigma$-con} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
+\text{b.} & \Box \varphi \in \Gamma & \text{iff} & \text{for every max $\Sigma$-con} \ \Delta, \ \text{if} \ \Gamma R \Delta, \ \text{then} \ \varphi \in \Delta
 \end{array}
 $$
 :::
 
 . . .
 
-- The right-to-left direction of (a) is immediate from the definition of $R$.
+(b) will follow from (a) by duality.
 
-- (b) follows from (a) by duality.
+Focus on (a) now: 
 
-- The interesting direction is (a) from left to right: the **existence lemma**.
+- $(\Leftarrow)$ is immediate from the definition of $R$.
 
-## the existence lemma
+- $(\Rightarrow)$ is the **existence lemma**.
 
-If $\Diamond \varphi \in \Gamma$, we need to *build* an accessible $\Delta$ containing $\varphi$:
+## the existence lemma {.smaller}
 
-![](images/existence.svg){.nostretch width="72%" fig-align="center"}
+If $\Diamond \varphi \in \Gamma$, we *build* an accessible $\Delta$ that contains $\varphi$.
 
-Anything containing $\{\psi : \Box \psi \in \Gamma\}$ is accessible from $\Gamma$, so it suffices to show that $\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}$ is $\Sigma$-consistent.
+![](images/existence.svg){.nostretch width="60%" fig-align="center"}
+
+If a maximal $\Sigma$-consistent set extends $\{\psi : \Box \psi \in \Gamma\}$, then it is accessible from $\Gamma$. By Lindembaum's theorem, we need only check that $\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}$ is $\Sigma$-consistent.
 
 ## proof {.smaller}
+
+::: {.theorem}
+If $\Gamma$ is maximal $\Sigma$-consistent and $\Diamond \varphi \in \Gamma$, then $\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}$ is $\Sigma$-consistent.
+:::
 
 ::: {.proof}
 Suppose not. Then for some $\Box\psi_1, \dots, \Box\psi_n \in \Gamma$:
@@ -205,14 +261,17 @@ $$
 \end{array}
 $$
 
-But $\Box \neg \varphi$ is equivalent to $\neg \Diamond \varphi$, which contradicts $\Diamond \varphi \in \Gamma$ given the $\Sigma$-consistency of $\Gamma$. So the set is $\Sigma$-consistent, and Lindenbaum's lemma extends it to the required $\Delta$.
+But $\Box \neg \varphi$ is equivalent to $\neg \Diamond \varphi$, which contradicts $\Diamond \varphi \in \Gamma$ given the $\Sigma$-consistency of $\Gamma$. So the set is $\Sigma$-consistent.
 :::
+By Lindenbaum lemma, we may extends the set to the required $\Delta$.
 
 # the canonical model {.divider}
 
-## definition
+## definition {.smaller}
 
-::: {.definition}
+::: {.columns}
+::: {.column width="50%"}
+::: {.definition} 
 The **canonical model** $\mathcal{M}_\Sigma = (W_\Sigma, R_\Sigma, V_\Sigma)$ for $\Sigma$:
 
 1. $W_\Sigma$ is the set of all maximal $\Sigma$-consistent sets.
@@ -220,65 +279,62 @@ The **canonical model** $\mathcal{M}_\Sigma = (W_\Sigma, R_\Sigma, V_\Sigma)$ fo
 3. $V_\Sigma(p) = \{\Gamma \in W_\Sigma : p \in \Gamma\}$.
 :::
 
+::: {style="height: 20px;"}
+:::
+
 The **canonical frame** for $\Sigma$ is $(W_\Sigma, R_\Sigma)$.
+:::
 
-## picturing the canonical model
+::: {.column width="50%"}
+![](images/canon.svg){.nostretch width="120%" fig-align="center"}
+:::
+:::
 
-![](images/canon.svg){.nostretch width="70%" fig-align="center"}
 
-A world makes true exactly the atoms it contains. The truth lemma says this extends to every formula.
 
-## the truth lemma
+## the truth lemma {.smaller}
 
 ::: {.theorem}
 For each maximal $\Sigma$-consistent set $\Gamma$ and each $\varphi$:
 $$\mathcal{M}_\Sigma, \Gamma \Vdash \varphi \quad \text{iff} \quad \varphi \in \Gamma$$
 :::
 
-. . .
-
-By induction on the complexity of $\varphi$.
+::: {.proof}
+By induction on the complexity of $\varphi$:
 
 $$
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash p & \text{iff} & \Gamma \in V_\Sigma(p) & \\
-& \text{iff} & p \in \Gamma & \textsf{Def} \ V_\Sigma
+\begin{array}{lllll}
+\text{Base case}: & & & & \\
+&\mathcal{M}_\Sigma, \Gamma \Vdash p & \text{iff } & \Gamma \in V_\Sigma(p) & \\
+& & \text{iff } & p \in \Sigma & \textsf{definition of} \ \Vdash \\[8pt]
+\text{Induction step for }  \neg\textbf{:} & & & & \\
+& \mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi & \text{iff } & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi & \textsf{definition of} \ \Vdash \\
+& & \text{iff } & \varphi \notin \Sigma & \textsf{inductive hypothesis} \\
+& & \text{iff } & \neg \varphi \in \Sigma & \textsf{maximal consistency} \\[8pt]
+\text{Induction step for } \to\textbf{:} & & & & \\
+& \mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi & \text{iff } & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi & \textsf{definition of} \ \Vdash \\
+& & \text{iff } & \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma & \textsf{inductive hypothesis} \\
+& & \text{iff } & \varphi \to \psi \in \Sigma & \textsf{maximal consistency} \\
 \end{array}
 $$
-
-## truth lemma: $\neg$ and $\to$ {.smaller}
-
-$$
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi & \text{iff} & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi & \\
-& \text{iff} & \varphi \notin \Gamma & \text{IH}\\
-& \text{iff} & \neg \varphi \in \Gamma & \text{decomposition 2}
-\end{array}
-$$
-
-. . .
-
-$$
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi & \text{iff} & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \ \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi & \\
-& \text{iff} & \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma & \text{IH}\\
-& \text{iff} & \varphi \to \psi \in \Gamma & \text{decomposition 3}
-\end{array}
-$$
+:::
 
 ## truth lemma: $\Box$ {.smaller}
 
+::: {.proof}
 $$
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi & \text{iff} & \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \mathcal{M}_\Sigma, \Delta \Vdash \varphi & \\
-& \text{iff} & \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \varphi \in \Delta & \text{IH}\\
-& \text{iff} & \Box \varphi \in \Gamma & \text{Thm 8.4b}
+\begin{array}{lllll}
+& \mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi & \text{iff } & \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \mathcal{M}_\Sigma, \Delta \Vdash \varphi & \textsf{definition of} \ \Vdash \\
+&           & \text{iff} & \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \varphi \in \Delta & \textsf{inductive hypothesis}\\
+&           & \text{iff} & \Box \varphi \in \Gamma  & \textsf{Thm 8.4b}\\
 \end{array}
 $$
+:::
 
 ![](images/truth-box.svg){.nostretch width="52%" fig-align="center"}
 
 This is the only step where the existence lemma is needed.
+
 
 ## where we stand
 
@@ -287,5 +343,37 @@ This is the only step where the existence lemma is needed.
 ::: {.incremental}
 - If $\nvdash_\Sigma \varphi$, then $\varphi$ fails at some world of $\mathcal{M}_\Sigma$.
 
-- So $\Sigma$ is complete with respect to **any** class of frames that contains the canonical frame for $\Sigma$.
+- So $\Sigma$ is complete with respect to a class of frames $\mathcal{C}$ if $\mathcal{C}$ contains the canonical frame for $\Sigma$.
 :::
+
+## corollary: $\textsf{K}$ is complete with respect to all frames
+
+::: {.theorem}
+$\textsf{K}$ is complete with respect to the class of *all* frames.
+:::
+
+::: {.proof}
+The canonical frame for $\textsf{K}$, $(W_\textsf{K}, W_\textsf{K})$, belongs to the class of all frames.
+:::
+
+. . .
+
+::: {style="height: 30px;"}
+:::
+
+**some open questions**:
+
+::: {.incremental}
+- Is $\textsf{KT}$ complete with respect to the class of **reflexive** frames?
+
+- Is the canonical frame for $\textsf{KT}$, $(W_\textsf{KT}, W_\textsf{KT})$ a **reflexive** frame?
+
+::: {style="height: 20px;"}
+:::
+
+- Is $\textsf{KB}$ complete with respect to the class of **symmetric** frames?
+
+- Is the canonical frame for $\textsf{KB}$, $(W_\textsf{KB}, W_\textsf{KB})$ a **symmetric** frame?
+
+:::
+

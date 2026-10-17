@@ -21,46 +21,63 @@ format:
 
 # completeness {.divider}
 
-If $\nvdash_\Sigma \varphi$, then $\varphi$ fails at a world of the canonical model $\mathcal{M}_\Sigma$. Which frames does this give us countermodels in?
+Given a normal modal system $\Sigma$, if $\varphi$ is a modal formula:
 
-## completeness of $\textsf{K}$
+$$
+\begin{array}{lll}
+\nvdash_\Sigma \varphi & \Rightarrow & \text{for some max $\Sigma$-con $\Gamma$}, \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \\
+                       & \Rightarrow & (W_\Sigma, R_\Sigma) \not \models \varphi\\
+\end{array}
+$$
+So, if the canonical frame $(W_\Sigma, R_\Sigma)$ for $\Sigma$ is in $\mathcal{C}$, then $\Sigma$ is complete with respect to $\mathcal{C}$.
+
+
+## completeness of $\textsf{K}$ {.smaller}
 
 ::: {.theorem}
 If $\models \varphi$, then $\vdash_{\textsf{K}} \varphi$.
 :::
 
 ::: {.proof}
+We rehearse the same argument again:
+
 ::: {.incremental}
 - Suppose $\nvdash_{\textsf{K}} \varphi$. Then $\neg \varphi$ is $\textsf{K}$-consistent.
 
-- By Lindenbaum's lemma, $\{\neg\varphi\}$ extends to a maximal $\textsf{K}$-consistent set $\Gamma$.
+- By Lindenbaum's lemma, $\{\neg\varphi\}$ may be extended to a maximal $\textsf{K}$-consistent set $\Gamma$.
 
-- $\Gamma \in W_{\textsf{K}}$, and by the truth lemma $\mathcal{M}_{\textsf{K}}, \Gamma \Vdash \neg \varphi$.
+- $\Gamma \in W_{\textsf{K}}$, and, by the truth lemma, $\mathcal{M}_{\textsf{K}}, \Gamma \Vdash \neg  \varphi$.
 
-- So $\varphi$ fails at a world of a model based on a frame. Hence $\not\models \varphi$.
+- So $\mathcal{M}_{\textsf{K}}, \Gamma \nVdash \varphi$. Hence $\not\models \varphi$.
 :::
 :::
 
-## beyond $\textsf{K}$
+## modal completeness beyond $\textsf{K}$ {.smaller}
 
 ![](images/strategy.svg){.nostretch width="80%" fig-align="center"}
 
-For $\textsf{KT}$, the same argument yields a world of $\mathcal{M}_{\textsf{KT}}$ where $\varphi$ fails. This shows $\not\models_{\text{ref}} \varphi$ **only if** the canonical frame for $\textsf{KT}$ is reflexive.
+Consider the case of $\textsf{KT}$. If $\nvdash_{KT} \varphi$, then the argument above yields that there is some $\Gamma \in W_{\textsf{KT}}$ for which $\mathcal{M}_{\textsf{KT}}, \Gamma \nVdash \varphi$. But notice that a **further step** is required to justify completeness with respect to the class of **reflexive** frames.
+
+The fact that $\mathcal{M}_{\textsf{KT}} \nVdash \varphi$ will help **only if** the canonical frame $(W_{\textsf{KT}}, R_{\textsf{KT}})$ for $\textsf{KT}$ is reflexive. That is, if $R_{\textsf{KT}}$ is reflexive on $W_{\textsf{KT}}$.
 
 ## completeness of $\textsf{KT}$ {.smaller}
 
 ::: {.columns}
 ::: {.column width="62%"}
+$\textsf{KT}$ is complete with respect to the class of all reflexive frames:
+
 ::: {.theorem}
 If $\models_{\text{ref}} \varphi$, then $\vdash_{\textsf{KT}} \varphi$.
 :::
 
 ::: {.proof}
-It suffices to verify that $\Gamma R_{\textsf{KT}} \Gamma$ for every $\Gamma \in W_{\textsf{KT}}$, i.e.:
+We argue that $R_{\textsf{KT}}$ is reflexive on $W_{\textsf{KT}}$: $\Gamma R_{\textsf{KT}} \Gamma$ for each $\Gamma \in W_{\textsf{KT}}$.
+
+That is, if $\Gamma$ is a maximal $\textsf{KT}$-consistent set, then for each modal formula $\varphi$:
 
 - if $\varphi \in \Gamma$, then $\Diamond \varphi \in \Gamma$.
 
-Let $\varphi \in \Gamma$. Since $\vdash_{\textsf{KT}} \varphi \to \Diamond \varphi$, we have $\varphi \to \Diamond \varphi \in \Gamma$. By closure, $\Diamond \varphi \in \Gamma$.
+Fix $\varphi \in \Gamma$. Since $\vdash_{\textsf{KT}} \varphi \to \Diamond \varphi$, $\varphi \to \Diamond \varphi \in \Gamma$. By closure under $\textsf{MP}$, $\Diamond \varphi \in \Gamma$.
 :::
 :::
 
@@ -71,28 +88,29 @@ Let $\varphi \in \Gamma$. Since $\vdash_{\textsf{KT}} \varphi \to \Diamond \varp
 
 # canonicity {.divider}
 
-## canonical axioms and systems
+## canonical axioms and systems 
 
 ::: {.definition}
-A normal system $\Sigma$ is **canonical** iff the canonical frame for $\Sigma$ validates every theorem of $\Sigma$.
+$\Sigma$ is a **canonical** normal system iff the canonical frame for $\Sigma$ validates every theorem of $\Sigma$.
 :::
 
 . . .
 
 ::: {.definition}
-An axiom is **canonical** iff for every normal system $\Sigma$ containing all its substitution instances, the canonical frame for $\Sigma$ validates it.
+An axiom is **canonical** iff whenever a normal system $\Sigma$ contains its substitution instances, its canonical frame $(W_\Sigma, R_\Sigma)$ validates them.
 :::
 
-. . .
 
-Canonical axioms are what make completeness proofs *modular*: they can be combined freely.
 
-## five canonical axioms
+
+## five canonical axioms {.smaller}
 
 ::: {.theorem}
-If $\Sigma$ contains every substitution instance of the axiom, then $R_\Sigma$ satisfies the corresponding condition.
+Whenever a normal system $\Sigma$ contains its substitution instances, $R_\Sigma$ satisfies the relevant condition.
 :::
 
+::: {.columns}
+::: {.column width="50%"}
 | | axiom | condition on $R_\Sigma$ |
 |--|--|--|
 | $\textsf{D}$ | $\Box p \to \Diamond p$ | serial |
@@ -100,27 +118,54 @@ If $\Sigma$ contains every substitution instance of the axiom, then $R_\Sigma$ s
 | $\textsf{B}$ | $p \to \Box \Diamond p$ | symmetric |
 | $\textsf{4}$ | $\Box p \to \Box \Box p$ | transitive |
 | $\textsf{5}$ | $\Diamond p \to \Box \Diamond p$ | euclidean |
+:::
 
-## the pattern
 
-In each case, we must show that $R_\Sigma$ holds between certain maximal consistent sets.
+::: {.column width="50%"}
+
+::: {style="height: 40px;"}
+:::
+
+For example:
 
 ::: {.incremental}
-- Unpack the condition using the definition of $R_\Sigma$ (in its $\Box$ or $\Diamond$ form).
+- $R_\textsf{KD}$ is serial on $W_\textsf{KD}$
 
-- Use the axiom, which belongs to every $\Gamma \in W_\Sigma$, to move a formula from one set to another.
+- $R_\textsf{KT}$ is reflexive on $W_\textsf{KT}$
 
-- In the diagrams, solid arrows are given and the dashed arrow is to be shown.
+- $R_\textsf{KB}$ is symmetric on $W_\textsf{KB}$
+
+- $R_\textsf{K4}$ is transitive on $W_\textsf{K4}$
+
+- $R_\textsf{K5}$ is euclidean on $W_\textsf{K5}$
+:::
+:::
+:::
+
+## the pattern {.smaller}
+
+In each case, we argue that $R_\Sigma$ relates certain maximal consistent sets:
+
+::: {.incremental}
+- We unpack the condition in terms of the definition of $R_\Sigma$ (in its $\Box$ or $\Diamond$ form).
+
+- Use the axiom, whose instances belong to each $\Gamma \in W_\Sigma$, to move a formula from one set to another.
+
+- In the diagrams below, solid arrows are given and the dashed arrow is to be shown.
 :::
 
 ## $\textsf{D}$: seriality {.smaller}
 
 ::: {.columns}
 ::: {.column width="60%"}
-Need: for every $\Gamma$ there is $\Delta$ with $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$. It suffices that $\{\varphi : \Box\varphi \in \Gamma\}$ is $\Sigma$-consistent.
+
+::: {.theorem}
+If $\Sigma$ includes substitution instances of $\textsf{D}$, then $R_\Sigma$ is serial on $W_\Sigma$: if $\Gamma$ is a max $\Sigma$-con set, there is $\Delta$ with $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$.
+:::
+
 
 ::: {.proof}
-Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By normality, $\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot$, so $\Box\bot \in \Gamma$. By $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So $\Gamma$ is $\Sigma$-inconsistent.
+It suffices to note that $\{\varphi : \Box \varphi \in \Gamma\}$ is $\Sigma$-consistent. Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By normality, $\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot$, so $\Box\bot \in \Gamma$. By $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So $\Gamma$ is $\Sigma$-inconsistent.
 :::
 :::
 
@@ -133,11 +178,15 @@ Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \
 
 ::: {.columns}
 ::: {.column width="55%"}
-Need: if $\Gamma R_\Sigma \Delta$, then $\Delta R_\Sigma \Gamma$, i.e.,
-
-- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$, then $\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta$.
+::: {.theorem}
+If $\Sigma$ includes substitution instances of $\textsf{B}$, then $R_\Sigma$ is symmetric on $W_\Sigma$: if $\Gamma, \Delta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$, then $\Delta R_\Sigma \Gamma$.
+:::
 
 ::: {.proof}
+Given maximal $\Sigma$-consistent sets $\Gamma, \Delta$, we argue that
+
+ if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$, then $\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta$.
+
 Let $\varphi \in \Gamma$. By $\textsf{B}$, $\varphi \to \Box \Diamond \varphi \in \Gamma$, so $\Box\Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
 :::
 :::
@@ -151,44 +200,64 @@ Let $\varphi \in \Gamma$. By $\textsf{B}$, $\varphi \to \Box \Diamond \varphi \i
 
 ::: {.columns}
 ::: {.column width="50%"}
-Need: if $\Gamma R_\Sigma \Delta$ and $\Delta R_\Sigma \Theta$, then $\Gamma R_\Sigma \Theta$, i.e.,
 
-- if $\Box \varphi \in \Gamma$, then $\varphi \in \Theta$.
+::: {.theorem}
+If $\Sigma$ includes substitution instances of $\textsf{4}$, then $R_\Sigma$ is transitive on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$ and $\Delta R_\Sigma \Theta$, then $\Gamma R_\Sigma \Theta$.
+:::
+
 
 ::: {.proof}
-Let $\Box \varphi \in \Gamma$. By $\textsf{4}$, $\Box\Box\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Box \varphi \in \Delta$. Since $\Delta R_\Sigma \Theta$, $\varphi \in \Theta$.
+Given maximal $\Sigma$-consistent sets $\Gamma, \Delta, \Theta$, we argue that
+
+- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$
+
+Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$. Let $\Box \varphi \in \Gamma$. By $\textsf{4}$, $\Box\Box\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Box \varphi \in \Delta$. Since $\Delta R_\Sigma \Theta$, $\varphi \in \Theta$.
 :::
 :::
 
 ::: {.column width="50%"}
-![](images/c-trans.svg){width="100%"}
+
+::: {style="height: 100px;"}
+:::
+
+![](images/c-trans.svg){width="80%"}
 :::
 :::
 
-## $\textsf{5}$: euclideanness {.smaller}
+## $\textsf{5}$: euclidean condition {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
-Need: if $\Gamma R_\Sigma \Delta$ and $\Gamma R_\Sigma \Theta$, then $\Delta R_\Sigma \Theta$, i.e.,
 
-- if $\varphi \in \Theta$, then $\Diamond\varphi \in \Delta$.
+::: {.theorem}
+If $\Sigma$ includes substitution instances of $\textsf{5}$, then $R_\Sigma$ is euclidean on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$ and $\Gamma R_\Sigma \Theta$, then $\Delta R_\Sigma \Theta$.
+:::
+
 
 ::: {.proof}
-Let $\varphi \in \Theta$. Since $\Gamma R_\Sigma \Theta$, $\Diamond\varphi \in \Gamma$. By $\textsf{5}$, $\Box\Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
+Given maximal $\Sigma$-consistent sets $\Gamma, \Delta, \Theta$, we argue that
+
+- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$
+
+Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$. Let $\varphi \in \Theta$. Since $\Gamma R_\Sigma \Theta$, $\Diamond \varphi \in \Gamma$. By $\textsf{5}$, $\Box \Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
 :::
 :::
 
 ::: {.column width="50%"}
-![](images/c-eucl.svg){width="100%"}
+
+::: {style="height: 100px;"}
+:::
+
+![](images/c-eucl.svg){width="80%"}
 :::
 :::
 
 # completeness for the landscape {.divider}
 
-## combining canonical axioms
+## how to combine canonical axioms {.smaller}
 
 ::: {.theorem}
-If $\Sigma$ is axiomatized by canonical axioms corresponding to conditions $C_1, \dots, C_n$, then $\Sigma$ is complete with respect to the class of frames satisfying $C_1, \dots, C_n$.
+If $\Sigma$ includes axioms that correspond to conditions $C_1, \dots, C_n$, then $\Sigma$ is complete with respect to the class of frames that satisfy $C_1, \dots, C_n$.
 :::
 
 . . .
@@ -201,7 +270,7 @@ If $\nvdash_\Sigma \varphi$, then $\varphi$ fails in $\mathcal{M}_\Sigma$. Since
 
 For example, $R_{\textsf{S4}}$ is reflexive and transitive, and $R_{\textsf{S5}}$ is reflexive and euclidean.
 
-## the full picture
+## the full picture {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
