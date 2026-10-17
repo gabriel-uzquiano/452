@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Euler diagram: the reflexive frames are a subclass of the serial frames." role="img" width="600" height="330" viewBox="0 0 600 330">
+  <defs><marker id="a" markerHeight="7" markerWidth="9" orient="auto-start-reverse" refX="9" refY="4" viewBox="0 0 10 8"><path d="M 0 0 L 10 4 L 0 8 z" fill="#343a40"/></marker></defs>
+  <g font-family="Georgia, &apos;Times New Roman&apos;, &apos;DejaVu Serif&apos;, serif">
+    <ellipse cx="300" cy="170" rx="270" ry="140" fill="#f4f6f8" stroke="#343a40" stroke-width="1.6"/>
+    <ellipse cx="360" cy="190" rx="150" ry="85" fill="#e8f1fc" stroke="#2780e3" stroke-width="2"/>
+    <text x="130" y="120" font-size="22" fill="#343a40" text-anchor="middle">serial</text>
+    <text x="360" y="185" font-size="22" fill="#2780e3" text-anchor="middle">reflexive</text>
+  </g>
+</svg>
