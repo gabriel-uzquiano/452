@@ -148,15 +148,25 @@ Gabriel Uzquiano
 <section>
 <section id="canonical-models" class="title-slide slide level1 divider center">
 <h1>canonical models</h1>
-<p>We want to show that a normal modal system <span class="math inline">\(\Sigma\)</span> <strong>characterizes</strong> a class of frames <span class="math inline">\(\mathcal{C}\)</span>: <span class="math display">\[\vdash_\Sigma \varphi \quad \text{iff} \quad \models_{\mathcal{C}} \varphi\]</span></p>
+<p><span class="math inline">\(\Sigma\)</span> <strong>characterizes</strong> a class of frames <span class="math inline">\(\mathcal{C}\)</span> iff <span class="math inline">\(\Sigma\)</span> is sound and complete with respect to <span class="math inline">\(\mathcal{C}\)</span>: <span class="math display">\[\vdash_\Sigma \varphi \quad \text{iff} \quad \models_{\mathcal{C}} \varphi\]</span></p>
 </section>
-<section id="soundness-and-completeness" class="slide level2">
-<h2>soundness and completeness</h2>
+<section id="how-to-justify-each-direction-rightarrow" class="slide level2">
+<h2>how to justify each direction (<span class="math inline">\(\Rightarrow\)</span>)</h2>
+<p><span class="math inline">\(\Sigma\)</span> is sound with respect to <span class="math inline">\(\mathcal{C}\)</span>:</p>
+<p><span class="math display">\[\vdash_\Sigma \varphi \quad \text{only if} \quad \models_{\mathcal{C}} \varphi\]</span></p>
 <ul>
-<li class="fragment"><p><strong>Soundness</strong> (<span class="math inline">\(\Rightarrow\)</span>): the axioms of <span class="math inline">\(\Sigma\)</span> are valid in every frame in <span class="math inline">\(\mathcal{C}\)</span> and the rules preserve validity in <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
-<li class="fragment"><p><strong>Completeness</strong> (<span class="math inline">\(\Leftarrow\)</span>): we argue by contraposition. If <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\varphi\)</span> fails at a world of some model based on a frame in <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
-<li class="fragment"><p>The model we build is the <strong>canonical model</strong> <span class="math inline">\(\mathcal{M}_\Sigma\)</span> for <span class="math inline">\(\Sigma\)</span>.</p></li>
-<li class="fragment"><p>The main task will be to verify that the canonical frame belongs to <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
+<li class="fragment"><p>We argue that the axioms of <span class="math inline">\(\Sigma\)</span> are valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
+<li class="fragment"><p>We observe that both <span class="math inline">\(\textsf{MP}\)</span> and <span class="math inline">\(\textsf{RN}\)</span> preserve validity in all frames in <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
+</ul>
+</section>
+<section id="how-to-justify-each-direction-leftarrow" class="slide level2">
+<h2>how to justify each direction (<span class="math inline">\(\Leftarrow\)</span>)</h2>
+<p><span class="math inline">\(\Sigma\)</span> is complete with respect to <span class="math inline">\(\mathcal{C}\)</span>:</p>
+<p><span class="math display">\[\vdash_\Sigma \varphi \quad \text{if} \quad \models_{\mathcal{C}} \varphi\]</span></p>
+<p>We argue by contraposition. If <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\varphi\)</span> is not valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>. That is, if <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then we find a world at which <span class="math inline">\(\varphi\)</span> fails in <em>some</em> model based on a frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<ul>
+<li class="fragment"><p>We build the <strong>canonical model</strong> <span class="math inline">\(\mathcal{M}_\Sigma\)</span> for <span class="math inline">\(\Sigma\)</span> from maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of formulas.</p></li>
+<li class="fragment"><p>We verify that the canonical for <span class="math inline">\(\Sigma\)</span> is a member of the class <span class="math inline">\(\mathcal{C}\)</span>.</p></li>
 </ul>
 </section>
 <section id="the-strategy" class="slide level2">
@@ -167,7 +177,12 @@ Gabriel Uzquiano
 </figure>
 </div>
 <div class="fragment">
-<p>Each arrow will be justified in this deck: Theorem 8.1, Lindenbaum’s lemma, and the Truth Lemma.</p>
+<p>Each arrow will be justified in this deck:</p>
+<ul>
+<li>Theorem 8.1,</li>
+<li>Lindenbaum’s Lemma,</li>
+<li>Truth Lemma.</li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -181,30 +196,28 @@ Gabriel Uzquiano
 <p><span class="math inline">\(\varphi\)</span> is <strong><span class="math inline">\(\Sigma\)</span>-derivable</strong> from <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, iff there is a finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of formulas <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \Gamma\)</span> for which <span class="math display">\[\vdash_\Sigma \boldsymbol{\alpha} \to \varphi\]</span></p>
 </div>
 <div class="fragment">
-<p>We make no allowance for premises <em>inside</em> a derivation. Otherwise <span class="math inline">\(\textsf{RN}\)</span> would let us infer <span class="math inline">\(p \vdash_\Sigma \Box p\)</span>, which is undesirable.</p>
+<p>We do <em>not</em> allow premises <em>inside</em> a derivation. Otherwise <span class="math inline">\(\textsf{RN}\)</span> would let us infer <span class="math inline">\(p \vdash_\Sigma \Box p\)</span>, which is undesirable.</p>
 </div>
 </section>
 <section id="consistency-1" class="slide level2">
 <h2>consistency</h2>
 <div class="definition">
-<p><span class="math inline">\(\Gamma\)</span> is <strong><span class="math inline">\(\Sigma\)</span>-consistent</strong> iff <span class="math inline">\(\Gamma \nvdash_\Sigma \bot\)</span>: there is no finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span> for which <span class="math display">\[\vdash_\Sigma \boldsymbol{\alpha} \to \bot\]</span></p>
+<p><span class="math inline">\(\Gamma\)</span> is <strong><span class="math inline">\(\Sigma\)</span>-consistent</strong> iff <span class="math inline">\(\Gamma \nvdash_\Sigma \bot\)</span>. That is, there is no finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span> for which <span class="math display">\[\vdash_\Sigma \boldsymbol{\alpha} \to \bot\]</span></p>
 </div>
 <div class="fragment">
-<ul>
-<li><p>Otherwise, <span class="math inline">\(\Gamma\)</span> is <strong><span class="math inline">\(\Sigma\)</span>-inconsistent</strong>.</p></li>
-<li><p><span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent iff <span class="math inline">\(\{\varphi\}\)</span> is, i.e., iff <span class="math inline">\(\nvdash_\Sigma \varphi \to \bot\)</span>.</p></li>
-<li><p>In particular, <span class="math inline">\(\nvdash_\Sigma \varphi\)</span> iff <span class="math inline">\(\neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p></li>
-</ul>
+<p>Otherwise, <span class="math inline">\(\Gamma\)</span> is <strong><span class="math inline">\(\Sigma\)</span>-inconsistent</strong>.</p>
+<p><span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent iff <span class="math inline">\(\{\varphi\}\)</span> is, i.e., iff <span class="math inline">\(\nvdash_\Sigma \varphi \to \bot\)</span>. In particular, <span class="math inline">\(\nvdash_\Sigma \varphi\)</span> iff <span class="math inline">\(\neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
 </div>
 </section>
-<section id="derivability-and-inconsistency" class="slide level2 smaller">
+<section id="derivability-and-inconsistency" class="slide level2">
 <h2>derivability and inconsistency</h2>
 <div class="theorem">
 <p><span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span> iff <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\vdash_\Sigma \boldsymbol{\alpha} \to \varphi\)</span>, then <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi\)</span>, and so <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span> by <span class="math inline">\(\textsf{PL}\)</span>. So <span class="math inline">\(\Gamma, \neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span> for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \bot\)</span>, we have <span class="math inline">\(\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_\Sigma \boldsymbol{\alpha} \to \varphi\)</span> by <span class="math inline">\(\textsf{PL}\)</span>. So <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>We consider each direction in turn:</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\vdash_\Sigma \boldsymbol{\alpha} \to \varphi\)</span>, then <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi\)</span>, and so <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span> by <span class="math inline">\(\textsf{PL}\)</span>. Therefore, <span class="math inline">\(\Gamma, \neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span> for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \bot\)</span>, we have <span class="math inline">\(\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_\Sigma \boldsymbol{\alpha} \to \varphi\)</span> by <span class="math inline">\(\textsf{PL}\)</span>. Thus <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
 </div>
 </section></section>
 <section>
@@ -212,7 +225,7 @@ Gabriel Uzquiano
 <h1>maximal consistency</h1>
 
 </section>
-<section id="maximal-sigma-consistent-sets" class="slide level2">
+<section id="maximal-sigma-consistent-sets" class="slide level2 smaller">
 <h2>maximal <span class="math inline">\(\Sigma\)</span>-consistent sets</h2>
 <div class="definition">
 <p><span class="math inline">\(\Gamma\)</span> is <strong>maximal <span class="math inline">\(\Sigma\)</span>-consistent</strong> iff</p>
@@ -223,11 +236,18 @@ Gabriel Uzquiano
 </div>
 <div class="fragment">
 <div class="theorem">
-<p>(<strong>Lindenbaum</strong>) Every <span class="math inline">\(\Sigma\)</span>-consistent set can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set.</p>
+<p>(<strong>Lindenbaum theorem</strong>) If <span class="math inline">\(\Delta\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent set, then <span class="math inline">\(\Delta\)</span> is a subset of some maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Gamma\)</span>.</p>
 </div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Enumerate all the formulas of propositional logic</p>
+<p><span class="math display">\[
+\varphi_0, \varphi_1, \varphi_2, \dots
+\]</span> and build a chain</p>
+<p><span class="math display">\[
+\Gamma = \Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots
+\]</span> where <span class="math inline">\(\Sigma_{0}\)</span> is <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if that set is <em>consistent</em>, and <span class="math inline">\(\Sigma_n\)</span> otherwise.</p>
+<p>Let <span class="math inline">\(\Sigma = \bigcup_n \Sigma_n\)</span>. Notice that the identity of <span class="math inline">\(\Sigma\)</span> is very sensitive to the details of the enumeration.</p>
 </div>
-<div class="fragment">
-<p>Enumerate all formulas <span class="math inline">\(\varphi_1, \varphi_2, \dots\)</span> and add each in turn whenever doing so preserves <span class="math inline">\(\Sigma\)</span>-consistency.</p>
 </div>
 </section>
 <section id="a-maximal-consistent-set-as-a-world" class="slide level2">
@@ -237,10 +257,10 @@ Gabriel Uzquiano
 <p><img data-src="images/mcs.svg" class="quarto-figure quarto-figure-center" style="width:72.0%"></p>
 </figure>
 </div>
-<p>A maximal <span class="math inline">\(\Sigma\)</span>-consistent set gives a complete and consistent description of how things might be. These will be the worlds of the canonical model.</p>
+<p>A maximal <span class="math inline">\(\Sigma\)</span>-consistent set gives a complete and consistent description of a way the world might be. These will be the worlds of the canonical model for <span class="math inline">\(\Sigma\)</span>.</p>
 </section>
-<section id="decomposition" class="slide level2 smaller">
-<h2>decomposition</h2>
+<section id="maximal-consistent-sets" class="slide level2 smaller">
+<h2>maximal consistent sets</h2>
 <div class="theorem">
 <p>If <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, then</p>
 <p><span class="math display">\[
@@ -252,8 +272,15 @@ Gabriel Uzquiano
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>1 (<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> would be <span class="math inline">\(\Sigma\)</span>-inconsistent too, which would make <span class="math inline">\(\Gamma\)</span> itself <span class="math inline">\(\Sigma\)</span>-inconsistent. So <span class="math inline">\(\varphi \in \Gamma\)</span>. (<span class="math inline">\(\Leftarrow\)</span>) Since <span class="math inline">\(\vdash_\Sigma \varphi \to \varphi\)</span>.</p>
-<p>2 (<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\neg \varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_\Sigma \neg\varphi\)</span>, so <span class="math inline">\(\varphi \notin \Gamma\)</span> by consistency. (<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \neg\neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and so <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span> by Theorem 8.1.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>We look at each case in turn:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\Gamma \vdash_\Sigma \varphi \Leftrightarrow \varphi \in \Gamma\)</span></p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> would likewise be <span class="math inline">\(\Sigma\)</span>-inconsistent, which would make <span class="math inline">\(\Gamma\)</span> itself <span class="math inline">\(\Sigma\)</span>-inconsistent. So <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Since <span class="math inline">\(\vdash_\Sigma \varphi \to \varphi\)</span>.</p></li>
+<li><p><span class="math inline">\(\neg \varphi \in \Gamma \Leftrightarrow \varphi \notin \Gamma\)</span></p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\neg \varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_\Sigma \neg\varphi\)</span>, so <span class="math inline">\(\varphi \notin \Gamma\)</span> by consistency.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \neg\neg\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and thus <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span> by Theorem 8.1.</p></li>
+</ol>
 <p>3 is analogous.</p>
 </div>
 </section></section>
@@ -262,8 +289,8 @@ Gabriel Uzquiano
 <h1>accessibility</h1>
 
 </section>
-<section id="the-canonical-relation" class="slide level2">
-<h2>the canonical relation</h2>
+<section id="the-canonical-accessibility-relation" class="slide level2">
+<h2>the canonical accessibility relation</h2>
 <div class="definition">
 <p>For maximal <span class="math inline">\(\Sigma\)</span>-consistent <span class="math inline">\(\Gamma, \Delta\)</span>: <span class="math display">\[\Gamma R \Delta \quad \text{iff} \quad \{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\]</span></p>
 </div>
@@ -284,46 +311,54 @@ Gabriel Uzquiano
 </figure>
 </div>
 </section>
-<section id="proof" class="slide level2 smaller">
+<section id="proof" class="slide level2">
 <h2>proof</h2>
+<div class="theorem">
+<p><span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span> iff <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span></p>
+</div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span> and <span class="math inline">\(\Box \varphi \in \Gamma\)</span>. For reductio, suppose <span class="math inline">\(\varphi \notin \Delta\)</span>. Then <span class="math inline">\(\neg \varphi \in \Delta\)</span>, so <span class="math inline">\(\Diamond \neg \varphi \in \Gamma\)</span>, i.e., <span class="math inline">\(\neg \Box \neg\neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi\)</span>, we get <span class="math inline">\(\neg \Box \varphi \in \Gamma\)</span>, and so <span class="math inline">\(\Box \varphi \notin \Gamma\)</span>. Contradiction.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We show: if <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Delta\)</span>. If <span class="math inline">\(\neg \Box \neg \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Box \neg \varphi \in \Gamma\)</span> by maximality. So <span class="math inline">\(\neg \varphi \in \Delta\)</span>, and <span class="math inline">\(\varphi \notin \Delta\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>We look at each direction in turn:</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span> and <span class="math inline">\(\Box \varphi \in \Gamma\)</span>. For reductio, suppose <span class="math inline">\(\varphi \notin \Delta\)</span>. Then <span class="math inline">\(\neg \varphi \in \Delta\)</span>, so <span class="math inline">\(\Diamond \neg \varphi \in \Gamma\)</span>, i.e., <span class="math inline">\(\neg \Box \neg\neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi\)</span>, we get <span class="math inline">\(\neg \Box \varphi \in \Gamma\)</span>, and so <span class="math inline">\(\Box \varphi \notin \Gamma\)</span>. Contradiction.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We now argue for the conditional: if <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Delta\)</span>. If <span class="math inline">\(\neg \Box \neg \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Box \neg \varphi \in \Gamma\)</span> by maximality. So <span class="math inline">\(\neg \varphi \in \Delta\)</span>, and <span class="math inline">\(\varphi \notin \Delta\)</span>.</p>
 </div>
 </section>
-<section id="diamond-and-box-in-maximal-consistent-sets" class="slide level2">
+<section id="diamond-and-box-in-maximal-consistent-sets" class="slide level2 smaller">
 <h2><span class="math inline">\(\Diamond\)</span> and <span class="math inline">\(\Box\)</span> in maximal consistent sets</h2>
 <div class="theorem">
 <p>If <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, then</p>
 <p><span class="math display">\[
 \begin{array}{llll}
-\text{a.} &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
-\text{b.} &amp; \Box \varphi \in \Gamma &amp; \text{iff} &amp; \text{for every} \ \Delta, \ \text{if} \ \Gamma R \Delta, \ \text{then} \ \varphi \in \Delta
+\text{a.} &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some max $\Sigma$-con} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
+\text{b.} &amp; \Box \varphi \in \Gamma &amp; \text{iff} &amp; \text{for every max $\Sigma$-con} \ \Delta, \ \text{if} \ \Gamma R \Delta, \ \text{then} \ \varphi \in \Delta
 \end{array}
 \]</span></p>
 </div>
 <div class="fragment">
+<ol start="2" type="a">
+<li>will follow from (a) by duality.</li>
+</ol>
+<p>Focus on (a) now:</p>
 <ul>
-<li><p>The right-to-left direction of (a) is immediate from the definition of <span class="math inline">\(R\)</span>.</p></li>
-<li><ol start="2" type="a">
-<li>follows from (a) by duality.</li>
-</ol></li>
-<li><p>The interesting direction is (a) from left to right: the <strong>existence lemma</strong>.</p></li>
+<li><p><span class="math inline">\((\Leftarrow)\)</span> is immediate from the definition of <span class="math inline">\(R\)</span>.</p></li>
+<li><p><span class="math inline">\((\Rightarrow)\)</span> is the <strong>existence lemma</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="the-existence-lemma" class="slide level2">
+<section id="the-existence-lemma" class="slide level2 smaller">
 <h2>the existence lemma</h2>
-<p>If <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>, we need to <em>build</em> an accessible <span class="math inline">\(\Delta\)</span> containing <span class="math inline">\(\varphi\)</span>:</p>
+<p>If <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>, we <em>build</em> an accessible <span class="math inline">\(\Delta\)</span> that contains <span class="math inline">\(\varphi\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/existence.svg" class="quarto-figure quarto-figure-center" style="width:72.0%"></p>
+<p><img data-src="images/existence.svg" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
-<p>Anything containing <span class="math inline">\(\{\psi : \Box \psi \in \Gamma\}\)</span> is accessible from <span class="math inline">\(\Gamma\)</span>, so it suffices to show that <span class="math inline">\(\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
+<p>If a maximal <span class="math inline">\(\Sigma\)</span>-consistent set extends <span class="math inline">\(\{\psi : \Box \psi \in \Gamma\}\)</span>, then it is accessible from <span class="math inline">\(\Gamma\)</span>. By Lindembaum’s theorem, we need only check that <span class="math inline">\(\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
 </section>
 <section id="proof-1" class="slide level2 smaller">
 <h2>proof</h2>
+<div class="theorem">
+<p>If <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent and <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>, then <span class="math inline">\(\{\varphi\} \cup \{\psi : \Box\psi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
+</div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose not. Then for some <span class="math inline">\(\Box\psi_1, \dots, \Box\psi_n \in \Gamma\)</span>:</p>
 <p><span class="math display">\[
@@ -336,16 +371,19 @@ Gabriel Uzquiano
 6 &amp; \Box \neg \varphi \in \Gamma &amp; 4, 5
 \end{array}
 \]</span></p>
-<p>But <span class="math inline">\(\Box \neg \varphi\)</span> is equivalent to <span class="math inline">\(\neg \Diamond \varphi\)</span>, which contradicts <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span> given the <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>. So the set is <span class="math inline">\(\Sigma\)</span>-consistent, and Lindenbaum’s lemma extends it to the required <span class="math inline">\(\Delta\)</span>.</p>
+<p>But <span class="math inline">\(\Box \neg \varphi\)</span> is equivalent to <span class="math inline">\(\neg \Diamond \varphi\)</span>, which contradicts <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span> given the <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>. So the set is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
 </div>
+<p>By Lindenbaum lemma, we may extends the set to the required <span class="math inline">\(\Delta\)</span>.</p>
 </section></section>
 <section>
 <section id="the-canonical-model" class="title-slide slide level1 divider center">
 <h1>the canonical model</h1>
 
 </section>
-<section id="definition" class="slide level2">
+<section id="definition" class="slide level2 smaller">
 <h2>definition</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="definition">
 <p>The <strong>canonical model</strong> <span class="math inline">\(\mathcal{M}_\Sigma = (W_\Sigma, R_\Sigma, V_\Sigma)\)</span> for <span class="math inline">\(\Sigma\)</span>:</p>
 <ol type="1">
@@ -354,60 +392,53 @@ Gabriel Uzquiano
 <li><span class="math inline">\(V_\Sigma(p) = \{\Gamma \in W_\Sigma : p \in \Gamma\}\)</span>.</li>
 </ol>
 </div>
+<div style="height: 20px;">
+
+</div>
 <p>The <strong>canonical frame</strong> for <span class="math inline">\(\Sigma\)</span> is <span class="math inline">\((W_\Sigma, R_\Sigma)\)</span>.</p>
-</section>
-<section id="picturing-the-canonical-model" class="slide level2">
-<h2>picturing the canonical model</h2>
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/canon.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="images/canon.svg" class="quarto-figure quarto-figure-center" style="width:120.0%"></p>
 </figure>
 </div>
-<p>A world makes true exactly the atoms it contains. The truth lemma says this extends to every formula.</p>
+</div></div>
 </section>
-<section id="the-truth-lemma" class="slide level2">
+<section id="the-truth-lemma" class="slide level2 smaller">
 <h2>the truth lemma</h2>
 <div class="theorem">
 <p>For each maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Gamma\)</span> and each <span class="math inline">\(\varphi\)</span>: <span class="math display">\[\mathcal{M}_\Sigma, \Gamma \Vdash \varphi \quad \text{iff} \quad \varphi \in \Gamma\]</span></p>
 </div>
-<div class="fragment">
-<p>By induction on the complexity of <span class="math inline">\(\varphi\)</span>.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By induction on the complexity of <span class="math inline">\(\varphi\)</span>:</p>
 <p><span class="math display">\[
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash p &amp; \text{iff} &amp; \Gamma \in V_\Sigma(p) &amp; \\
-&amp; \text{iff} &amp; p \in \Gamma &amp; \textsf{Def} \ V_\Sigma
-\end{array}
-\]</span></p>
-</div>
-</section>
-<section id="truth-lemma-neg-and-to" class="slide level2 smaller">
-<h2>truth lemma: <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span></h2>
-<p><span class="math display">\[
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi &amp; \text{iff} &amp; \mathcal{M}_\Sigma, \Gamma \nVdash \varphi &amp; \\
-&amp; \text{iff} &amp; \varphi \notin \Gamma &amp; \text{IH}\\
-&amp; \text{iff} &amp; \neg \varphi \in \Gamma &amp; \text{decomposition 2}
-\end{array}
-\]</span></p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi &amp; \text{iff} &amp; \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \ \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi &amp; \\
-&amp; \text{iff} &amp; \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma &amp; \text{IH}\\
-&amp; \text{iff} &amp; \varphi \to \psi \in \Gamma &amp; \text{decomposition 3}
+\begin{array}{lllll}
+\text{Base case}: &amp; &amp; &amp; &amp; \\
+&amp;\mathcal{M}_\Sigma, \Gamma \Vdash p &amp; \text{iff } &amp; \Gamma \in V_\Sigma(p) &amp; \\
+&amp; &amp; \text{iff } &amp; p \in \Sigma &amp; \textsf{definition of} \ \Vdash \\[8pt]
+\text{Induction step for }  \neg\textbf{:} &amp; &amp; &amp; &amp; \\
+&amp; \mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi &amp; \text{iff } &amp; \mathcal{M}_\Sigma, \Gamma \nVdash \varphi &amp; \textsf{definition of} \ \Vdash \\
+&amp; &amp; \text{iff } &amp; \varphi \notin \Sigma &amp; \textsf{inductive hypothesis} \\
+&amp; &amp; \text{iff } &amp; \neg \varphi \in \Sigma &amp; \textsf{maximal consistency} \\[8pt]
+\text{Induction step for } \to\textbf{:} &amp; &amp; &amp; &amp; \\
+&amp; \mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi &amp; \text{iff } &amp; \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi &amp; \textsf{definition of} \ \Vdash \\
+&amp; &amp; \text{iff } &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma &amp; \textsf{inductive hypothesis} \\
+&amp; &amp; \text{iff } &amp; \varphi \to \psi \in \Sigma &amp; \textsf{maximal consistency} \\
 \end{array}
 \]</span></p>
 </div>
 </section>
 <section id="truth-lemma-box" class="slide level2 smaller">
 <h2>truth lemma: <span class="math inline">\(\Box\)</span></h2>
-<p><span class="math display">\[
-\begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \mathcal{M}_\Sigma, \Delta \Vdash \varphi &amp; \\
-&amp; \text{iff} &amp; \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \varphi \in \Delta &amp; \text{IH}\\
-&amp; \text{iff} &amp; \Box \varphi \in \Gamma &amp; \text{Thm 8.4b}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{array}{lllll}
+&amp; \mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi &amp; \text{iff } &amp; \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \mathcal{M}_\Sigma, \Delta \Vdash \varphi &amp; \textsf{definition of} \ \Vdash \\
+&amp;           &amp; \text{iff} &amp; \text{for all} \ \Delta \in W_\Sigma, \ \text{if} \ \Gamma R_\Sigma \Delta, \ \text{then} \ \varphi \in \Delta &amp; \textsf{inductive hypothesis}\\
+&amp;           &amp; \text{iff} &amp; \Box \varphi \in \Gamma  &amp; \textsf{Thm 8.4b}\\
 \end{array}
 \]</span></p>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/truth-box.svg" class="quarto-figure quarto-figure-center" style="width:52.0%"></p>
@@ -424,9 +455,35 @@ Gabriel Uzquiano
 </div>
 <ul>
 <li class="fragment"><p>If <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\varphi\)</span> fails at some world of <span class="math inline">\(\mathcal{M}_\Sigma\)</span>.</p></li>
-<li class="fragment"><p>So <span class="math inline">\(\Sigma\)</span> is complete with respect to <strong>any</strong> class of frames that contains the canonical frame for <span class="math inline">\(\Sigma\)</span>.</p></li>
+<li class="fragment"><p>So <span class="math inline">\(\Sigma\)</span> is complete with respect to a class of frames <span class="math inline">\(\mathcal{C}\)</span> if <span class="math inline">\(\mathcal{C}\)</span> contains the canonical frame for <span class="math inline">\(\Sigma\)</span>.</p></li>
+</ul>
+</section>
+<section id="corollary-textsfk-is-complete-with-respect-to-all-frames" class="slide level2">
+<h2>corollary: <span class="math inline">\(\textsf{K}\)</span> is complete with respect to all frames</h2>
+<div class="theorem">
+<p><span class="math inline">\(\textsf{K}\)</span> is complete with respect to the class of <em>all</em> frames.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The canonical frame for <span class="math inline">\(\textsf{K}\)</span>, <span class="math inline">\((W_\textsf{K}, W_\textsf{K})\)</span>, belongs to the class of all frames.</p>
+</div>
+<div class="fragment">
+<div style="height: 30px;">
+
+</div>
+<p><strong>some open questions</strong>:</p>
+<ul>
+<li class="fragment"><p>Is <span class="math inline">\(\textsf{KT}\)</span> complete with respect to the class of <strong>reflexive</strong> frames?</p></li>
+<li class="fragment"><p>Is the canonical frame for <span class="math inline">\(\textsf{KT}\)</span>, <span class="math inline">\((W_\textsf{KT}, W_\textsf{KT})\)</span> a <strong>reflexive</strong> frame?</p></li>
+</ul>
+<div style="height: 20px;">
+
+</div>
+<ul>
+<li class="fragment"><p>Is <span class="math inline">\(\textsf{KB}\)</span> complete with respect to the class of <strong>symmetric</strong> frames?</p></li>
+<li class="fragment"><p>Is the canonical frame for <span class="math inline">\(\textsf{KB}\)</span>, <span class="math inline">\((W_\textsf{KB}, W_\textsf{KB})\)</span> a <strong>symmetric</strong> frame?</p></li>
 </ul>
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
