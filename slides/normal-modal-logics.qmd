@@ -21,12 +21,12 @@ format:
 
 # normal modal logics {.divider}
 
-We now look at axiom systems that extend the minimal normal modal logic $\textsf{K}$ with all substitution instances of several further modal axioms.
+We now look at axiom systems extending the minimal normal modal logic $\textsf{K}$ with substitution instances of further modal axioms.
 
 ## normal modal logics 
 
 ::: {.definition}
-A **normal modal logic** $\Sigma$ is an axiom system that results from $\textsf{K}$ when we add to its axioms all substitution instances of further modal axioms.
+A **normal modal logic** $\Sigma$ is an axiom system that results from $\textsf{K}$ when we add to its axioms every substitution instance of some further modal axiom.
 :::
 
 . . .
@@ -45,6 +45,7 @@ A **normal modal logic** $\Sigma$ is an axiom system that results from $\textsf{
 
 ## three important normal systems
 
+Three systems provide candidate axiomatizations of the logic of metaphysical necessity:
 
 :::{.columns}
 ::: {.column width="60%"}
@@ -81,7 +82,9 @@ $$
 :::
 . . .
 
-We write $\vdash_{\textsf{KT}} \varphi$, $\vdash_{\textsf{KT4}} \varphi$, $\vdash_{\textsf{KT5}} \varphi$. Two notable systems are $\textsf{S4} = \textsf{KT4}$ and $\textsf{S5} = \textsf{KT5}$.
+We write $\vdash_{\textsf{KT}} \varphi$, $\vdash_{\textsf{KT4}} \varphi$, $\vdash_{\textsf{KT5}} \varphi$. 
+
+Two notable systems are $\textsf{S4} = \textsf{KT4}$ and $\textsf{S5} = \textsf{KT5}$.
 
 
 
