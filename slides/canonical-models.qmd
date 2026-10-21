@@ -80,7 +80,7 @@ We do *not* allow premises *inside* a derivation. Otherwise, $\textsf{RN}$ would
 ## consistency
 
 ::: {.definition}
-$\Gamma$ is **$\Sigma$-consistent** iff $\Gamma \nvdash_\Sigma \bot$. That is, there is no finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$ for which
+$\Gamma$ is **$\Sigma$-consistent** iff $\Gamma \nvdash_\Sigma \bot$. In other words, there is no finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$ for which
 $$\vdash_\Sigma \boldsymbol{\alpha} \to \bot$$
 :::
 
@@ -92,7 +92,7 @@ $\varphi$ is $\Sigma$-consistent iff $\{\varphi\}$ is. That is, $\varphi$ is $\S
 
 
 
-## derivability and inconsistency
+## derivability and inconsistency {.smaller}
 
 ::: {.theorem}
 $\Gamma \vdash_\Sigma \varphi$ iff $\Gamma, \neg \varphi$ is $\Sigma$-inconsistent.
@@ -101,9 +101,9 @@ $\Gamma \vdash_\Sigma \varphi$ iff $\Gamma, \neg \varphi$ is $\Sigma$-inconsiste
 ::: {.proof}
 We consider each direction in turn:
 
-($\Rightarrow$) Given a finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$, if $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$, then $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi$, and, by $\textsf{PL}$, $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$. Therefore, $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent.
+($\Rightarrow$) Given a finite conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$, if $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$, then, since $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \neg \varphi$ and $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi$, by $\textsf{PL}$, $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$. Therefore, $\Gamma, \neg\varphi$ is $\Sigma$-inconsistent.
 
-($\Leftarrow$) Suppose $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ for some conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$. Since $\vdash_\Sigma \neg \bot$, we have $\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)$, whence $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$ by $\textsf{PL}$. Thus $\Gamma \vdash_\Sigma \varphi$.
+($\Leftarrow$) Suppose $\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot$ for some conjunction $\boldsymbol{\alpha}$ of members of $\Gamma$. Since $\vdash_\Sigma \neg \bot$, by $\textsf{PL}$, we have $\vdash_\Sigma \neg(\boldsymbol{\alpha} \wedge \neg \varphi)$, whence $\vdash_\Sigma \boldsymbol{\alpha} \to \varphi$ by $\textsf{PL}$. Thus $\Gamma \vdash_\Sigma \varphi$.
 :::
 
 In particular, $\nvdash_\Sigma \varphi$ iff $\neg \varphi$ is $\Sigma$-consistent.
@@ -126,19 +126,19 @@ $\Gamma$ is **maximal $\Sigma$-consistent** iff
 :::
 
 ::: {.proof}
-Enumerate all the formulas of propositional logic 
+Enumerate all modal formulas: 
 
 $$
 \varphi_0, \varphi_1, \varphi_2, \dots
 $$ 
-and build a chain
+and build a chain:
 
 $$
-\Gamma = \Sigma_0 \subseteq \Sigma_1 \subseteq \Sigma_2 \subseteq \cdots
+\Gamma = \Delta_0 \subseteq \Delta_1 \subseteq \Delta_2 \subseteq \cdots
 $$
-where $\Sigma_{0}$ is $\Gamma$ and $\Sigma_{n+1}$ is $\Sigma_n, \varphi_n$ if that set is *consistent*, and $\Sigma_n$ otherwise. 
+where $\Delta_{0}$ is $\Gamma$ and $\Delta_{n+1}$ is $\Delta_n, \varphi_n$ if that set is $\Sigma$-*consistent*, and $\Delta_n$ otherwise. 
 
-Let $\Sigma = \bigcup_n \Sigma_n$. Notice that the identity of $\Sigma$ is very sensitive to the details of the enumeration. 
+Let $\Delta = \bigcup_n \Delta_n$. Notice that the identity of $\Delta$ is very sensitive to the details of the enumeration. 
 :::
 
 
@@ -199,7 +199,7 @@ $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ iff $\{\varphi : \B
 
 ![](images/acc-dia.svg){.nostretch width="62%" fig-align="center"}
 
-## proof
+## proof {.smaller}
 
 ::: {.theorem}
 $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ iff $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$
@@ -208,7 +208,7 @@ $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ iff $\{\varphi : \B
 ::: {.proof}
 We look at each direction in turn:
 
-($\Rightarrow$) Suppose $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ and $\Box \varphi \in \Gamma$. For reductio, suppose $\varphi \notin \Delta$. Then $\neg \varphi \in \Delta$, so $\Diamond \neg \varphi \in \Gamma$, i.e., $\neg \Box \neg\neg \varphi \in \Gamma$. Since $\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi$, we get $\neg \Box \varphi \in \Gamma$, and so $\Box \varphi \notin \Gamma$. Contradiction.
+($\Rightarrow$) Suppose $\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma$ and $\Box \varphi \in \Gamma$. For reductio, suppose $\varphi \notin \Delta$. Then $\neg \varphi \in \Delta$, so $\Diamond \neg \varphi \in \Gamma$, i.e., $\neg \Box \neg\neg \varphi \in \Gamma$. Since $\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi$, we have $\neg \Box \varphi \in \Gamma$, and so $\Box \varphi \notin \Gamma$. Contradiction.
 
 ($\Leftarrow$) Suppose $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$. We now argue for the conditional: if $\Diamond \varphi \notin \Gamma$, then $\varphi \notin \Delta$. If $\neg \Box \neg \varphi \notin \Gamma$, then $\Box \neg \varphi \in \Gamma$ by maximality. So $\neg \varphi \in \Delta$, and $\varphi \notin \Delta$.
 :::
@@ -317,10 +317,10 @@ $$
 & \mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi & \text{iff } & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi & \textsf{definition of} \ \Vdash \\
 & & \text{iff } & \varphi \notin \Sigma & \textsf{inductive hypothesis} \\
 & & \text{iff } & \neg \varphi \in \Sigma & \textsf{maximal consistency} \\[8pt]
-\text{Induction step for } \to\textbf{:} & & & & \\
-& \mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi & \text{iff } & \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi & \textsf{definition of} \ \Vdash \\
-& & \text{iff } & \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma & \textsf{inductive hypothesis} \\
-& & \text{iff } & \varphi \to \psi \in \Sigma & \textsf{maximal consistency} \\
+\text{Induction step for } \to\textbf{:} & \text{similar to $\neg$} & & &  \\
+%& \mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi & \text{iff } & \mathcal{M}_\Sigma, \Gamma \nVdash %\varphi \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi & \textsf{definition of} \ \Vdash \\
+%& & \text{iff } & \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma & \textsf{inductive hypothesis} %\\
+%& & \text{iff } & \varphi \to \psi \in \Sigma & \textsf{maximal consistency} \\
 \end{array}
 $$
 :::
@@ -339,7 +339,6 @@ $$
 
 ![](images/truth-box.svg){.nostretch width="52%" fig-align="center"}
 
-This is the only step where the existence lemma is needed.
 
 
 ## where we stand
@@ -352,7 +351,7 @@ This is the only step where the existence lemma is needed.
 - So $\Sigma$ is complete with respect to a class of frames $\mathcal{C}$ if $\mathcal{C}$ contains the canonical frame for $\Sigma$.
 :::
 
-## corollary: $\textsf{K}$ is complete with respect to all frames
+## corollary: $\textsf{K}$ is complete with respect to all frames {.smaller}
 
 ::: {.theorem}
 $\textsf{K}$ is complete with respect to the class of *all* frames.
