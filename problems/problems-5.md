@@ -11,6 +11,7 @@ A rule $\varphi/\psi$ is **admissible** in a system $\Sigma$ when the theorems o
 
    2. Explain why your construction from 1.1 is not available for $\textsf{K5}$.
 
+     
      *For 1.1., given a countermodel for $\varphi$ at a world $w$, add a new world $w_0$ that sees only $w$.*
      
      *For 1.2., give a euclidean frame and a world $w$ such that adding a new world $w_0$ that sees only $w$ yields a frame that is not euclidean.*
