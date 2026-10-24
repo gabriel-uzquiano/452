@@ -81,7 +81,7 @@
         
         
 
-        ($\Rightarrow$) Suppose $R$ is *not* the identity relation on $W$. That is, there are some $w, u \in W$ such that $Rwu$ and $w \neq u$. Consider a valuation $V$ such that $V(p) = \{u\}$. By definition of $V$, $(W,R, V), w \nVdash p$. However, $(W,R, V), w \Vdash \Diamond p$, since $Rwv$ and $(W,R, V), u \nVdash p$.
+        ($\Rightarrow$) Suppose $R$ is *not* the identity relation on $W$. That is, either some $w \in W$ is such that $\neg Rww$ or else there are some $w, u \in W$ such that $Rwu$ and $w \neq u$. If the former, let $V$ such that $V(p) = \{w\}$ in which case $V$, $(W,R, V), w \nVdash \Diamond p$ even though $V$, $(W,R, V), w \Vdash p$. If the latter, let $V$ such that $V(p) = \{u\}$. By definition of $V$, $(W,R, V), w \nVdash p$. However, $(W,R, V), w \Vdash \Diamond p$, since $Rwv$ and $(W,R, V), u \nVdash p$.
     
     
     3. The formulas in 2.1 and 2.2 are *not* equivalent. For each formula, find a model and a world where it is true and the other is false. Explain why this is consistent with 2.1 and 2.2. (Could either of your models be based on an identity frame?)
