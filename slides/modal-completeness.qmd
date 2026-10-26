@@ -390,7 +390,7 @@ $$\Box(\Box p \to p) \to \Box p \tag{\textsf{L}}$$
 ::: {.incremental}
 - The set $\{\Diamond p_0\} \cup \{\Box(p_n \to \Diamond p_{n+1}) : n \geq 0\}$ is $\textsf{GL}$-consistent: each finite subset is true at the root of a long enough finite chain. Extend it to a maximal $\textsf{GL}$-consistent $\Gamma$. 
 
-- Since $\Diamond p_0 \in \Gamma$, there is $\Delta_0$ with $\Gamma R_{GL} \Delta_0$ and $p_0 \in \Delta_0$. Since axiom **4** each instance of $\Box(p_k\to\Diamond p_{k+1})$ is placed into each $\Delta_n$. So $p_n \to \Diamond p_{n+1}\in\Delta_n$, hence $\Diamond p_{n+1}\in\Delta_n$, and the existence lemma gives $\Delta_{n+1}$ with $p_{n+1}\in\Delta_{n+1}$.
+- Since $\Diamond p_0 \in \Gamma$, there is $\Delta_0$ with $\Gamma R_{GL} \Delta_0$ and $p_0 \in \Delta_0$. Since axiom $\textsf{4}$ each instance of $\Box(p_k\to\Diamond p_{k+1})$ is placed into each $\Delta_n$. So $p_n \to \Diamond p_{n+1}\in\Delta_n$, hence $\Diamond p_{n+1}\in\Delta_n$, and the existence lemma gives $\Delta_{n+1}$ with $p_{n+1}\in\Delta_{n+1}$.
 
 - So the canonical frame contains an infinite chain, and it does not validate Löb's axiom. Completeness of $\textsf{GL}$ requires the use of alternative methods, such as filtrations and finite models.
 
