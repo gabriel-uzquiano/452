@@ -107,7 +107,7 @@ The argument is simple.
 ::: {.incremental}
 - So the canonical *model* verifies all and only theorems of $\Sigma$.
 
-- The question now is whether theorems of $\Sigma$ are **valid** in the canonical frame for $\Sigma$: true under **every** valuation, not just under $V_\Sigma$?
+- The question now is whether theorems of $\Sigma$ are **valid** in the canonical frame for $\Sigma$. That is, are the theorems of $\Sigma$ true under **every** valuation, not just under $V_\Sigma$?
 
 - Completeness with respect to $\mathcal{C}$ only requires the frame to be in $\mathcal{C}$. Canonicity asks for more: that the frame validate $\Sigma$.
 :::
@@ -169,12 +169,12 @@ For example:
 
 ## from frame conditions to canonicity {.smaller}
 
-We proceed to argue that $R_\Sigma$ satisfies the relevant **condition**. 
+We proceed to argue that $R_\Sigma$ satisfies the relevant **condition** in each case. 
 
-To conclude that the axiom is **canonical**, we need one more step:
+To conclude that the axiom is **canonical**, we rely on a further observation:
 
 ::: {.incremental}
-- each condition **validates** its axiom: on every frame satisfying the condition, every instance of the axiom is true at every world under every valuation. We did this when we studied frame definability.
+- for a frame to satisfy the condition is sufficent for the frame to **validate** the axiom.
 
 - So if $R_\Sigma$ satisfies the condition, the canonical frame validates the axiom.
 :::
@@ -182,7 +182,7 @@ To conclude that the axiom is **canonical**, we need one more step:
 . . .
 
 $$
-\Sigma \ \text{contains instances of the axiom} \ \Rightarrow \ R_\Sigma \ \text{satisfies the condition} \ \Rightarrow \ (W_\Sigma, R_\Sigma) \ \text{validates the axiom}
+\Sigma \ \text{contains all instances of the axiom} \ \Rightarrow \ R_\Sigma \ \text{satisfies the condition} \ \Rightarrow \ (W_\Sigma, R_\Sigma) \ \text{validates all instances of the axiom}
 $$
 
 ## the pattern {.smaller}
@@ -190,7 +190,7 @@ $$
 In each case, we argue that $R_\Sigma$ relates certain maximal consistent sets:
 
 ::: {.incremental}
-- We unpack the condition in terms of the definition of $R_\Sigma$ (in its $\Box$ or $\Diamond$ form).
+- We unpack the condition in terms of the definition of $R_\Sigma$ in either the $\Box$ or $\Diamond$ form.
 
 - Use the axiom, whose instances belong to each $\Gamma \in W_\Sigma$, to move a formula from one set to another.
 
@@ -199,7 +199,7 @@ In each case, we argue that $R_\Sigma$ relates certain maximal consistent sets:
 
 ## a useful lemma {.smaller}
 
-Several proofs, including the existence lemma, use the same step.
+Several proofs, including the existence lemma, use one crucial step.
 
 ::: {.theorem}
 If $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \psi$, then $\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box\psi$.
@@ -225,7 +225,11 @@ If $\Sigma$ includes substitution instances of $\textsf{D}$, then $R_\Sigma$ is 
 
 
 ::: {.proof}
-It suffices to note that $\{\varphi : \Box \varphi \in \Gamma\}$ is $\Sigma$-consistent. Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By the lemma, $\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot$, so $\Box\bot \in \Gamma$. By $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So $\Gamma$ is $\Sigma$-inconsistent.
+We argue that $\{\varphi : \Box \varphi \in \Gamma\}$ is $\Sigma$-consistent. Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By the lemma, 
+
+$$\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot.$$
+
+It follows that $\Box\bot \in \Gamma$. Given axiom $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So, $\Gamma$ is $\Sigma$-inconsistent, which contradicts the assumption that $\Gamma$ is a max $\Sigma$-con set.
 :::
 :::
 
@@ -245,7 +249,7 @@ If $\Sigma$ includes substitution instances of $\textsf{B}$, then $R_\Sigma$ is 
 ::: {.proof}
 Given maximal $\Sigma$-consistent sets $\Gamma, \Delta$, we argue that
 
- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$, then $\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta$.
+- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$, then $\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta$.
 
 Let $\varphi \in \Gamma$. By $\textsf{B}$, $\varphi \to \Box \Diamond \varphi \in \Gamma$, so $\Box\Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
 :::
@@ -269,7 +273,7 @@ If $\Sigma$ includes substitution instances of $\textsf{4}$, then $R_\Sigma$ is 
 ::: {.proof}
 Given maximal $\Sigma$-consistent sets $\Gamma, \Delta, \Theta$, we argue
 
- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$
+- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$
 
 Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$. Let $\Box \varphi \in \Gamma$. By $\textsf{4}$, $\Box\Box\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Box \varphi \in \Delta$. Since $\Delta R_\Sigma \Theta$, $\varphi \in \Theta$.
 :::
@@ -297,7 +301,7 @@ If $\Sigma$ includes substitution instances of $\textsf{5}$, then $R_\Sigma$ is 
 ::: {.proof}
 Given maximal $\Sigma$-consistent sets $\Gamma, \Delta, \Theta$, we argue
 
-if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$
+- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$
 
 Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$. Let $\varphi \in \Theta$. Since $\Gamma R_\Sigma \Theta$, $\Diamond \varphi \in \Gamma$. By $\textsf{5}$, $\Box \Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
 :::
@@ -317,13 +321,13 @@ Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : 
 ## how to combine canonical axioms {.smaller}
 
 ::: {.theorem}
-If $\Sigma$ is axiomatized by adding to $\textsf{K}$ canonical axioms that correspond to conditions $C_1, \dots, C_n$, then $\Sigma$ is complete with respect to the class of frames that satisfy $C_1, \dots, C_n$.
+If $\Sigma$ extends $\textsf{K}$ with the canonical axioms that correspond to conditions $C_1, \dots, C_n$, then $\Sigma$ is complete with respect to the class of frames that satisfy $C_1, \dots, C_n$.
 :::
 
 . . .
 
 ::: {.proof}
-If $\nvdash_\Sigma \varphi$, then $\varphi$ fails at some world of $\mathcal{M}_\Sigma$. Since $\Sigma$ contains the instances of each axiom, the canonical frame satisfies each of $C_1, \dots, C_n$. So $\varphi$ fails on a frame in the class.
+If $\nvdash_\Sigma \varphi$, then $\varphi$ fails at some world of $\mathcal{M}_\Sigma$. Since $\Sigma$ contains all instances of each axiom, $R_\Sigma$ satisfies all of $C_1, \dots, C_n$. Thus $\varphi$ fails on a frame in the class.
 :::
 
 . . .
@@ -344,7 +348,7 @@ $\Gamma \cup \{\neg\varphi\}$ is $\Sigma$-consistent (Theorem 8.1). By Lindenbau
 
 . . .
 
-So for canonical $\Sigma$ and the corresponding class $\mathcal{C}$: if every world in a model on a frame in $\mathcal{C}$ that makes all of $\Gamma$ true also makes $\varphi$ true, then $\Gamma \vdash_\Sigma \varphi$. Compare the propositional case: every consistent set is satisfiable.
+Given a canonical system $\Sigma$ and the relevant class $\mathcal{C}$: if a world in a model on a frame in $\mathcal{C}$ that verifies $\Gamma$ verifies $\varphi$ true, then $\Gamma \vdash_\Sigma \varphi$. 
 
 ## the full picture {.smaller}
 
@@ -384,9 +388,9 @@ $$\Box(\Box p \to p) \to \Box p \tag{\textsf{L}}$$
 ::: {.incremental}
 - The set $\{\Diamond p_0\} \cup \{\Box(p_n \to \Diamond p_{n+1}) : n \geq 0\}$ is $\textsf{GL}$-consistent: each finite subset is true at the root of a long enough finite chain.
 
-- Extend it to a maximal $\textsf{GL}$-consistent $\Gamma$. Since $\textsf{GL} \vdash \textsf{4}$, each $\Box(p_n \to \Diamond p_{n+1})$ is passed along the chain, and the existence lemma yields $\Delta_0, \Delta_1, \Delta_2, \dots$
+- Extend it to a maximal $\textsf{GL}$-consistent $\Gamma$. Since $\textsf{GL} \vdash \textsf{4}$, each $\Box(p_n \to \Diamond p_{n+1})$ is passed along the chain, and the existence lemma yields $\Delta_0 R_{GL} \Delta_1 R_{GL} \Delta_2 R_{GL} \dots$
 
-- So the canonical frame contains an infinite chain, and it does not validate Löb's axiom. Completeness of $\textsf{GL}$ requires other methods, such as filtrations and finite models.
+- So the canonical frame contains an infinite chain, and it does not validate Löb's axiom. Completeness of $\textsf{GL}$ requires the use of alternative methods, such as filtrations and finite models.
 :::
 
 ## exercise: $\textsf{S4.2}$ {.smaller}
@@ -395,7 +399,7 @@ $$\Box(\Box p \to p) \to \Box p \tag{\textsf{L}}$$
 ::: {.column width="55%"}
 $\textsf{S4.2}$ extends $\textsf{S4}$ with all instances of
 $$\Diamond\Box p \to \Box\Diamond p \tag{\textsf{.2}}$$
-recall Lenzen's view of the logic of knowledge.
+
 
 $\textsf{.2}$ is canonical for **directed** frames: if $\Gamma R_\Sigma \Delta$ and $\Gamma R_\Sigma \Theta$, then there is $\Lambda$ with $\Delta R_\Sigma \Lambda$ and $\Theta R_\Sigma \Lambda$.
 
