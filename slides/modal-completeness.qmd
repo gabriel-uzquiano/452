@@ -197,7 +197,7 @@ In each case, we argue that $R_\Sigma$ relates certain maximal consistent sets:
 - In the diagrams below, solid arrows are given and the dashed arrow is to be shown.
 :::
 
-## a useful lemma {.smaller}
+## a helpful lemma {.smaller}
 
 Several proofs, including the existence lemma, use one crucial step.
 
@@ -207,7 +207,8 @@ If $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \psi$, then $\vd
 
 ::: {.proof}
 By $\textsf{RK}$, $\vdash_\Sigma \Box(\varphi_1 \wedge \dots \wedge \varphi_n) \to \Box\psi$. It remains to verify that
-$$\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n)$$.
+$$\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n).$$
+But $\Sigma$ extends $\textsf{K}$, and we observed that $\vdash_{\textsf{K}} (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n)$.
 :::
 
 . . .
@@ -220,16 +221,16 @@ With $\psi = \bot$, this is the step used for $\textsf{D}$ below.
 ::: {.column width="60%"}
 
 ::: {.theorem}
-If $\Sigma$ includes substitution instances of $\textsf{D}$, then $R_\Sigma$ is serial on $W_\Sigma$: if $\Gamma$ is a max $\Sigma$-con set, there is $\Delta$ with $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$.
+If $\Sigma$ includes substitution instances of $\textsf{D}$, then $R_\Sigma$ is serial on $W_\Sigma$: if $\Gamma$ is a maximal $\Sigma$-consistent set, there is $\Delta$ with $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$.
 :::
 
 
 ::: {.proof}
-We argue that $\{\varphi : \Box \varphi \in \Gamma\}$ is $\Sigma$-consistent. Suppose not. Then $\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By the lemma, 
+We argue that $\{\varphi : \Box \varphi \in \Gamma\}$ is $\Sigma$-consistent. Suppose not. Then $\vdash_{\Sigma} (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot$ for some $\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma$. By the lemma, 
 
 $$\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot.$$
 
-It follows that $\Box\bot \in \Gamma$. Given axiom $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So, $\Gamma$ is $\Sigma$-inconsistent, which contradicts the assumption that $\Gamma$ is a max $\Sigma$-con set.
+It follows that $\Box\bot \in \Gamma$. Given axiom $\textsf{D}$, $\Diamond \bot \in \Gamma$. But $\vdash_\Sigma \Box \neg \bot$, i.e., $\neg\Diamond\bot \in \Gamma$. So, $\Gamma$ is $\Sigma$-inconsistent, which contradicts the assumption that $\Gamma$ is maximal $\Sigma$-consistent.
 :::
 :::
 
@@ -243,7 +244,7 @@ It follows that $\Box\bot \in \Gamma$. Given axiom $\textsf{D}$, $\Diamond \bot 
 ::: {.columns}
 ::: {.column width="55%"}
 ::: {.theorem}
-If $\Sigma$ includes substitution instances of $\textsf{B}$, then $R_\Sigma$ is symmetric on $W_\Sigma$: if $\Gamma, \Delta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$, then $\Delta R_\Sigma \Gamma$.
+If $\Sigma$ includes substitution instances of $\textsf{B}$, then $R_\Sigma$ is symmetric on $W_\Sigma$: if $\Gamma, \Delta$ are maximal $\Sigma$-consistent, then if $\Gamma R_\Sigma \Delta$, then $\Delta R_\Sigma \Gamma$.
 :::
 
 ::: {.proof}
@@ -266,7 +267,7 @@ Let $\varphi \in \Gamma$. By $\textsf{B}$, $\varphi \to \Box \Diamond \varphi \i
 ::: {.column width="50%"}
 
 ::: {.theorem}
-If $\Sigma$ includes substitution instances of $\textsf{4}$, then $R_\Sigma$ is transitive on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$ and $\Delta R_\Sigma \Theta$, then $\Gamma R_\Sigma \Theta$.
+If $\Sigma$ includes substitution instances of $\textsf{4}$, then $R_\Sigma$ is transitive on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are maximal $\Sigma$-consistent, then if $\Gamma R_\Sigma \Delta$ and $\Delta R_\Sigma \Theta$, then $\Gamma R_\Sigma \Theta$.
 :::
 
 
@@ -294,16 +295,16 @@ Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : 
 ::: {.column width="50%"}
 
 ::: {.theorem}
-If $\Sigma$ includes substitution instances of $\textsf{5}$, then $R_\Sigma$ is euclidean on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are max $\Sigma$-con sets, then if $\Gamma R_\Sigma \Delta$ and $\Gamma R_\Sigma \Theta$, then $\Delta R_\Sigma \Theta$.
+If $\Sigma$ includes substitution instances of $\textsf{5}$, then $R_\Sigma$ is euclidean on $W_\Sigma$: if $\Gamma, \Delta, \Theta$ are maximal $\Sigma$-consistent, then if $\Gamma R_\Sigma \Delta$ and $\Gamma R_\Sigma \Theta$, then $\Delta R_\Sigma \Theta$.
 :::
 
 
 ::: {.proof}
 Given maximal $\Sigma$-consistent sets $\Gamma, \Delta, \Theta$, we argue
 
-- if $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$, then $\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta$
+- if $\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta$ and $\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Gamma$, then $\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Delta$
 
-Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta$. Let $\varphi \in \Theta$. Since $\Gamma R_\Sigma \Theta$, $\Diamond \varphi \in \Gamma$. By $\textsf{5}$, $\Box \Diamond\varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
+Assume $\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta$ and $\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Gamma$. Let $\varphi \in \Theta$. Since $\Gamma R_\Sigma \Theta$, $\Diamond \varphi \in \Gamma$. By $\textsf{5}$, $\Box \Diamond \varphi \in \Gamma$. Since $\Gamma R_\Sigma \Delta$, $\Diamond \varphi \in \Delta$.
 :::
 :::
 
