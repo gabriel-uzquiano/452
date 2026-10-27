@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="epistemic-logic_files/libs/clipboard/clipboard.min.js"></script>
+<script src="epistemic-logic_files/libs/quarto-html/tabby.min.js"></script>
+<script src="epistemic-logic_files/libs/quarto-html/popper.min.js"></script>
+<script src="epistemic-logic_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="epistemic-logic_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="epistemic-logic_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="epistemic-logic_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Gabriel Uzquiano">
+  <title>epistemic logic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="epistemic-logic_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="epistemic-logic_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="epistemic-logic_files/libs/revealjs/dist/theme/quarto-72ecf22953552b577c0b5bc35a5142cc.css">
+  <link rel="stylesheet" href="fonts.css">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="epistemic-logic_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#ffffff" class="quarto-title-block center">
+  <h1 class="title">epistemic logic</h1>
+  <p class="subtitle">PHIL 452 · Modal Logic</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Gabriel Uzquiano 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="epistemic-logic" class="title-slide slide level1 divider center">
+<h1>epistemic logic</h1>
+<p>Modal logic provides a formal approach to the study of different aspects of knowledge and its interaction with belief.</p>
+</section>
+<section id="the-language" class="slide level2">
+<h2>the language</h2>
+<p>We follow Hintikka (1962) and supplement the language of propositional logic with a family of operators <span class="math inline">\(\textsf{K}_i\)</span>, one for each agent <span class="math inline">\(i \in I\)</span>.</p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{array}{lll}
+\textsf{K}_i \varphi &amp; &amp; \text{agent } i \text{ knows that } \varphi\\
+\langle \textsf{K}_i \rangle \varphi &amp; &amp; \text{agent } i \text{ has not ruled out } \varphi\text{: for all } i \text{ knows, } \varphi \text{ might be the case}
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>where <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span> abbreviates <span class="math inline">\(\neg \textsf{K}_i \neg\)</span>.</p>
+<ul>
+<li><p>To know that <span class="math inline">\(\neg\varphi\)</span> is to rule <span class="math inline">\(\varphi\)</span> out.</p></li>
+<li><p>To not know that <span class="math inline">\(\neg\varphi\)</span> is to not rule <span class="math inline">\(\varphi\)</span> out:</p>
+<p>for all the agent <span class="math inline">\(i\)</span> knows, <span class="math inline">\(\varphi\)</span> might be the case.</p></li>
+</ul>
+</div>
+</section>
+<section id="epistemic-accessibility" class="slide level2">
+<h2>epistemic accessibility</h2>
+<blockquote>
+<p>The content of someone’s knowledge of the world is given by his class of <em>epistemically accessible</em> worlds. These are the worlds that might, for all he knows, be his world; world <span class="math inline">\(w\)</span> is one of them iff he knows nothing, either explicitly or implicitly, to rule out the hypothesis that <span class="math inline">\(w\)</span> is the world where he lives. (Lewis 1986)</p>
+</blockquote>
+<div class="fragment">
+<p>We speak of <strong>states</strong> rather than worlds:</p>
+<ul>
+<li><span class="math inline">\(v\)</span> is accessible from <span class="math inline">\(u\)</span> just in case what the agent knows to be the case in <span class="math inline">\(u\)</span> is the case in <span class="math inline">\(v\)</span>.</li>
+</ul>
+<p>In a poker game, states correspond to distributions of cards among players; as the game progresses, agents come to rule out some distributions as live options.</p>
+</div>
+</section>
+<section id="relational-models" class="slide level2">
+<h2>relational models</h2>
+<div class="definition">
+<p>A <strong>relational model</strong> <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{K}_i}\)</span> is a structure <span class="math inline">\((W, \{R_i : i \in I\}, V)\)</span>, where:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(W\)</span> is a non-empty set of information states,</p></li>
+<li class="fragment"><p><span class="math inline">\(R_i\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span> for each <span class="math inline">\(i \in I\)</span>, and</p></li>
+<li class="fragment"><p><span class="math inline">\(V\)</span> is a valuation that maps a propositional variable <span class="math inline">\(p\)</span> to a set of states <span class="math inline">\(V(p)\)</span>.</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="an-example" class="title-slide slide level1 divider center">
+<h1>an example</h1>
+
+</section>
+<section id="has-your-phone-been-stolen" class="slide level2">
+<h2>has your phone been stolen?</h2>
+<p>You have lost sight of your phone. Maybe it has been stolen (<span class="math inline">\(p\)</span>) or maybe not (<span class="math inline">\(\neg p\)</span>). Either way, you know you had it with you last night (<span class="math inline">\(q\)</span>). You had your phone with you in all epistemic alternatives, but only one state encodes the information that your phone has been stolen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/phone.svg" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+<p>Nothing you know at either state enables you to distinguish <span class="math inline">\(s_1\)</span> from <span class="math inline">\(s_2\)</span>. They are both candidates to represent what is in fact the case.</p>
+</section>
+<section id="truth-at-a-state" class="slide level2">
+<h2>truth at a state</h2>
+<div class="definition">
+<p><span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash p &amp; \text{iff} &amp; s \in V(p)\\
+M, s \Vdash \neg \varphi &amp; \text{iff} &amp; M, s \nVdash \varphi\\
+M, s \Vdash \varphi \to \psi &amp; \text{iff} &amp; M, s \nVdash \varphi \ \text{or} \ M, s \Vdash \psi\\
+M, s \Vdash \textsf{K}_i \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Since <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span> is <span class="math inline">\(\neg \textsf{K}_i \neg\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash \langle \textsf{K}_i \rangle \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi
+\end{array}
+\]</span></p>
+</div>
+</section>
+<section id="your-phone-revisited" class="slide level2">
+<h2>your phone, revisited</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/phone-eval.svg" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\textsf{K}_i q\)</span> is true at both states.</p></li>
+<li class="fragment"><p>neither <span class="math inline">\(\textsf{K}_i p\)</span> nor <span class="math inline">\(\textsf{K}_i \neg p\)</span> is true at either state.</p></li>
+</ul>
+</section>
+<section id="truth-in-a-model" class="slide level2">
+<h2>truth in a model</h2>
+<div class="definition">
+<p><span class="math inline">\(\varphi\)</span> is <strong>true in</strong> a model <span class="math inline">\(M\)</span>, written <span class="math inline">\(M \Vdash \varphi\)</span>, iff <span class="math inline">\(M, s \Vdash \varphi\)</span>, for each <span class="math inline">\(s \in W\)</span>.</p>
+</div>
+<div class="definition">
+<p><span class="math inline">\(\varphi\)</span> is <strong>valid in</strong> a frame <span class="math inline">\(F = (W, \{R_i : i \in I\})\)</span>, written <span class="math inline">\(F \models \varphi\)</span>, iff <span class="math inline">\(M \Vdash \varphi\)</span>, for each model <span class="math inline">\(M\)</span> based on the frame <span class="math inline">\(F\)</span>.</p>
+</div>
+<div class="fragment">
+<p>All substitution instances of <span class="math inline">\(\textsf{K}\)</span> are valid in all frames, and <span class="math inline">\(\textsf{RN}\)</span> preserves validity in all frames:</p>
+<p><span class="math display">\[\varphi / \textsf{K}_i \varphi \tag{\textsf{RN}}\]</span> <span class="math display">\[\textsf{K}_i (p \to q) \to (\textsf{K}_i p \to \textsf{K}_i q) \tag{\textsf{K}}\]</span></p>
+</div>
+<div class="fragment">
+<p>Agents know all logical truths, and they furthermore know what follows from what they know.</p>
+</div>
+</section>
+<section id="textsfm-knowledge-commutes-with-conjunction" class="slide level2">
+<h2><span class="math inline">\(\textsf{M}\)</span>: knowledge commutes with conjunction</h2>
+<p><span class="math display">\[\textsf{K}_i (\varphi \wedge \psi) \to (\textsf{K}_i \varphi \wedge \textsf{K}_i \psi) \tag{\textsf{M}}\]</span></p>
+<div style="height: 40px;">
+
+</div>
+<ul>
+<li class="fragment"><p>It follows from <span class="math inline">\(\textsf{RN}\)</span> and <span class="math inline">\(\textsf{K}\)</span>: you know a conjunction iff you know each conjunct.</p></li>
+<li class="fragment"><p>Semantically, <span class="math inline">\(\varphi \wedge \psi\)</span> is true at a state iff <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> both are.</p></li>
+</ul>
+</section>
+<section id="logical-omniscience" class="slide level2">
+<h2>logical omniscience</h2>
+<p>Ordinary knowledge appears not to be closed under logical consequence, and ordinary agents do not know all logical truths. Many logical truths are far too complex for me to even entertain, much less know.</p>
+<p>Two potential lines of response:</p>
+<ul>
+<li class="fragment"><p><strong>idealization</strong>: do not take <span class="math inline">\(\textsf{K}_i\)</span> to represent ordinary knowledge. Instead, <span class="math inline">\(\textsf{K}_i\)</span> is used to model the knowledge of idealized agents with unlimited logical capabilities.</p></li>
+<li class="fragment"><p><strong>implicit knowledge</strong>: use <span class="math inline">\(\textsf{K}_i\)</span> to model what follows from knowledge we may reasonably attribute to ordinary agents, even if it is not explicitly known by them.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="the-logic-of-knowledge" class="title-slide slide level1 divider center">
+<h1>the logic of knowledge</h1>
+<p>Which modal axioms are candidates for the logic of knowledge?</p>
+</section>
+<section id="textsft-what-is-known-is-true" class="slide level2">
+<h2><span class="math inline">\(\textsf{T}\)</span>: what is known is true</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<p><span class="math display">\[\textsf{K}_i p \to p \tag{\textsf{T}}\]</span></p>
+<ul>
+<li class="fragment"><p>knowledge entails truth</p></li>
+<li class="fragment"><p><span class="math inline">\(\textsf{T}\)</span> requires each <span class="math inline">\(R_i\)</span> to be <strong>reflexive</strong> on <span class="math inline">\(W\)</span>.</p></li>
+<li class="fragment"><p>each state is a genuine epistemic option for an agent at that very state.</p></li>
+</ul>
+</div><div class="column" style="width:38%;">
+<p><img data-src="images/ep-T.svg" style="width:50.0%"></p>
+</div></div>
+</section>
+<section id="moorean-sentences-are-unknowable" class="slide level2">
+<h2>Moorean sentences are unknowable</h2>
+<p>Consider the sentence ‘you do not know it, but your phone has been stolen’. <span class="math display">\[p \wedge \neg \textsf{K}_i p\]</span> This Moorean sentence may well be true, but could you ever come to know it?</p>
+<div class="fragment">
+<p>Not in the presence of <span class="math inline">\(\textsf{T}\)</span> and <span class="math inline">\(\textsf{M}\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span> is falsified at all states of all reflexive models.</p></li>
+<li><p><span class="math inline">\(\neg (p \wedge \neg \textsf{K}_i p)\)</span> is valid in all reflexive frames.</p></li>
+</ul>
+</div>
+</section>
+<section id="a-theorem-of-epistemic-logic" class="slide level2">
+<h2>a theorem of epistemic logic</h2>
+<div class="theorem">
+<p><span class="math inline">\(\vdash \neg \textsf{K}_i (p \wedge \neg \textsf{K}_i p)\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We use instances of <span class="math inline">\(\textsf{M}\)</span> and <span class="math inline">\(\textsf{T}\)</span>: <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \textsf{K}_i (p \wedge \neg \textsf{K}_i p) \to (\textsf{K}_i p \wedge \textsf{K}_i \neg \textsf{K}_i p) &amp; \textsf{M}\\
+2 &amp; \textsf{K}_i \neg \textsf{K}_i p \to \neg \textsf{K}_i p &amp; \textsf{T}\\
+3 &amp; (\textsf{K}_i p \wedge \textsf{K}_i \neg \textsf{K}_i p) \to (\textsf{K}_i p \wedge \neg \textsf{K}_i p) &amp; \textsf{PL} \ 2\\
+4 &amp; \neg \textsf{K}_i (p \wedge \neg \textsf{K}_i p) &amp; \textsf{PL} \ 1, 3
+\end{array}
+\]</span></p>
+</div>
+</section>
+<section id="textsfb-what-might-be-known-is-true" class="slide level2">
+<h2><span class="math inline">\(\textsf{B}\)</span>: what might be known is true</h2>
+<p>The dual of <span class="math inline">\(\textsf{T}\)</span> claims that if something is true, then for all you know, it is true.</p>
+<p><span class="math display">\[p \to  \langle \textsf{K}_i \rangle p \]</span> <span class="math inline">\(\textsf{B}\)</span> claims that if something is true, then <strong>you know that</strong> for all you know, it is true.</p>
+<p><span class="math display">\[p \to \textsf{K}_i \langle \textsf{K}_i \rangle p \tag{\textsf{B}}\]</span></p>
+<p>The dual claims that if for all you know, you know something, then it is true. <span class="math display">\[\langle \textsf{K}_i \rangle \textsf{K}_i p \to p \tag{$\textsf{B}_\Diamond$}\]</span></p>
+<div class="fragment">
+<p><strong>Whatever might be known is true</strong>. If for all you know, you know that your phone has been stolen, then it has indeed been stolen.</p>
+</div>
+</section>
+<section id="symmetry-and-skepticism" class="slide level2">
+<h2>symmetry and skepticism</h2>
+<p><span class="math inline">\(\textsf{B}\)</span> requires each <span class="math inline">\(R_i\)</span> to be <strong>symmetric</strong> on <span class="math inline">\(W\)</span>.</p>
+<p>Williamson (2000, §8.2) links symmetry and to radical skepticism.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<ul>
+<li class="fragment"><p>At <span class="math inline">\(w\)</span>, <span class="math inline">\(i\)</span> believes that she has a hand.</p></li>
+<li class="fragment"><p>At <span class="math inline">\(v\)</span>, <span class="math inline">\(i\)</span> is systematically deceived into believing that despite being a brain in a vat.</p></li>
+<li class="fragment"><p><span class="math inline">\(R_ivw\)</span>. What <span class="math inline">\(i\)</span> knows at <span class="math inline">\(v\)</span> is true at <span class="math inline">\(w\)</span>.</p></li>
+<li class="fragment"><p>By symmetry, <span class="math inline">\(R_i w v\)</span>, and what <span class="math inline">\(i\)</span> knows at <span class="math inline">\(w\)</span> is true at <span class="math inline">\(v\)</span>.</p></li>
+<li class="fragment"><p>The belief that <span class="math inline">\(i\)</span> has hand is false at <span class="math inline">\(v\)</span>, and it is <em>not</em> knowledge at <span class="math inline">\(w\)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:52%;">
+<p><img data-src="images/skeptic.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="the-case-against-textsfb" class="slide level2">
+<h2>the case against <span class="math inline">\(\textsf{B}\)</span></h2>
+<p>Read as <span class="math inline">\(\neg \varphi \to \textsf{K}_i \neg \textsf{K}_i \varphi\)</span>:</p>
+<ul>
+<li class="fragment"><p>whenever you fail to know something because it is false, you know that you do not know it.</p></li>
+<li class="fragment"><p>The agent in <span class="math inline">\(v\)</span> does not know she is being deceived; she does not know she does not know.</p></li>
+<li class="fragment"><p>the rejection of <span class="math inline">\(\textsf{B}\)</span> as a <em>validity</em> is not to say that symmetric models are never appropriate, as in the phone example.</p></li>
+</ul>
+</section>
+<section id="from-textsfb-to-textsf5" class="slide level2">
+<h2>from <span class="math inline">\(\textsf{B}\)</span> to <span class="math inline">\(\textsf{5}\)</span></h2>
+<p>If <span class="math inline">\(R_i\)</span> is reflexive and euclidean on <span class="math inline">\(W\)</span>, then <span class="math inline">\(R_i\)</span> is symmetric on <span class="math inline">\(W\)</span>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p><span class="math inline">\(\textsf{KTB} \sqsubseteq \textsf{KT5} = \textsf{S5}\)</span>.</p></li>
+<li class="fragment"><p>The case against <span class="math inline">\(\textsf{B}\)</span> is a case against <span class="math inline">\(\textsf{5}\)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/ref-eucl-sym.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="textsf5-what-is-not-ruled-out-is-known-to-not-be-ruled-out" class="slide level2">
+<h2><span class="math inline">\(\textsf{5}\)</span>: what is not ruled out is known to not be ruled out</h2>
+<p><span class="math display">\[\langle \textsf{K}_i \rangle p \to \textsf{K}_i \langle \textsf{K}_i \rangle p \tag{\textsf{5}}\]</span></p>
+<p>The dual axiom claims that if it is not ruled out that you know something, then you know it. <span class="math display">\[\langle \textsf{K}_i \rangle \textsf{K}_i p \to \textsf{K}_i p \tag{$\textsf{5}_\Diamond$}\]</span></p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>I mistakenly take myself to know that my phone has been stolen. Unbeknownst to me, I just misplaced it. So, I do <em>not</em> know that it has been stolen. Yet, since I have not ruled out that I know it, by <span class="math inline">\(\textsf{5}_\Diamond\)</span>, I <strong>must</strong> know it after all.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/ep-5.svg" style="width:100.0%"></p>
+</div></div>
+</div>
+</section>
+<section id="textsf5-knowledge-and-belief" class="slide level2 smaller">
+<h2><span class="math inline">\(\textsf{5}\)</span>, knowledge, and belief</h2>
+<p>Add a belief operator <span class="math inline">\(\textsf{B}_i\)</span> governed by at least two principles:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\textsf{K}_i \varphi \to \textsf{B}_i \varphi &amp; &amp; \textsf{Knowledge entails Belief}\\
+\textsf{B}_i \varphi \to \neg \textsf{B}_i \neg \varphi &amp; &amp; \textsf{Consistent Belief}
+\end{array}
+\]</span></p>
+<p>Then <span class="math inline">\(\textsf{5}\)</span> yields <span class="math display">\[
+\begin{array}{lll}
+\textsf{B}_i \textsf{K}_i \varphi \to \textsf{K}_i \varphi &amp; &amp; \textsf{Infallible Epistemic Belief} \\
+\end{array}
+\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We combine <span class="math inline">\(\textsf{5}\)</span> with the two former principles: <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \neg \textsf{K}_i \varphi \to \textsf{K}_i \neg \textsf{K}_i \varphi &amp; \textsf{5} \ \text{in the form } \neg\textsf{K}_i \to \textsf{K}_i \neg \textsf{K}_i\\
+2 &amp; \textsf{K}_i \neg \textsf{K}_i \varphi \to \textsf{B}_i \neg \textsf{K}_i \varphi &amp; \textsf{Knowledge Entails Belief}\\
+3 &amp; \textsf{B}_i \neg \textsf{K}_i \varphi \to \neg \textsf{B}_i \textsf{K}_i \varphi &amp; \textsf{Consistent Belief} \ \text{for} \ \textsf{B}_i\\
+4 &amp; \textsf{B}_i \textsf{K}_i \varphi \to \textsf{K}_i \varphi &amp; \textsf{PL} \ 1, 2, 3
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>To believe that you know is, on this framework, sufficient to know. No one mistakenly believes that they know what they do not know.</p>
+</div>
+</section>
+<section id="textsf4-what-is-known-is-known-to-be-known" class="slide level2">
+<h2><span class="math inline">\(\textsf{4}\)</span>: what is known is known to be known</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><span class="math display">\[\textsf{K}_i p \to \textsf{K}_i \textsf{K}_i p \tag{\textsf{4}}\]</span></p>
+<ul>
+<li class="fragment"><p>Otherwise known as the <span class="math inline">\(\textsf{KK}\)</span>-principle.</p></li>
+<li class="fragment"><p>Knowledge is transparent to the agent.</p></li>
+<li class="fragment"><p>Agents with unlimited introspection recognize their own knowledge: they have conclusive reasons that are not defeasible by new information.</p></li>
+<li class="fragment"><p><span class="math inline">\(\textsf{4}\)</span> requires each <span class="math inline">\(R_i\)</span> to be <strong>transitive</strong> on <span class="math inline">\(W\)</span>.</p></li>
+<li class="fragment"><p>Hintikka (1962) adopted <span class="math inline">\(\textsf{KT4}\)</span> (or <span class="math inline">\(\textsf{S4}\)</span>) after dismissing <span class="math inline">\(\textsf{B}\)</span> and <span class="math inline">\(\textsf{5}\)</span> as implausible.</p></li>
+</ul>
+</div><div class="column" style="width:52%;">
+<p><img data-src="images/ep-4.svg" style="width:75.0%"></p>
+</div></div>
+</section>
+<section id="textsf4-an-objection-from-belief" class="slide level2">
+<h2><span class="math inline">\(\textsf{4}\)</span>: an objection from belief</h2>
+<p>Given <span class="math inline">\(\textsf{K}_i \varphi \to \textsf{B}_i \varphi\)</span>, axiom <span class="math inline">\(\textsf{4}\)</span> entails <span class="math display">\[\textsf{K}_i \varphi \to \textsf{B}_i \textsf{K}_i \varphi\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We need only assume that Knowledge entails Belief. <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \textsf{K}_i \varphi \to \textsf{K}_i \textsf{K}_i \varphi &amp; \textsf{4}\\
+2 &amp; \textsf{K}_i \textsf{K}_i \varphi \to \textsf{B}_i \textsf{K}_i \varphi &amp; \textsf{Knowledge entails Belief}\\
+3 &amp; \textsf{K}_i \varphi \to \textsf{B}_i \textsf{K}_i \varphi &amp; \textsf{PL} \ 1, 2
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>I know something only if I believe that I know it.</p>
+</div>
+</section>
+<section id="margins-for-error" class="slide level2">
+<h2>margins for error</h2>
+<p>Williamson (2000, ch.&nbsp;5): you glance at a crowd and make an estimate. Let <span class="math inline">\(p_k\)</span> stand for the proposition that the actual count is <span class="math inline">\(k\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/margin.svg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<div class="fragment">
+<p>A <strong>margin of error principle</strong>: <span class="math display">\[\textsf{K} \neg p_k \to \neg p_{k+1} \tag{\textsf{MEP}}\]</span> You know the count is not <span class="math inline">\(k\)</span> only if it is not <span class="math inline">\(k+1\)</span> either. This is because you cannot distinguish two crowds that differ just by one person. So, your belief would be true only by luck.</p>
+</div>
+</section>
+<section id="why-accept-textsfmep" class="slide level2">
+<h2>why accept <span class="math inline">\(\textsf{MEP}\)</span>?</h2>
+<ul>
+<li class="fragment"><p>Suppose the true count is <span class="math inline">\(k+1\)</span> and you believe it is not <span class="math inline">\(k\)</span>.</p></li>
+<li class="fragment"><p>A crowd of <span class="math inline">\(k\)</span> would look exactly the same to you as this crowd.</p></li>
+<li class="fragment"><p>You would have formed the same belief had the count been <span class="math inline">\(k\)</span>, and it would have been false.</p></li>
+<li class="fragment"><p>Your belief is true only by luck, and a belief that is true by luck is not knowledge.</p></li>
+</ul>
+</section>
+<section id="the-margin-of-error-argument" class="slide level2">
+<h2>the margin of error argument</h2>
+<p>Suppose you are reflective enough to know every instance of <span class="math inline">\(\textsf{MEP}\)</span>.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>You know that the count is <em>not</em> <span class="math inline">\(k\)</span> only if you know that it is <em>not</em> <span class="math inline">\(k+1\)</span>. <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \textsf{K} \neg p_k \to \textsf{K} \textsf{K} \neg p_k &amp; \textsf{4}\\
+2 &amp; \textsf{K}(\textsf{K} \neg p_k \to \neg p_{k+1}) &amp; \text{known instance of } \textsf{MEP}\\
+3 &amp; \textsf{K} \textsf{K} \neg p_k \to \textsf{K} \neg p_{k+1} &amp; \textsf{K}, \ 2\\
+4 &amp; \textsf{K} \neg p_k \to \textsf{K} \neg p_{k+1} &amp; \textsf{PL} \ 1, 3
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment"><p>You surely know the count is not <span class="math inline">\(0\)</span>: <span class="math inline">\(\textsf{K} \neg p_0\)</span>.</p></li>
+<li class="fragment"><p>By induction, <span class="math inline">\(\textsf{K} \neg p_n\)</span> for every <span class="math inline">\(n\)</span>, including the true count <span class="math inline">\(k\)</span>.</p></li>
+<li class="fragment"><p>By <span class="math inline">\(\textsf{T}\)</span>, <span class="math inline">\(\neg p_k\)</span>, contradicting <span class="math inline">\(p_k\)</span>.</p></li>
+<li class="fragment"><p>Williamson blames <span class="math inline">\(\textsf{4}\)</span>: limited discrimination calls for non-transitive accessibility.</p></li>
+</ul>
+</div>
+</section>
+<section id="where-this-leaves-us" class="slide level2">
+<h2>where this leaves us</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li class="fragment"><p><span class="math inline">\(\textsf{T}\)</span>: accepted by all.</p></li>
+<li class="fragment"><p><span class="math inline">\(\textsf{B}\)</span>, <span class="math inline">\(\textsf{5}\)</span>: rejected by most.</p></li>
+<li class="fragment"><p><span class="math inline">\(\textsf{4}\)</span>: contested.</p>
+<p>Hintikka and Stalnaker support <span class="math inline">\(\textsf{S4}\)</span>.</p>
+<p>Williamson stays with <span class="math inline">\(\textsf{KT}\)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/landscape-s4.svg" style="width:100.0%"></p>
+</div></div>
+<p>For a survey of these debates, see Holliday, “Epistemic Logic and Epistemology” (2018), §7.</p>
+</section></section>
+<section>
+<section id="the-unexpected-examination" class="title-slide slide level1 divider center">
+<h1>the unexpected examination</h1>
+<p>Margin of error principles reappear in a famous paradox.</p>
+</section>
+<section id="the-paradox" class="slide level2">
+<h2>the paradox</h2>
+<p>Teacher announces an exam next term that will come as a <strong>surprise</strong>: on the day of the exam, students will not know that it is that day.</p>
+<ul>
+<li class="fragment"><p>The exam cannot be on the last day.</p>
+<p>Otherwise, students would know that it is that day.</p></li>
+<li class="fragment"><p>Having ruled out the last day, it cannot be on the penultimate day either.</p>
+<p>If no exam has taken place by the penultimate day, it would be the only option left.</p></li>
+<li class="fragment"><p>Similar reasoning rules out every other day, until no day is left.</p></li>
+<li class="fragment"><p>Yet, teacher eventually gives the exam, and the students are surprised.</p></li>
+</ul>
+</section>
+<section id="glimpse" class="slide level2">
+<h2>Glimpse</h2>
+<p>Williamson (2000, ch.&nbsp;6): the same issue arises in a much simpler case.</p>
+<ul>
+<li class="fragment"><p>Students know the teacher circles all and only exam dates on her office calendar.</p></li>
+<li class="fragment"><p>From a distant glimpse, they see exactly one date circled. They are able to appreciate that it is not very near the end of term, but they cannot narrow it down much further.</p></li>
+<li class="fragment"><p>Let <span class="math inline">\(e_n\)</span>: the exam takes place <span class="math inline">\(n\)</span> days before the end of term.</p></li>
+<li class="fragment"><p>Since the glimpse is imprecise, a margin of error principle applies, and the students know it:</p>
+<p><span class="math display">\[\textsf{K} \neg e_n \to \neg e_{n+1} \tag{\textsf{MEP}}\]</span></p></li>
+<li class="fragment"><p>From the glimpse, they know the exam is not on the last day: <span class="math inline">\(\textsf{K} \neg e_0\)</span>.</p></li>
+</ul>
+</section>
+<section id="the-argument-from-glimpse" class="slide level2">
+<h2>the argument from Glimpse</h2>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If students can rule out <span class="math inline">\(e_{0}\)</span>, then they can rule out <span class="math inline">\(e_{1}\)</span>: <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \textsf{K} \neg e_0 \to \textsf{K} \textsf{K} \neg e_0 &amp; \textsf{4}\\
+2 &amp; \textsf{K}(\textsf{K} \neg e_0 \to \neg e_1) &amp; \text{known instance of } \textsf{MEP}\\
+3 &amp; \textsf{K} \textsf{K} \neg e_0 \to \textsf{K} \neg e_1 &amp; \textsf{K}, \ 2\\
+4 &amp; \textsf{K} \neg e_0 \to \textsf{K} \neg e_1 &amp; \textsf{PL} \ 1, 3
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>In general: <span class="math display">\[\textsf{K} \neg e_n \to \textsf{K} \neg e_{n+1}\]</span></p>
+</div>
+</section>
+<section id="ruling-out-every-day" class="slide level2">
+<h2>ruling out every day</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/glimpse.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+<ul>
+<li class="fragment"><p>Students start from <span class="math inline">\(\textsf{K} \neg e_0\)</span> and they are in a position to rule out <em>every</em> day of term.</p></li>
+<li class="fragment"><p>Yet, the exam takes place and they are surprised.</p></li>
+<li class="fragment"><p>For Williamson, the students’ error is to rely on <span class="math inline">\(\textsf{4}\)</span>.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="knowability" class="title-slide slide level1 divider center">
+<h1>knowability</h1>
+<p>Of special interest is the interaction of epistemic and metaphysical modalities.</p>
+</section>
+<section id="what-is-the-case-can-be-known" class="slide level2">
+<h2>what is the case can be known</h2>
+<p>Some philosophers hold that what is true never outstrips what can be known. If we read <span class="math inline">\(\Diamond\)</span> in terms of <em>metaphysical</em> possibility, the knowability principle becomes: <span class="math display">\[p \to \Diamond \textsf{K} p \tag{\textsf{Knowability}}\]</span></p>
+<div class="fragment">
+<p><strong>Fitch’s paradox.</strong> Knowability, given modest principles, entails that every truth is <em>known</em>: <span class="math display">\[p \to \textsf{K} p \tag{\textsf{Knowledge}}\]</span></p>
+</div>
+<div class="fragment">
+<p>If <span class="math inline">\(\textsf{Knowledge}\)</span> fails, then there are Moorean truths. The thought is to apply Knowability to a Moorean truth. If, unbeknownst to you, your phone has been stolen, then <span class="math inline">\(p \wedge \neg \textsf{K} p\)</span> is an ordinary truth you could never come to know: as soon as you know <span class="math inline">\(p\)</span>, the second conjunct becomes false. So, if <span class="math inline">\(\textsf{Knowledge}\)</span> fails, <span class="math inline">\(\textsf{Knowability}\)</span> must fail as well.</p>
+</div>
+</section>
+<section id="the-ingredients" class="slide level2">
+<h2>the ingredients</h2>
+<ul>
+<li class="fragment"><p>For <span class="math inline">\(\textsf{K}\)</span>: <span class="math inline">\(\textsf{M}\)</span> and <span class="math inline">\(\textsf{T}\)</span>, which gave us the theorem <span class="math inline">\(\neg \textsf{K}(p \wedge \neg \textsf{K}p)\)</span>.</p></li>
+<li class="fragment"><p>For <span class="math inline">\(\Box\)</span>: the rule <span class="math inline">\(\textsf{RN}\)</span>, and <span class="math inline">\(\Diamond\)</span> as the dual of <span class="math inline">\(\Box\)</span>.</p></li>
+<li class="fragment"><p>A simple instance of <span class="math inline">\(\textsf{Knowability}\)</span> for a Moorean truth.</p></li>
+<li class="fragment"><p>Classical propositional logic.</p></li>
+</ul>
+<div class="fragment">
+<p>Notice how little is assumed: no <span class="math inline">\(\textsf{4}\)</span>, no <span class="math inline">\(\textsf{5}\)</span>, no full closure of knowledge.</p>
+</div>
+</section>
+<section id="fitchs-argument" class="slide level2">
+<h2>Fitch’s argument</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/fitch.svg" class="quarto-figure quarto-figure-center" style="width:68.0%"></p>
+</figure>
+</div>
+</section>
+<section id="fitchs-argument-step-by-step" class="slide level2">
+<h2>Fitch’s argument, step by step</h2>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Here is a formal version of the argument: <span class="math display">\[
+\begin{array}{lll}
+1 &amp; \textsf{K}(p \wedge \neg \textsf{K} p) \to (\textsf{K} p \wedge \textsf{K} \neg \textsf{K} p) &amp; \textsf{M}\\
+2 &amp; \textsf{K} \neg \textsf{K} p \to \neg \textsf{K} p &amp; \textsf{T}\\
+3 &amp; \neg \textsf{K}(p \wedge \neg \textsf{K} p) &amp; \textsf{PL} \ 1, 2\\
+\hline
+4 &amp; \Box \neg \textsf{K}(p \wedge \neg \textsf{K} p) &amp; \textsf{RN} \ 3\\
+5 &amp; \neg \Diamond \textsf{K}(p \wedge \neg \textsf{K} p) &amp; \textsf{Def} \ \Diamond \ 4\\
+\hline
+6 &amp; (p \wedge \neg \textsf{K} p) \to \Diamond \textsf{K}(p \wedge \neg \textsf{K} p) &amp; \textsf{Knowability}\\
+7 &amp; p \to \textsf{K} p &amp; \textsf{PL} \ 5, 6
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Three stages: Moorean truths are unknowable (1–3); as a matter of necessity (4–5); and thus <span class="math inline">\(\textsf{Knowability}\)</span> collapses into <span class="math inline">\(p \to \textsf{K}p\)</span> (6–7).</p>
+<p>If <em>all</em> truths are knowable, all truths are known.</p>
+</div>
+</section>
+<section id="a-semantic-diagnosis" class="slide level2">
+<h2>a semantic diagnosis</h2>
+<p>Making the agent explicit again, a model for the hybrid language requires two accessibility relations: <span class="math inline">\(R_i\)</span> for <span class="math inline">\(i\)</span>’s knowledge and <span class="math inline">\(R_\Diamond\)</span> for metaphysical possibility.</p>
+<ul>
+<li class="fragment"><p><strong>RN in line 4</strong> presupposes that line 3 is true at <em>every</em> <span class="math inline">\(R_\Diamond\)</span>-accessible world. Since line 3 depends on <span class="math inline">\(\textsf{T}\)</span>, <span class="math inline">\(R_i\)</span> must be reflexive at every world.</p></li>
+<li class="fragment"><p><strong><span class="math inline">\(\Diamond\)</span> shifts the world of evaluation</strong>, including for the inner <span class="math inline">\(\neg \textsf{K}_i p\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/fitch-sem.svg" class="quarto-figure quarto-figure-center" style="width:62.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="what-is-the-problem" class="slide level2">
+<h2>what is the problem</h2>
+<ul>
+<li class="fragment"><p>For <span class="math inline">\(\textsf{Knowability}\)</span> to be true at <span class="math inline">\(w\)</span>, <span class="math inline">\(\textsf{K}_i(p \wedge \neg \textsf{K}_i p)\)</span> must be true at some <span class="math inline">\(R_\Diamond\)</span>-accessible world.</p></li>
+<li class="fragment"><p>To know the conjunction requires one to know <span class="math inline">\(p\)</span>: it must be a world like <span class="math inline">\(v\)</span>, where <span class="math inline">\(i\)</span> knows <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p>But at <span class="math inline">\(v\)</span>, the second conjunct says that <span class="math inline">\(i\)</span> does not know <span class="math inline">\(p\)</span> <em>at <span class="math inline">\(v\)</span></em>, not at <span class="math inline">\(w\)</span>. Since knowledge is factive, <span class="math inline">\(i\)</span> cannot know the conjunction at <span class="math inline">\(v\)</span>.</p></li>
+<li class="fragment"><p>What we want is a world where <span class="math inline">\(i\)</span> knows <span class="math inline">\(p\)</span> and knows she <em>did not</em> know <span class="math inline">\(p\)</span> at <span class="math inline">\(w\)</span>.</p>
+<p><span class="math inline">\(\textsf{K}_i(p \wedge \neg \textsf{K}_i p)\)</span> cannot express this: the inner <span class="math inline">\(\textsf{K}_i\)</span> concerns <span class="math inline">\(i\)</span>’s state at the world of evaluation.</p></li>
+<li class="fragment"><p>On this view, the paradox arises because some truths concern the agent’s own epistemic situation, and coming to know them makes them false.</p></li>
+</ul>
+</section>
+<section id="where-to-resist" class="slide level2">
+<h2>where to resist</h2>
+<ul>
+<li class="fragment"><p><strong>Logic</strong>: the final step to <span class="math inline">\(p \to \textsf{K}p\)</span> is not intuitionistically valid. Some anti-realists reject classical logic.</p></li>
+<li class="fragment"><p><strong>Restriction</strong> (Tennant): restrict Knowability to <em>Cartesian</em> truths, those <span class="math inline">\(\varphi\)</span> for which <span class="math inline">\(\textsf{K}\varphi\)</span> is consistent. Since <span class="math inline">\(\textsf{K}(p \wedge \neg \textsf{K}p)\)</span> is inconsistent by <span class="math inline">\(\textsf{M}\)</span> and <span class="math inline">\(\textsf{T}\)</span>, the instance in line 6 is blocked.</p></li>
+<li class="fragment"><p><strong>Interpretation</strong> (van Benthem): read <span class="math inline">\(\Diamond \textsf{K}\varphi\)</span> dynamically, as <em>one could come to know <span class="math inline">\(\varphi\)</span> by learning something true</em>. Learning <span class="math inline">\(p \wedge \neg \textsf{K}p\)</span> makes it false.</p>
+<p>We will return to this idea when we discuss information flow.</p></li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="epistemic-logic_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="epistemic-logic_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="epistemic-logic_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="epistemic-logic_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Same behaviour as the notes' checkMC/revealMC, with two changes for slides:
+    // MathJax 3 has no MathJax.Hub, and reveal.js steals arrow/space keys from
+    // focused radio buttons unless the event stops at the widget.
+    function checkMC(btn) {
+      var ex = btn.closest('.mc-exercise');
+      var correct = JSON.parse(ex.dataset.correct);
+      var multi = ex.dataset.multi === "true";
+      var feedback = ex.querySelector('.mc-feedback');
+      feedback.removeAttribute('hidden');
+      var ok;
+      if (multi) {
+        var checked = Array.from(ex.querySelectorAll('input[type=checkbox]:checked'))
+                           .map(function (c) { return parseInt(c.value); });
+        if (checked.length === 0) {
+          feedback.textContent = 'Please select an option.';
+          feedback.className = 'mc-feedback';
+          return;
+        }
+        ok = correct.length === checked.length &&
+             correct.every(function (v) { return checked.includes(v); });
+      } else {
+        var selected = ex.querySelector('input[type=radio]:checked');
+        if (!selected) {
+          feedback.textContent = 'Please select an option.';
+          feedback.className = 'mc-feedback';
+          return;
+        }
+        ok = correct.includes(parseInt(selected.value));
+      }
+      feedback.textContent = ok ? '\u2713 Correct.' : '\u2717 Not quite \u2014 try again.';
+      feedback.className = 'mc-feedback ' + (ok ? 'fb-ok' : 'fb-err');
+    }
+
+    function revealMC(btn) {
+      var ex = btn.closest('.mc-exercise');
+      var ans = ex.querySelector('.mc-answer');
+      ans.removeAttribute('hidden');
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([ans]);
+      } else if (window.MathJax && MathJax.Hub) {
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, ans]);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.mc-exercise').forEach(function (ex) {
+        ex.addEventListener('keydown', function (e) { e.stopPropagation(); });
+      });
+    });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
