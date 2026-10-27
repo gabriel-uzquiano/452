@@ -219,7 +219,7 @@ Gabriel Uzquiano
 <div class="fragment">
 <ul>
 <li class="fragment"><p>So the canonical <em>model</em> verifies all and only theorems of <span class="math inline">\(\Sigma\)</span>.</p></li>
-<li class="fragment"><p>The question now is whether theorems of <span class="math inline">\(\Sigma\)</span> are <strong>valid</strong> in the canonical frame for <span class="math inline">\(\Sigma\)</span>: true under <strong>every</strong> valuation, not just under <span class="math inline">\(V_\Sigma\)</span>?</p></li>
+<li class="fragment"><p>The question now is whether theorems of <span class="math inline">\(\Sigma\)</span> are <strong>valid</strong> in the canonical frame for <span class="math inline">\(\Sigma\)</span>. That is, are the theorems of <span class="math inline">\(\Sigma\)</span> true under <strong>every</strong> valuation, not just under <span class="math inline">\(V_\Sigma\)</span>?</p></li>
 <li class="fragment"><p>Completeness with respect to <span class="math inline">\(\mathcal{C}\)</span> only requires the frame to be in <span class="math inline">\(\mathcal{C}\)</span>. Canonicity asks for more: that the frame validate <span class="math inline">\(\Sigma\)</span>.</p></li>
 </ul>
 </div>
@@ -294,15 +294,15 @@ Gabriel Uzquiano
 </section>
 <section id="from-frame-conditions-to-canonicity" class="slide level2 smaller">
 <h2>from frame conditions to canonicity</h2>
-<p>We proceed to argue that <span class="math inline">\(R_\Sigma\)</span> satisfies the relevant <strong>condition</strong>.</p>
-<p>To conclude that the axiom is <strong>canonical</strong>, we need one more step:</p>
+<p>We proceed to argue that <span class="math inline">\(R_\Sigma\)</span> satisfies the relevant <strong>condition</strong> in each case.</p>
+<p>To conclude that the axiom is <strong>canonical</strong>, we rely on a further observation:</p>
 <ul>
-<li class="fragment"><p>each condition <strong>validates</strong> its axiom: on every frame satisfying the condition, every instance of the axiom is true at every world under every valuation. We did this when we studied frame definability.</p></li>
+<li class="fragment"><p>for a frame to satisfy the condition is sufficent for the frame to <strong>validate</strong> the axiom.</p></li>
 <li class="fragment"><p>So if <span class="math inline">\(R_\Sigma\)</span> satisfies the condition, the canonical frame validates the axiom.</p></li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\Sigma \ \text{contains instances of the axiom} \ \Rightarrow \ R_\Sigma \ \text{satisfies the condition} \ \Rightarrow \ (W_\Sigma, R_\Sigma) \ \text{validates the axiom}
+\Sigma \ \text{contains all instances of the axiom} \ \Rightarrow \ R_\Sigma \ \text{satisfies the condition} \ \Rightarrow \ (W_\Sigma, R_\Sigma) \ \text{validates all instances of the axiom}
 \]</span></p>
 </div>
 </section>
@@ -310,19 +310,19 @@ Gabriel Uzquiano
 <h2>the pattern</h2>
 <p>In each case, we argue that <span class="math inline">\(R_\Sigma\)</span> relates certain maximal consistent sets:</p>
 <ul>
-<li class="fragment"><p>We unpack the condition in terms of the definition of <span class="math inline">\(R_\Sigma\)</span> (in its <span class="math inline">\(\Box\)</span> or <span class="math inline">\(\Diamond\)</span> form).</p></li>
+<li class="fragment"><p>We unpack the condition in terms of the definition of <span class="math inline">\(R_\Sigma\)</span> in either the <span class="math inline">\(\Box\)</span> or <span class="math inline">\(\Diamond\)</span> form.</p></li>
 <li class="fragment"><p>Use the axiom, whose instances belong to each <span class="math inline">\(\Gamma \in W_\Sigma\)</span>, to move a formula from one set to another.</p></li>
 <li class="fragment"><p>In the diagrams below, solid arrows are given and the dashed arrow is to be shown.</p></li>
 </ul>
 </section>
-<section id="a-useful-lemma" class="slide level2 smaller">
-<h2>a useful lemma</h2>
-<p>Several proofs, including the existence lemma, use the same step.</p>
+<section id="a-helpful-lemma" class="slide level2 smaller">
+<h2>a helpful lemma</h2>
+<p>Several proofs, including the existence lemma, use one crucial step.</p>
 <div class="theorem">
 <p>If <span class="math inline">\(\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \psi\)</span>, then <span class="math inline">\(\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box\psi\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <span class="math inline">\(\textsf{RK}\)</span>, <span class="math inline">\(\vdash_\Sigma \Box(\varphi_1 \wedge \dots \wedge \varphi_n) \to \Box\psi\)</span>. It remains to verify that <span class="math display">\[\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n)\]</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <span class="math inline">\(\textsf{RK}\)</span>, <span class="math inline">\(\vdash_\Sigma \Box(\varphi_1 \wedge \dots \wedge \varphi_n) \to \Box\psi\)</span>. It remains to verify that <span class="math display">\[\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n).\]</span> But <span class="math inline">\(\Sigma\)</span> extends <span class="math inline">\(\textsf{K}\)</span>, and we observed that <span class="math inline">\(\vdash_{\textsf{K}} (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box(\varphi_1 \wedge \dots \wedge \varphi_n)\)</span>.</p>
 </div>
 <div class="fragment">
 <p>With <span class="math inline">\(\psi = \bot\)</span>, this is the step used for <span class="math inline">\(\textsf{D}\)</span> below.</p>
@@ -333,10 +333,12 @@ Gabriel Uzquiano
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="theorem">
-<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{D}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is serial on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma\)</span> is a max <span class="math inline">\(\Sigma\)</span>-con set, there is <span class="math inline">\(\Delta\)</span> with <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span>.</p>
+<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{D}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is serial on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set, there is <span class="math inline">\(\Delta\)</span> with <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>It suffices to note that <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent. Suppose not. Then <span class="math inline">\(\vdash_\Sigma (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot\)</span> for some <span class="math inline">\(\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma\)</span>. By the lemma, <span class="math inline">\(\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot\)</span>, so <span class="math inline">\(\Box\bot \in \Gamma\)</span>. By <span class="math inline">\(\textsf{D}\)</span>, <span class="math inline">\(\Diamond \bot \in \Gamma\)</span>. But <span class="math inline">\(\vdash_\Sigma \Box \neg \bot\)</span>, i.e., <span class="math inline">\(\neg\Diamond\bot \in \Gamma\)</span>. So <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>We argue that <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent. Suppose not. Then <span class="math inline">\(\vdash_{\Sigma} (\varphi_1 \wedge \dots \wedge \varphi_n) \to \bot\)</span> for some <span class="math inline">\(\Box\varphi_1, \dots, \Box\varphi_n \in \Gamma\)</span>. By the lemma,</p>
+<p><span class="math display">\[\vdash_\Sigma (\Box\varphi_1 \wedge \dots \wedge \Box\varphi_n) \to \Box \bot.\]</span></p>
+<p>It follows that <span class="math inline">\(\Box\bot \in \Gamma\)</span>. Given axiom <span class="math inline">\(\textsf{D}\)</span>, <span class="math inline">\(\Diamond \bot \in \Gamma\)</span>. But <span class="math inline">\(\vdash_\Sigma \Box \neg \bot\)</span>, i.e., <span class="math inline">\(\neg\Diamond\bot \in \Gamma\)</span>. So, <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, which contradicts the assumption that <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent.</p>
 </div>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/c-ser.svg" style="width:100.0%"></p>
@@ -347,11 +349,13 @@ Gabriel Uzquiano
 <div class="columns">
 <div class="column" style="width:55%;">
 <div class="theorem">
-<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{B}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is symmetric on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta\)</span> are max <span class="math inline">\(\Sigma\)</span>-con sets, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, then <span class="math inline">\(\Delta R_\Sigma \Gamma\)</span>.</p>
+<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{B}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is symmetric on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta\)</span> are maximal <span class="math inline">\(\Sigma\)</span>-consistent, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, then <span class="math inline">\(\Delta R_\Sigma \Gamma\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Given maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta\)</span>, we argue that</p>
-<p>if <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span>, then <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta\)</span>.</p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span>, then <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Gamma\} \subseteq \Delta\)</span>.</li>
+</ul>
 <p>Let <span class="math inline">\(\varphi \in \Gamma\)</span>. By <span class="math inline">\(\textsf{B}\)</span>, <span class="math inline">\(\varphi \to \Box \Diamond \varphi \in \Gamma\)</span>, so <span class="math inline">\(\Box\Diamond\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>.</p>
 </div>
 </div><div class="column" style="width:45%;">
@@ -363,11 +367,13 @@ Gabriel Uzquiano
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="theorem">
-<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{4}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is transitive on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta, \Theta\)</span> are max <span class="math inline">\(\Sigma\)</span>-con sets, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> and <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>.</p>
+<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{4}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is transitive on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta, \Theta\)</span> are maximal <span class="math inline">\(\Sigma\)</span>-consistent, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> and <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Given maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>, we argue</p>
-<p>if <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta\)</span>, then <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta\)</span></p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta\)</span>, then <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta\)</span></li>
+</ul>
 <p>Assume <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta\)</span>. Let <span class="math inline">\(\Box \varphi \in \Gamma\)</span>. By <span class="math inline">\(\textsf{4}\)</span>, <span class="math inline">\(\Box\Box\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, <span class="math inline">\(\Box \varphi \in \Delta\)</span>. Since <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, <span class="math inline">\(\varphi \in \Theta\)</span>.</p>
 </div>
 </div><div class="column" style="width:50%;">
@@ -382,12 +388,14 @@ Gabriel Uzquiano
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="theorem">
-<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{5}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is euclidean on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta, \Theta\)</span> are max <span class="math inline">\(\Sigma\)</span>-con sets, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> and <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>.</p>
+<p>If <span class="math inline">\(\Sigma\)</span> includes substitution instances of <span class="math inline">\(\textsf{5}\)</span>, then <span class="math inline">\(R_\Sigma\)</span> is euclidean on <span class="math inline">\(W_\Sigma\)</span>: if <span class="math inline">\(\Gamma, \Delta, \Theta\)</span> are maximal <span class="math inline">\(\Sigma\)</span>-consistent, then if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> and <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Given maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>, we argue</p>
-<p>if <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta\)</span>, then <span class="math inline">\(\{\varphi : \Box\varphi \in \Delta\} \subseteq \Theta\)</span></p>
-<p>Assume <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Theta\)</span>. Let <span class="math inline">\(\varphi \in \Theta\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. By <span class="math inline">\(\textsf{5}\)</span>, <span class="math inline">\(\Box \Diamond\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>.</p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Gamma\)</span>, then <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Delta\)</span></li>
+</ul>
+<p>Assume <span class="math inline">\(\{\varphi : \Box\varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Theta\} \subseteq \Gamma\)</span>. Let <span class="math inline">\(\varphi \in \Theta\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. By <span class="math inline">\(\textsf{5}\)</span>, <span class="math inline">\(\Box \Diamond \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>.</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div style="height: 100px;">
@@ -404,11 +412,11 @@ Gabriel Uzquiano
 <section id="how-to-combine-canonical-axioms" class="slide level2 smaller">
 <h2>how to combine canonical axioms</h2>
 <div class="theorem">
-<p>If <span class="math inline">\(\Sigma\)</span> is axiomatized by adding to <span class="math inline">\(\textsf{K}\)</span> canonical axioms that correspond to conditions <span class="math inline">\(C_1, \dots, C_n\)</span>, then <span class="math inline">\(\Sigma\)</span> is complete with respect to the class of frames that satisfy <span class="math inline">\(C_1, \dots, C_n\)</span>.</p>
+<p>If <span class="math inline">\(\Sigma\)</span> extends <span class="math inline">\(\textsf{K}\)</span> with the canonical axioms that correspond to conditions <span class="math inline">\(C_1, \dots, C_n\)</span>, then <span class="math inline">\(\Sigma\)</span> is complete with respect to the class of frames that satisfy <span class="math inline">\(C_1, \dots, C_n\)</span>.</p>
 </div>
 <div class="fragment">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>If <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\varphi\)</span> fails at some world of <span class="math inline">\(\mathcal{M}_\Sigma\)</span>. Since <span class="math inline">\(\Sigma\)</span> contains the instances of each axiom, the canonical frame satisfies each of <span class="math inline">\(C_1, \dots, C_n\)</span>. So <span class="math inline">\(\varphi\)</span> fails on a frame in the class.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>If <span class="math inline">\(\nvdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\varphi\)</span> fails at some world of <span class="math inline">\(\mathcal{M}_\Sigma\)</span>. Since <span class="math inline">\(\Sigma\)</span> contains all instances of each axiom, <span class="math inline">\(R_\Sigma\)</span> satisfies all of <span class="math inline">\(C_1, \dots, C_n\)</span>. Thus <span class="math inline">\(\varphi\)</span> fails on a frame in the class.</p>
 </div>
 </div>
 <div class="fragment">
@@ -425,7 +433,7 @@ Gabriel Uzquiano
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\Gamma \cup \{\neg\varphi\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent (Theorem 8.1). By Lindenbaum’s lemma, it extends to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>. By the truth lemma, every member of <span class="math inline">\(\Gamma \cup \{\neg\varphi\}\)</span> is true at <span class="math inline">\(\Delta\)</span>.</p>
 </div>
 <div class="fragment">
-<p>So for canonical <span class="math inline">\(\Sigma\)</span> and the corresponding class <span class="math inline">\(\mathcal{C}\)</span>: if every world in a model on a frame in <span class="math inline">\(\mathcal{C}\)</span> that makes all of <span class="math inline">\(\Gamma\)</span> true also makes <span class="math inline">\(\varphi\)</span> true, then <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>. Compare the propositional case: every consistent set is satisfiable.</p>
+<p>Given a canonical system <span class="math inline">\(\Sigma\)</span> and the relevant class <span class="math inline">\(\mathcal{C}\)</span>: if a world in a model on a frame in <span class="math inline">\(\mathcal{C}\)</span> that verifies <span class="math inline">\(\Gamma\)</span> verifies <span class="math inline">\(\varphi\)</span> true, then <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
 </div>
 </section>
 <section id="the-full-picture" class="slide level2 smaller">
@@ -460,16 +468,16 @@ Gabriel Uzquiano
 </figure>
 </div>
 <ul>
-<li class="fragment"><p>The set <span class="math inline">\(\{\Diamond p_0\} \cup \{\Box(p_n \to \Diamond p_{n+1}) : n \geq 0\}\)</span> is <span class="math inline">\(\textsf{GL}\)</span>-consistent: each finite subset is true at the root of a long enough finite chain.</p></li>
-<li class="fragment"><p>Extend it to a maximal <span class="math inline">\(\textsf{GL}\)</span>-consistent <span class="math inline">\(\Gamma\)</span>. Since <span class="math inline">\(\textsf{GL} \vdash \textsf{4}\)</span>, each <span class="math inline">\(\Box(p_n \to \Diamond p_{n+1})\)</span> is passed along the chain, and the existence lemma yields <span class="math inline">\(\Delta_0, \Delta_1, \Delta_2, \dots\)</span></p></li>
-<li class="fragment"><p>So the canonical frame contains an infinite chain, and it does not validate Löb’s axiom. Completeness of <span class="math inline">\(\textsf{GL}\)</span> requires other methods, such as filtrations and finite models.</p></li>
+<li class="fragment"><p>The set <span class="math inline">\(\{\Diamond p_0\} \cup \{\Box(p_n \to \Diamond p_{n+1}) : n \geq 0\}\)</span> is <span class="math inline">\(\textsf{GL}\)</span>-consistent: each finite subset is true at the root of a long enough finite chain. Extend it to a maximal <span class="math inline">\(\textsf{GL}\)</span>-consistent <span class="math inline">\(\Gamma\)</span>.</p></li>
+<li class="fragment"><p>Since <span class="math inline">\(\Diamond p_0 \in \Gamma\)</span>, there is <span class="math inline">\(\Delta_0\)</span> with <span class="math inline">\(\Gamma R_{GL} \Delta_0\)</span> and <span class="math inline">\(p_0 \in \Delta_0\)</span>. Since axiom <span class="math inline">\(\textsf{4}\)</span> each instance of <span class="math inline">\(\Box(p_k\to\Diamond p_{k+1})\)</span> is placed into each <span class="math inline">\(\Delta_n\)</span>. So <span class="math inline">\(p_n \to \Diamond p_{n+1}\in\Delta_n\)</span>, hence <span class="math inline">\(\Diamond p_{n+1}\in\Delta_n\)</span>, and the existence lemma gives <span class="math inline">\(\Delta_{n+1}\)</span> with <span class="math inline">\(p_{n+1}\in\Delta_{n+1}\)</span>.</p></li>
+<li class="fragment"><p>So the canonical frame contains an infinite chain, and it does not validate Löb’s axiom. Completeness of <span class="math inline">\(\textsf{GL}\)</span> requires the use of alternative methods, such as filtrations and finite models.</p></li>
 </ul>
 </section>
 <section id="exercise-textsfs4.2" class="slide level2 smaller">
 <h2>exercise: <span class="math inline">\(\textsf{S4.2}\)</span></h2>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><span class="math inline">\(\textsf{S4.2}\)</span> extends <span class="math inline">\(\textsf{S4}\)</span> with all instances of <span class="math display">\[\Diamond\Box p \to \Box\Diamond p \tag{\textsf{.2}}\]</span> recall Lenzen’s view of the logic of knowledge.</p>
+<p><span class="math inline">\(\textsf{S4.2}\)</span> extends <span class="math inline">\(\textsf{S4}\)</span> with all instances of <span class="math display">\[\Diamond\Box p \to \Box\Diamond p \tag{\textsf{.2}}\]</span></p>
 <p><span class="math inline">\(\textsf{.2}\)</span> is canonical for <strong>directed</strong> frames: if <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> and <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, then there is <span class="math inline">\(\Lambda\)</span> with <span class="math inline">\(\Delta R_\Sigma \Lambda\)</span> and <span class="math inline">\(\Theta R_\Sigma \Lambda\)</span>.</p>
 <p><em>Hint</em>: show that <span class="math inline">\(\{\varphi : \Box\varphi \in \Delta\} \cup \{\psi : \Box\psi \in \Theta\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, and use Lindenbaum’s lemma.</p>
 </div><div class="column" style="width:45%;">
